@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../.resources/report.gif" type="image/gif"/><title>EuropeanNationType.java</title><link rel="stylesheet" href="../../../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../.sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">NationTest (May 13, 2016 7:06:58 PM)</a> &gt; <a href="../../index.html" class="el_group">FreeCol</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">net.sf.freecol.common.model</a> &gt; <span class="el_source">EuropeanNationType.java</span></div><h1>EuropeanNationType.java</h1><pre class="source lang-java linenums">/**
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../.resources/report.gif" type="image/gif"/><title>EuropeanNationType.java</title><link rel="stylesheet" href="../../../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../.sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">ModifierTest (May 13, 2016 7:43:28 PM)</a> &gt; <a href="../../index.html" class="el_group">FreeCol</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">net.sf.freecol.common.model</a> &gt; <span class="el_source">EuropeanNationType.java</span></div><h1>EuropeanNationType.java</h1><pre class="source lang-java linenums">/**
  *  Copyright (C) 2002-2016   The FreeCol Team
  *
  *  This file is part of FreeCol.
@@ -37,13 +37,13 @@ import net.sf.freecol.common.io.FreeColXMLWriter;
 public class EuropeanNationType extends NationType {
 
     /** Whether this is an REF Nation. */
-<span class="fc" id="L40">    private boolean ref = false;</span>
+<span class="nc" id="L40">    private boolean ref = false;</span>
 
     /**
      * Stores the starting units of this Nation at various
      * difficulties.
      */
-<span class="fc" id="L46">    private final Map&lt;String, Map&lt;String, AbstractUnit&gt;&gt; startingUnitMap = new HashMap&lt;&gt;();</span>
+<span class="nc" id="L46">    private final Map&lt;String, Map&lt;String, AbstractUnit&gt;&gt; startingUnitMap = new HashMap&lt;&gt;();</span>
 
 
     /**
@@ -53,8 +53,8 @@ public class EuropeanNationType extends NationType {
      * @param specification The &lt;code&gt;Specification&lt;/code&gt; to refer to.
      */
     public EuropeanNationType(String id, Specification specification) {
-<span class="fc" id="L56">        super(id, specification);</span>
-<span class="fc" id="L57">    }</span>
+<span class="nc" id="L56">        super(id, specification);</span>
+<span class="nc" id="L57">    }</span>
 
 
     /**
@@ -64,7 +64,7 @@ public class EuropeanNationType extends NationType {
      */
     @Override
     public final boolean isREF() {
-<span class="fc" id="L67">        return ref;</span>
+<span class="nc" id="L67">        return ref;</span>
     }
 
     /**
@@ -74,7 +74,7 @@ public class EuropeanNationType extends NationType {
      */
     @Override
     public boolean isEuropean() {
-<span class="fc" id="L77">        return true;</span>
+<span class="nc" id="L77">        return true;</span>
     }
 
     /**
@@ -84,7 +84,7 @@ public class EuropeanNationType extends NationType {
      */
     @Override
     public boolean isIndian() {
-<span class="fc" id="L87">        return false;</span>
+<span class="nc" id="L87">        return false;</span>
     }
 
     /**
@@ -149,19 +149,19 @@ public class EuropeanNationType extends NationType {
      */
     @Override
     protected void writeAttributes(FreeColXMLWriter xw) throws XMLStreamException {
-<span class="fc" id="L152">        super.writeAttributes(xw);</span>
+<span class="nc" id="L152">        super.writeAttributes(xw);</span>
 
-<span class="fc" id="L154">        xw.writeAttribute(REF_TAG, ref);</span>
-<span class="fc" id="L155">    }</span>
+<span class="nc" id="L154">        xw.writeAttribute(REF_TAG, ref);</span>
+<span class="nc" id="L155">    }</span>
 
     /**
      * {@inheritDoc}
      */
     @Override
     protected void writeChildren(FreeColXMLWriter xw) throws XMLStreamException {
-<span class="fc" id="L162">        super.writeChildren(xw);</span>
+<span class="nc" id="L162">        super.writeChildren(xw);</span>
 
-<span class="pc bpc" id="L164" title="2 of 4 branches missed.">        if (startingUnitMap != null &amp;&amp; !startingUnitMap.isEmpty()) {</span>
+<span class="nc bnc" id="L164" title="All 4 branches missed.">        if (startingUnitMap != null &amp;&amp; !startingUnitMap.isEmpty()) {</span>
             Map&lt;String, AbstractUnit&gt; map;
             // default map
 <span class="nc bnc" id="L167" title="All 2 branches missed.">            if ((map = startingUnitMap.get(null)) != null) {</span>
@@ -176,7 +176,7 @@ public class EuropeanNationType extends NationType {
                 }
             }
         }
-<span class="fc" id="L179">    }</span>
+<span class="nc" id="L179">    }</span>
 
     private void writeUnit(FreeColXMLWriter xw, String id,
                            AbstractUnit au,
@@ -267,7 +267,7 @@ public class EuropeanNationType extends NationType {
      * {@inheritDoc}
      */
     @Override
-<span class="fc" id="L270">    public String getXMLTagName() { return getTagName(); }</span>
+<span class="nc" id="L270">    public String getXMLTagName() { return getTagName(); }</span>
 
     /**
      * Gets the tag name of the root element representing this object.
@@ -275,7 +275,7 @@ public class EuropeanNationType extends NationType {
      * @return &quot;european-nation-type&quot;.
      */
     public static String getTagName() {
-<span class="fc" id="L278">        return &quot;european-nation-type&quot;;</span>
+<span class="nc" id="L278">        return &quot;european-nation-type&quot;;</span>
     }
 }
-</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span>NationTest (May 13, 2016 7:06:58 PM)</div></body></html>
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span>ModifierTest (May 13, 2016 7:43:28 PM)</div></body></html>

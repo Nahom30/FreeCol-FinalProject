@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../.resources/report.gif" type="image/gif"/><title>Game.java</title><link rel="stylesheet" href="../../../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../.sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">NationTest (May 13, 2016 7:06:58 PM)</a> &gt; <a href="../../index.html" class="el_group">FreeCol</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">net.sf.freecol.common.model</a> &gt; <span class="el_source">Game.java</span></div><h1>Game.java</h1><pre class="source lang-java linenums"><span class="nc" id="L1">/**</span>
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../.resources/report.gif" type="image/gif"/><title>Game.java</title><link rel="stylesheet" href="../../../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../.sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">ModifierTest (May 13, 2016 7:43:28 PM)</a> &gt; <a href="../../index.html" class="el_group">FreeCol</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">net.sf.freecol.common.model</a> &gt; <span class="el_source">Game.java</span></div><h1>Game.java</h1><pre class="source lang-java linenums"><span class="nc" id="L1">/**</span>
  *  Copyright (C) 2002-2016   The FreeCol Team
  *
  *  This file is part of FreeCol.
@@ -54,7 +54,7 @@ import net.sf.freecol.common.util.Utils;
  */
 public class Game extends FreeColGameObject {
 
-<span class="fc" id="L57">    private static final Logger logger = Logger.getLogger(Game.class.getName());</span>
+<span class="nc" id="L57">    private static final Logger logger = Logger.getLogger(Game.class.getName());</span>
 
     /** State for the FCGO iterator, out here because it has to be static. */
 <span class="nc" id="L60">    private static enum FcgoState {</span>
@@ -66,26 +66,26 @@ public class Game extends FreeColGameObject {
     /** Map of all classes with corresponding server classes. */
     private static final java.util.Map&lt;Class&lt;? extends FreeColObject&gt;,
                                        Class&lt;? extends FreeColObject&gt;&gt;
-<span class="fc" id="L69">        serverClasses = new HashMap&lt;&gt;();</span>
+<span class="nc" id="L69">        serverClasses = new HashMap&lt;&gt;();</span>
     static {
-<span class="fc" id="L71">        serverClasses.put(net.sf.freecol.common.model.Building.class,</span>
-<span class="fc" id="L72">                          net.sf.freecol.server.model.ServerBuilding.class);</span>
-<span class="fc" id="L73">        serverClasses.put(net.sf.freecol.common.model.Colony.class,</span>
-<span class="fc" id="L74">                          net.sf.freecol.server.model.ServerColony.class);</span>
-<span class="fc" id="L75">        serverClasses.put(net.sf.freecol.common.model.ColonyTile.class,</span>
-<span class="fc" id="L76">                          net.sf.freecol.server.model.ServerColonyTile.class);</span>
-<span class="fc" id="L77">        serverClasses.put(net.sf.freecol.common.model.Europe.class,</span>
-<span class="fc" id="L78">                          net.sf.freecol.server.model.ServerEurope.class);</span>
-<span class="fc" id="L79">        serverClasses.put(net.sf.freecol.common.model.Game.class,</span>
-<span class="fc" id="L80">                          net.sf.freecol.server.model.ServerGame.class);</span>
-<span class="fc" id="L81">        serverClasses.put(net.sf.freecol.common.model.IndianSettlement.class,</span>
-<span class="fc" id="L82">                          net.sf.freecol.server.model.ServerIndianSettlement.class);</span>
-<span class="fc" id="L83">        serverClasses.put(net.sf.freecol.common.model.Region.class,</span>
-<span class="fc" id="L84">                          net.sf.freecol.server.model.ServerRegion.class);</span>
-<span class="fc" id="L85">        serverClasses.put(net.sf.freecol.common.model.Player.class,</span>
-<span class="fc" id="L86">                          net.sf.freecol.server.model.ServerPlayer.class);</span>
-<span class="fc" id="L87">        serverClasses.put(net.sf.freecol.common.model.Unit.class,</span>
-<span class="fc" id="L88">                          net.sf.freecol.server.model.ServerUnit.class);</span>
+<span class="nc" id="L71">        serverClasses.put(net.sf.freecol.common.model.Building.class,</span>
+<span class="nc" id="L72">                          net.sf.freecol.server.model.ServerBuilding.class);</span>
+<span class="nc" id="L73">        serverClasses.put(net.sf.freecol.common.model.Colony.class,</span>
+<span class="nc" id="L74">                          net.sf.freecol.server.model.ServerColony.class);</span>
+<span class="nc" id="L75">        serverClasses.put(net.sf.freecol.common.model.ColonyTile.class,</span>
+<span class="nc" id="L76">                          net.sf.freecol.server.model.ServerColonyTile.class);</span>
+<span class="nc" id="L77">        serverClasses.put(net.sf.freecol.common.model.Europe.class,</span>
+<span class="nc" id="L78">                          net.sf.freecol.server.model.ServerEurope.class);</span>
+<span class="nc" id="L79">        serverClasses.put(net.sf.freecol.common.model.Game.class,</span>
+<span class="nc" id="L80">                          net.sf.freecol.server.model.ServerGame.class);</span>
+<span class="nc" id="L81">        serverClasses.put(net.sf.freecol.common.model.IndianSettlement.class,</span>
+<span class="nc" id="L82">                          net.sf.freecol.server.model.ServerIndianSettlement.class);</span>
+<span class="nc" id="L83">        serverClasses.put(net.sf.freecol.common.model.Region.class,</span>
+<span class="nc" id="L84">                          net.sf.freecol.server.model.ServerRegion.class);</span>
+<span class="nc" id="L85">        serverClasses.put(net.sf.freecol.common.model.Player.class,</span>
+<span class="nc" id="L86">                          net.sf.freecol.server.model.ServerPlayer.class);</span>
+<span class="nc" id="L87">        serverClasses.put(net.sf.freecol.common.model.Unit.class,</span>
+<span class="nc" id="L88">                          net.sf.freecol.server.model.ServerUnit.class);</span>
     };
 
     /**
@@ -93,26 +93,26 @@ public class Game extends FreeColGameObject {
      * up game loading.
      */
     private static final java.util.Map&lt;String, Class&lt;? extends FreeColGameObject&gt;&gt;
-<span class="fc" id="L96">        locationClasses = new HashMap&lt;&gt;();</span>
+<span class="nc" id="L96">        locationClasses = new HashMap&lt;&gt;();</span>
     static {
-<span class="fc" id="L98">        locationClasses.put(&quot;Building&quot;,</span>
-<span class="fc" id="L99">                            net.sf.freecol.common.model.Building.class);</span>
-<span class="fc" id="L100">        locationClasses.put(&quot;Colony&quot;,</span>
-<span class="fc" id="L101">                            net.sf.freecol.common.model.Colony.class);</span>
-<span class="fc" id="L102">        locationClasses.put(&quot;ColonyTile&quot;,</span>
-<span class="fc" id="L103">                            net.sf.freecol.common.model.ColonyTile.class);</span>
-<span class="fc" id="L104">        locationClasses.put(&quot;Europe&quot;,</span>
-<span class="fc" id="L105">                            net.sf.freecol.common.model.Europe.class);</span>
-<span class="fc" id="L106">        locationClasses.put(&quot;HighSeas&quot;,</span>
-<span class="fc" id="L107">                            net.sf.freecol.common.model.HighSeas.class);</span>
-<span class="fc" id="L108">        locationClasses.put(&quot;IndianSettlement&quot;,</span>
-<span class="fc" id="L109">                            net.sf.freecol.common.model.IndianSettlement.class);</span>
-<span class="fc" id="L110">        locationClasses.put(&quot;Map&quot;,</span>
-<span class="fc" id="L111">                            net.sf.freecol.common.model.Map.class);</span>
-<span class="fc" id="L112">        locationClasses.put(&quot;Tile&quot;,</span>
-<span class="fc" id="L113">                            net.sf.freecol.common.model.Tile.class);</span>
-<span class="fc" id="L114">        locationClasses.put(&quot;Unit&quot;,</span>
-<span class="fc" id="L115">                            net.sf.freecol.common.model.Unit.class);</span>
+<span class="nc" id="L98">        locationClasses.put(&quot;Building&quot;,</span>
+<span class="nc" id="L99">                            net.sf.freecol.common.model.Building.class);</span>
+<span class="nc" id="L100">        locationClasses.put(&quot;Colony&quot;,</span>
+<span class="nc" id="L101">                            net.sf.freecol.common.model.Colony.class);</span>
+<span class="nc" id="L102">        locationClasses.put(&quot;ColonyTile&quot;,</span>
+<span class="nc" id="L103">                            net.sf.freecol.common.model.ColonyTile.class);</span>
+<span class="nc" id="L104">        locationClasses.put(&quot;Europe&quot;,</span>
+<span class="nc" id="L105">                            net.sf.freecol.common.model.Europe.class);</span>
+<span class="nc" id="L106">        locationClasses.put(&quot;HighSeas&quot;,</span>
+<span class="nc" id="L107">                            net.sf.freecol.common.model.HighSeas.class);</span>
+<span class="nc" id="L108">        locationClasses.put(&quot;IndianSettlement&quot;,</span>
+<span class="nc" id="L109">                            net.sf.freecol.common.model.IndianSettlement.class);</span>
+<span class="nc" id="L110">        locationClasses.put(&quot;Map&quot;,</span>
+<span class="nc" id="L111">                            net.sf.freecol.common.model.Map.class);</span>
+<span class="nc" id="L112">        locationClasses.put(&quot;Tile&quot;,</span>
+<span class="nc" id="L113">                            net.sf.freecol.common.model.Tile.class);</span>
+<span class="nc" id="L114">        locationClasses.put(&quot;Unit&quot;,</span>
+<span class="nc" id="L115">                            net.sf.freecol.common.model.Unit.class);</span>
     };
 
 
@@ -120,45 +120,45 @@ public class Game extends FreeColGameObject {
      * The next available identifier that can be given to a new
      * &lt;code&gt;FreeColGameObject&lt;/code&gt;.
      */
-<span class="fc" id="L123">    protected int nextId = 1;</span>
+<span class="nc" id="L123">    protected int nextId = 1;</span>
 
     /** Game UUID, persistent in savegame files */
-<span class="fc" id="L126">    private UUID uuid = UUID.randomUUID();</span>
+<span class="nc" id="L126">    private UUID uuid = UUID.randomUUID();</span>
 
     /** The client player name, null in the server. */
     private final String clientUserName;
 
     /** All the players in the game. */
-<span class="fc" id="L132">    protected final List&lt;Player&gt; players = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L132">    protected final List&lt;Player&gt; players = new ArrayList&lt;&gt;();</span>
 
     /** A virtual player to use for enemy privateers. */
     private Player unknownEnemy;
 
     /** The map of the New World. */
-<span class="fc" id="L138">    private Map map = null;</span>
+<span class="nc" id="L138">    private Map map = null;</span>
 
     /**
      * The current nation options.  Mainly used to see if a player
      * nation is available.
      */
-<span class="fc" id="L144">    private NationOptions nationOptions = null;</span>
+<span class="nc" id="L144">    private NationOptions nationOptions = null;</span>
 
     /** The player whose turn it is. */
-<span class="fc" id="L147">    protected Player currentPlayer = null;</span>
+<span class="nc" id="L147">    protected Player currentPlayer = null;</span>
 
     /** The current turn. */
-<span class="fc" id="L150">    private Turn turn = new Turn(1);</span>
+<span class="nc" id="L150">    private Turn turn = new Turn(1);</span>
 
     /** Whether the War of Spanish Succession has already taken place. */
-<span class="fc" id="L153">    private boolean spanishSuccession = false;</span>
+<span class="nc" id="L153">    private boolean spanishSuccession = false;</span>
 
     /** Initial active unit identifier. */
-<span class="fc" id="L156">    private String initialActiveUnitId = null;</span>
+<span class="nc" id="L156">    private String initialActiveUnitId = null;</span>
     
     // Serialization not required below.
 
     /** The Specification this game uses. */
-<span class="fc" id="L161">    private Specification specification = null;</span>
+<span class="nc" id="L161">    private Specification specification = null;</span>
 
     /**
      * References to all objects created in this game.
@@ -175,43 +175,43 @@ public class Game extends FreeColGameObject {
      * implemented in future.  As soon as that happens, we will also
      * have to make the combat model selectable.
      */
-<span class="fc" id="L178">    protected CombatModel combatModel = null;</span>
+<span class="nc" id="L178">    protected CombatModel combatModel = null;</span>
 
     /** The number of removed FCGOs that should trigger a cache clean. */
     private static final int REMOVE_GC_THRESHOLD = 64;
 
     /** The number of FCGOs removed since last cache clean. */
-<span class="fc" id="L184">    private int removeCount = 0;</span>
+<span class="nc" id="L184">    private int removeCount = 0;</span>
 
     /**
      * A FreeColGameObjectListener to watch the objects in the game.
      * Usually this is the AIMain instance.
      * FIXME: is this better done with a property change listener?
      */
-<span class="fc" id="L191">    protected FreeColGameObjectListener freeColGameObjectListener = null;</span>
+<span class="nc" id="L191">    protected FreeColGameObjectListener freeColGameObjectListener = null;</span>
 
 
     /**
      * Trivial constructor for use in Game.newInstance.
      */
     public Game() {
-<span class="fc" id="L198">        super((Game)null);</span>
+<span class="nc" id="L198">        super((Game)null);</span>
 
-<span class="fc" id="L200">        this.clientUserName = null;</span>
-<span class="fc" id="L201">        this.players.clear();</span>
-<span class="fc" id="L202">        this.unknownEnemy = null;</span>
-<span class="fc" id="L203">        this.map = null;</span>
-<span class="fc" id="L204">        this.nationOptions = null;</span>
-<span class="fc" id="L205">        this.currentPlayer = null;</span>
-<span class="fc" id="L206">        this.spanishSuccession = false;</span>
-<span class="fc" id="L207">        this.initialActiveUnitId = null;</span>
-<span class="fc" id="L208">        this.specification = null;</span>
-<span class="fc" id="L209">        this.freeColGameObjects = new HashMap&lt;&gt;(10000);</span>
-<span class="fc" id="L210">        this.combatModel = new SimpleCombatModel();</span>
-<span class="fc" id="L211">        this.removeCount = 0;</span>
-<span class="fc" id="L212">        internId(&quot;0&quot;);</span>
-<span class="fc" id="L213">        this.initialized = true;</span>
-<span class="fc" id="L214">    }</span>
+<span class="nc" id="L200">        this.clientUserName = null;</span>
+<span class="nc" id="L201">        this.players.clear();</span>
+<span class="nc" id="L202">        this.unknownEnemy = null;</span>
+<span class="nc" id="L203">        this.map = null;</span>
+<span class="nc" id="L204">        this.nationOptions = null;</span>
+<span class="nc" id="L205">        this.currentPlayer = null;</span>
+<span class="nc" id="L206">        this.spanishSuccession = false;</span>
+<span class="nc" id="L207">        this.initialActiveUnitId = null;</span>
+<span class="nc" id="L208">        this.specification = null;</span>
+<span class="nc" id="L209">        this.freeColGameObjects = new HashMap&lt;&gt;(10000);</span>
+<span class="nc" id="L210">        this.combatModel = new SimpleCombatModel();</span>
+<span class="nc" id="L211">        this.removeCount = 0;</span>
+<span class="nc" id="L212">        internId(&quot;0&quot;);</span>
+<span class="nc" id="L213">        this.initialized = true;</span>
+<span class="nc" id="L214">    }</span>
 
     /**
      * Constructor used by the ServerGame constructor.
@@ -305,9 +305,9 @@ public class Game extends FreeColGameObject {
      * @return The game object, or null if not found.
      */
     public FreeColGameObject getFreeColGameObject(String id) {
-<span class="pc bpc" id="L308" title="2 of 4 branches missed.">        if (id == null || id.isEmpty()) return null;</span>
-<span class="fc" id="L309">        final WeakReference&lt;FreeColGameObject&gt; ro = freeColGameObjects.get(id);</span>
-<span class="pc bpc" id="L310" title="1 of 2 branches missed.">        if (ro == null) return null;</span>
+<span class="nc bnc" id="L308" title="All 4 branches missed.">        if (id == null || id.isEmpty()) return null;</span>
+<span class="nc" id="L309">        final WeakReference&lt;FreeColGameObject&gt; ro = freeColGameObjects.get(id);</span>
+<span class="nc bnc" id="L310" title="All 2 branches missed.">        if (ro == null) return null;</span>
 <span class="nc" id="L311">        final FreeColGameObject o = ro.get();</span>
 <span class="nc bnc" id="L312" title="All 2 branches missed.">        if (o == null) {</span>
 <span class="nc" id="L313">            removeFreeColGameObject(id, &quot;missed&quot;);</span>
@@ -346,25 +346,25 @@ public class Game extends FreeColGameObject {
      *     object are null.
      */
     public void setFreeColGameObject(String id, FreeColGameObject fcgo) {
-<span class="pc bpc" id="L349" title="2 of 4 branches missed.">        if (id == null || id.isEmpty()) {</span>
+<span class="nc bnc" id="L349" title="All 4 branches missed.">        if (id == null || id.isEmpty()) {</span>
 <span class="nc" id="L350">            throw new IllegalArgumentException(&quot;Null/empty id.&quot;);</span>
-<span class="pc bpc" id="L351" title="1 of 2 branches missed.">        } else if (fcgo == null) {</span>
+<span class="nc bnc" id="L351" title="All 2 branches missed.">        } else if (fcgo == null) {</span>
 <span class="nc" id="L352">            throw new IllegalArgumentException(&quot;Null FreeColGameObject.&quot;);</span>
         }
 
-<span class="fc" id="L355">        final FreeColGameObject old = getFreeColGameObject(id);</span>
-<span class="pc bpc" id="L356" title="1 of 2 branches missed.">        if (old != null) {</span>
+<span class="nc" id="L355">        final FreeColGameObject old = getFreeColGameObject(id);</span>
+<span class="nc bnc" id="L356" title="All 2 branches missed.">        if (old != null) {</span>
 <span class="nc" id="L357">            throw new IllegalArgumentException(&quot;Tried to replace FCGO &quot;</span>
 <span class="nc" id="L358">                + id + &quot; : &quot; + old.getClass()</span>
 <span class="nc" id="L359">                + &quot; with &quot; + fcgo.getId() + &quot; : &quot; + fcgo.getClass());</span>
         }
 
         //logger.finest(&quot;Added FCGO: &quot; + id);
-<span class="fc" id="L363">        final WeakReference&lt;FreeColGameObject&gt; wr</span>
-<span class="fc" id="L364">            = new WeakReference&lt;&gt;(fcgo);</span>
-<span class="fc" id="L365">        freeColGameObjects.put(id, wr);</span>
-<span class="fc" id="L366">        notifySetFreeColGameObject(id, fcgo);</span>
-<span class="fc" id="L367">    }</span>
+<span class="nc" id="L363">        final WeakReference&lt;FreeColGameObject&gt; wr</span>
+<span class="nc" id="L364">            = new WeakReference&lt;&gt;(fcgo);</span>
+<span class="nc" id="L365">        freeColGameObjects.put(id, wr);</span>
+<span class="nc" id="L366">        notifySetFreeColGameObject(id, fcgo);</span>
+<span class="nc" id="L367">    }</span>
 
     /**
      * Removes the &lt;code&gt;FreeColGameObject&lt;/code&gt; with the specified
@@ -523,7 +523,7 @@ public class Game extends FreeColGameObject {
      *     not found.
      */
     public Player getPlayerByNationId(String nationId) {
-<span class="pc" id="L526">        return find(players, p -&gt; p.getNationId().equals(nationId));</span>
+<span class="nc" id="L526">        return find(players, p -&gt; p.getNationId().equals(nationId));</span>
     }
 
     /**
@@ -922,10 +922,10 @@ public class Game extends FreeColGameObject {
      * @param fcgo The new &lt;code&gt;FreeColGameObject&lt;/code&gt;.
      */
     public void notifySetFreeColGameObject(String id, FreeColGameObject fcgo) {
-<span class="pc bpc" id="L925" title="1 of 2 branches missed.">        if (freeColGameObjectListener != null) {</span>
+<span class="nc bnc" id="L925" title="All 2 branches missed.">        if (freeColGameObjectListener != null) {</span>
 <span class="nc" id="L926">            freeColGameObjectListener.setFreeColGameObject(id, fcgo);</span>
         }
-<span class="fc" id="L928">    }</span>
+<span class="nc" id="L928">    }</span>
 
     /**
      * Notify a listener (if any) of that a game object has gone.
@@ -1189,7 +1189,7 @@ public class Game extends FreeColGameObject {
      */
     @Override
     public Game getGame() {
-<span class="fc" id="L1192">        return this; // The game must be itself!</span>
+<span class="nc" id="L1192">        return this; // The game must be itself!</span>
     }
 
     /**
@@ -1237,7 +1237,7 @@ public class Game extends FreeColGameObject {
     private static final String TURN_TAG = &quot;turn&quot;;
     private static final String UUID_TAG = &quot;UUID&quot;;
     // @compat 0.10.x
-<span class="fc" id="L1240">    private static final String OLD_NEXT_ID_TAG = &quot;nextID&quot;;</span>
+<span class="nc" id="L1240">    private static final String OLD_NEXT_ID_TAG = &quot;nextID&quot;;</span>
     // end @compat 0.10.x
 
 
@@ -1408,4 +1408,4 @@ public class Game extends FreeColGameObject {
 <span class="nc" id="L1408">        return &quot;game&quot;;</span>
     }
 }
-</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span>NationTest (May 13, 2016 7:06:58 PM)</div></body></html>
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span>ModifierTest (May 13, 2016 7:43:28 PM)</div></body></html>

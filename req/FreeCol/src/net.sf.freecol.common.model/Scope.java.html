@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../.resources/report.gif" type="image/gif"/><title>Scope.java</title><link rel="stylesheet" href="../../../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../.sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">NationTest (May 13, 2016 7:06:58 PM)</a> &gt; <a href="../../index.html" class="el_group">FreeCol</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">net.sf.freecol.common.model</a> &gt; <span class="el_source">Scope.java</span></div><h1>Scope.java</h1><pre class="source lang-java linenums">/**
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../.resources/report.gif" type="image/gif"/><title>Scope.java</title><link rel="stylesheet" href="../../../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../.sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">ModifierTest (May 13, 2016 7:43:28 PM)</a> &gt; <a href="../../index.html" class="el_group">FreeCol</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">net.sf.freecol.common.model</a> &gt; <span class="el_source">Scope.java</span></div><h1>Scope.java</h1><pre class="source lang-java linenums">/**
  *  Copyright (C) 2002-2016   The FreeCol Team
  *
  *  This file is part of FreeCol.
@@ -36,34 +36,34 @@ public class Scope extends FreeColObject {
      * The identifier of a &lt;code&gt;FreeColSpecObjectType&lt;/code&gt;, or
      * &lt;code&gt;Option&lt;/code&gt;.
      */
-<span class="nc" id="L39">    private String type = null;</span>
+<span class="pc" id="L39">    private String type = null;</span>
 
     /** The object identifier of an &lt;code&gt;Ability&lt;/code&gt;. */
-<span class="nc" id="L42">    private String abilityId = null;</span>
+<span class="pc" id="L42">    private String abilityId = null;</span>
 
     /** The value of an &lt;code&gt;Ability&lt;/code&gt;. */
-<span class="nc" id="L45">    private boolean abilityValue = true;</span>
+<span class="pc" id="L45">    private boolean abilityValue = true;</span>
 
     /** The name of an &lt;code&gt;Method&lt;/code&gt;. */
-<span class="nc" id="L48">    private String methodName = null;</span>
+<span class="pc" id="L48">    private String methodName = null;</span>
 
     /**
      * The &lt;code&gt;String&lt;/code&gt; representation of the value of an
      * &lt;code&gt;Method&lt;/code&gt;.
      */
-<span class="nc" id="L54">    private String methodValue = null;</span>
+<span class="pc" id="L54">    private String methodValue = null;</span>
 
     /** True if the scope applies to a null object. */
-<span class="nc" id="L57">    private boolean matchesNull = true;</span>
+<span class="pc" id="L57">    private boolean matchesNull = true;</span>
 
     /** Whether the match is negated. */
-<span class="nc" id="L60">    private boolean matchNegated = false;</span>
+<span class="pc" id="L60">    private boolean matchNegated = false;</span>
 
 
     /**
      * Deliberately empty constructor.
      */
-<span class="nc" id="L66">    public Scope() {}</span>
+<span class="fc" id="L66">    public Scope() {}</span>
 
     /**
      * Creates a new &lt;code&gt;Scope&lt;/code&gt; instance from a stream.
@@ -111,8 +111,8 @@ public class Scope extends FreeColObject {
     }
 
     public void setMatchNegated(final boolean newMatchNegated) {
-<span class="nc" id="L114">        this.matchNegated = newMatchNegated;</span>
-<span class="nc" id="L115">    }</span>
+<span class="fc" id="L114">        this.matchNegated = newMatchNegated;</span>
+<span class="fc" id="L115">    }</span>
 
     public String getType() {
 <span class="nc" id="L118">        return type;</span>
@@ -137,8 +137,8 @@ public class Scope extends FreeColObject {
      * @param newAbilityId The new ability id.
      */
     public void setAbilityId(final String newAbilityId) {
-<span class="nc" id="L140">        this.abilityId = newAbilityId;</span>
-<span class="nc" id="L141">    }</span>
+<span class="fc" id="L140">        this.abilityId = newAbilityId;</span>
+<span class="fc" id="L141">    }</span>
 
     public boolean getAbilityValue() {
 <span class="nc" id="L144">        return abilityValue;</span>
@@ -207,10 +207,10 @@ public class Scope extends FreeColObject {
      * @return A new scope to negatively match on persons.
      */
     public static Scope makeNegatedPersonScope() {
-<span class="nc" id="L210">        Scope scope = new Scope();</span>
-<span class="nc" id="L211">        scope.setAbilityId(&quot;model.ability.person&quot;);</span>
-<span class="nc" id="L212">        scope.setMatchNegated(true);</span>
-<span class="nc" id="L213">        return scope;</span>
+<span class="fc" id="L210">        Scope scope = new Scope();</span>
+<span class="fc" id="L211">        scope.setAbilityId(&quot;model.ability.person&quot;);</span>
+<span class="fc" id="L212">        scope.setMatchNegated(true);</span>
+<span class="fc" id="L213">        return scope;</span>
     }
     // end @compat 0.10.7
 
@@ -306,21 +306,21 @@ public class Scope extends FreeColObject {
         // Scopes do not have ids, no super.writeAttributes().
         // However, they might in future.
 
-<span class="nc" id="L309">        xw.writeAttribute(MATCH_NEGATED_TAG, matchNegated);</span>
+<span class="fc" id="L309">        xw.writeAttribute(MATCH_NEGATED_TAG, matchNegated);</span>
 
-<span class="nc" id="L311">        xw.writeAttribute(MATCHES_NULL_TAG, matchesNull);</span>
+<span class="fc" id="L311">        xw.writeAttribute(MATCHES_NULL_TAG, matchesNull);</span>
 
-<span class="nc bnc" id="L313" title="All 2 branches missed.">        if (type != null) {</span>
+<span class="pc bpc" id="L313" title="1 of 2 branches missed.">        if (type != null) {</span>
 <span class="nc" id="L314">            xw.writeAttribute(TYPE_TAG, type);</span>
         }
 
-<span class="nc bnc" id="L317" title="All 2 branches missed.">        if (abilityId != null) {</span>
-<span class="nc" id="L318">            xw.writeAttribute(ABILITY_ID_TAG, abilityId);</span>
+<span class="pc bpc" id="L317" title="1 of 2 branches missed.">        if (abilityId != null) {</span>
+<span class="fc" id="L318">            xw.writeAttribute(ABILITY_ID_TAG, abilityId);</span>
 
-<span class="nc" id="L320">            xw.writeAttribute(ABILITY_VALUE_TAG, abilityValue);</span>
+<span class="fc" id="L320">            xw.writeAttribute(ABILITY_VALUE_TAG, abilityValue);</span>
         }
 
-<span class="nc bnc" id="L323" title="All 2 branches missed.">        if (methodName != null) {</span>
+<span class="pc bpc" id="L323" title="1 of 2 branches missed.">        if (methodName != null) {</span>
 <span class="nc" id="L324">            xw.writeAttribute(METHOD_NAME_TAG, methodName);</span>
 
 <span class="nc bnc" id="L326" title="All 2 branches missed.">            if (methodValue != null) {</span>
@@ -328,7 +328,7 @@ public class Scope extends FreeColObject {
 <span class="nc" id="L328">                xw.writeAttribute(METHOD_VALUE_TAG, methodValue);</span>
             }
         }
-<span class="nc" id="L331">    }</span>
+<span class="fc" id="L331">    }</span>
 
     /**
      * {@inheritDoc}
@@ -377,25 +377,25 @@ public class Scope extends FreeColObject {
      */
     @Override
     public String toString() {
-<span class="nc" id="L380">        StringBuilder sb = new StringBuilder(64);</span>
-<span class="nc" id="L381">        sb.append(&quot;[Scope &quot;).append(type);</span>
-<span class="nc bnc" id="L382" title="All 2 branches missed.">        if (abilityId != null) {</span>
-<span class="nc" id="L383">            sb.append(&quot; &quot;).append(abilityId).append(&quot;=&quot;).append(abilityValue);</span>
+<span class="fc" id="L380">        StringBuilder sb = new StringBuilder(64);</span>
+<span class="fc" id="L381">        sb.append(&quot;[Scope &quot;).append(type);</span>
+<span class="pc bpc" id="L382" title="1 of 2 branches missed.">        if (abilityId != null) {</span>
+<span class="fc" id="L383">            sb.append(&quot; &quot;).append(abilityId).append(&quot;=&quot;).append(abilityValue);</span>
         }
-<span class="nc bnc" id="L385" title="All 2 branches missed.">        if (methodName != null) {</span>
+<span class="pc bpc" id="L385" title="1 of 2 branches missed.">        if (methodName != null) {</span>
 <span class="nc" id="L386">            sb.append(&quot; &quot;).append(methodName).append(&quot;=&quot;).append(methodValue);</span>
         }
-<span class="nc bnc" id="L388" title="All 2 branches missed.">        if (matchesNull) sb.append(&quot; matches-null&quot;);</span>
-<span class="nc bnc" id="L389" title="All 2 branches missed.">        if (matchNegated) sb.append(&quot; match-negated&quot;);</span>
-<span class="nc" id="L390">        sb.append(&quot;]&quot;);</span>
-<span class="nc" id="L391">        return sb.toString();</span>
+<span class="pc bpc" id="L388" title="1 of 2 branches missed.">        if (matchesNull) sb.append(&quot; matches-null&quot;);</span>
+<span class="pc bpc" id="L389" title="1 of 2 branches missed.">        if (matchNegated) sb.append(&quot; match-negated&quot;);</span>
+<span class="fc" id="L390">        sb.append(&quot;]&quot;);</span>
+<span class="fc" id="L391">        return sb.toString();</span>
     }
 
     /**
      * {@inheritDoc}
      */
     @Override
-<span class="nc" id="L398">    public String getXMLTagName() { return getTagName(); }</span>
+<span class="fc" id="L398">    public String getXMLTagName() { return getTagName(); }</span>
 
     /**
      * Gets the tag name of the root element representing this object.
@@ -403,7 +403,7 @@ public class Scope extends FreeColObject {
      * @return &quot;scope&quot;.
      */
     public static String getTagName() {
-<span class="nc" id="L406">        return &quot;scope&quot;;</span>
+<span class="fc" id="L406">        return &quot;scope&quot;;</span>
     }
 }
-</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span>NationTest (May 13, 2016 7:06:58 PM)</div></body></html>
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span>ModifierTest (May 13, 2016 7:43:28 PM)</div></body></html>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../.resources/report.gif" type="image/gif"/><title>GoodsType.java</title><link rel="stylesheet" href="../../../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../.sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">NationTest (May 13, 2016 7:06:58 PM)</a> &gt; <a href="../../index.html" class="el_group">FreeCol</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">net.sf.freecol.common.model</a> &gt; <span class="el_source">GoodsType.java</span></div><h1>GoodsType.java</h1><pre class="source lang-java linenums">/**
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../.resources/report.gif" type="image/gif"/><title>GoodsType.java</title><link rel="stylesheet" href="../../../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../.sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">ModifierTest (May 13, 2016 7:43:28 PM)</a> &gt; <a href="../../index.html" class="el_group">FreeCol</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">net.sf.freecol.common.model</a> &gt; <span class="el_source">GoodsType.java</span></div><h1>GoodsType.java</h1><pre class="source lang-java linenums">/**
  *  Copyright (C) 2002-2016   The FreeCol Team
  *
  *  This file is part of FreeCol.
@@ -43,9 +43,9 @@ public final class GoodsType extends FreeColSpecObjectType {
     private static final float DEFAULT_ZERO_PRODUCTION_FACTOR = 1.0f;
 
     /** A comparator to impose a useful order on goods types. */
-<span class="nc" id="L46">    public static final Comparator&lt;GoodsType&gt; goodsTypeComparator</span>
-<span class="nc" id="L47">        = Comparator.comparingInt(GoodsType::getRank)</span>
-<span class="nc" id="L48">            .thenComparing(gt -&gt; (FreeColObject)gt);</span>
+<span class="fc" id="L46">    public static final Comparator&lt;GoodsType&gt; goodsTypeComparator</span>
+<span class="fc" id="L47">        = Comparator.comparingInt(GoodsType::getRank)</span>
+<span class="pc" id="L48">            .thenComparing(gt -&gt; (FreeColObject)gt);</span>
 
     /** Is this a farmed goods type. */
     private boolean isFarmed;
@@ -548,7 +548,7 @@ public final class GoodsType extends FreeColSpecObjectType {
     private static final String STORABLE_TAG = &quot;storable&quot;;
     private static final String STORED_AS_TAG = &quot;stored-as&quot;;
     private static final String TRADE_GOODS_TAG = &quot;trade-goods&quot;;
-<span class="nc" id="L551">    private static final String ZERO_PRODUCTION_FACTOR_TAG = &quot;zero-production-factor&quot;;</span>
+<span class="fc" id="L551">    private static final String ZERO_PRODUCTION_FACTOR_TAG = &quot;zero-production-factor&quot;;</span>
 
 
     /**
@@ -706,4 +706,4 @@ public final class GoodsType extends FreeColSpecObjectType {
 <span class="nc" id="L706">        return &quot;goods-type&quot;;</span>
     }
 }
-</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span>NationTest (May 13, 2016 7:06:58 PM)</div></body></html>
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span>ModifierTest (May 13, 2016 7:43:28 PM)</div></body></html>

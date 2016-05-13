@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../.resources/report.gif" type="image/gif"/><title>NationType.java</title><link rel="stylesheet" href="../../../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../.sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">NationTest (May 13, 2016 7:06:58 PM)</a> &gt; <a href="../../index.html" class="el_group">FreeCol</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">net.sf.freecol.common.model</a> &gt; <span class="el_source">NationType.java</span></div><h1>NationType.java</h1><pre class="source lang-java linenums"><span class="nc" id="L1">/**</span>
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../.resources/report.gif" type="image/gif"/><title>NationType.java</title><link rel="stylesheet" href="../../../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../.sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">ModifierTest (May 13, 2016 7:43:28 PM)</a> &gt; <a href="../../index.html" class="el_group">FreeCol</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">net.sf.freecol.common.model</a> &gt; <span class="el_source">NationType.java</span></div><h1>NationType.java</h1><pre class="source lang-java linenums"><span class="nc" id="L1">/**</span>
  *  Copyright (C) 2002-2016   The FreeCol Team
  *
  *  This file is part of FreeCol.
@@ -36,8 +36,8 @@ import static net.sf.freecol.common.util.StringUtils.*;
  */
 public abstract class NationType extends FreeColSpecObjectType {
 
-<span class="fc" id="L39">    public static enum SettlementNumber {</span>
-<span class="fc" id="L40">        LOW, AVERAGE, HIGH;</span>
+<span class="nc" id="L39">    public static enum SettlementNumber {</span>
+<span class="nc" id="L40">        LOW, AVERAGE, HIGH;</span>
 
         /**
          * Get a message key for this settlement number.
@@ -49,8 +49,8 @@ public abstract class NationType extends FreeColSpecObjectType {
         }
     }
 
-<span class="fc" id="L52">    public static enum AggressionLevel {</span>
-<span class="fc" id="L53">        LOW, AVERAGE, HIGH;</span>
+<span class="nc" id="L52">    public static enum AggressionLevel {</span>
+<span class="nc" id="L53">        LOW, AVERAGE, HIGH;</span>
 
         /**
          * Get a message key for this aggression level.
@@ -64,13 +64,13 @@ public abstract class NationType extends FreeColSpecObjectType {
 
 
     /** The number of settlements this Nation has. */
-<span class="fc" id="L67">    private SettlementNumber numberOfSettlements = SettlementNumber.AVERAGE;</span>
+<span class="nc" id="L67">    private SettlementNumber numberOfSettlements = SettlementNumber.AVERAGE;</span>
 
     /** The aggression of this Nation. */
-<span class="fc" id="L70">    private AggressionLevel aggression = AggressionLevel.AVERAGE;</span>
+<span class="nc" id="L70">    private AggressionLevel aggression = AggressionLevel.AVERAGE;</span>
 
     /** The types of settlement this Nation has. */
-<span class="fc" id="L73">    private List&lt;SettlementType&gt; settlementTypes = null;</span>
+<span class="nc" id="L73">    private List&lt;SettlementType&gt; settlementTypes = null;</span>
 
 
     /**
@@ -80,8 +80,8 @@ public abstract class NationType extends FreeColSpecObjectType {
      * @param specification The &lt;code&gt;Specification&lt;/code&gt; to refer to.
      */
     public NationType(String id, Specification specification) {
-<span class="fc" id="L83">        super(id, specification);</span>
-<span class="fc" id="L84">    }</span>
+<span class="nc" id="L83">        super(id, specification);</span>
+<span class="nc" id="L84">    }</span>
 
 
     /**
@@ -90,8 +90,8 @@ public abstract class NationType extends FreeColSpecObjectType {
      * @return A list of &lt;code&gt;SettlementType&lt;/code&gt;s.
      */
     public final List&lt;SettlementType&gt; getSettlementTypes() {
-<span class="pc bpc" id="L93" title="1 of 2 branches missed.">        return (settlementTypes == null)</span>
-<span class="fc" id="L94">            ? Collections.&lt;SettlementType&gt;emptyList()</span>
+<span class="nc bnc" id="L93" title="All 2 branches missed.">        return (settlementTypes == null)</span>
+<span class="nc" id="L94">            ? Collections.&lt;SettlementType&gt;emptyList()</span>
 <span class="nc" id="L95">            : settlementTypes;</span>
     }
 
@@ -121,7 +121,7 @@ public abstract class NationType extends FreeColSpecObjectType {
      * @return The capital &lt;code&gt;SettlementType&lt;/code&gt;.
      */
     public SettlementType getCapitalType() {
-<span class="fc" id="L124">        return getSettlementType(true);</span>
+<span class="nc" id="L124">        return getSettlementType(true);</span>
     }
 
     /**
@@ -131,7 +131,7 @@ public abstract class NationType extends FreeColSpecObjectType {
      * @return The settlement type.
      */
     public SettlementType getSettlementType(boolean isCapital) {
-<span class="pc bnc" id="L134" title="All 2 branches missed.">        return find(getSettlementTypes(), s -&gt; s.isCapital() == isCapital);</span>
+<span class="nc bnc" id="L134" title="All 2 branches missed.">        return find(getSettlementTypes(), s -&gt; s.isCapital() == isCapital);</span>
     }
 
     /**
@@ -196,24 +196,24 @@ public abstract class NationType extends FreeColSpecObjectType {
      */
     @Override
     protected void writeAttributes(FreeColXMLWriter xw) throws XMLStreamException {
-<span class="fc" id="L199">        super.writeAttributes(xw);</span>
+<span class="nc" id="L199">        super.writeAttributes(xw);</span>
 
-<span class="fc" id="L201">        xw.writeAttribute(NUMBER_OF_SETTLEMENTS_TAG, numberOfSettlements);</span>
+<span class="nc" id="L201">        xw.writeAttribute(NUMBER_OF_SETTLEMENTS_TAG, numberOfSettlements);</span>
 
-<span class="fc" id="L203">        xw.writeAttribute(AGGRESSION_TAG, aggression);</span>
-<span class="fc" id="L204">    }</span>
+<span class="nc" id="L203">        xw.writeAttribute(AGGRESSION_TAG, aggression);</span>
+<span class="nc" id="L204">    }</span>
 
     /**
      * {@inheritDoc}
      */
     @Override
     protected void writeChildren(FreeColXMLWriter xw) throws XMLStreamException {
-<span class="fc" id="L211">        super.writeChildren(xw);</span>
+<span class="nc" id="L211">        super.writeChildren(xw);</span>
 
-<span class="pc bpc" id="L213" title="1 of 2 branches missed.">        for (SettlementType settlementType : getSettlementTypes()) {</span>
+<span class="nc bnc" id="L213" title="All 2 branches missed.">        for (SettlementType settlementType : getSettlementTypes()) {</span>
 <span class="nc" id="L214">            settlementType.toXML(xw, SETTLEMENT_TAG);</span>
         }
-<span class="fc" id="L216">    }</span>
+<span class="nc" id="L216">    }</span>
 
     /**
      * {@inheritDoc}
@@ -277,4 +277,4 @@ public abstract class NationType extends FreeColSpecObjectType {
         }
 <span class="nc" id="L278">    }</span>
 }
-</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span>NationTest (May 13, 2016 7:06:58 PM)</div></body></html>
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span>ModifierTest (May 13, 2016 7:43:28 PM)</div></body></html>
