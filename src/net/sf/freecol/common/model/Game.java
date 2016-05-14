@@ -295,7 +295,8 @@ public class Game extends FreeColGameObject {
      * @return Nothing.
      */
     public String getNextId() {
-        throw new IllegalStateException("game.getNextId not implemented");
+        //throw new IllegalStateException("game.getNextId not implemented");
+    	return "";
     }
 
     /**

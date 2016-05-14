@@ -3,21 +3,71 @@ package net.sf.freecol.common.model;
 import junit.framework.TestCase;
 import net.sf.freecol.common.io.FreeColXMLReader;
 import net.sf.freecol.common.io.FreeColXMLWriter;
+import net.sf.freecol.common.io.FreeColXMLWriter.WriteScope;
 
 import static org.junit.Assert.*;
-
 import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 
 import javax.xml.stream.XMLStreamException;
-
 import org.junit.*;
+import net.sf.freecol.common.io.FreeColXMLReader;
+import net.sf.freecol.common.io.FreeColXMLWriter;
 
 public class ResourceTypeTests {
 	ResourceType rType1, rType2;
+	class testXMLWriter extends FreeColXMLWriter
+	{
+		public String outputString = "";
+		
+		public testXMLWriter(OutputStream outputStream, WriteScope scope, boolean indent) throws IOException {
+			super(outputStream, scope, indent);
+			// TODO Auto-generated constructor stub
+		}
+		
+		@Override
+		public void writeAttribute(String attributeName, int value) throws XMLStreamException {
+	        outputString += attributeName + '=' + String.valueOf(value) + ';';
+	    }
+		
+		@Override
+		public void writeAttribute(String attributeName, String value) throws XMLStreamException {
+	        outputString += attributeName + '=' + value + ';';
+	    }
+	}
+	testXMLWriter testXW;
+	
+	class testXMLReader extends FreeColXMLReader{
+		public String outputString = "";
+		public testXMLReader(InputStream inputStream) throws IOException {
+			super(inputStream);
+			// TODO Auto-generated constructor stub
+		}
+
+	    public int getAttribute(String attributeName, int defaultValue) {
+	    	outputString += attributeName + '=' + String.valueOf(defaultValue) + ';';
+	    	return defaultValue;
+	    }
+	    
+	    public String getAttribute(String attributeName, String defaultValue) {
+	    	outputString += attributeName + '=' + defaultValue + ';';
+	    	return defaultValue;
+	    }
+
+	    public boolean getAttribute(String attributeName, boolean defaultValue) {
+	    	outputString += attributeName + '=' + String.valueOf(defaultValue) + ';';
+	    	return defaultValue;
+	    }
+	}
+	testXMLReader testXR;
 	
 	@Before
-	public void setUp() {
+	public void setUp() throws IOException {
+		testXW = new testXMLWriter(new ByteArrayOutputStream(), WriteScope.CLIENT, false);
+		testXR = new testXMLReader(new ByteArrayInputStream(new byte[0]));
 		rType1 = new ResourceType("Resource1",null);
 		rType2 = new ResourceType("Resource1",null);
 	}
@@ -59,8 +109,12 @@ public class ResourceTypeTests {
 	}
 	
 	@Test
-	public void goodsTypeInvalidTest(){
+	public void goodsTypeInvalidTest() throws XMLStreamException{
 		assertNull(rType1.getBestGoodsType());
+		rType1.writeAttributes(testXW);
+		assertEquals("id=Resource1;maximum-value=0;minimum-value=0;", testXW.outputString);
+		rType1.readAttributes(testXR);
+		assertEquals("id=null;ID=null;abstract=false;maximum-value=-1;minimum-value=-1;",testXR.outputString);
 	}
 	
 	//The following tests are related to methods defined in the abstract class FreeColSpecObjectType
@@ -96,6 +150,8 @@ public class ResourceTypeTests {
 	
 	@After
 	public void tearDown() {
-		
+		testXW = null;
+		rType1 = null;
+		rType2 = null;
 	}
 }
