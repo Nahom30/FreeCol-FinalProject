@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../.resources/report.gif" type="image/gif"/><title>ModifierTest.java</title><link rel="stylesheet" href="../../../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../.sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">ModifierTest (May 13, 2016 7:43:28 PM)</a> &gt; <a href="../../index.html" class="el_group">FreeCol</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">net.sf.freecol.common.model</a> &gt; <span class="el_source">ModifierTest.java</span></div><h1>ModifierTest.java</h1><pre class="source lang-java linenums">package net.sf.freecol.common.model;
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../.resources/report.gif" type="image/gif"/><title>ModifierTest.java</title><link rel="stylesheet" href="../../../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../.sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">AbstractGoodsTest (May 14, 2016 4:05:35 PM)</a> &gt; <a href="../../index.html" class="el_group">FreeCol</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">net.sf.freecol.common.model</a> &gt; <span class="el_source">ModifierTest.java</span></div><h1>ModifierTest.java</h1><pre class="source lang-java linenums">package net.sf.freecol.common.model;
 
 import java.io.BufferedInputStream;
 import java.io.CharArrayWriter;
@@ -20,7 +20,7 @@ import org.w3c.dom.Element;
  * @author nahomnegash
  * @version $Revision: 1.0 $
  */
-<span class="fc" id="L23">public class ModifierTest {</span>
+<span class="nc" id="L23">public class ModifierTest {</span>
 	/**
 	 * Run the Modifier(Modifier) constructor test.
 	 *
@@ -31,37 +31,37 @@ import org.w3c.dom.Element;
 	@Test
 	public void testModifier_1()
 		throws Exception {
-<span class="fc" id="L34">		Modifier template = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L34">		Modifier template = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
 
-<span class="fc" id="L36">		Modifier result = new Modifier(template);</span>
+<span class="nc" id="L36">		Modifier result = new Modifier(template);</span>
 
 		// add additional test code here
-<span class="fc" id="L39">		assertNotNull(result);</span>
-<span class="fc" id="L40">		assertEquals(&quot;[Modifier  ADDITIVE 1.0 index=0]&quot;, result.toString());</span>
-<span class="fc" id="L41">		assertEquals(1.0f, result.getValue(), 1.0f);</span>
-<span class="fc" id="L42">		assertEquals(0.0f, result.getIncrement(), 1.0f);</span>
-<span class="fc" id="L43">		assertEquals(&quot;modifier&quot;, result.getXMLTagName());</span>
-<span class="fc" id="L44">		assertEquals(0, result.getModifierIndex());</span>
-<span class="fc" id="L45">		assertEquals(false, result.hasIncrement());</span>
-<span class="fc" id="L46">		assertEquals(null, result.getIncrementType());</span>
-<span class="fc" id="L47">		assertEquals(null, result.getSource());</span>
-<span class="fc" id="L48">		assertEquals(0, result.getDuration());</span>
-<span class="fc" id="L49">		assertEquals(false, result.isTemporary());</span>
-<span class="fc" id="L50">		assertEquals(true, result.isIndependent());</span>
-<span class="fc" id="L51">		assertEquals(false, result.hasTimeLimit());</span>
-<span class="fc" id="L52">		assertEquals(&quot;.name&quot;, result.getNameKey());</span>
-<span class="fc" id="L53">		assertEquals(false, result.hasScope());</span>
-<span class="fc" id="L54">		assertEquals(null, result.getFirstTurn());</span>
-<span class="fc" id="L55">		assertEquals(null, result.getLastTurn());</span>
-<span class="fc" id="L56">		assertEquals(null, result.getSpecification());</span>
-<span class="fc" id="L57">		assertEquals(&quot;&quot;, result.getSuffix());</span>
-<span class="fc" id="L58">		assertEquals(&quot;&quot;, result.getId());</span>
-<span class="fc" id="L59">		assertEquals(&quot;&lt;modifier id=\&quot;\&quot; value=\&quot;1.0\&quot; type=\&quot;additive\&quot; index=\&quot;0\&quot;&gt;&lt;/modifier&gt;&quot;, result.serialize());</span>
-<span class="fc" id="L60">		assertEquals(null, result.getGame());</span>
-<span class="fc" id="L61">		assertEquals(-1, result.getIdNumber());</span>
-<span class="fc" id="L62">		assertEquals(&quot;&quot;, result.getIdType());</span>
-<span class="fc" id="L63">		assertEquals(null, result.getFeatureContainer());</span>
-<span class="fc" id="L64">	}</span>
+<span class="nc" id="L39">		assertNotNull(result);</span>
+<span class="nc" id="L40">		assertEquals(&quot;[Modifier  ADDITIVE 1.0 index=0]&quot;, result.toString());</span>
+<span class="nc" id="L41">		assertEquals(1.0f, result.getValue(), 1.0f);</span>
+<span class="nc" id="L42">		assertEquals(0.0f, result.getIncrement(), 1.0f);</span>
+<span class="nc" id="L43">		assertEquals(&quot;modifier&quot;, result.getXMLTagName());</span>
+<span class="nc" id="L44">		assertEquals(0, result.getModifierIndex());</span>
+<span class="nc" id="L45">		assertEquals(false, result.hasIncrement());</span>
+<span class="nc" id="L46">		assertEquals(null, result.getIncrementType());</span>
+<span class="nc" id="L47">		assertEquals(null, result.getSource());</span>
+<span class="nc" id="L48">		assertEquals(0, result.getDuration());</span>
+<span class="nc" id="L49">		assertEquals(false, result.isTemporary());</span>
+<span class="nc" id="L50">		assertEquals(true, result.isIndependent());</span>
+<span class="nc" id="L51">		assertEquals(false, result.hasTimeLimit());</span>
+<span class="nc" id="L52">		assertEquals(&quot;.name&quot;, result.getNameKey());</span>
+<span class="nc" id="L53">		assertEquals(false, result.hasScope());</span>
+<span class="nc" id="L54">		assertEquals(null, result.getFirstTurn());</span>
+<span class="nc" id="L55">		assertEquals(null, result.getLastTurn());</span>
+<span class="nc" id="L56">		assertEquals(null, result.getSpecification());</span>
+<span class="nc" id="L57">		assertEquals(&quot;&quot;, result.getSuffix());</span>
+<span class="nc" id="L58">		assertEquals(&quot;&quot;, result.getId());</span>
+<span class="nc" id="L59">		assertEquals(&quot;&lt;modifier id=\&quot;\&quot; value=\&quot;1.0\&quot; type=\&quot;additive\&quot; index=\&quot;0\&quot;&gt;&lt;/modifier&gt;&quot;, result.serialize());</span>
+<span class="nc" id="L60">		assertEquals(null, result.getGame());</span>
+<span class="nc" id="L61">		assertEquals(-1, result.getIdNumber());</span>
+<span class="nc" id="L62">		assertEquals(&quot;&quot;, result.getIdType());</span>
+<span class="nc" id="L63">		assertEquals(null, result.getFeatureContainer());</span>
+<span class="nc" id="L64">	}</span>
 
 	/**
 	 * Run the Modifier(Specification) constructor test.
@@ -73,38 +73,38 @@ import org.w3c.dom.Element;
 	@Test
 	public void testModifier_2()
 		throws Exception {
-<span class="fc" id="L76">		Specification specification = new Specification();</span>
+<span class="nc" id="L76">		Specification specification = new Specification();</span>
 
-<span class="fc" id="L78">		Modifier result = new Modifier(specification);</span>
+<span class="nc" id="L78">		Modifier result = new Modifier(specification);</span>
 
 		// add additional test code here
-<span class="fc" id="L81">		assertNotNull(result);</span>
-<span class="fc" id="L82">		assertEquals(&quot;[Modifier null null 0.0 index=0]&quot;, result.toString());</span>
-<span class="fc" id="L83">		assertEquals(0.0f, result.getValue(), 1.0f);</span>
-<span class="fc" id="L84">		assertEquals(null, result.getType());</span>
-<span class="fc" id="L85">		assertEquals(0.0f, result.getIncrement(), 1.0f);</span>
-<span class="fc" id="L86">		assertEquals(&quot;modifier&quot;, result.getXMLTagName());</span>
-<span class="fc" id="L87">		assertEquals(0, result.getModifierIndex());</span>
-<span class="fc" id="L88">		assertEquals(false, result.hasIncrement());</span>
-<span class="fc" id="L89">		assertEquals(null, result.getIncrementType());</span>
-<span class="fc" id="L90">		assertEquals(true, result.requireNegatedPersonScope());</span>
-<span class="fc" id="L91">		assertEquals(null, result.getSource());</span>
-<span class="fc" id="L92">		assertEquals(0, result.getDuration());</span>
-<span class="fc" id="L93">		assertEquals(false, result.isTemporary());</span>
-<span class="fc" id="L94">		assertEquals(true, result.isIndependent());</span>
-<span class="fc" id="L95">		assertEquals(false, result.hasTimeLimit());</span>
-<span class="fc" id="L96">		assertEquals(&quot;null.name&quot;, result.getNameKey());</span>
-<span class="fc" id="L97">		assertEquals(true, result.hasScope());</span>
-<span class="fc" id="L98">		assertEquals(null, result.getFirstTurn());</span>
-<span class="fc" id="L99">		assertEquals(null, result.getLastTurn());</span>
-<span class="fc" id="L100">		assertEquals(null, result.getSuffix());</span>
-<span class="fc" id="L101">		assertEquals(&quot;[Modifier null null 0.0 index=0 [ [Scope null model.ability.person=true matches-null match-negated] ]]&quot;, result.toString());</span>
-<span class="fc" id="L102">		assertEquals(null, result.getId());</span>
-<span class="fc" id="L103">		assertEquals(null, result.getGame());</span>
-<span class="fc" id="L104">		assertEquals(-1, result.getIdNumber());</span>
-<span class="fc" id="L105">		assertEquals(null, result.getIdType());</span>
-<span class="fc" id="L106">		assertEquals(null, result.getFeatureContainer());</span>
-<span class="fc" id="L107">	}</span>
+<span class="nc" id="L81">		assertNotNull(result);</span>
+<span class="nc" id="L82">		assertEquals(&quot;[Modifier null null 0.0 index=0]&quot;, result.toString());</span>
+<span class="nc" id="L83">		assertEquals(0.0f, result.getValue(), 1.0f);</span>
+<span class="nc" id="L84">		assertEquals(null, result.getType());</span>
+<span class="nc" id="L85">		assertEquals(0.0f, result.getIncrement(), 1.0f);</span>
+<span class="nc" id="L86">		assertEquals(&quot;modifier&quot;, result.getXMLTagName());</span>
+<span class="nc" id="L87">		assertEquals(0, result.getModifierIndex());</span>
+<span class="nc" id="L88">		assertEquals(false, result.hasIncrement());</span>
+<span class="nc" id="L89">		assertEquals(null, result.getIncrementType());</span>
+<span class="nc" id="L90">		assertEquals(true, result.requireNegatedPersonScope());</span>
+<span class="nc" id="L91">		assertEquals(null, result.getSource());</span>
+<span class="nc" id="L92">		assertEquals(0, result.getDuration());</span>
+<span class="nc" id="L93">		assertEquals(false, result.isTemporary());</span>
+<span class="nc" id="L94">		assertEquals(true, result.isIndependent());</span>
+<span class="nc" id="L95">		assertEquals(false, result.hasTimeLimit());</span>
+<span class="nc" id="L96">		assertEquals(&quot;null.name&quot;, result.getNameKey());</span>
+<span class="nc" id="L97">		assertEquals(true, result.hasScope());</span>
+<span class="nc" id="L98">		assertEquals(null, result.getFirstTurn());</span>
+<span class="nc" id="L99">		assertEquals(null, result.getLastTurn());</span>
+<span class="nc" id="L100">		assertEquals(null, result.getSuffix());</span>
+<span class="nc" id="L101">		assertEquals(&quot;[Modifier null null 0.0 index=0 [ [Scope null model.ability.person=true matches-null match-negated] ]]&quot;, result.toString());</span>
+<span class="nc" id="L102">		assertEquals(null, result.getId());</span>
+<span class="nc" id="L103">		assertEquals(null, result.getGame());</span>
+<span class="nc" id="L104">		assertEquals(-1, result.getIdNumber());</span>
+<span class="nc" id="L105">		assertEquals(null, result.getIdType());</span>
+<span class="nc" id="L106">		assertEquals(null, result.getFeatureContainer());</span>
+<span class="nc" id="L107">	}</span>
 
 	/**
 	 * Run the Modifier(String,Modifier) constructor test.
@@ -116,38 +116,38 @@ import org.w3c.dom.Element;
 	@Test
 	public void testModifier_3()
 		throws Exception {
-<span class="fc" id="L119">		String id = &quot;&quot;;</span>
-<span class="fc" id="L120">		Modifier template = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L119">		String id = &quot;&quot;;</span>
+<span class="nc" id="L120">		Modifier template = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
 
-<span class="fc" id="L122">		Modifier result = new Modifier(id, template);</span>
+<span class="nc" id="L122">		Modifier result = new Modifier(id, template);</span>
 
 		// add additional test code here
-<span class="fc" id="L125">		assertNotNull(result);</span>
-<span class="fc" id="L126">		assertEquals(&quot;[Modifier  ADDITIVE 1.0 index=0]&quot;, result.toString());</span>
-<span class="fc" id="L127">		assertEquals(1.0f, result.getValue(), 1.0f);</span>
-<span class="fc" id="L128">		assertEquals(0.0f, result.getIncrement(), 1.0f);</span>
-<span class="fc" id="L129">		assertEquals(&quot;modifier&quot;, result.getXMLTagName());</span>
-<span class="fc" id="L130">		assertEquals(0, result.getModifierIndex());</span>
-<span class="fc" id="L131">		assertEquals(false, result.hasIncrement());</span>
-<span class="fc" id="L132">		assertEquals(null, result.getIncrementType());</span>
-<span class="fc" id="L133">		assertEquals(null, result.getSource());</span>
-<span class="fc" id="L134">		assertEquals(0, result.getDuration());</span>
-<span class="fc" id="L135">		assertEquals(false, result.isTemporary());</span>
-<span class="fc" id="L136">		assertEquals(true, result.isIndependent());</span>
-<span class="fc" id="L137">		assertEquals(false, result.hasTimeLimit());</span>
-<span class="fc" id="L138">		assertEquals(&quot;.name&quot;, result.getNameKey());</span>
-<span class="fc" id="L139">		assertEquals(false, result.hasScope());</span>
-<span class="fc" id="L140">		assertEquals(null, result.getFirstTurn());</span>
-<span class="fc" id="L141">		assertEquals(null, result.getLastTurn());</span>
-<span class="fc" id="L142">		assertEquals(null, result.getSpecification());</span>
-<span class="fc" id="L143">		assertEquals(&quot;&quot;, result.getSuffix());</span>
-<span class="fc" id="L144">		assertEquals(&quot;&quot;, result.getId());</span>
-<span class="fc" id="L145">		assertEquals(&quot;&lt;modifier id=\&quot;\&quot; value=\&quot;1.0\&quot; type=\&quot;additive\&quot; index=\&quot;0\&quot;&gt;&lt;/modifier&gt;&quot;, result.serialize());</span>
-<span class="fc" id="L146">		assertEquals(null, result.getGame());</span>
-<span class="fc" id="L147">		assertEquals(-1, result.getIdNumber());</span>
-<span class="fc" id="L148">		assertEquals(&quot;&quot;, result.getIdType());</span>
-<span class="fc" id="L149">		assertEquals(null, result.getFeatureContainer());</span>
-<span class="fc" id="L150">	}</span>
+<span class="nc" id="L125">		assertNotNull(result);</span>
+<span class="nc" id="L126">		assertEquals(&quot;[Modifier  ADDITIVE 1.0 index=0]&quot;, result.toString());</span>
+<span class="nc" id="L127">		assertEquals(1.0f, result.getValue(), 1.0f);</span>
+<span class="nc" id="L128">		assertEquals(0.0f, result.getIncrement(), 1.0f);</span>
+<span class="nc" id="L129">		assertEquals(&quot;modifier&quot;, result.getXMLTagName());</span>
+<span class="nc" id="L130">		assertEquals(0, result.getModifierIndex());</span>
+<span class="nc" id="L131">		assertEquals(false, result.hasIncrement());</span>
+<span class="nc" id="L132">		assertEquals(null, result.getIncrementType());</span>
+<span class="nc" id="L133">		assertEquals(null, result.getSource());</span>
+<span class="nc" id="L134">		assertEquals(0, result.getDuration());</span>
+<span class="nc" id="L135">		assertEquals(false, result.isTemporary());</span>
+<span class="nc" id="L136">		assertEquals(true, result.isIndependent());</span>
+<span class="nc" id="L137">		assertEquals(false, result.hasTimeLimit());</span>
+<span class="nc" id="L138">		assertEquals(&quot;.name&quot;, result.getNameKey());</span>
+<span class="nc" id="L139">		assertEquals(false, result.hasScope());</span>
+<span class="nc" id="L140">		assertEquals(null, result.getFirstTurn());</span>
+<span class="nc" id="L141">		assertEquals(null, result.getLastTurn());</span>
+<span class="nc" id="L142">		assertEquals(null, result.getSpecification());</span>
+<span class="nc" id="L143">		assertEquals(&quot;&quot;, result.getSuffix());</span>
+<span class="nc" id="L144">		assertEquals(&quot;&quot;, result.getId());</span>
+<span class="nc" id="L145">		assertEquals(&quot;&lt;modifier id=\&quot;\&quot; value=\&quot;1.0\&quot; type=\&quot;additive\&quot; index=\&quot;0\&quot;&gt;&lt;/modifier&gt;&quot;, result.serialize());</span>
+<span class="nc" id="L146">		assertEquals(null, result.getGame());</span>
+<span class="nc" id="L147">		assertEquals(-1, result.getIdNumber());</span>
+<span class="nc" id="L148">		assertEquals(&quot;&quot;, result.getIdType());</span>
+<span class="nc" id="L149">		assertEquals(null, result.getFeatureContainer());</span>
+<span class="nc" id="L150">	}</span>
 
 	/**
 	 * Run the Modifier(FreeColXMLReader,Specification) constructor test.
@@ -203,8 +203,8 @@ import org.w3c.dom.Element;
 	@Test
 	public void testModifier_6()
 		throws Exception {
-<span class="fc" id="L206">		Element e = new IIOMetadataNode();</span>
-<span class="fc" id="L207">		Specification specification = new Specification();</span>
+<span class="nc" id="L206">		Element e = new IIOMetadataNode();</span>
+<span class="nc" id="L207">		Specification specification = new Specification();</span>
 
 <span class="nc" id="L209">		Modifier result = new Modifier(e, specification);</span>
 
@@ -228,41 +228,41 @@ import org.w3c.dom.Element;
 	@Test
 	public void testModifier_7()
 		throws Exception {
-<span class="fc" id="L231">		String id = &quot;&quot;;</span>
-<span class="fc" id="L232">		float value = 1.0f;</span>
-<span class="fc" id="L233">		Modifier.ModifierType type = Modifier.ModifierType.ADDITIVE;</span>
+<span class="nc" id="L231">		String id = &quot;&quot;;</span>
+<span class="nc" id="L232">		float value = 1.0f;</span>
+<span class="nc" id="L233">		Modifier.ModifierType type = Modifier.ModifierType.ADDITIVE;</span>
 
-<span class="fc" id="L235">		Modifier result = new Modifier(id, value, type);</span>
+<span class="nc" id="L235">		Modifier result = new Modifier(id, value, type);</span>
 
 		// add additional test code here
-<span class="fc" id="L238">		assertNotNull(result);</span>
-<span class="fc" id="L239">		assertEquals(&quot;[Modifier  ADDITIVE 1.0 index=0]&quot;, result.toString());</span>
-<span class="fc" id="L240">		assertEquals(1.0f, result.getValue(), 1.0f);</span>
-<span class="fc" id="L241">		assertEquals(0.0f, result.getIncrement(), 1.0f);</span>
-<span class="fc" id="L242">		assertEquals(&quot;modifier&quot;, result.getXMLTagName());</span>
-<span class="fc" id="L243">		assertEquals(0, result.getModifierIndex());</span>
-<span class="fc" id="L244">		assertEquals(false, result.hasIncrement());</span>
-<span class="fc" id="L245">		assertEquals(null, result.getIncrementType());</span>
-<span class="fc" id="L246">		assertEquals(true, result.requireNegatedPersonScope());</span>
-<span class="fc" id="L247">		assertEquals(null, result.getSource());</span>
-<span class="fc" id="L248">		assertEquals(0, result.getDuration());</span>
-<span class="fc" id="L249">		assertEquals(false, result.isTemporary());</span>
-<span class="fc" id="L250">		assertEquals(true, result.isIndependent());</span>
-<span class="fc" id="L251">		assertEquals(false, result.hasTimeLimit());</span>
-<span class="fc" id="L252">		assertEquals(&quot;.name&quot;, result.getNameKey());</span>
-<span class="fc" id="L253">		assertEquals(true, result.hasScope());</span>
-<span class="fc" id="L254">		assertEquals(null, result.getFirstTurn());</span>
-<span class="fc" id="L255">		assertEquals(null, result.getLastTurn());</span>
-<span class="fc" id="L256">		assertEquals(null, result.getSpecification());</span>
-<span class="fc" id="L257">		assertEquals(&quot;&quot;, result.getSuffix());</span>
-<span class="fc" id="L258">		assertEquals(&quot;[Modifier  ADDITIVE 1.0 index=0 [ [Scope null model.ability.person=true matches-null match-negated] ]]&quot;, result.toString());</span>
-<span class="fc" id="L259">		assertEquals(&quot;&quot;, result.getId());</span>
-<span class="fc" id="L260">		assertEquals(&quot;&lt;modifier id=\&quot;\&quot; value=\&quot;1.0\&quot; type=\&quot;additive\&quot; index=\&quot;0\&quot;&gt;&lt;scope match-negated=\&quot;true\&quot; matches-null=\&quot;true\&quot; ability-id=\&quot;model.ability.person\&quot; ability-value=\&quot;true\&quot;&gt;&lt;/scope&gt;&lt;/modifier&gt;&quot;, result.serialize());</span>
-<span class="fc" id="L261">		assertEquals(null, result.getGame());</span>
-<span class="fc" id="L262">		assertEquals(-1, result.getIdNumber());</span>
-<span class="fc" id="L263">		assertEquals(&quot;&quot;, result.getIdType());</span>
-<span class="fc" id="L264">		assertEquals(null, result.getFeatureContainer());</span>
-<span class="fc" id="L265">	}</span>
+<span class="nc" id="L238">		assertNotNull(result);</span>
+<span class="nc" id="L239">		assertEquals(&quot;[Modifier  ADDITIVE 1.0 index=0]&quot;, result.toString());</span>
+<span class="nc" id="L240">		assertEquals(1.0f, result.getValue(), 1.0f);</span>
+<span class="nc" id="L241">		assertEquals(0.0f, result.getIncrement(), 1.0f);</span>
+<span class="nc" id="L242">		assertEquals(&quot;modifier&quot;, result.getXMLTagName());</span>
+<span class="nc" id="L243">		assertEquals(0, result.getModifierIndex());</span>
+<span class="nc" id="L244">		assertEquals(false, result.hasIncrement());</span>
+<span class="nc" id="L245">		assertEquals(null, result.getIncrementType());</span>
+<span class="nc" id="L246">		assertEquals(true, result.requireNegatedPersonScope());</span>
+<span class="nc" id="L247">		assertEquals(null, result.getSource());</span>
+<span class="nc" id="L248">		assertEquals(0, result.getDuration());</span>
+<span class="nc" id="L249">		assertEquals(false, result.isTemporary());</span>
+<span class="nc" id="L250">		assertEquals(true, result.isIndependent());</span>
+<span class="nc" id="L251">		assertEquals(false, result.hasTimeLimit());</span>
+<span class="nc" id="L252">		assertEquals(&quot;.name&quot;, result.getNameKey());</span>
+<span class="nc" id="L253">		assertEquals(true, result.hasScope());</span>
+<span class="nc" id="L254">		assertEquals(null, result.getFirstTurn());</span>
+<span class="nc" id="L255">		assertEquals(null, result.getLastTurn());</span>
+<span class="nc" id="L256">		assertEquals(null, result.getSpecification());</span>
+<span class="nc" id="L257">		assertEquals(&quot;&quot;, result.getSuffix());</span>
+<span class="nc" id="L258">		assertEquals(&quot;[Modifier  ADDITIVE 1.0 index=0 [ [Scope null model.ability.person=true matches-null match-negated] ]]&quot;, result.toString());</span>
+<span class="nc" id="L259">		assertEquals(&quot;&quot;, result.getId());</span>
+<span class="nc" id="L260">		assertEquals(&quot;&lt;modifier id=\&quot;\&quot; value=\&quot;1.0\&quot; type=\&quot;additive\&quot; index=\&quot;0\&quot;&gt;&lt;scope match-negated=\&quot;true\&quot; matches-null=\&quot;true\&quot; ability-id=\&quot;model.ability.person\&quot; ability-value=\&quot;true\&quot;&gt;&lt;/scope&gt;&lt;/modifier&gt;&quot;, result.serialize());</span>
+<span class="nc" id="L261">		assertEquals(null, result.getGame());</span>
+<span class="nc" id="L262">		assertEquals(-1, result.getIdNumber());</span>
+<span class="nc" id="L263">		assertEquals(&quot;&quot;, result.getIdType());</span>
+<span class="nc" id="L264">		assertEquals(null, result.getFeatureContainer());</span>
+<span class="nc" id="L265">	}</span>
 
 	/**
 	 * Run the Modifier(String,float,ModifierType,FreeColObject) constructor test.
@@ -274,40 +274,40 @@ import org.w3c.dom.Element;
 	@Test
 	public void testModifier_8()
 		throws Exception {
-<span class="fc" id="L277">		String id = &quot;&quot;;</span>
-<span class="fc" id="L278">		float value = 1.0f;</span>
-<span class="fc" id="L279">		Modifier.ModifierType type = Modifier.ModifierType.ADDITIVE;</span>
-<span class="fc" id="L280">		FreeColObject source = new AbstractGoods();</span>
+<span class="nc" id="L277">		String id = &quot;&quot;;</span>
+<span class="nc" id="L278">		float value = 1.0f;</span>
+<span class="nc" id="L279">		Modifier.ModifierType type = Modifier.ModifierType.ADDITIVE;</span>
+<span class="nc" id="L280">		FreeColObject source = new AbstractGoods();</span>
 
-<span class="fc" id="L282">		Modifier result = new Modifier(id, value, type, source);</span>
+<span class="nc" id="L282">		Modifier result = new Modifier(id, value, type, source);</span>
 
 		// add additional test code here
-<span class="fc" id="L285">		assertNotNull(result);</span>
-<span class="fc" id="L286">		assertEquals(&quot;[Modifier  (null) ADDITIVE 1.0 index=0]&quot;, result.toString());</span>
-<span class="fc" id="L287">		assertEquals(1.0f, result.getValue(), 1.0f);</span>
-<span class="fc" id="L288">		assertEquals(0.0f, result.getIncrement(), 1.0f);</span>
-<span class="fc" id="L289">		assertEquals(&quot;modifier&quot;, result.getXMLTagName());</span>
-<span class="fc" id="L290">		assertEquals(0, result.getModifierIndex());</span>
-<span class="fc" id="L291">		assertEquals(false, result.hasIncrement());</span>
-<span class="fc" id="L292">		assertEquals(null, result.getIncrementType());</span>
-<span class="fc" id="L293">		assertEquals(true, result.requireNegatedPersonScope());</span>
-<span class="fc" id="L294">		assertEquals(0, result.getDuration());</span>
-<span class="fc" id="L295">		assertEquals(false, result.isTemporary());</span>
-<span class="fc" id="L296">		assertEquals(true, result.isIndependent());</span>
-<span class="fc" id="L297">		assertEquals(false, result.hasTimeLimit());</span>
-<span class="fc" id="L298">		assertEquals(&quot;.name&quot;, result.getNameKey());</span>
-<span class="fc" id="L299">		assertEquals(true, result.hasScope());</span>
-<span class="fc" id="L300">		assertEquals(null, result.getFirstTurn());</span>
-<span class="fc" id="L301">		assertEquals(null, result.getLastTurn());</span>
-<span class="fc" id="L302">		assertEquals(null, result.getSpecification());</span>
-<span class="fc" id="L303">		assertEquals(&quot;&quot;, result.getSuffix());</span>
-<span class="fc" id="L304">		assertEquals(&quot;[Modifier  (null) ADDITIVE 1.0 index=0 [ [Scope null model.ability.person=true matches-null match-negated] ]]&quot;, result.toString());</span>
-<span class="fc" id="L305">		assertEquals(&quot;&quot;, result.getId());</span>
-<span class="fc" id="L306">		assertEquals(null, result.getGame());</span>
-<span class="fc" id="L307">		assertEquals(-1, result.getIdNumber());</span>
-<span class="fc" id="L308">		assertEquals(&quot;&quot;, result.getIdType());</span>
-<span class="fc" id="L309">		assertEquals(null, result.getFeatureContainer());</span>
-<span class="fc" id="L310">	}</span>
+<span class="nc" id="L285">		assertNotNull(result);</span>
+<span class="nc" id="L286">		assertEquals(&quot;[Modifier  (null) ADDITIVE 1.0 index=0]&quot;, result.toString());</span>
+<span class="nc" id="L287">		assertEquals(1.0f, result.getValue(), 1.0f);</span>
+<span class="nc" id="L288">		assertEquals(0.0f, result.getIncrement(), 1.0f);</span>
+<span class="nc" id="L289">		assertEquals(&quot;modifier&quot;, result.getXMLTagName());</span>
+<span class="nc" id="L290">		assertEquals(0, result.getModifierIndex());</span>
+<span class="nc" id="L291">		assertEquals(false, result.hasIncrement());</span>
+<span class="nc" id="L292">		assertEquals(null, result.getIncrementType());</span>
+<span class="nc" id="L293">		assertEquals(true, result.requireNegatedPersonScope());</span>
+<span class="nc" id="L294">		assertEquals(0, result.getDuration());</span>
+<span class="nc" id="L295">		assertEquals(false, result.isTemporary());</span>
+<span class="nc" id="L296">		assertEquals(true, result.isIndependent());</span>
+<span class="nc" id="L297">		assertEquals(false, result.hasTimeLimit());</span>
+<span class="nc" id="L298">		assertEquals(&quot;.name&quot;, result.getNameKey());</span>
+<span class="nc" id="L299">		assertEquals(true, result.hasScope());</span>
+<span class="nc" id="L300">		assertEquals(null, result.getFirstTurn());</span>
+<span class="nc" id="L301">		assertEquals(null, result.getLastTurn());</span>
+<span class="nc" id="L302">		assertEquals(null, result.getSpecification());</span>
+<span class="nc" id="L303">		assertEquals(&quot;&quot;, result.getSuffix());</span>
+<span class="nc" id="L304">		assertEquals(&quot;[Modifier  (null) ADDITIVE 1.0 index=0 [ [Scope null model.ability.person=true matches-null match-negated] ]]&quot;, result.toString());</span>
+<span class="nc" id="L305">		assertEquals(&quot;&quot;, result.getId());</span>
+<span class="nc" id="L306">		assertEquals(null, result.getGame());</span>
+<span class="nc" id="L307">		assertEquals(-1, result.getIdNumber());</span>
+<span class="nc" id="L308">		assertEquals(&quot;&quot;, result.getIdType());</span>
+<span class="nc" id="L309">		assertEquals(null, result.getFeatureContainer());</span>
+<span class="nc" id="L310">	}</span>
 
 	/**
 	 * Run the Modifier(String,float,ModifierType,FreeColObject,int) constructor test.
@@ -319,41 +319,41 @@ import org.w3c.dom.Element;
 	@Test
 	public void testModifier_9()
 		throws Exception {
-<span class="fc" id="L322">		String id = &quot;&quot;;</span>
-<span class="fc" id="L323">		float value = 1.0f;</span>
-<span class="fc" id="L324">		Modifier.ModifierType type = Modifier.ModifierType.ADDITIVE;</span>
-<span class="fc" id="L325">		FreeColObject source = new AbstractGoods();</span>
-<span class="fc" id="L326">		int modifierIndex = 1;</span>
+<span class="nc" id="L322">		String id = &quot;&quot;;</span>
+<span class="nc" id="L323">		float value = 1.0f;</span>
+<span class="nc" id="L324">		Modifier.ModifierType type = Modifier.ModifierType.ADDITIVE;</span>
+<span class="nc" id="L325">		FreeColObject source = new AbstractGoods();</span>
+<span class="nc" id="L326">		int modifierIndex = 1;</span>
 
-<span class="fc" id="L328">		Modifier result = new Modifier(id, value, type, source, modifierIndex);</span>
+<span class="nc" id="L328">		Modifier result = new Modifier(id, value, type, source, modifierIndex);</span>
 
 		// add additional test code here
-<span class="fc" id="L331">		assertNotNull(result);</span>
-<span class="fc" id="L332">		assertEquals(&quot;[Modifier  (null) ADDITIVE 1.0 index=1]&quot;, result.toString());</span>
-<span class="fc" id="L333">		assertEquals(1.0f, result.getValue(), 1.0f);</span>
-<span class="fc" id="L334">		assertEquals(0.0f, result.getIncrement(), 1.0f);</span>
-<span class="fc" id="L335">		assertEquals(&quot;modifier&quot;, result.getXMLTagName());</span>
-<span class="fc" id="L336">		assertEquals(1, result.getModifierIndex());</span>
-<span class="fc" id="L337">		assertEquals(false, result.hasIncrement());</span>
-<span class="fc" id="L338">		assertEquals(null, result.getIncrementType());</span>
-<span class="fc" id="L339">		assertEquals(true, result.requireNegatedPersonScope());</span>
-<span class="fc" id="L340">		assertEquals(0, result.getDuration());</span>
-<span class="fc" id="L341">		assertEquals(false, result.isTemporary());</span>
-<span class="fc" id="L342">		assertEquals(true, result.isIndependent());</span>
-<span class="fc" id="L343">		assertEquals(false, result.hasTimeLimit());</span>
-<span class="fc" id="L344">		assertEquals(&quot;.name&quot;, result.getNameKey());</span>
-<span class="fc" id="L345">		assertEquals(true, result.hasScope());</span>
-<span class="fc" id="L346">		assertEquals(null, result.getFirstTurn());</span>
-<span class="fc" id="L347">		assertEquals(null, result.getLastTurn());</span>
-<span class="fc" id="L348">		assertEquals(null, result.getSpecification());</span>
-<span class="fc" id="L349">		assertEquals(&quot;&quot;, result.getSuffix());</span>
-<span class="fc" id="L350">		assertEquals(&quot;[Modifier  (null) ADDITIVE 1.0 index=1 [ [Scope null model.ability.person=true matches-null match-negated] ]]&quot;, result.toString());</span>
-<span class="fc" id="L351">		assertEquals(&quot;&quot;, result.getId());</span>
-<span class="fc" id="L352">		assertEquals(null, result.getGame());</span>
-<span class="fc" id="L353">		assertEquals(-1, result.getIdNumber());</span>
-<span class="fc" id="L354">		assertEquals(&quot;&quot;, result.getIdType());</span>
-<span class="fc" id="L355">		assertEquals(null, result.getFeatureContainer());</span>
-<span class="fc" id="L356">	}</span>
+<span class="nc" id="L331">		assertNotNull(result);</span>
+<span class="nc" id="L332">		assertEquals(&quot;[Modifier  (null) ADDITIVE 1.0 index=1]&quot;, result.toString());</span>
+<span class="nc" id="L333">		assertEquals(1.0f, result.getValue(), 1.0f);</span>
+<span class="nc" id="L334">		assertEquals(0.0f, result.getIncrement(), 1.0f);</span>
+<span class="nc" id="L335">		assertEquals(&quot;modifier&quot;, result.getXMLTagName());</span>
+<span class="nc" id="L336">		assertEquals(1, result.getModifierIndex());</span>
+<span class="nc" id="L337">		assertEquals(false, result.hasIncrement());</span>
+<span class="nc" id="L338">		assertEquals(null, result.getIncrementType());</span>
+<span class="nc" id="L339">		assertEquals(true, result.requireNegatedPersonScope());</span>
+<span class="nc" id="L340">		assertEquals(0, result.getDuration());</span>
+<span class="nc" id="L341">		assertEquals(false, result.isTemporary());</span>
+<span class="nc" id="L342">		assertEquals(true, result.isIndependent());</span>
+<span class="nc" id="L343">		assertEquals(false, result.hasTimeLimit());</span>
+<span class="nc" id="L344">		assertEquals(&quot;.name&quot;, result.getNameKey());</span>
+<span class="nc" id="L345">		assertEquals(true, result.hasScope());</span>
+<span class="nc" id="L346">		assertEquals(null, result.getFirstTurn());</span>
+<span class="nc" id="L347">		assertEquals(null, result.getLastTurn());</span>
+<span class="nc" id="L348">		assertEquals(null, result.getSpecification());</span>
+<span class="nc" id="L349">		assertEquals(&quot;&quot;, result.getSuffix());</span>
+<span class="nc" id="L350">		assertEquals(&quot;[Modifier  (null) ADDITIVE 1.0 index=1 [ [Scope null model.ability.person=true matches-null match-negated] ]]&quot;, result.toString());</span>
+<span class="nc" id="L351">		assertEquals(&quot;&quot;, result.getId());</span>
+<span class="nc" id="L352">		assertEquals(null, result.getGame());</span>
+<span class="nc" id="L353">		assertEquals(-1, result.getIdNumber());</span>
+<span class="nc" id="L354">		assertEquals(&quot;&quot;, result.getIdType());</span>
+<span class="nc" id="L355">		assertEquals(null, result.getFeatureContainer());</span>
+<span class="nc" id="L356">	}</span>
 
 	/**
 	 * Run the Modifier(String,float,ModifierType,FreeColObject,int) constructor test.
@@ -365,43 +365,43 @@ import org.w3c.dom.Element;
 	@Test
 	public void testModifier_10()
 		throws Exception {
-<span class="fc" id="L368">		String id = &quot;&quot;;</span>
-<span class="fc" id="L369">		float value = 1.0f;</span>
-<span class="fc" id="L370">		Modifier.ModifierType type = Modifier.ModifierType.ADDITIVE;</span>
-<span class="fc" id="L371">		FreeColObject source = null;</span>
-<span class="fc" id="L372">		int modifierIndex = 1;</span>
+<span class="nc" id="L368">		String id = &quot;&quot;;</span>
+<span class="nc" id="L369">		float value = 1.0f;</span>
+<span class="nc" id="L370">		Modifier.ModifierType type = Modifier.ModifierType.ADDITIVE;</span>
+<span class="nc" id="L371">		FreeColObject source = null;</span>
+<span class="nc" id="L372">		int modifierIndex = 1;</span>
 
-<span class="fc" id="L374">		Modifier result = new Modifier(id, value, type, source, modifierIndex);</span>
+<span class="nc" id="L374">		Modifier result = new Modifier(id, value, type, source, modifierIndex);</span>
 
 		// add additional test code here
-<span class="fc" id="L377">		assertNotNull(result);</span>
-<span class="fc" id="L378">		assertEquals(&quot;[Modifier  ADDITIVE 1.0 index=1]&quot;, result.toString());</span>
-<span class="fc" id="L379">		assertEquals(1.0f, result.getValue(), 1.0f);</span>
-<span class="fc" id="L380">		assertEquals(0.0f, result.getIncrement(), 1.0f);</span>
-<span class="fc" id="L381">		assertEquals(&quot;modifier&quot;, result.getXMLTagName());</span>
-<span class="fc" id="L382">		assertEquals(1, result.getModifierIndex());</span>
-<span class="fc" id="L383">		assertEquals(false, result.hasIncrement());</span>
-<span class="fc" id="L384">		assertEquals(null, result.getIncrementType());</span>
-<span class="fc" id="L385">		assertEquals(true, result.requireNegatedPersonScope());</span>
-<span class="fc" id="L386">		assertEquals(null, result.getSource());</span>
-<span class="fc" id="L387">		assertEquals(0, result.getDuration());</span>
-<span class="fc" id="L388">		assertEquals(false, result.isTemporary());</span>
-<span class="fc" id="L389">		assertEquals(true, result.isIndependent());</span>
-<span class="fc" id="L390">		assertEquals(false, result.hasTimeLimit());</span>
-<span class="fc" id="L391">		assertEquals(&quot;.name&quot;, result.getNameKey());</span>
-<span class="fc" id="L392">		assertEquals(true, result.hasScope());</span>
-<span class="fc" id="L393">		assertEquals(null, result.getFirstTurn());</span>
-<span class="fc" id="L394">		assertEquals(null, result.getLastTurn());</span>
-<span class="fc" id="L395">		assertEquals(null, result.getSpecification());</span>
-<span class="fc" id="L396">		assertEquals(&quot;&quot;, result.getSuffix());</span>
-<span class="fc" id="L397">		assertEquals(&quot;[Modifier  ADDITIVE 1.0 index=1 [ [Scope null model.ability.person=true matches-null match-negated] ]]&quot;, result.toString());</span>
-<span class="fc" id="L398">		assertEquals(&quot;&quot;, result.getId());</span>
-<span class="fc" id="L399">		assertEquals(&quot;&lt;modifier id=\&quot;\&quot; value=\&quot;1.0\&quot; type=\&quot;additive\&quot; index=\&quot;1\&quot;&gt;&lt;scope match-negated=\&quot;true\&quot; matches-null=\&quot;true\&quot; ability-id=\&quot;model.ability.person\&quot; ability-value=\&quot;true\&quot;&gt;&lt;/scope&gt;&lt;/modifier&gt;&quot;, result.serialize());</span>
-<span class="fc" id="L400">		assertEquals(null, result.getGame());</span>
-<span class="fc" id="L401">		assertEquals(-1, result.getIdNumber());</span>
-<span class="fc" id="L402">		assertEquals(&quot;&quot;, result.getIdType());</span>
-<span class="fc" id="L403">		assertEquals(null, result.getFeatureContainer());</span>
-<span class="fc" id="L404">	}</span>
+<span class="nc" id="L377">		assertNotNull(result);</span>
+<span class="nc" id="L378">		assertEquals(&quot;[Modifier  ADDITIVE 1.0 index=1]&quot;, result.toString());</span>
+<span class="nc" id="L379">		assertEquals(1.0f, result.getValue(), 1.0f);</span>
+<span class="nc" id="L380">		assertEquals(0.0f, result.getIncrement(), 1.0f);</span>
+<span class="nc" id="L381">		assertEquals(&quot;modifier&quot;, result.getXMLTagName());</span>
+<span class="nc" id="L382">		assertEquals(1, result.getModifierIndex());</span>
+<span class="nc" id="L383">		assertEquals(false, result.hasIncrement());</span>
+<span class="nc" id="L384">		assertEquals(null, result.getIncrementType());</span>
+<span class="nc" id="L385">		assertEquals(true, result.requireNegatedPersonScope());</span>
+<span class="nc" id="L386">		assertEquals(null, result.getSource());</span>
+<span class="nc" id="L387">		assertEquals(0, result.getDuration());</span>
+<span class="nc" id="L388">		assertEquals(false, result.isTemporary());</span>
+<span class="nc" id="L389">		assertEquals(true, result.isIndependent());</span>
+<span class="nc" id="L390">		assertEquals(false, result.hasTimeLimit());</span>
+<span class="nc" id="L391">		assertEquals(&quot;.name&quot;, result.getNameKey());</span>
+<span class="nc" id="L392">		assertEquals(true, result.hasScope());</span>
+<span class="nc" id="L393">		assertEquals(null, result.getFirstTurn());</span>
+<span class="nc" id="L394">		assertEquals(null, result.getLastTurn());</span>
+<span class="nc" id="L395">		assertEquals(null, result.getSpecification());</span>
+<span class="nc" id="L396">		assertEquals(&quot;&quot;, result.getSuffix());</span>
+<span class="nc" id="L397">		assertEquals(&quot;[Modifier  ADDITIVE 1.0 index=1 [ [Scope null model.ability.person=true matches-null match-negated] ]]&quot;, result.toString());</span>
+<span class="nc" id="L398">		assertEquals(&quot;&quot;, result.getId());</span>
+<span class="nc" id="L399">		assertEquals(&quot;&lt;modifier id=\&quot;\&quot; value=\&quot;1.0\&quot; type=\&quot;additive\&quot; index=\&quot;1\&quot;&gt;&lt;scope match-negated=\&quot;true\&quot; matches-null=\&quot;true\&quot; ability-id=\&quot;model.ability.person\&quot; ability-value=\&quot;true\&quot;&gt;&lt;/scope&gt;&lt;/modifier&gt;&quot;, result.serialize());</span>
+<span class="nc" id="L400">		assertEquals(null, result.getGame());</span>
+<span class="nc" id="L401">		assertEquals(-1, result.getIdNumber());</span>
+<span class="nc" id="L402">		assertEquals(&quot;&quot;, result.getIdType());</span>
+<span class="nc" id="L403">		assertEquals(null, result.getFeatureContainer());</span>
+<span class="nc" id="L404">	}</span>
 
 	/**
 	 * Run the float apply(float,float) method test.
@@ -413,19 +413,19 @@ import org.w3c.dom.Element;
 	@Test
 	public void testApply_1()
 		throws Exception {
-<span class="fc" id="L416">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L417">		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
-<span class="fc" id="L418">		fixture.setValue(1.0f);</span>
-<span class="fc" id="L419">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L420">		fixture.setModifierIndex(1);</span>
-<span class="fc" id="L421">		float base = 1.0f;</span>
-<span class="fc" id="L422">		float value = 1.0f;</span>
+<span class="nc" id="L416">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L417">		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
+<span class="nc" id="L418">		fixture.setValue(1.0f);</span>
+<span class="nc" id="L419">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L420">		fixture.setModifierIndex(1);</span>
+<span class="nc" id="L421">		float base = 1.0f;</span>
+<span class="nc" id="L422">		float value = 1.0f;</span>
 
-<span class="fc" id="L424">		float result = fixture.apply(base, value);</span>
+<span class="nc" id="L424">		float result = fixture.apply(base, value);</span>
 
 		// add additional test code here
-<span class="fc" id="L427">		assertEquals(2.0f, result, 0.1f);</span>
-<span class="fc" id="L428">	}</span>
+<span class="nc" id="L427">		assertEquals(2.0f, result, 0.1f);</span>
+<span class="nc" id="L428">	}</span>
 
 	/**
 	 * Run the float applyTo(float) method test.
@@ -437,18 +437,18 @@ import org.w3c.dom.Element;
 	@Test
 	public void testApplyTo_1()
 		throws Exception {
-<span class="fc" id="L440">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L441">		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
-<span class="fc" id="L442">		fixture.setValue(1.0f);</span>
-<span class="fc" id="L443">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L444">		fixture.setModifierIndex(1);</span>
-<span class="fc" id="L445">		float number = 1.0f;</span>
+<span class="nc" id="L440">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L441">		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
+<span class="nc" id="L442">		fixture.setValue(1.0f);</span>
+<span class="nc" id="L443">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L444">		fixture.setModifierIndex(1);</span>
+<span class="nc" id="L445">		float number = 1.0f;</span>
 
-<span class="fc" id="L447">		float result = fixture.applyTo(number);</span>
+<span class="nc" id="L447">		float result = fixture.applyTo(number);</span>
 
 		// add additional test code here
-<span class="fc" id="L450">		assertEquals(2.0f, result, 0.1f);</span>
-<span class="fc" id="L451">	}</span>
+<span class="nc" id="L450">		assertEquals(2.0f, result, 0.1f);</span>
+<span class="nc" id="L451">	}</span>
 
 	/**
 	 * Run the float applyTo(float,Turn) method test.
@@ -460,19 +460,19 @@ import org.w3c.dom.Element;
 	@Test
 	public void testApplyTo_2()
 		throws Exception {
-<span class="fc" id="L463">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L464">		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
-<span class="fc" id="L465">		fixture.setValue(1.0f);</span>
-<span class="fc" id="L466">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L467">		fixture.setModifierIndex(1);</span>
-<span class="fc" id="L468">		float number = 1.0f;</span>
-<span class="fc" id="L469">		Turn turn = new Turn(1);</span>
+<span class="nc" id="L463">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L464">		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
+<span class="nc" id="L465">		fixture.setValue(1.0f);</span>
+<span class="nc" id="L466">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L467">		fixture.setModifierIndex(1);</span>
+<span class="nc" id="L468">		float number = 1.0f;</span>
+<span class="nc" id="L469">		Turn turn = new Turn(1);</span>
 
-<span class="fc" id="L471">		float result = fixture.applyTo(number, turn);</span>
+<span class="nc" id="L471">		float result = fixture.applyTo(number, turn);</span>
 
 		// add additional test code here
-<span class="fc" id="L474">		assertEquals(2.0f, result, 0.1f);</span>
-<span class="fc" id="L475">	}</span>
+<span class="nc" id="L474">		assertEquals(2.0f, result, 0.1f);</span>
+<span class="nc" id="L475">	}</span>
 
 	/**
 	 * Run the float applyTo(float,Turn) method test.
@@ -484,19 +484,19 @@ import org.w3c.dom.Element;
 	@Test
 	public void testApplyTo_3()
 		throws Exception {
-<span class="fc" id="L487">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L488">		fixture.setIncrement((Modifier.ModifierType) null, 1.0f, new Turn(1), new Turn(1));</span>
-<span class="fc" id="L489">		fixture.setValue(1.0f);</span>
-<span class="fc" id="L490">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L491">		fixture.setModifierIndex(1);</span>
-<span class="fc" id="L492">		float number = 1.0f;</span>
-<span class="fc" id="L493">		Turn turn = new Turn(1);</span>
+<span class="nc" id="L487">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L488">		fixture.setIncrement((Modifier.ModifierType) null, 1.0f, new Turn(1), new Turn(1));</span>
+<span class="nc" id="L489">		fixture.setValue(1.0f);</span>
+<span class="nc" id="L490">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L491">		fixture.setModifierIndex(1);</span>
+<span class="nc" id="L492">		float number = 1.0f;</span>
+<span class="nc" id="L493">		Turn turn = new Turn(1);</span>
 
-<span class="fc" id="L495">		float result = fixture.applyTo(number, turn);</span>
+<span class="nc" id="L495">		float result = fixture.applyTo(number, turn);</span>
 
 		// add additional test code here
-<span class="fc" id="L498">		assertEquals(2.0f, result, 0.1f);</span>
-<span class="fc" id="L499">	}</span>
+<span class="nc" id="L498">		assertEquals(2.0f, result, 0.1f);</span>
+<span class="nc" id="L499">	}</span>
 
 	/**
 	 * Run the int compareTo(FreeColObject) method test.
@@ -508,15 +508,15 @@ import org.w3c.dom.Element;
 	@Test
 	public void testCompareTo_1()
 		throws Exception {
-<span class="fc" id="L511">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L512">		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
-<span class="fc" id="L513">		fixture.setValue(1.0f);</span>
-<span class="fc" id="L514">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L515">		fixture.setModifierIndex(1);</span>
-<span class="fc" id="L516">		Modifier other = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L517">		other.setModifierIndex(1);</span>
+<span class="nc" id="L511">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L512">		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
+<span class="nc" id="L513">		fixture.setValue(1.0f);</span>
+<span class="nc" id="L514">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L515">		fixture.setModifierIndex(1);</span>
+<span class="nc" id="L516">		Modifier other = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L517">		other.setModifierIndex(1);</span>
 
-<span class="fc" id="L519">		int result = fixture.compareTo(other);</span>
+<span class="nc" id="L519">		int result = fixture.compareTo(other);</span>
 
 		// add additional test code here
 <span class="nc" id="L522">		assertEquals(1767166750, result);</span>
@@ -532,16 +532,16 @@ import org.w3c.dom.Element;
 	@Test
 	public void testCompareTo_2()
 		throws Exception {
-<span class="fc" id="L535">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L536">		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
-<span class="fc" id="L537">		fixture.setValue(1.0f);</span>
-<span class="fc" id="L538">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L539">		fixture.setModifierIndex(1);</span>
-<span class="fc" id="L540">		Modifier other = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L541">		other.setType(Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L542">		other.setModifierIndex(1);</span>
+<span class="nc" id="L535">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L536">		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
+<span class="nc" id="L537">		fixture.setValue(1.0f);</span>
+<span class="nc" id="L538">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L539">		fixture.setModifierIndex(1);</span>
+<span class="nc" id="L540">		Modifier other = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L541">		other.setType(Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L542">		other.setModifierIndex(1);</span>
 
-<span class="fc" id="L544">		int result = fixture.compareTo(other);</span>
+<span class="nc" id="L544">		int result = fixture.compareTo(other);</span>
 
 		// add additional test code here
 <span class="nc" id="L547">		assertEquals(1767166750, result);</span>
@@ -557,18 +557,18 @@ import org.w3c.dom.Element;
 	@Test
 	public void testCompareTo_3()
 		throws Exception {
-<span class="fc" id="L560">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L561">		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
-<span class="fc" id="L562">		fixture.setValue(1.0f);</span>
-<span class="fc" id="L563">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L564">		fixture.setModifierIndex(1);</span>
-<span class="fc" id="L565">		FreeColObject other = new AbstractGoods();</span>
+<span class="nc" id="L560">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L561">		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
+<span class="nc" id="L562">		fixture.setValue(1.0f);</span>
+<span class="nc" id="L563">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L564">		fixture.setModifierIndex(1);</span>
+<span class="nc" id="L565">		FreeColObject other = new AbstractGoods();</span>
 
-<span class="fc" id="L567">		int result = fixture.compareTo(other);</span>
+<span class="nc" id="L567">		int result = fixture.compareTo(other);</span>
 
 		// add additional test code here
-<span class="fc" id="L570">		assertEquals(1, result);</span>
-<span class="fc" id="L571">	}</span>
+<span class="nc" id="L570">		assertEquals(1, result);</span>
+<span class="nc" id="L571">	}</span>
 
 	/**
 	 * Run the boolean equals(Object) method test.
@@ -580,22 +580,22 @@ import org.w3c.dom.Element;
 	@Test
 	public void testEquals_1()
 		throws Exception {
-<span class="fc" id="L583">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L584">		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
-<span class="fc" id="L585">		fixture.setValue(1.0f);</span>
-<span class="fc" id="L586">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L587">		fixture.setModifierIndex(1);</span>
-<span class="fc" id="L588">		Modifier o = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L589">		o.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
-<span class="fc" id="L590">		o.setValue(1.0f);</span>
-<span class="fc" id="L591">		o.setType(Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L592">		o.setModifierIndex(1);</span>
+<span class="nc" id="L583">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L584">		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
+<span class="nc" id="L585">		fixture.setValue(1.0f);</span>
+<span class="nc" id="L586">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L587">		fixture.setModifierIndex(1);</span>
+<span class="nc" id="L588">		Modifier o = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L589">		o.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
+<span class="nc" id="L590">		o.setValue(1.0f);</span>
+<span class="nc" id="L591">		o.setType(Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L592">		o.setModifierIndex(1);</span>
 
-<span class="fc" id="L594">		boolean result = fixture.equals(o);</span>
+<span class="nc" id="L594">		boolean result = fixture.equals(o);</span>
 
 		// add additional test code here
-<span class="fc" id="L597">		assertEquals(true, result);</span>
-<span class="fc" id="L598">	}</span>
+<span class="nc" id="L597">		assertEquals(true, result);</span>
+<span class="nc" id="L598">	}</span>
 
 	/**
 	 * Run the boolean equals(Object) method test.
@@ -607,22 +607,22 @@ import org.w3c.dom.Element;
 	@Test
 	public void testEquals_2()
 		throws Exception {
-<span class="fc" id="L610">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L611">		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
-<span class="fc" id="L612">		fixture.setValue(1.0f);</span>
-<span class="fc" id="L613">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L614">		fixture.setModifierIndex(1);</span>
-<span class="fc" id="L615">		Modifier o = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L616">		o.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
-<span class="fc" id="L617">		o.setValue(1.0f);</span>
-<span class="fc" id="L618">		o.setType(Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L619">		o.setModifierIndex(1);</span>
+<span class="nc" id="L610">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L611">		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
+<span class="nc" id="L612">		fixture.setValue(1.0f);</span>
+<span class="nc" id="L613">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L614">		fixture.setModifierIndex(1);</span>
+<span class="nc" id="L615">		Modifier o = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L616">		o.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
+<span class="nc" id="L617">		o.setValue(1.0f);</span>
+<span class="nc" id="L618">		o.setType(Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L619">		o.setModifierIndex(1);</span>
 
-<span class="fc" id="L621">		boolean result = fixture.equals(o);</span>
+<span class="nc" id="L621">		boolean result = fixture.equals(o);</span>
 
 		// add additional test code here
-<span class="fc" id="L624">		assertEquals(true, result);</span>
-<span class="fc" id="L625">	}</span>
+<span class="nc" id="L624">		assertEquals(true, result);</span>
+<span class="nc" id="L625">	}</span>
 
 	/**
 	 * Run the boolean equals(Object) method test.
@@ -634,22 +634,22 @@ import org.w3c.dom.Element;
 	@Test
 	public void testEquals_3()
 		throws Exception {
-<span class="fc" id="L637">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L638">		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
-<span class="fc" id="L639">		fixture.setValue(1.0f);</span>
-<span class="fc" id="L640">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L641">		fixture.setModifierIndex(1);</span>
-<span class="fc" id="L642">		Modifier o = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L643">		o.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
-<span class="fc" id="L644">		o.setValue(1.0f);</span>
-<span class="fc" id="L645">		o.setType(Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L646">		o.setModifierIndex(1);</span>
+<span class="nc" id="L637">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L638">		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
+<span class="nc" id="L639">		fixture.setValue(1.0f);</span>
+<span class="nc" id="L640">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L641">		fixture.setModifierIndex(1);</span>
+<span class="nc" id="L642">		Modifier o = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L643">		o.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
+<span class="nc" id="L644">		o.setValue(1.0f);</span>
+<span class="nc" id="L645">		o.setType(Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L646">		o.setModifierIndex(1);</span>
 
-<span class="fc" id="L648">		boolean result = fixture.equals(o);</span>
+<span class="nc" id="L648">		boolean result = fixture.equals(o);</span>
 
 		// add additional test code here
-<span class="fc" id="L651">		assertEquals(true, result);</span>
-<span class="fc" id="L652">	}</span>
+<span class="nc" id="L651">		assertEquals(true, result);</span>
+<span class="nc" id="L652">	}</span>
 
 	/**
 	 * Run the boolean equals(Object) method test.
@@ -661,22 +661,22 @@ import org.w3c.dom.Element;
 	@Test
 	public void testEquals_4()
 		throws Exception {
-<span class="fc" id="L664">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L665">		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
-<span class="fc" id="L666">		fixture.setValue(1.0f);</span>
-<span class="fc" id="L667">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L668">		fixture.setModifierIndex(1);</span>
-<span class="fc" id="L669">		Modifier o = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L670">		o.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
-<span class="fc" id="L671">		o.setValue(1.0f);</span>
-<span class="fc" id="L672">		o.setType(Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L673">		o.setModifierIndex(1);</span>
+<span class="nc" id="L664">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L665">		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
+<span class="nc" id="L666">		fixture.setValue(1.0f);</span>
+<span class="nc" id="L667">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L668">		fixture.setModifierIndex(1);</span>
+<span class="nc" id="L669">		Modifier o = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L670">		o.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
+<span class="nc" id="L671">		o.setValue(1.0f);</span>
+<span class="nc" id="L672">		o.setType(Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L673">		o.setModifierIndex(1);</span>
 
-<span class="fc" id="L675">		boolean result = fixture.equals(o);</span>
+<span class="nc" id="L675">		boolean result = fixture.equals(o);</span>
 
 		// add additional test code here
-<span class="fc" id="L678">		assertEquals(true, result);</span>
-<span class="fc" id="L679">	}</span>
+<span class="nc" id="L678">		assertEquals(true, result);</span>
+<span class="nc" id="L679">	}</span>
 
 	/**
 	 * Run the boolean equals(Object) method test.
@@ -688,22 +688,22 @@ import org.w3c.dom.Element;
 	@Test
 	public void testEquals_5()
 		throws Exception {
-<span class="fc" id="L691">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L692">		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
-<span class="fc" id="L693">		fixture.setValue(1.0f);</span>
-<span class="fc" id="L694">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L695">		fixture.setModifierIndex(1);</span>
-<span class="fc" id="L696">		Modifier o = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L697">		o.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
-<span class="fc" id="L698">		o.setValue(1.0f);</span>
-<span class="fc" id="L699">		o.setType(Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L700">		o.setModifierIndex(1);</span>
+<span class="nc" id="L691">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L692">		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
+<span class="nc" id="L693">		fixture.setValue(1.0f);</span>
+<span class="nc" id="L694">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L695">		fixture.setModifierIndex(1);</span>
+<span class="nc" id="L696">		Modifier o = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L697">		o.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
+<span class="nc" id="L698">		o.setValue(1.0f);</span>
+<span class="nc" id="L699">		o.setType(Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L700">		o.setModifierIndex(1);</span>
 
-<span class="fc" id="L702">		boolean result = fixture.equals(o);</span>
+<span class="nc" id="L702">		boolean result = fixture.equals(o);</span>
 
 		// add additional test code here
-<span class="fc" id="L705">		assertEquals(true, result);</span>
-<span class="fc" id="L706">	}</span>
+<span class="nc" id="L705">		assertEquals(true, result);</span>
+<span class="nc" id="L706">	}</span>
 
 	/**
 	 * Run the boolean equals(Object) method test.
@@ -715,22 +715,22 @@ import org.w3c.dom.Element;
 	@Test
 	public void testEquals_6()
 		throws Exception {
-<span class="fc" id="L718">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L719">		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
-<span class="fc" id="L720">		fixture.setValue(1.0f);</span>
-<span class="fc" id="L721">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L722">		fixture.setModifierIndex(1);</span>
-<span class="fc" id="L723">		Modifier o = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L724">		o.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
-<span class="fc" id="L725">		o.setValue(1.0f);</span>
-<span class="fc" id="L726">		o.setType(Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L727">		o.setModifierIndex(1);</span>
+<span class="nc" id="L718">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L719">		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
+<span class="nc" id="L720">		fixture.setValue(1.0f);</span>
+<span class="nc" id="L721">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L722">		fixture.setModifierIndex(1);</span>
+<span class="nc" id="L723">		Modifier o = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L724">		o.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
+<span class="nc" id="L725">		o.setValue(1.0f);</span>
+<span class="nc" id="L726">		o.setType(Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L727">		o.setModifierIndex(1);</span>
 
-<span class="fc" id="L729">		boolean result = fixture.equals(o);</span>
+<span class="nc" id="L729">		boolean result = fixture.equals(o);</span>
 
 		// add additional test code here
-<span class="fc" id="L732">		assertEquals(true, result);</span>
-<span class="fc" id="L733">	}</span>
+<span class="nc" id="L732">		assertEquals(true, result);</span>
+<span class="nc" id="L733">	}</span>
 
 	/**
 	 * Run the boolean equals(Object) method test.
@@ -742,22 +742,22 @@ import org.w3c.dom.Element;
 	@Test
 	public void testEquals_7()
 		throws Exception {
-<span class="fc" id="L745">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L746">		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
-<span class="fc" id="L747">		fixture.setValue(1.0f);</span>
-<span class="fc" id="L748">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L749">		fixture.setModifierIndex(1);</span>
-<span class="fc" id="L750">		Modifier o = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L751">		o.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
-<span class="fc" id="L752">		o.setValue(1.0f);</span>
-<span class="fc" id="L753">		o.setType(Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L754">		o.setModifierIndex(1);</span>
+<span class="nc" id="L745">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L746">		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
+<span class="nc" id="L747">		fixture.setValue(1.0f);</span>
+<span class="nc" id="L748">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L749">		fixture.setModifierIndex(1);</span>
+<span class="nc" id="L750">		Modifier o = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L751">		o.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
+<span class="nc" id="L752">		o.setValue(1.0f);</span>
+<span class="nc" id="L753">		o.setType(Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L754">		o.setModifierIndex(1);</span>
 
-<span class="fc" id="L756">		boolean result = fixture.equals(o);</span>
+<span class="nc" id="L756">		boolean result = fixture.equals(o);</span>
 
 		// add additional test code here
-<span class="fc" id="L759">		assertEquals(true, result);</span>
-<span class="fc" id="L760">	}</span>
+<span class="nc" id="L759">		assertEquals(true, result);</span>
+<span class="nc" id="L760">	}</span>
 
 	/**
 	 * Run the boolean equals(Object) method test.
@@ -769,22 +769,22 @@ import org.w3c.dom.Element;
 	@Test
 	public void testEquals_8()
 		throws Exception {
-<span class="fc" id="L772">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L773">		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
-<span class="fc" id="L774">		fixture.setValue(1.0f);</span>
-<span class="fc" id="L775">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L776">		fixture.setModifierIndex(1);</span>
-<span class="fc" id="L777">		Modifier o = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L778">		o.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
-<span class="fc" id="L779">		o.setValue(1.0f);</span>
-<span class="fc" id="L780">		o.setType(Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L781">		o.setModifierIndex(1);</span>
+<span class="nc" id="L772">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L773">		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
+<span class="nc" id="L774">		fixture.setValue(1.0f);</span>
+<span class="nc" id="L775">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L776">		fixture.setModifierIndex(1);</span>
+<span class="nc" id="L777">		Modifier o = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L778">		o.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
+<span class="nc" id="L779">		o.setValue(1.0f);</span>
+<span class="nc" id="L780">		o.setType(Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L781">		o.setModifierIndex(1);</span>
 
-<span class="fc" id="L783">		boolean result = fixture.equals(o);</span>
+<span class="nc" id="L783">		boolean result = fixture.equals(o);</span>
 
 		// add additional test code here
-<span class="fc" id="L786">		assertEquals(true, result);</span>
-<span class="fc" id="L787">	}</span>
+<span class="nc" id="L786">		assertEquals(true, result);</span>
+<span class="nc" id="L787">	}</span>
 
 	/**
 	 * Run the boolean equals(Object) method test.
@@ -796,18 +796,18 @@ import org.w3c.dom.Element;
 	@Test
 	public void testEquals_9()
 		throws Exception {
-<span class="fc" id="L799">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L800">		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
-<span class="fc" id="L801">		fixture.setValue(1.0f);</span>
-<span class="fc" id="L802">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L803">		fixture.setModifierIndex(1);</span>
-<span class="fc" id="L804">		Object o = new Object();</span>
+<span class="nc" id="L799">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L800">		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
+<span class="nc" id="L801">		fixture.setValue(1.0f);</span>
+<span class="nc" id="L802">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L803">		fixture.setModifierIndex(1);</span>
+<span class="nc" id="L804">		Object o = new Object();</span>
 
-<span class="fc" id="L806">		boolean result = fixture.equals(o);</span>
+<span class="nc" id="L806">		boolean result = fixture.equals(o);</span>
 
 		// add additional test code here
-<span class="fc" id="L809">		assertEquals(false, result);</span>
-<span class="fc" id="L810">	}</span>
+<span class="nc" id="L809">		assertEquals(false, result);</span>
+<span class="nc" id="L810">	}</span>
 
 	/**
 	 * Run the float getIncrement() method test.
@@ -819,17 +819,17 @@ import org.w3c.dom.Element;
 	@Test
 	public void testGetIncrement_1()
 		throws Exception {
-<span class="fc" id="L822">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L823">		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
-<span class="fc" id="L824">		fixture.setValue(1.0f);</span>
-<span class="fc" id="L825">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L826">		fixture.setModifierIndex(1);</span>
+<span class="nc" id="L822">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L823">		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
+<span class="nc" id="L824">		fixture.setValue(1.0f);</span>
+<span class="nc" id="L825">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L826">		fixture.setModifierIndex(1);</span>
 
-<span class="fc" id="L828">		float result = fixture.getIncrement();</span>
+<span class="nc" id="L828">		float result = fixture.getIncrement();</span>
 
 		// add additional test code here
-<span class="fc" id="L831">		assertEquals(1.0f, result, 0.1f);</span>
-<span class="fc" id="L832">	}</span>
+<span class="nc" id="L831">		assertEquals(1.0f, result, 0.1f);</span>
+<span class="nc" id="L832">	}</span>
 
 	/**
 	 * Run the Modifier.ModifierType getIncrementType() method test.
@@ -841,20 +841,20 @@ import org.w3c.dom.Element;
 	@Test
 	public void testGetIncrementType_1()
 		throws Exception {
-<span class="fc" id="L844">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L845">		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
-<span class="fc" id="L846">		fixture.setValue(1.0f);</span>
-<span class="fc" id="L847">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L848">		fixture.setModifierIndex(1);</span>
+<span class="nc" id="L844">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L845">		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
+<span class="nc" id="L846">		fixture.setValue(1.0f);</span>
+<span class="nc" id="L847">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L848">		fixture.setModifierIndex(1);</span>
 
-<span class="fc" id="L850">		Modifier.ModifierType result = fixture.getIncrementType();</span>
+<span class="nc" id="L850">		Modifier.ModifierType result = fixture.getIncrementType();</span>
 
 		// add additional test code here
-<span class="fc" id="L853">		assertNotNull(result);</span>
-<span class="fc" id="L854">		assertEquals(&quot;ADDITIVE&quot;, result.name());</span>
-<span class="fc" id="L855">		assertEquals(&quot;ADDITIVE&quot;, result.toString());</span>
-<span class="fc" id="L856">		assertEquals(0, result.ordinal());</span>
-<span class="fc" id="L857">	}</span>
+<span class="nc" id="L853">		assertNotNull(result);</span>
+<span class="nc" id="L854">		assertEquals(&quot;ADDITIVE&quot;, result.name());</span>
+<span class="nc" id="L855">		assertEquals(&quot;ADDITIVE&quot;, result.toString());</span>
+<span class="nc" id="L856">		assertEquals(0, result.ordinal());</span>
+<span class="nc" id="L857">	}</span>
 
 	/**
 	 * Run the int getModifierIndex() method test.
@@ -866,17 +866,17 @@ import org.w3c.dom.Element;
 	@Test
 	public void testGetModifierIndex_1()
 		throws Exception {
-<span class="fc" id="L869">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L870">		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
-<span class="fc" id="L871">		fixture.setValue(1.0f);</span>
-<span class="fc" id="L872">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L873">		fixture.setModifierIndex(1);</span>
+<span class="nc" id="L869">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L870">		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
+<span class="nc" id="L871">		fixture.setValue(1.0f);</span>
+<span class="nc" id="L872">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L873">		fixture.setModifierIndex(1);</span>
 
-<span class="fc" id="L875">		int result = fixture.getModifierIndex();</span>
+<span class="nc" id="L875">		int result = fixture.getModifierIndex();</span>
 
 		// add additional test code here
-<span class="fc" id="L878">		assertEquals(1, result);</span>
-<span class="fc" id="L879">	}</span>
+<span class="nc" id="L878">		assertEquals(1, result);</span>
+<span class="nc" id="L879">	}</span>
 
 	/**
 	 * Run the String getTagName() method test.
@@ -889,11 +889,11 @@ import org.w3c.dom.Element;
 	public void testGetTagName_1()
 		throws Exception {
 
-<span class="fc" id="L892">		String result = Modifier.getTagName();</span>
+<span class="nc" id="L892">		String result = Modifier.getTagName();</span>
 
 		// add additional test code here
-<span class="fc" id="L895">		assertEquals(&quot;modifier&quot;, result);</span>
-<span class="fc" id="L896">	}</span>
+<span class="nc" id="L895">		assertEquals(&quot;modifier&quot;, result);</span>
+<span class="nc" id="L896">	}</span>
 
 	/**
 	 * Run the Modifier.ModifierType getType() method test.
@@ -905,20 +905,20 @@ import org.w3c.dom.Element;
 	@Test
 	public void testGetType_1()
 		throws Exception {
-<span class="fc" id="L908">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L909">		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
-<span class="fc" id="L910">		fixture.setValue(1.0f);</span>
-<span class="fc" id="L911">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L912">		fixture.setModifierIndex(1);</span>
+<span class="nc" id="L908">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L909">		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
+<span class="nc" id="L910">		fixture.setValue(1.0f);</span>
+<span class="nc" id="L911">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L912">		fixture.setModifierIndex(1);</span>
 
-<span class="fc" id="L914">		Modifier.ModifierType result = fixture.getType();</span>
+<span class="nc" id="L914">		Modifier.ModifierType result = fixture.getType();</span>
 
 		// add additional test code here
-<span class="fc" id="L917">		assertNotNull(result);</span>
-<span class="fc" id="L918">		assertEquals(&quot;ADDITIVE&quot;, result.name());</span>
-<span class="fc" id="L919">		assertEquals(&quot;ADDITIVE&quot;, result.toString());</span>
-<span class="fc" id="L920">		assertEquals(0, result.ordinal());</span>
-<span class="fc" id="L921">	}</span>
+<span class="nc" id="L917">		assertNotNull(result);</span>
+<span class="nc" id="L918">		assertEquals(&quot;ADDITIVE&quot;, result.name());</span>
+<span class="nc" id="L919">		assertEquals(&quot;ADDITIVE&quot;, result.toString());</span>
+<span class="nc" id="L920">		assertEquals(0, result.ordinal());</span>
+<span class="nc" id="L921">	}</span>
 
 	/**
 	 * Run the float getValue() method test.
@@ -930,17 +930,17 @@ import org.w3c.dom.Element;
 	@Test
 	public void testGetValue_1()
 		throws Exception {
-<span class="fc" id="L933">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L934">		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
-<span class="fc" id="L935">		fixture.setValue(1.0f);</span>
-<span class="fc" id="L936">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L937">		fixture.setModifierIndex(1);</span>
+<span class="nc" id="L933">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L934">		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
+<span class="nc" id="L935">		fixture.setValue(1.0f);</span>
+<span class="nc" id="L936">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L937">		fixture.setModifierIndex(1);</span>
 
-<span class="fc" id="L939">		float result = fixture.getValue();</span>
+<span class="nc" id="L939">		float result = fixture.getValue();</span>
 
 		// add additional test code here
-<span class="fc" id="L942">		assertEquals(1.0f, result, 0.1f);</span>
-<span class="fc" id="L943">	}</span>
+<span class="nc" id="L942">		assertEquals(1.0f, result, 0.1f);</span>
+<span class="nc" id="L943">	}</span>
 
 	/**
 	 * Run the float getValue(Turn) method test.
@@ -952,18 +952,18 @@ import org.w3c.dom.Element;
 	@Test
 	public void testGetValue_2()
 		throws Exception {
-<span class="fc" id="L955">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L956">		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
-<span class="fc" id="L957">		fixture.setValue(1.0f);</span>
-<span class="fc" id="L958">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L959">		fixture.setModifierIndex(1);</span>
-<span class="fc" id="L960">		Turn turn = new Turn(1);</span>
+<span class="nc" id="L955">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L956">		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
+<span class="nc" id="L957">		fixture.setValue(1.0f);</span>
+<span class="nc" id="L958">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L959">		fixture.setModifierIndex(1);</span>
+<span class="nc" id="L960">		Turn turn = new Turn(1);</span>
 
-<span class="fc" id="L962">		float result = fixture.getValue(turn);</span>
+<span class="nc" id="L962">		float result = fixture.getValue(turn);</span>
 
 		// add additional test code here
-<span class="fc" id="L965">		assertEquals(1.0f, result, 0.1f);</span>
-<span class="fc" id="L966">	}</span>
+<span class="nc" id="L965">		assertEquals(1.0f, result, 0.1f);</span>
+<span class="nc" id="L966">	}</span>
 
 	/**
 	 * Run the float getValue(Turn) method test.
@@ -975,18 +975,18 @@ import org.w3c.dom.Element;
 	@Test
 	public void testGetValue_3()
 		throws Exception {
-<span class="fc" id="L978">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L979">		fixture.setIncrement((Modifier.ModifierType) null, 1.0f, new Turn(1), new Turn(1));</span>
-<span class="fc" id="L980">		fixture.setValue(1.0f);</span>
-<span class="fc" id="L981">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L982">		fixture.setModifierIndex(1);</span>
-<span class="fc" id="L983">		Turn turn = new Turn(1);</span>
+<span class="nc" id="L978">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L979">		fixture.setIncrement((Modifier.ModifierType) null, 1.0f, new Turn(1), new Turn(1));</span>
+<span class="nc" id="L980">		fixture.setValue(1.0f);</span>
+<span class="nc" id="L981">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L982">		fixture.setModifierIndex(1);</span>
+<span class="nc" id="L983">		Turn turn = new Turn(1);</span>
 
-<span class="fc" id="L985">		float result = fixture.getValue(turn);</span>
+<span class="nc" id="L985">		float result = fixture.getValue(turn);</span>
 
 		// add additional test code here
-<span class="fc" id="L988">		assertEquals(1.0f, result, 0.1f);</span>
-<span class="fc" id="L989">	}</span>
+<span class="nc" id="L988">		assertEquals(1.0f, result, 0.1f);</span>
+<span class="nc" id="L989">	}</span>
 
 	/**
 	 * Run the float getValue(Turn) method test.
@@ -998,18 +998,18 @@ import org.w3c.dom.Element;
 	@Test
 	public void testGetValue_4()
 		throws Exception {
-<span class="fc" id="L1001">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L1002">		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
-<span class="fc" id="L1003">		fixture.setValue(1.0f);</span>
-<span class="fc" id="L1004">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L1005">		fixture.setModifierIndex(1);</span>
-<span class="fc" id="L1006">		Turn turn = new Turn(1);</span>
+<span class="nc" id="L1001">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L1002">		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
+<span class="nc" id="L1003">		fixture.setValue(1.0f);</span>
+<span class="nc" id="L1004">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L1005">		fixture.setModifierIndex(1);</span>
+<span class="nc" id="L1006">		Turn turn = new Turn(1);</span>
 
-<span class="fc" id="L1008">		float result = fixture.getValue(turn);</span>
+<span class="nc" id="L1008">		float result = fixture.getValue(turn);</span>
 
 		// add additional test code here
-<span class="fc" id="L1011">		assertEquals(1.0f, result, 0.1f);</span>
-<span class="fc" id="L1012">	}</span>
+<span class="nc" id="L1011">		assertEquals(1.0f, result, 0.1f);</span>
+<span class="nc" id="L1012">	}</span>
 
 	/**
 	 * Run the String getXMLTagName() method test.
@@ -1021,17 +1021,17 @@ import org.w3c.dom.Element;
 	@Test
 	public void testGetXMLTagName_1()
 		throws Exception {
-<span class="fc" id="L1024">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L1025">		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
-<span class="fc" id="L1026">		fixture.setValue(1.0f);</span>
-<span class="fc" id="L1027">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L1028">		fixture.setModifierIndex(1);</span>
+<span class="nc" id="L1024">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L1025">		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
+<span class="nc" id="L1026">		fixture.setValue(1.0f);</span>
+<span class="nc" id="L1027">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L1028">		fixture.setModifierIndex(1);</span>
 
-<span class="fc" id="L1030">		String result = fixture.getXMLTagName();</span>
+<span class="nc" id="L1030">		String result = fixture.getXMLTagName();</span>
 
 		// add additional test code here
-<span class="fc" id="L1033">		assertEquals(&quot;modifier&quot;, result);</span>
-<span class="fc" id="L1034">	}</span>
+<span class="nc" id="L1033">		assertEquals(&quot;modifier&quot;, result);</span>
+<span class="nc" id="L1034">	}</span>
 
 	/**
 	 * Run the boolean hasIncrement() method test.
@@ -1043,17 +1043,17 @@ import org.w3c.dom.Element;
 	@Test
 	public void testHasIncrement_1()
 		throws Exception {
-<span class="fc" id="L1046">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L1047">		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
-<span class="fc" id="L1048">		fixture.setValue(1.0f);</span>
-<span class="fc" id="L1049">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L1050">		fixture.setModifierIndex(1);</span>
+<span class="nc" id="L1046">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L1047">		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
+<span class="nc" id="L1048">		fixture.setValue(1.0f);</span>
+<span class="nc" id="L1049">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L1050">		fixture.setModifierIndex(1);</span>
 
-<span class="fc" id="L1052">		boolean result = fixture.hasIncrement();</span>
+<span class="nc" id="L1052">		boolean result = fixture.hasIncrement();</span>
 
 		// add additional test code here
-<span class="fc" id="L1055">		assertEquals(true, result);</span>
-<span class="fc" id="L1056">	}</span>
+<span class="nc" id="L1055">		assertEquals(true, result);</span>
+<span class="nc" id="L1056">	}</span>
 
 	/**
 	 * Run the boolean hasIncrement() method test.
@@ -1065,17 +1065,17 @@ import org.w3c.dom.Element;
 	@Test
 	public void testHasIncrement_2()
 		throws Exception {
-<span class="fc" id="L1068">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L1069">		fixture.setIncrement((Modifier.ModifierType) null, 1.0f, new Turn(1), new Turn(1));</span>
-<span class="fc" id="L1070">		fixture.setValue(1.0f);</span>
-<span class="fc" id="L1071">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L1072">		fixture.setModifierIndex(1);</span>
+<span class="nc" id="L1068">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L1069">		fixture.setIncrement((Modifier.ModifierType) null, 1.0f, new Turn(1), new Turn(1));</span>
+<span class="nc" id="L1070">		fixture.setValue(1.0f);</span>
+<span class="nc" id="L1071">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L1072">		fixture.setModifierIndex(1);</span>
 
-<span class="fc" id="L1074">		boolean result = fixture.hasIncrement();</span>
+<span class="nc" id="L1074">		boolean result = fixture.hasIncrement();</span>
 
 		// add additional test code here
-<span class="fc" id="L1077">		assertEquals(false, result);</span>
-<span class="fc" id="L1078">	}</span>
+<span class="nc" id="L1077">		assertEquals(false, result);</span>
+<span class="nc" id="L1078">	}</span>
 
 	/**
 	 * Run the int hashCode() method test.
@@ -1087,13 +1087,13 @@ import org.w3c.dom.Element;
 	@Test
 	public void testHashCode_1()
 		throws Exception {
-<span class="fc" id="L1090">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L1091">		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
-<span class="fc" id="L1092">		fixture.setValue(1.0f);</span>
-<span class="fc" id="L1093">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L1094">		fixture.setModifierIndex(1);</span>
+<span class="nc" id="L1090">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L1091">		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
+<span class="nc" id="L1092">		fixture.setValue(1.0f);</span>
+<span class="nc" id="L1093">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L1094">		fixture.setModifierIndex(1);</span>
 
-<span class="fc" id="L1096">		int result = fixture.hashCode();</span>
+<span class="nc" id="L1096">		int result = fixture.hashCode();</span>
 
 		// add additional test code here
 <span class="nc" id="L1099">		assertEquals(310833089, result);</span>
@@ -1109,38 +1109,38 @@ import org.w3c.dom.Element;
 	@Test
 	public void testMakeTimedModifier_1()
 		throws Exception {
-<span class="fc" id="L1112">		String id = &quot;&quot;;</span>
-<span class="fc" id="L1113">		Modifier template = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L1114">		template.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
-<span class="fc" id="L1115">		template.setValue(1.0f);</span>
-<span class="fc" id="L1116">		Turn start = new Turn(1);</span>
+<span class="nc" id="L1112">		String id = &quot;&quot;;</span>
+<span class="nc" id="L1113">		Modifier template = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L1114">		template.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
+<span class="nc" id="L1115">		template.setValue(1.0f);</span>
+<span class="nc" id="L1116">		Turn start = new Turn(1);</span>
 
-<span class="fc" id="L1118">		Modifier result = Modifier.makeTimedModifier(id, template, start);</span>
+<span class="nc" id="L1118">		Modifier result = Modifier.makeTimedModifier(id, template, start);</span>
 
 		// add additional test code here
-<span class="fc" id="L1121">		assertNotNull(result);</span>
-<span class="fc" id="L1122">		assertEquals(&quot;[Modifier  ADDITIVE 1.0 index=0]&quot;, result.toString());</span>
-<span class="fc" id="L1123">		assertEquals(1.0f, result.getValue(), 1.0f);</span>
-<span class="fc" id="L1124">		assertEquals(1.0f, result.getIncrement(), 1.0f);</span>
-<span class="fc" id="L1125">		assertEquals(&quot;modifier&quot;, result.getXMLTagName());</span>
-<span class="fc" id="L1126">		assertEquals(0, result.getModifierIndex());</span>
-<span class="fc" id="L1127">		assertEquals(true, result.hasIncrement());</span>
-<span class="fc" id="L1128">		assertEquals(null, result.getSource());</span>
-<span class="fc" id="L1129">		assertEquals(0, result.getDuration());</span>
-<span class="fc" id="L1130">		assertEquals(false, result.isTemporary());</span>
-<span class="fc" id="L1131">		assertEquals(true, result.isIndependent());</span>
-<span class="fc" id="L1132">		assertEquals(true, result.hasTimeLimit());</span>
-<span class="fc" id="L1133">		assertEquals(&quot;.name&quot;, result.getNameKey());</span>
-<span class="fc" id="L1134">		assertEquals(false, result.hasScope());</span>
-<span class="fc" id="L1135">		assertEquals(null, result.getSpecification());</span>
-<span class="fc" id="L1136">		assertEquals(&quot;&quot;, result.getSuffix());</span>
-<span class="fc" id="L1137">		assertEquals(&quot;&quot;, result.getId());</span>
-<span class="fc" id="L1138">		assertEquals(&quot;&lt;modifier id=\&quot;\&quot; firstTurn=\&quot;1\&quot; lastTurn=\&quot;0\&quot; value=\&quot;1.0\&quot; type=\&quot;additive\&quot; increment-type=\&quot;additive\&quot; increment=\&quot;1.0\&quot; index=\&quot;0\&quot;&gt;&lt;/modifier&gt;&quot;, result.serialize());</span>
-<span class="fc" id="L1139">		assertEquals(null, result.getGame());</span>
-<span class="fc" id="L1140">		assertEquals(-1, result.getIdNumber());</span>
-<span class="fc" id="L1141">		assertEquals(&quot;&quot;, result.getIdType());</span>
-<span class="fc" id="L1142">		assertEquals(null, result.getFeatureContainer());</span>
-<span class="fc" id="L1143">	}</span>
+<span class="nc" id="L1121">		assertNotNull(result);</span>
+<span class="nc" id="L1122">		assertEquals(&quot;[Modifier  ADDITIVE 1.0 index=0]&quot;, result.toString());</span>
+<span class="nc" id="L1123">		assertEquals(1.0f, result.getValue(), 1.0f);</span>
+<span class="nc" id="L1124">		assertEquals(1.0f, result.getIncrement(), 1.0f);</span>
+<span class="nc" id="L1125">		assertEquals(&quot;modifier&quot;, result.getXMLTagName());</span>
+<span class="nc" id="L1126">		assertEquals(0, result.getModifierIndex());</span>
+<span class="nc" id="L1127">		assertEquals(true, result.hasIncrement());</span>
+<span class="nc" id="L1128">		assertEquals(null, result.getSource());</span>
+<span class="nc" id="L1129">		assertEquals(0, result.getDuration());</span>
+<span class="nc" id="L1130">		assertEquals(false, result.isTemporary());</span>
+<span class="nc" id="L1131">		assertEquals(true, result.isIndependent());</span>
+<span class="nc" id="L1132">		assertEquals(true, result.hasTimeLimit());</span>
+<span class="nc" id="L1133">		assertEquals(&quot;.name&quot;, result.getNameKey());</span>
+<span class="nc" id="L1134">		assertEquals(false, result.hasScope());</span>
+<span class="nc" id="L1135">		assertEquals(null, result.getSpecification());</span>
+<span class="nc" id="L1136">		assertEquals(&quot;&quot;, result.getSuffix());</span>
+<span class="nc" id="L1137">		assertEquals(&quot;&quot;, result.getId());</span>
+<span class="nc" id="L1138">		assertEquals(&quot;&lt;modifier id=\&quot;\&quot; firstTurn=\&quot;1\&quot; lastTurn=\&quot;0\&quot; value=\&quot;1.0\&quot; type=\&quot;additive\&quot; increment-type=\&quot;additive\&quot; increment=\&quot;1.0\&quot; index=\&quot;0\&quot;&gt;&lt;/modifier&gt;&quot;, result.serialize());</span>
+<span class="nc" id="L1139">		assertEquals(null, result.getGame());</span>
+<span class="nc" id="L1140">		assertEquals(-1, result.getIdNumber());</span>
+<span class="nc" id="L1141">		assertEquals(&quot;&quot;, result.getIdType());</span>
+<span class="nc" id="L1142">		assertEquals(null, result.getFeatureContainer());</span>
+<span class="nc" id="L1143">	}</span>
 
 	/**
 	 * Run the Modifier makeTimedModifier(String,Modifier,Turn) method test.
@@ -1152,37 +1152,37 @@ import org.w3c.dom.Element;
 	@Test
 	public void testMakeTimedModifier_2()
 		throws Exception {
-<span class="fc" id="L1155">		String id = &quot;&quot;;</span>
-<span class="fc" id="L1156">		Modifier template = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L1157">		template.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
-<span class="fc" id="L1158">		Turn start = new Turn(1);</span>
+<span class="nc" id="L1155">		String id = &quot;&quot;;</span>
+<span class="nc" id="L1156">		Modifier template = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L1157">		template.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
+<span class="nc" id="L1158">		Turn start = new Turn(1);</span>
 
-<span class="fc" id="L1160">		Modifier result = Modifier.makeTimedModifier(id, template, start);</span>
+<span class="nc" id="L1160">		Modifier result = Modifier.makeTimedModifier(id, template, start);</span>
 
 		// add additional test code here
-<span class="fc" id="L1163">		assertNotNull(result);</span>
-<span class="fc" id="L1164">		assertEquals(&quot;[Modifier  ADDITIVE 1.0 index=0]&quot;, result.toString());</span>
-<span class="fc" id="L1165">		assertEquals(1.0f, result.getValue(), 1.0f);</span>
-<span class="fc" id="L1166">		assertEquals(1.0f, result.getIncrement(), 1.0f);</span>
-<span class="fc" id="L1167">		assertEquals(&quot;modifier&quot;, result.getXMLTagName());</span>
-<span class="fc" id="L1168">		assertEquals(0, result.getModifierIndex());</span>
-<span class="fc" id="L1169">		assertEquals(true, result.hasIncrement());</span>
-<span class="fc" id="L1170">		assertEquals(null, result.getSource());</span>
-<span class="fc" id="L1171">		assertEquals(0, result.getDuration());</span>
-<span class="fc" id="L1172">		assertEquals(false, result.isTemporary());</span>
-<span class="fc" id="L1173">		assertEquals(true, result.isIndependent());</span>
-<span class="fc" id="L1174">		assertEquals(true, result.hasTimeLimit());</span>
-<span class="fc" id="L1175">		assertEquals(&quot;.name&quot;, result.getNameKey());</span>
-<span class="fc" id="L1176">		assertEquals(false, result.hasScope());</span>
-<span class="fc" id="L1177">		assertEquals(null, result.getSpecification());</span>
-<span class="fc" id="L1178">		assertEquals(&quot;&quot;, result.getSuffix());</span>
-<span class="fc" id="L1179">		assertEquals(&quot;&quot;, result.getId());</span>
-<span class="fc" id="L1180">		assertEquals(&quot;&lt;modifier id=\&quot;\&quot; firstTurn=\&quot;1\&quot; lastTurn=\&quot;0\&quot; value=\&quot;1.0\&quot; type=\&quot;additive\&quot; increment-type=\&quot;additive\&quot; increment=\&quot;1.0\&quot; index=\&quot;0\&quot;&gt;&lt;/modifier&gt;&quot;, result.serialize());</span>
-<span class="fc" id="L1181">		assertEquals(null, result.getGame());</span>
-<span class="fc" id="L1182">		assertEquals(-1, result.getIdNumber());</span>
-<span class="fc" id="L1183">		assertEquals(&quot;&quot;, result.getIdType());</span>
-<span class="fc" id="L1184">		assertEquals(null, result.getFeatureContainer());</span>
-<span class="fc" id="L1185">	}</span>
+<span class="nc" id="L1163">		assertNotNull(result);</span>
+<span class="nc" id="L1164">		assertEquals(&quot;[Modifier  ADDITIVE 1.0 index=0]&quot;, result.toString());</span>
+<span class="nc" id="L1165">		assertEquals(1.0f, result.getValue(), 1.0f);</span>
+<span class="nc" id="L1166">		assertEquals(1.0f, result.getIncrement(), 1.0f);</span>
+<span class="nc" id="L1167">		assertEquals(&quot;modifier&quot;, result.getXMLTagName());</span>
+<span class="nc" id="L1168">		assertEquals(0, result.getModifierIndex());</span>
+<span class="nc" id="L1169">		assertEquals(true, result.hasIncrement());</span>
+<span class="nc" id="L1170">		assertEquals(null, result.getSource());</span>
+<span class="nc" id="L1171">		assertEquals(0, result.getDuration());</span>
+<span class="nc" id="L1172">		assertEquals(false, result.isTemporary());</span>
+<span class="nc" id="L1173">		assertEquals(true, result.isIndependent());</span>
+<span class="nc" id="L1174">		assertEquals(true, result.hasTimeLimit());</span>
+<span class="nc" id="L1175">		assertEquals(&quot;.name&quot;, result.getNameKey());</span>
+<span class="nc" id="L1176">		assertEquals(false, result.hasScope());</span>
+<span class="nc" id="L1177">		assertEquals(null, result.getSpecification());</span>
+<span class="nc" id="L1178">		assertEquals(&quot;&quot;, result.getSuffix());</span>
+<span class="nc" id="L1179">		assertEquals(&quot;&quot;, result.getId());</span>
+<span class="nc" id="L1180">		assertEquals(&quot;&lt;modifier id=\&quot;\&quot; firstTurn=\&quot;1\&quot; lastTurn=\&quot;0\&quot; value=\&quot;1.0\&quot; type=\&quot;additive\&quot; increment-type=\&quot;additive\&quot; increment=\&quot;1.0\&quot; index=\&quot;0\&quot;&gt;&lt;/modifier&gt;&quot;, result.serialize());</span>
+<span class="nc" id="L1181">		assertEquals(null, result.getGame());</span>
+<span class="nc" id="L1182">		assertEquals(-1, result.getIdNumber());</span>
+<span class="nc" id="L1183">		assertEquals(&quot;&quot;, result.getIdType());</span>
+<span class="nc" id="L1184">		assertEquals(null, result.getFeatureContainer());</span>
+<span class="nc" id="L1185">	}</span>
 
 	/**
 	 * Run the void readAttributes(FreeColXMLReader) method test.
@@ -1194,11 +1194,11 @@ import org.w3c.dom.Element;
 	@Test
 	public void testReadAttributes_1()
 		throws Exception {
-<span class="fc" id="L1197">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L1198">		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
-<span class="fc" id="L1199">		fixture.setValue(1.0f);</span>
-<span class="fc" id="L1200">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L1201">		fixture.setModifierIndex(1);</span>
+<span class="nc" id="L1197">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L1198">		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
+<span class="nc" id="L1199">		fixture.setValue(1.0f);</span>
+<span class="nc" id="L1200">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L1201">		fixture.setModifierIndex(1);</span>
 <span class="nc" id="L1202">		FreeColXMLReader xr = new FreeColXMLReader(new BufferedInputStream(new PipedInputStream()));</span>
 
 <span class="nc" id="L1204">		fixture.readAttributes(xr);</span>
@@ -1219,11 +1219,11 @@ import org.w3c.dom.Element;
 	@Test
 	public void testReadAttributes_2()
 		throws Exception {
-<span class="fc" id="L1222">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L1223">		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
-<span class="fc" id="L1224">		fixture.setValue(1.0f);</span>
-<span class="fc" id="L1225">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L1226">		fixture.setModifierIndex(1);</span>
+<span class="nc" id="L1222">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L1223">		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
+<span class="nc" id="L1224">		fixture.setValue(1.0f);</span>
+<span class="nc" id="L1225">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L1226">		fixture.setModifierIndex(1);</span>
 <span class="nc" id="L1227">		FreeColXMLReader xr = new FreeColXMLReader(new BufferedInputStream(new PipedInputStream()));</span>
 
 <span class="nc" id="L1229">		fixture.readAttributes(xr);</span>
@@ -1244,11 +1244,11 @@ import org.w3c.dom.Element;
 	@Test
 	public void testReadAttributes_3()
 		throws Exception {
-<span class="fc" id="L1247">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L1248">		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
-<span class="fc" id="L1249">		fixture.setValue(1.0f);</span>
-<span class="fc" id="L1250">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L1251">		fixture.setModifierIndex(1);</span>
+<span class="nc" id="L1247">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L1248">		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
+<span class="nc" id="L1249">		fixture.setValue(1.0f);</span>
+<span class="nc" id="L1250">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L1251">		fixture.setModifierIndex(1);</span>
 <span class="nc" id="L1252">		FreeColXMLReader xr = new FreeColXMLReader(new BufferedInputStream(new PipedInputStream()));</span>
 
 <span class="nc" id="L1254">		fixture.readAttributes(xr);</span>
@@ -1269,11 +1269,11 @@ import org.w3c.dom.Element;
 	@Test
 	public void testReadAttributes_4()
 		throws Exception {
-<span class="fc" id="L1272">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L1273">		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
-<span class="fc" id="L1274">		fixture.setValue(1.0f);</span>
-<span class="fc" id="L1275">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L1276">		fixture.setModifierIndex(1);</span>
+<span class="nc" id="L1272">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L1273">		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
+<span class="nc" id="L1274">		fixture.setValue(1.0f);</span>
+<span class="nc" id="L1275">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L1276">		fixture.setModifierIndex(1);</span>
 <span class="nc" id="L1277">		FreeColXMLReader xr = new FreeColXMLReader(new BufferedInputStream(new PipedInputStream()));</span>
 
 <span class="nc" id="L1279">		fixture.readAttributes(xr);</span>
@@ -1294,17 +1294,17 @@ import org.w3c.dom.Element;
 	@Test
 	public void testRequireNegatedPersonScope_1()
 		throws Exception {
-<span class="fc" id="L1297">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L1298">		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
-<span class="fc" id="L1299">		fixture.setValue(1.0f);</span>
-<span class="fc" id="L1300">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L1301">		fixture.setModifierIndex(1);</span>
+<span class="nc" id="L1297">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L1298">		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
+<span class="nc" id="L1299">		fixture.setValue(1.0f);</span>
+<span class="nc" id="L1300">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L1301">		fixture.setModifierIndex(1);</span>
 
-<span class="fc" id="L1303">		boolean result = fixture.requireNegatedPersonScope();</span>
+<span class="nc" id="L1303">		boolean result = fixture.requireNegatedPersonScope();</span>
 
 		// add additional test code here
-<span class="fc" id="L1306">		assertEquals(true, result);</span>
-<span class="fc" id="L1307">	}</span>
+<span class="nc" id="L1306">		assertEquals(true, result);</span>
+<span class="nc" id="L1307">	}</span>
 
 	/**
 	 * Run the boolean requireNegatedPersonScope() method test.
@@ -1316,17 +1316,17 @@ import org.w3c.dom.Element;
 	@Test
 	public void testRequireNegatedPersonScope_2()
 		throws Exception {
-<span class="fc" id="L1319">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L1320">		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
-<span class="fc" id="L1321">		fixture.setValue(1.0f);</span>
-<span class="fc" id="L1322">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L1323">		fixture.setModifierIndex(1);</span>
+<span class="nc" id="L1319">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L1320">		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
+<span class="nc" id="L1321">		fixture.setValue(1.0f);</span>
+<span class="nc" id="L1322">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L1323">		fixture.setModifierIndex(1);</span>
 
-<span class="fc" id="L1325">		boolean result = fixture.requireNegatedPersonScope();</span>
+<span class="nc" id="L1325">		boolean result = fixture.requireNegatedPersonScope();</span>
 
 		// add additional test code here
-<span class="fc" id="L1328">		assertEquals(true, result);</span>
-<span class="fc" id="L1329">	}</span>
+<span class="nc" id="L1328">		assertEquals(true, result);</span>
+<span class="nc" id="L1329">	}</span>
 
 	/**
 	 * Run the void setIncrement(float) method test.
@@ -1338,17 +1338,17 @@ import org.w3c.dom.Element;
 	@Test
 	public void testSetIncrement_1()
 		throws Exception {
-<span class="fc" id="L1341">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L1342">		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
-<span class="fc" id="L1343">		fixture.setValue(1.0f);</span>
-<span class="fc" id="L1344">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L1345">		fixture.setModifierIndex(1);</span>
-<span class="fc" id="L1346">		float increment = 1.0f;</span>
+<span class="nc" id="L1341">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L1342">		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
+<span class="nc" id="L1343">		fixture.setValue(1.0f);</span>
+<span class="nc" id="L1344">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L1345">		fixture.setModifierIndex(1);</span>
+<span class="nc" id="L1346">		float increment = 1.0f;</span>
 
-<span class="fc" id="L1348">		fixture.setIncrement(increment);</span>
+<span class="nc" id="L1348">		fixture.setIncrement(increment);</span>
 
 		// add additional test code here
-<span class="fc" id="L1351">	}</span>
+<span class="nc" id="L1351">	}</span>
 
 	/**
 	 * Run the void setIncrement(ModifierType,float,Turn,Turn) method test.
@@ -1360,20 +1360,20 @@ import org.w3c.dom.Element;
 	@Test
 	public void testSetIncrement_2()
 		throws Exception {
-<span class="fc" id="L1363">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L1364">		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
-<span class="fc" id="L1365">		fixture.setValue(1.0f);</span>
-<span class="fc" id="L1366">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L1367">		fixture.setModifierIndex(1);</span>
-<span class="fc" id="L1368">		Modifier.ModifierType incrementType = Modifier.ModifierType.ADDITIVE;</span>
-<span class="fc" id="L1369">		float increment = 1.0f;</span>
-<span class="fc" id="L1370">		Turn firstTurn = new Turn(1);</span>
-<span class="fc" id="L1371">		Turn lastTurn = new Turn(1);</span>
+<span class="nc" id="L1363">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L1364">		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
+<span class="nc" id="L1365">		fixture.setValue(1.0f);</span>
+<span class="nc" id="L1366">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L1367">		fixture.setModifierIndex(1);</span>
+<span class="nc" id="L1368">		Modifier.ModifierType incrementType = Modifier.ModifierType.ADDITIVE;</span>
+<span class="nc" id="L1369">		float increment = 1.0f;</span>
+<span class="nc" id="L1370">		Turn firstTurn = new Turn(1);</span>
+<span class="nc" id="L1371">		Turn lastTurn = new Turn(1);</span>
 
-<span class="fc" id="L1373">		fixture.setIncrement(incrementType, increment, firstTurn, lastTurn);</span>
+<span class="nc" id="L1373">		fixture.setIncrement(incrementType, increment, firstTurn, lastTurn);</span>
 
 		// add additional test code here
-<span class="fc" id="L1376">	}</span>
+<span class="nc" id="L1376">	}</span>
 
 	/**
 	 * Run the void setIncrement(ModifierType,float,Turn,Turn) method test.
@@ -1385,15 +1385,15 @@ import org.w3c.dom.Element;
 	@Test(expected = java.lang.IllegalArgumentException.class)
 	public void testSetIncrement_3()
 		throws Exception {
-<span class="fc" id="L1388">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L1389">		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
-<span class="fc" id="L1390">		fixture.setValue(1.0f);</span>
-<span class="fc" id="L1391">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L1392">		fixture.setModifierIndex(1);</span>
-<span class="fc" id="L1393">		Modifier.ModifierType incrementType = Modifier.ModifierType.ADDITIVE;</span>
-<span class="fc" id="L1394">		float increment = 1.0f;</span>
-<span class="fc" id="L1395">		Turn firstTurn = null;</span>
-<span class="fc" id="L1396">		Turn lastTurn = new Turn(1);</span>
+<span class="nc" id="L1388">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L1389">		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
+<span class="nc" id="L1390">		fixture.setValue(1.0f);</span>
+<span class="nc" id="L1391">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L1392">		fixture.setModifierIndex(1);</span>
+<span class="nc" id="L1393">		Modifier.ModifierType incrementType = Modifier.ModifierType.ADDITIVE;</span>
+<span class="nc" id="L1394">		float increment = 1.0f;</span>
+<span class="nc" id="L1395">		Turn firstTurn = null;</span>
+<span class="nc" id="L1396">		Turn lastTurn = new Turn(1);</span>
 
 <span class="nc" id="L1398">		fixture.setIncrement(incrementType, increment, firstTurn, lastTurn);</span>
 
@@ -1410,17 +1410,17 @@ import org.w3c.dom.Element;
 	@Test
 	public void testSetIncrementType_1()
 		throws Exception {
-<span class="fc" id="L1413">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L1414">		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
-<span class="fc" id="L1415">		fixture.setValue(1.0f);</span>
-<span class="fc" id="L1416">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L1417">		fixture.setModifierIndex(1);</span>
-<span class="fc" id="L1418">		Modifier.ModifierType incrementType = Modifier.ModifierType.ADDITIVE;</span>
+<span class="nc" id="L1413">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L1414">		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
+<span class="nc" id="L1415">		fixture.setValue(1.0f);</span>
+<span class="nc" id="L1416">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L1417">		fixture.setModifierIndex(1);</span>
+<span class="nc" id="L1418">		Modifier.ModifierType incrementType = Modifier.ModifierType.ADDITIVE;</span>
 
-<span class="fc" id="L1420">		fixture.setIncrementType(incrementType);</span>
+<span class="nc" id="L1420">		fixture.setIncrementType(incrementType);</span>
 
 		// add additional test code here
-<span class="fc" id="L1423">	}</span>
+<span class="nc" id="L1423">	}</span>
 
 	/**
 	 * Run the void setModifierIndex(int) method test.
@@ -1432,17 +1432,17 @@ import org.w3c.dom.Element;
 	@Test
 	public void testSetModifierIndex_1()
 		throws Exception {
-<span class="fc" id="L1435">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L1436">		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
-<span class="fc" id="L1437">		fixture.setValue(1.0f);</span>
-<span class="fc" id="L1438">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L1439">		fixture.setModifierIndex(1);</span>
-<span class="fc" id="L1440">		int modifierIndex = 1;</span>
+<span class="nc" id="L1435">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L1436">		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
+<span class="nc" id="L1437">		fixture.setValue(1.0f);</span>
+<span class="nc" id="L1438">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L1439">		fixture.setModifierIndex(1);</span>
+<span class="nc" id="L1440">		int modifierIndex = 1;</span>
 
-<span class="fc" id="L1442">		fixture.setModifierIndex(modifierIndex);</span>
+<span class="nc" id="L1442">		fixture.setModifierIndex(modifierIndex);</span>
 
 		// add additional test code here
-<span class="fc" id="L1445">	}</span>
+<span class="nc" id="L1445">	}</span>
 
 	/**
 	 * Run the void setType(ModifierType) method test.
@@ -1454,17 +1454,17 @@ import org.w3c.dom.Element;
 	@Test
 	public void testSetType_1()
 		throws Exception {
-<span class="fc" id="L1457">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L1458">		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
-<span class="fc" id="L1459">		fixture.setValue(1.0f);</span>
-<span class="fc" id="L1460">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L1461">		fixture.setModifierIndex(1);</span>
-<span class="fc" id="L1462">		Modifier.ModifierType modifierType = Modifier.ModifierType.ADDITIVE;</span>
+<span class="nc" id="L1457">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L1458">		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
+<span class="nc" id="L1459">		fixture.setValue(1.0f);</span>
+<span class="nc" id="L1460">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L1461">		fixture.setModifierIndex(1);</span>
+<span class="nc" id="L1462">		Modifier.ModifierType modifierType = Modifier.ModifierType.ADDITIVE;</span>
 
-<span class="fc" id="L1464">		fixture.setType(modifierType);</span>
+<span class="nc" id="L1464">		fixture.setType(modifierType);</span>
 
 		// add additional test code here
-<span class="fc" id="L1467">	}</span>
+<span class="nc" id="L1467">	}</span>
 
 	/**
 	 * Run the void setValue(float) method test.
@@ -1476,17 +1476,17 @@ import org.w3c.dom.Element;
 	@Test
 	public void testSetValue_1()
 		throws Exception {
-<span class="fc" id="L1479">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L1480">		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
-<span class="fc" id="L1481">		fixture.setValue(1.0f);</span>
-<span class="fc" id="L1482">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L1483">		fixture.setModifierIndex(1);</span>
-<span class="fc" id="L1484">		float value = 1.0f;</span>
+<span class="nc" id="L1479">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L1480">		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
+<span class="nc" id="L1481">		fixture.setValue(1.0f);</span>
+<span class="nc" id="L1482">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L1483">		fixture.setModifierIndex(1);</span>
+<span class="nc" id="L1484">		float value = 1.0f;</span>
 
-<span class="fc" id="L1486">		fixture.setValue(value);</span>
+<span class="nc" id="L1486">		fixture.setValue(value);</span>
 
 		// add additional test code here
-<span class="fc" id="L1489">	}</span>
+<span class="nc" id="L1489">	}</span>
 
 	/**
 	 * Run the String toString() method test.
@@ -1498,17 +1498,17 @@ import org.w3c.dom.Element;
 	@Test
 	public void testToString_1()
 		throws Exception {
-<span class="fc" id="L1501">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L1502">		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
-<span class="fc" id="L1503">		fixture.setValue(1.0f);</span>
-<span class="fc" id="L1504">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L1505">		fixture.setModifierIndex(1);</span>
+<span class="nc" id="L1501">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L1502">		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
+<span class="nc" id="L1503">		fixture.setValue(1.0f);</span>
+<span class="nc" id="L1504">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L1505">		fixture.setModifierIndex(1);</span>
 
-<span class="fc" id="L1507">		String result = fixture.toString();</span>
+<span class="nc" id="L1507">		String result = fixture.toString();</span>
 
 		// add additional test code here
-<span class="fc" id="L1510">		assertEquals(&quot;[Modifier  ADDITIVE 1.0 index=1]&quot;, result);</span>
-<span class="fc" id="L1511">	}</span>
+<span class="nc" id="L1510">		assertEquals(&quot;[Modifier  ADDITIVE 1.0 index=1]&quot;, result);</span>
+<span class="nc" id="L1511">	}</span>
 
 	/**
 	 * Run the String toString() method test.
@@ -1520,17 +1520,17 @@ import org.w3c.dom.Element;
 	@Test
 	public void testToString_2()
 		throws Exception {
-<span class="fc" id="L1523">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L1524">		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
-<span class="fc" id="L1525">		fixture.setValue(1.0f);</span>
-<span class="fc" id="L1526">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L1527">		fixture.setModifierIndex(1);</span>
+<span class="nc" id="L1523">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L1524">		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
+<span class="nc" id="L1525">		fixture.setValue(1.0f);</span>
+<span class="nc" id="L1526">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L1527">		fixture.setModifierIndex(1);</span>
 
-<span class="fc" id="L1529">		String result = fixture.toString();</span>
+<span class="nc" id="L1529">		String result = fixture.toString();</span>
 
 		// add additional test code here
-<span class="fc" id="L1532">		assertEquals(&quot;[Modifier  ADDITIVE 1.0 index=1]&quot;, result);</span>
-<span class="fc" id="L1533">	}</span>
+<span class="nc" id="L1532">		assertEquals(&quot;[Modifier  ADDITIVE 1.0 index=1]&quot;, result);</span>
+<span class="nc" id="L1533">	}</span>
 
 	/**
 	 * Run the String toString() method test.
@@ -1542,17 +1542,17 @@ import org.w3c.dom.Element;
 	@Test
 	public void testToString_3()
 		throws Exception {
-<span class="fc" id="L1545">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L1546">		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
-<span class="fc" id="L1547">		fixture.setValue(1.0f);</span>
-<span class="fc" id="L1548">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L1549">		fixture.setModifierIndex(-1);</span>
+<span class="nc" id="L1545">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L1546">		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
+<span class="nc" id="L1547">		fixture.setValue(1.0f);</span>
+<span class="nc" id="L1548">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L1549">		fixture.setModifierIndex(-1);</span>
 
-<span class="fc" id="L1551">		String result = fixture.toString();</span>
+<span class="nc" id="L1551">		String result = fixture.toString();</span>
 
 		// add additional test code here
-<span class="fc" id="L1554">		assertEquals(&quot;[Modifier  ADDITIVE 1.0]&quot;, result);</span>
-<span class="fc" id="L1555">	}</span>
+<span class="nc" id="L1554">		assertEquals(&quot;[Modifier  ADDITIVE 1.0]&quot;, result);</span>
+<span class="nc" id="L1555">	}</span>
 
 	/**
 	 * Run the void writeAttributes(FreeColXMLWriter) method test.
@@ -1564,12 +1564,12 @@ import org.w3c.dom.Element;
 	@Test(expected = javax.xml.stream.XMLStreamException.class)
 	public void testWriteAttributes_1()
 		throws Exception {
-<span class="fc" id="L1567">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L1568">		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
-<span class="fc" id="L1569">		fixture.setValue(1.0f);</span>
-<span class="fc" id="L1570">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L1571">		fixture.setModifierIndex(1);</span>
-<span class="fc" id="L1572">		FreeColXMLWriter xw = new FreeColXMLWriter(new CharArrayWriter(), net.sf.freecol.common.io.FreeColXMLWriter.WriteScope.CLIENT);</span>
+<span class="nc" id="L1567">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L1568">		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
+<span class="nc" id="L1569">		fixture.setValue(1.0f);</span>
+<span class="nc" id="L1570">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L1571">		fixture.setModifierIndex(1);</span>
+<span class="nc" id="L1572">		FreeColXMLWriter xw = new FreeColXMLWriter(new CharArrayWriter(), net.sf.freecol.common.io.FreeColXMLWriter.WriteScope.CLIENT);</span>
 
 <span class="nc" id="L1574">		fixture.writeAttributes(xw);</span>
 
@@ -1586,12 +1586,12 @@ import org.w3c.dom.Element;
 	@Test(expected = javax.xml.stream.XMLStreamException.class)
 	public void testWriteAttributes_2()
 		throws Exception {
-<span class="fc" id="L1589">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L1590">		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
-<span class="fc" id="L1591">		fixture.setValue(1.0f);</span>
-<span class="fc" id="L1592">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L1593">		fixture.setModifierIndex(1);</span>
-<span class="fc" id="L1594">		FreeColXMLWriter xw = new FreeColXMLWriter(new CharArrayWriter(), net.sf.freecol.common.io.FreeColXMLWriter.WriteScope.CLIENT);</span>
+<span class="nc" id="L1589">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L1590">		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
+<span class="nc" id="L1591">		fixture.setValue(1.0f);</span>
+<span class="nc" id="L1592">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L1593">		fixture.setModifierIndex(1);</span>
+<span class="nc" id="L1594">		FreeColXMLWriter xw = new FreeColXMLWriter(new CharArrayWriter(), net.sf.freecol.common.io.FreeColXMLWriter.WriteScope.CLIENT);</span>
 
 <span class="nc" id="L1596">		fixture.writeAttributes(xw);</span>
 
@@ -1608,12 +1608,12 @@ import org.w3c.dom.Element;
 	@Test(expected = javax.xml.stream.XMLStreamException.class)
 	public void testWriteAttributes_3()
 		throws Exception {
-<span class="fc" id="L1611">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L1612">		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
-<span class="fc" id="L1613">		fixture.setValue(1.0f);</span>
-<span class="fc" id="L1614">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L1615">		fixture.setModifierIndex(1);</span>
-<span class="fc" id="L1616">		FreeColXMLWriter xw = new FreeColXMLWriter(new CharArrayWriter(), net.sf.freecol.common.io.FreeColXMLWriter.WriteScope.CLIENT);</span>
+<span class="nc" id="L1611">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L1612">		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
+<span class="nc" id="L1613">		fixture.setValue(1.0f);</span>
+<span class="nc" id="L1614">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L1615">		fixture.setModifierIndex(1);</span>
+<span class="nc" id="L1616">		FreeColXMLWriter xw = new FreeColXMLWriter(new CharArrayWriter(), net.sf.freecol.common.io.FreeColXMLWriter.WriteScope.CLIENT);</span>
 
 <span class="nc" id="L1618">		fixture.writeAttributes(xw);</span>
 
@@ -1630,12 +1630,12 @@ import org.w3c.dom.Element;
 	@Test(expected = javax.xml.stream.XMLStreamException.class)
 	public void testWriteAttributes_4()
 		throws Exception {
-<span class="fc" id="L1633">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L1634">		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
-<span class="fc" id="L1635">		fixture.setValue(1.0f);</span>
-<span class="fc" id="L1636">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L1637">		fixture.setModifierIndex(1);</span>
-<span class="fc" id="L1638">		FreeColXMLWriter xw = new FreeColXMLWriter(new CharArrayWriter(), net.sf.freecol.common.io.FreeColXMLWriter.WriteScope.CLIENT);</span>
+<span class="nc" id="L1633">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L1634">		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
+<span class="nc" id="L1635">		fixture.setValue(1.0f);</span>
+<span class="nc" id="L1636">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L1637">		fixture.setModifierIndex(1);</span>
+<span class="nc" id="L1638">		FreeColXMLWriter xw = new FreeColXMLWriter(new CharArrayWriter(), net.sf.freecol.common.io.FreeColXMLWriter.WriteScope.CLIENT);</span>
 
 <span class="nc" id="L1640">		fixture.writeAttributes(xw);</span>
 
@@ -1652,12 +1652,12 @@ import org.w3c.dom.Element;
 	@Test(expected = javax.xml.stream.XMLStreamException.class)
 	public void testWriteAttributes_5()
 		throws Exception {
-<span class="fc" id="L1655">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L1656">		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
-<span class="fc" id="L1657">		fixture.setValue(1.0f);</span>
-<span class="fc" id="L1658">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L1659">		fixture.setModifierIndex(1);</span>
-<span class="fc" id="L1660">		FreeColXMLWriter xw = new FreeColXMLWriter(new CharArrayWriter(), net.sf.freecol.common.io.FreeColXMLWriter.WriteScope.CLIENT);</span>
+<span class="nc" id="L1655">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L1656">		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
+<span class="nc" id="L1657">		fixture.setValue(1.0f);</span>
+<span class="nc" id="L1658">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L1659">		fixture.setModifierIndex(1);</span>
+<span class="nc" id="L1660">		FreeColXMLWriter xw = new FreeColXMLWriter(new CharArrayWriter(), net.sf.freecol.common.io.FreeColXMLWriter.WriteScope.CLIENT);</span>
 
 <span class="nc" id="L1662">		fixture.writeAttributes(xw);</span>
 
@@ -1674,12 +1674,12 @@ import org.w3c.dom.Element;
 	@Test(expected = javax.xml.stream.XMLStreamException.class)
 	public void testWriteAttributes_6()
 		throws Exception {
-<span class="fc" id="L1677">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L1678">		fixture.setIncrement((Modifier.ModifierType) null, 1.0f, new Turn(1), new Turn(1));</span>
-<span class="fc" id="L1679">		fixture.setValue(1.0f);</span>
-<span class="fc" id="L1680">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L1681">		fixture.setModifierIndex(1);</span>
-<span class="fc" id="L1682">		FreeColXMLWriter xw = new FreeColXMLWriter(new CharArrayWriter(), net.sf.freecol.common.io.FreeColXMLWriter.WriteScope.CLIENT);</span>
+<span class="nc" id="L1677">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L1678">		fixture.setIncrement((Modifier.ModifierType) null, 1.0f, new Turn(1), new Turn(1));</span>
+<span class="nc" id="L1679">		fixture.setValue(1.0f);</span>
+<span class="nc" id="L1680">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L1681">		fixture.setModifierIndex(1);</span>
+<span class="nc" id="L1682">		FreeColXMLWriter xw = new FreeColXMLWriter(new CharArrayWriter(), net.sf.freecol.common.io.FreeColXMLWriter.WriteScope.CLIENT);</span>
 
 <span class="nc" id="L1684">		fixture.writeAttributes(xw);</span>
 
@@ -1696,12 +1696,12 @@ import org.w3c.dom.Element;
 	@Test(expected = javax.xml.stream.XMLStreamException.class)
 	public void testWriteAttributes_7()
 		throws Exception {
-<span class="fc" id="L1699">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L1700">		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
-<span class="fc" id="L1701">		fixture.setValue(1.0f);</span>
-<span class="fc" id="L1702">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L1703">		fixture.setModifierIndex(1);</span>
-<span class="fc" id="L1704">		FreeColXMLWriter xw = new FreeColXMLWriter(new CharArrayWriter(), net.sf.freecol.common.io.FreeColXMLWriter.WriteScope.CLIENT);</span>
+<span class="nc" id="L1699">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L1700">		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
+<span class="nc" id="L1701">		fixture.setValue(1.0f);</span>
+<span class="nc" id="L1702">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L1703">		fixture.setModifierIndex(1);</span>
+<span class="nc" id="L1704">		FreeColXMLWriter xw = new FreeColXMLWriter(new CharArrayWriter(), net.sf.freecol.common.io.FreeColXMLWriter.WriteScope.CLIENT);</span>
 
 <span class="nc" id="L1706">		fixture.writeAttributes(xw);</span>
 
@@ -1718,12 +1718,12 @@ import org.w3c.dom.Element;
 	@Test(expected = javax.xml.stream.XMLStreamException.class)
 	public void testWriteAttributes_8()
 		throws Exception {
-<span class="fc" id="L1721">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L1722">		fixture.setIncrement((Modifier.ModifierType) null, 1.0f, new Turn(1), new Turn(1));</span>
-<span class="fc" id="L1723">		fixture.setValue(1.0f);</span>
-<span class="fc" id="L1724">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L1725">		fixture.setModifierIndex(1);</span>
-<span class="fc" id="L1726">		FreeColXMLWriter xw = new FreeColXMLWriter(new CharArrayWriter(), net.sf.freecol.common.io.FreeColXMLWriter.WriteScope.CLIENT);</span>
+<span class="nc" id="L1721">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L1722">		fixture.setIncrement((Modifier.ModifierType) null, 1.0f, new Turn(1), new Turn(1));</span>
+<span class="nc" id="L1723">		fixture.setValue(1.0f);</span>
+<span class="nc" id="L1724">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L1725">		fixture.setModifierIndex(1);</span>
+<span class="nc" id="L1726">		FreeColXMLWriter xw = new FreeColXMLWriter(new CharArrayWriter(), net.sf.freecol.common.io.FreeColXMLWriter.WriteScope.CLIENT);</span>
 
 <span class="nc" id="L1728">		fixture.writeAttributes(xw);</span>
 
@@ -1740,12 +1740,12 @@ import org.w3c.dom.Element;
 	@Test(expected = javax.xml.stream.XMLStreamException.class)
 	public void testWriteAttributes_9()
 		throws Exception {
-<span class="fc" id="L1743">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L1744">		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
-<span class="fc" id="L1745">		fixture.setValue(1.0f);</span>
-<span class="fc" id="L1746">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L1747">		fixture.setModifierIndex(-1);</span>
-<span class="fc" id="L1748">		FreeColXMLWriter xw = new FreeColXMLWriter(new CharArrayWriter(), net.sf.freecol.common.io.FreeColXMLWriter.WriteScope.CLIENT);</span>
+<span class="nc" id="L1743">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L1744">		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));</span>
+<span class="nc" id="L1745">		fixture.setValue(1.0f);</span>
+<span class="nc" id="L1746">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L1747">		fixture.setModifierIndex(-1);</span>
+<span class="nc" id="L1748">		FreeColXMLWriter xw = new FreeColXMLWriter(new CharArrayWriter(), net.sf.freecol.common.io.FreeColXMLWriter.WriteScope.CLIENT);</span>
 
 <span class="nc" id="L1750">		fixture.writeAttributes(xw);</span>
 
@@ -1762,12 +1762,12 @@ import org.w3c.dom.Element;
 	@Test(expected = javax.xml.stream.XMLStreamException.class)
 	public void testWriteAttributes_10()
 		throws Exception {
-<span class="fc" id="L1765">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L1766">		fixture.setIncrement((Modifier.ModifierType) null, 1.0f, new Turn(1), new Turn(1));</span>
-<span class="fc" id="L1767">		fixture.setValue(1.0f);</span>
-<span class="fc" id="L1768">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
-<span class="fc" id="L1769">		fixture.setModifierIndex(-1);</span>
-<span class="fc" id="L1770">		FreeColXMLWriter xw = new FreeColXMLWriter(new CharArrayWriter(), net.sf.freecol.common.io.FreeColXMLWriter.WriteScope.CLIENT);</span>
+<span class="nc" id="L1765">		Modifier fixture = new Modifier(&quot;&quot;, 1.0f, Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L1766">		fixture.setIncrement((Modifier.ModifierType) null, 1.0f, new Turn(1), new Turn(1));</span>
+<span class="nc" id="L1767">		fixture.setValue(1.0f);</span>
+<span class="nc" id="L1768">		fixture.setType(Modifier.ModifierType.ADDITIVE);</span>
+<span class="nc" id="L1769">		fixture.setModifierIndex(-1);</span>
+<span class="nc" id="L1770">		FreeColXMLWriter xw = new FreeColXMLWriter(new CharArrayWriter(), net.sf.freecol.common.io.FreeColXMLWriter.WriteScope.CLIENT);</span>
 
 <span class="nc" id="L1772">		fixture.writeAttributes(xw);</span>
 
@@ -1786,7 +1786,7 @@ import org.w3c.dom.Element;
 	public void setUp()
 		throws Exception {
 		// add additional set up code here
-<span class="fc" id="L1789">	}</span>
+<span class="nc" id="L1789">	}</span>
 
 	/**
 	 * Perform post-test clean-up.
@@ -1800,7 +1800,7 @@ import org.w3c.dom.Element;
 	public void tearDown()
 		throws Exception {
 		// Add additional tear down code here
-<span class="fc" id="L1803">	}</span>
+<span class="nc" id="L1803">	}</span>
 
 	/**
 	 * Launch the test.
@@ -1813,4 +1813,4 @@ import org.w3c.dom.Element;
 <span class="nc" id="L1813">		new org.junit.runner.JUnitCore().run(ModifierTest.class);</span>
 <span class="nc" id="L1814">	}</span>
 }
-</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span>ModifierTest (May 13, 2016 7:43:28 PM)</div></body></html>
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span>AbstractGoodsTest (May 14, 2016 4:05:35 PM)</div></body></html>
