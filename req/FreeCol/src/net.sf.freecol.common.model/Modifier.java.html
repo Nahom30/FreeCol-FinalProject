@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../.resources/report.gif" type="image/gif"/><title>Modifier.java</title><link rel="stylesheet" href="../../../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../.sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">ModifierTest (May 13, 2016 7:43:28 PM)</a> &gt; <a href="../../index.html" class="el_group">FreeCol</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">net.sf.freecol.common.model</a> &gt; <span class="el_source">Modifier.java</span></div><h1>Modifier.java</h1><pre class="source lang-java linenums"><span class="pc" id="L1">/**</span>
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../.resources/report.gif" type="image/gif"/><title>Modifier.java</title><link rel="stylesheet" href="../../../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../.sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">AbstractGoodsTest (May 14, 2016 4:05:35 PM)</a> &gt; <a href="../../index.html" class="el_group">FreeCol</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">net.sf.freecol.common.model</a> &gt; <span class="el_source">Modifier.java</span></div><h1>Modifier.java</h1><pre class="source lang-java linenums"><span class="nc" id="L1">/**</span>
  *  Copyright (C) 2002-2016   The FreeCol Team
  *
  *  This file is part of FreeCol.
@@ -194,7 +194,7 @@ public class Modifier extends Feature {
      */
     public Modifier(String id, float value, ModifierType type,
                     FreeColObject source, int modifierIndex) {
-<span class="fc bfc" id="L197" title="All 2 branches covered.">        this((source == null) ? null : source.getSpecification());</span>
+<span class="pc bpc" id="L197" title="1 of 2 branches missed.">        this((source == null) ? null : source.getSpecification());</span>
 
 <span class="fc" id="L199">        setId(id);</span>
 <span class="fc" id="L200">        setValue(value);</span>
@@ -233,15 +233,15 @@ public class Modifier extends Feature {
      * @param template A &lt;code&gt;Modifier&lt;/code&gt; to copy.
      */
     public Modifier(Modifier template) {
-<span class="fc" id="L236">        this(template.getSpecification());</span>
+<span class="nc" id="L236">        this(template.getSpecification());</span>
 
-<span class="fc" id="L238">        copyFrom(template);</span>
-<span class="fc" id="L239">        setType(template.getType());</span>
-<span class="fc" id="L240">        setValue(template.getValue());</span>
-<span class="fc" id="L241">        setIncrementType(template.getIncrementType());</span>
-<span class="fc" id="L242">        setIncrement(template.getIncrement());</span>
-<span class="fc" id="L243">        setModifierIndex(template.getModifierIndex());</span>
-<span class="fc" id="L244">    }</span>
+<span class="nc" id="L238">        copyFrom(template);</span>
+<span class="nc" id="L239">        setType(template.getType());</span>
+<span class="nc" id="L240">        setValue(template.getValue());</span>
+<span class="nc" id="L241">        setIncrementType(template.getIncrementType());</span>
+<span class="nc" id="L242">        setIncrement(template.getIncrement());</span>
+<span class="nc" id="L243">        setModifierIndex(template.getModifierIndex());</span>
+<span class="nc" id="L244">    }</span>
 
     /**
      * Creates a new &lt;code&gt;Modifier&lt;/code&gt; instance from another with
@@ -251,9 +251,9 @@ public class Modifier extends Feature {
      * @param template A &lt;code&gt;Modifier&lt;/code&gt; to copy.
      */
     public Modifier(String id, Modifier template) {
-<span class="fc" id="L254">        this(template);</span>
-<span class="fc" id="L255">        setId(id);</span>
-<span class="fc" id="L256">    }</span>
+<span class="nc" id="L254">        this(template);</span>
+<span class="nc" id="L255">        setId(id);</span>
+<span class="nc" id="L256">    }</span>
 
     /**
      * Creates a new &lt;code&gt;Modifier&lt;/code&gt; instance.
@@ -276,7 +276,7 @@ public class Modifier extends Feature {
      * @param specification The &lt;code&gt;Specification&lt;/code&gt; to refer to.
      */
     public Modifier(Element e, Specification specification) {
-<span class="fc" id="L279">        this(specification);</span>
+<span class="nc" id="L279">        this(specification);</span>
 
 <span class="nc" id="L281">        DOMMessage.readFromXMLElement(this, e);</span>
 <span class="nc" id="L282">    }</span>
@@ -297,17 +297,17 @@ public class Modifier extends Feature {
      */
     public static Modifier makeTimedModifier(String id, Modifier template,
                                              Turn start) {
-<span class="fc" id="L300">        Modifier modifier = new Modifier(id, template);</span>
-<span class="fc" id="L301">        float inc = template.getIncrement();</span>
-<span class="fc" id="L302">        int duration = template.getDuration();</span>
-<span class="fc" id="L303">        modifier.setTemporary(template.isTemporary());</span>
+<span class="nc" id="L300">        Modifier modifier = new Modifier(id, template);</span>
+<span class="nc" id="L301">        float inc = template.getIncrement();</span>
+<span class="nc" id="L302">        int duration = template.getDuration();</span>
+<span class="nc" id="L303">        modifier.setTemporary(template.isTemporary());</span>
         // FIXME: this only works for additive modifiers
-<span class="pc bpc" id="L305" title="1 of 2 branches missed.">        if (duration == 0) {</span>
-<span class="fc" id="L306">            duration = (int)(template.getValue()/-inc);</span>
+<span class="nc bnc" id="L305" title="All 2 branches missed.">        if (duration == 0) {</span>
+<span class="nc" id="L306">            duration = (int)(template.getValue()/-inc);</span>
         }
-<span class="fc" id="L308">        modifier.setIncrement(template.getIncrementType(), inc, start,</span>
-<span class="fc" id="L309">                              new Turn(start.getNumber() + duration));</span>
-<span class="fc" id="L310">        return modifier;</span>
+<span class="nc" id="L308">        modifier.setIncrement(template.getIncrementType(), inc, start,</span>
+<span class="nc" id="L309">                              new Turn(start.getNumber() + duration));</span>
+<span class="nc" id="L310">        return modifier;</span>
     }
 
     /**
@@ -316,7 +316,7 @@ public class Modifier extends Feature {
      * @return The &lt;code&gt;ModifierType&lt;/code&gt;.
      */
     public final ModifierType getType() {
-<span class="fc" id="L319">        return modifierType;</span>
+<span class="nc" id="L319">        return modifierType;</span>
     }
 
     /**
@@ -334,7 +334,7 @@ public class Modifier extends Feature {
      * @return The modifier value.
      */
     public final float getValue() {
-<span class="fc" id="L337">        return value;</span>
+<span class="nc" id="L337">        return value;</span>
     }
 
     /**
@@ -344,13 +344,13 @@ public class Modifier extends Feature {
      * @return The turn-dependent modifier value.
      */
     public final float getValue(Turn turn) {
-<span class="pc bpc" id="L347" title="1 of 2 branches missed.">        if (appliesTo(turn)) {</span>
-<span class="fc bfc" id="L348" title="All 2 branches covered.">            if (hasIncrement()) {</span>
-<span class="fc" id="L349">                float f = (turn.getNumber() - getFirstTurn().getNumber())</span>
-<span class="fc" id="L350">                    * increment;</span>
-<span class="fc" id="L351">                return apply(value, f, incrementType);</span>
+<span class="nc bnc" id="L347" title="All 2 branches missed.">        if (appliesTo(turn)) {</span>
+<span class="nc bnc" id="L348" title="All 2 branches missed.">            if (hasIncrement()) {</span>
+<span class="nc" id="L349">                float f = (turn.getNumber() - getFirstTurn().getNumber())</span>
+<span class="nc" id="L350">                    * increment;</span>
+<span class="nc" id="L351">                return apply(value, f, incrementType);</span>
             } else {
-<span class="fc" id="L353">                return value;</span>
+<span class="nc" id="L353">                return value;</span>
             }
         } else {
 <span class="nc" id="L356">            return 0;</span>
@@ -372,7 +372,7 @@ public class Modifier extends Feature {
      * @return True if this modifier has an increment.
      */
     public final boolean hasIncrement() {
-<span class="fc bfc" id="L375" title="All 2 branches covered.">        return incrementType != null;</span>
+<span class="nc bnc" id="L375" title="All 2 branches missed.">        return incrementType != null;</span>
     }
 
     /**
@@ -381,7 +381,7 @@ public class Modifier extends Feature {
      * @return The increment &lt;code&gt;ModifierType&lt;/code&gt;.
      */
     public final ModifierType getIncrementType() {
-<span class="fc" id="L384">        return incrementType;</span>
+<span class="nc" id="L384">        return incrementType;</span>
     }
 
     /**
@@ -390,8 +390,8 @@ public class Modifier extends Feature {
      * @param incrementType The new increment &lt;code&gt;ModifierType&lt;/code&gt;.
      */
     public final void setIncrementType(final ModifierType incrementType) {
-<span class="fc" id="L393">        this.incrementType = incrementType;</span>
-<span class="fc" id="L394">    }</span>
+<span class="nc" id="L393">        this.incrementType = incrementType;</span>
+<span class="nc" id="L394">    }</span>
 
     /**
      * Get the increment value.
@@ -399,7 +399,7 @@ public class Modifier extends Feature {
      * @return The increment value.
      */
     public final float getIncrement() {
-<span class="fc" id="L402">        return increment;</span>
+<span class="nc" id="L402">        return increment;</span>
     }
 
     /**
@@ -408,8 +408,8 @@ public class Modifier extends Feature {
      * @param increment The new value.
      */
     public final void setIncrement(final float increment) {
-<span class="fc" id="L411">        this.increment = increment;</span>
-<span class="fc" id="L412">    }</span>
+<span class="nc" id="L411">        this.increment = increment;</span>
+<span class="nc" id="L412">    }</span>
 
     /**
      * Set the whole increment.
@@ -424,14 +424,14 @@ public class Modifier extends Feature {
     public final void setIncrement(final ModifierType incrementType,
                                    final float increment,
                                    Turn firstTurn, Turn lastTurn) {
-<span class="fc bfc" id="L427" title="All 2 branches covered.">        if (firstTurn == null) {</span>
-<span class="fc" id="L428">            throw new IllegalArgumentException(&quot;Null firstTurn&quot;);</span>
+<span class="nc bnc" id="L427" title="All 2 branches missed.">        if (firstTurn == null) {</span>
+<span class="nc" id="L428">            throw new IllegalArgumentException(&quot;Null firstTurn&quot;);</span>
         }
-<span class="fc" id="L430">        this.incrementType = incrementType;</span>
-<span class="fc" id="L431">        this.increment = increment;</span>
-<span class="fc" id="L432">        setFirstTurn(firstTurn);</span>
-<span class="fc" id="L433">        setLastTurn(lastTurn);</span>
-<span class="fc" id="L434">    }</span>
+<span class="nc" id="L430">        this.incrementType = incrementType;</span>
+<span class="nc" id="L431">        this.increment = increment;</span>
+<span class="nc" id="L432">        setFirstTurn(firstTurn);</span>
+<span class="nc" id="L433">        setLastTurn(lastTurn);</span>
+<span class="nc" id="L434">    }</span>
 
     /**
      * Get the modifier index.
@@ -439,7 +439,7 @@ public class Modifier extends Feature {
      * @return The modifier index.
      */
     public final int getModifierIndex() {
-<span class="fc" id="L442">        return modifierIndex;</span>
+<span class="nc" id="L442">        return modifierIndex;</span>
     }
 
     /**
@@ -460,7 +460,7 @@ public class Modifier extends Feature {
      * @return a &lt;code&gt;float&lt;/code&gt; value
      */
     public float apply(float base, float value) {
-<span class="fc" id="L463">        return apply(base, value, getType());</span>
+<span class="nc" id="L463">        return apply(base, value, getType());</span>
     }
 
     /**
@@ -473,9 +473,9 @@ public class Modifier extends Feature {
      * @return The result of applying the value to the base.
      */
     private float apply(float base, float value, ModifierType type) {
-<span class="pc bpc" id="L476" title="3 of 4 branches missed.">        switch (type) {</span>
+<span class="nc bnc" id="L476" title="All 4 branches missed.">        switch (type) {</span>
         case ADDITIVE:
-<span class="fc" id="L478">            return base + value;</span>
+<span class="nc" id="L478">            return base + value;</span>
         case MULTIPLICATIVE:
 <span class="nc" id="L480">            return base * value;</span>
         case PERCENTAGE:
@@ -493,7 +493,7 @@ public class Modifier extends Feature {
      * @return a &lt;code&gt;float&lt;/code&gt; value
      */
     public float applyTo(float number) {
-<span class="fc" id="L496">        return apply(number, value);</span>
+<span class="nc" id="L496">        return apply(number, value);</span>
     }
 
     /**
@@ -505,8 +505,8 @@ public class Modifier extends Feature {
      * @return The modified number.
      */
     public float applyTo(float number, Turn turn) {
-<span class="fc bfc" id="L508" title="All 2 branches covered.">        return (incrementType == null) ? apply(number, value)</span>
-<span class="fc" id="L509">            : apply(number, getValue(turn), getType());</span>
+<span class="nc bnc" id="L508" title="All 2 branches missed.">        return (incrementType == null) ? apply(number, value)</span>
+<span class="nc" id="L509">            : apply(number, getValue(turn), getType());</span>
     }
 
     // @compat 0.10.7
@@ -516,9 +516,9 @@ public class Modifier extends Feature {
      * @return True if a negated person scope was added.
      */
     public boolean requireNegatedPersonScope() {
-<span class="pc bpc" id="L519" title="1 of 2 branches missed.">        if (hasScope()) return false;</span>
-<span class="fc" id="L520">        addScope(Scope.makeNegatedPersonScope());</span>
-<span class="fc" id="L521">        return true;</span>
+<span class="nc bnc" id="L519" title="All 2 branches missed.">        if (hasScope()) return false;</span>
+<span class="nc" id="L520">        addScope(Scope.makeNegatedPersonScope());</span>
+<span class="nc" id="L521">        return true;</span>
     }
     // end @compat 0.10.7
 
@@ -530,20 +530,20 @@ public class Modifier extends Feature {
      */
     @Override
     public int compareTo(FreeColObject other) {
-<span class="fc" id="L533">        int cmp = 0;</span>
-<span class="fc bfc" id="L534" title="All 2 branches covered.">        if (other instanceof Modifier) {</span>
-<span class="fc" id="L535">            Modifier modifier = (Modifier)other;</span>
-<span class="fc" id="L536">            cmp = modifierIndex - modifier.modifierIndex;</span>
-<span class="pc bpc" id="L537" title="1 of 2 branches missed.">            if (cmp == 0) {</span>
-<span class="fc" id="L538">                cmp = modifierType.ordinal() - modifier.modifierType.ordinal();</span>
+<span class="nc" id="L533">        int cmp = 0;</span>
+<span class="nc bnc" id="L534" title="All 2 branches missed.">        if (other instanceof Modifier) {</span>
+<span class="nc" id="L535">            Modifier modifier = (Modifier)other;</span>
+<span class="nc" id="L536">            cmp = modifierIndex - modifier.modifierIndex;</span>
+<span class="nc bnc" id="L537" title="All 2 branches missed.">            if (cmp == 0) {</span>
+<span class="nc" id="L538">                cmp = modifierType.ordinal() - modifier.modifierType.ordinal();</span>
             }
-<span class="pc bpc" id="L540" title="1 of 2 branches missed.">            if (cmp == 0) {</span>
-<span class="fc" id="L541">                cmp = FreeColObject.compareIds(getSource(), </span>
-<span class="fc" id="L542">                                               modifier.getSource());</span>
+<span class="nc bnc" id="L540" title="All 2 branches missed.">            if (cmp == 0) {</span>
+<span class="nc" id="L541">                cmp = FreeColObject.compareIds(getSource(), </span>
+<span class="nc" id="L542">                                               modifier.getSource());</span>
             }
         }
-<span class="pc bpc" id="L545" title="1 of 2 branches missed.">        if (cmp == 0) cmp = super.compareTo(other);</span>
-<span class="fc" id="L546">        return cmp;</span>
+<span class="nc bnc" id="L545" title="All 2 branches missed.">        if (cmp == 0) cmp = super.compareTo(other);</span>
+<span class="nc" id="L546">        return cmp;</span>
     }
 
 
@@ -554,17 +554,17 @@ public class Modifier extends Feature {
      */
     @Override
     public boolean equals(Object o) {
-<span class="pc bpc" id="L557" title="1 of 2 branches missed.">        if (o == this) return true;</span>
-<span class="fc bfc" id="L558" title="All 2 branches covered.">        if (o instanceof Modifier) { </span>
-<span class="fc" id="L559">            Modifier m = (Modifier)o;</span>
-<span class="pc bpc" id="L560" title="1 of 2 branches missed.">            return Utils.equals(this.modifierType, m.modifierType)</span>
-<span class="pc bpc" id="L561" title="1 of 2 branches missed.">                &amp;&amp; this.value == m.value</span>
-<span class="pc bpc" id="L562" title="1 of 2 branches missed.">                &amp;&amp; this.increment == m.increment</span>
-<span class="pc bpc" id="L563" title="1 of 2 branches missed.">                &amp;&amp; Utils.equals(this.incrementType, m.incrementType)</span>
-<span class="pc bpc" id="L564" title="1 of 2 branches missed.">                &amp;&amp; this.modifierIndex == m.modifierIndex</span>
-<span class="pc bpc" id="L565" title="1 of 2 branches missed.">                &amp;&amp; super.equals(o);</span>
+<span class="nc bnc" id="L557" title="All 2 branches missed.">        if (o == this) return true;</span>
+<span class="nc bnc" id="L558" title="All 2 branches missed.">        if (o instanceof Modifier) { </span>
+<span class="nc" id="L559">            Modifier m = (Modifier)o;</span>
+<span class="nc bnc" id="L560" title="All 2 branches missed.">            return Utils.equals(this.modifierType, m.modifierType)</span>
+<span class="nc bnc" id="L561" title="All 2 branches missed.">                &amp;&amp; this.value == m.value</span>
+<span class="nc bnc" id="L562" title="All 2 branches missed.">                &amp;&amp; this.increment == m.increment</span>
+<span class="nc bnc" id="L563" title="All 2 branches missed.">                &amp;&amp; Utils.equals(this.incrementType, m.incrementType)</span>
+<span class="nc bnc" id="L564" title="All 2 branches missed.">                &amp;&amp; this.modifierIndex == m.modifierIndex</span>
+<span class="nc bnc" id="L565" title="All 2 branches missed.">                &amp;&amp; super.equals(o);</span>
         }
-<span class="fc" id="L567">        return false;</span>
+<span class="nc" id="L567">        return false;</span>
     }
 
     /**
@@ -572,12 +572,12 @@ public class Modifier extends Feature {
      */
     @Override
     public int hashCode() {
-<span class="fc" id="L575">        int hash = super.hashCode();</span>
-<span class="fc" id="L576">        hash = 31 * hash + Float.floatToIntBits(value);</span>
-<span class="fc" id="L577">        hash = 31 * hash + Float.floatToIntBits(increment);</span>
-<span class="fc" id="L578">        hash = 31 * hash + Utils.hashCode(modifierType);</span>
-<span class="fc" id="L579">        hash = 31 * hash + Utils.hashCode(incrementType);</span>
-<span class="fc" id="L580">        return 31 * hash + modifierIndex;</span>
+<span class="nc" id="L575">        int hash = super.hashCode();</span>
+<span class="nc" id="L576">        hash = 31 * hash + Float.floatToIntBits(value);</span>
+<span class="nc" id="L577">        hash = 31 * hash + Float.floatToIntBits(increment);</span>
+<span class="nc" id="L578">        hash = 31 * hash + Utils.hashCode(modifierType);</span>
+<span class="nc" id="L579">        hash = 31 * hash + Utils.hashCode(incrementType);</span>
+<span class="nc" id="L580">        return 31 * hash + modifierIndex;</span>
     }
 
 
@@ -597,22 +597,22 @@ public class Modifier extends Feature {
      */
     @Override
     protected void writeAttributes(FreeColXMLWriter xw) throws XMLStreamException {
-<span class="fc" id="L600">        super.writeAttributes(xw);</span>
+<span class="nc" id="L600">        super.writeAttributes(xw);</span>
 
-<span class="fc" id="L602">        xw.writeAttribute(VALUE_TAG, value);</span>
+<span class="nc" id="L602">        xw.writeAttribute(VALUE_TAG, value);</span>
 
-<span class="fc" id="L604">        xw.writeAttribute(TYPE_TAG, modifierType);</span>
+<span class="nc" id="L604">        xw.writeAttribute(TYPE_TAG, modifierType);</span>
 
-<span class="fc bfc" id="L606" title="All 2 branches covered.">        if (incrementType != null) {</span>
-<span class="fc" id="L607">            xw.writeAttribute(INCREMENT_TYPE_TAG, incrementType);</span>
+<span class="nc bnc" id="L606" title="All 2 branches missed.">        if (incrementType != null) {</span>
+<span class="nc" id="L607">            xw.writeAttribute(INCREMENT_TYPE_TAG, incrementType);</span>
 
-<span class="fc" id="L609">            xw.writeAttribute(INCREMENT_TAG, increment);</span>
+<span class="nc" id="L609">            xw.writeAttribute(INCREMENT_TAG, increment);</span>
         }
 
-<span class="pc bpc" id="L612" title="1 of 2 branches missed.">        if (modifierIndex &gt;= 0) {</span>
-<span class="fc" id="L613">            xw.writeAttribute(INDEX_TAG, modifierIndex);</span>
+<span class="nc bnc" id="L612" title="All 2 branches missed.">        if (modifierIndex &gt;= 0) {</span>
+<span class="nc" id="L613">            xw.writeAttribute(INDEX_TAG, modifierIndex);</span>
         }
-<span class="fc" id="L615">    }</span>
+<span class="nc" id="L615">    }</span>
 
     /**
      * {@inheritDoc}
@@ -652,31 +652,31 @@ public class Modifier extends Feature {
      */
     @Override
     public String toString() {
-<span class="fc" id="L655">        StringBuilder sb = new StringBuilder(64);</span>
-<span class="fc" id="L656">        sb.append(&quot;[Modifier &quot;).append(getId());</span>
-<span class="fc bfc" id="L657" title="All 2 branches covered.">        if (getSource() != null) {</span>
-<span class="fc" id="L658">            sb.append(&quot; (&quot; + getSource().getId() + &quot;)&quot;);</span>
+<span class="nc" id="L655">        StringBuilder sb = new StringBuilder(64);</span>
+<span class="nc" id="L656">        sb.append(&quot;[Modifier &quot;).append(getId());</span>
+<span class="nc bnc" id="L657" title="All 2 branches missed.">        if (getSource() != null) {</span>
+<span class="nc" id="L658">            sb.append(&quot; (&quot; + getSource().getId() + &quot;)&quot;);</span>
         }
-<span class="fc" id="L660">        sb.append(&quot; &quot;).append(modifierType)</span>
-<span class="fc" id="L661">            .append(&quot; &quot;).append(value);</span>
-<span class="fc bfc" id="L662" title="All 2 branches covered.">        if (modifierIndex &gt;= DEFAULT_MODIFIER_INDEX) {</span>
-<span class="fc" id="L663">            sb.append(&quot; index=&quot;).append(modifierIndex);</span>
+<span class="nc" id="L660">        sb.append(&quot; &quot;).append(modifierType)</span>
+<span class="nc" id="L661">            .append(&quot; &quot;).append(value);</span>
+<span class="nc bnc" id="L662" title="All 2 branches missed.">        if (modifierIndex &gt;= DEFAULT_MODIFIER_INDEX) {</span>
+<span class="nc" id="L663">            sb.append(&quot; index=&quot;).append(modifierIndex);</span>
         }
-<span class="fc" id="L665">        List&lt;Scope&gt; scopes = getScopes();</span>
-<span class="fc bfc" id="L666" title="All 2 branches covered.">        if (!scopes.isEmpty()) {</span>
-<span class="fc" id="L667">            sb.append(&quot; [&quot;);</span>
-<span class="fc bfc" id="L668" title="All 2 branches covered.">            for (Scope s : scopes) sb.append(&quot; &quot;).append(s);</span>
-<span class="fc" id="L669">            sb.append(&quot; ]&quot;);</span>
+<span class="nc" id="L665">        List&lt;Scope&gt; scopes = getScopes();</span>
+<span class="nc bnc" id="L666" title="All 2 branches missed.">        if (!scopes.isEmpty()) {</span>
+<span class="nc" id="L667">            sb.append(&quot; [&quot;);</span>
+<span class="nc bnc" id="L668" title="All 2 branches missed.">            for (Scope s : scopes) sb.append(&quot; &quot;).append(s);</span>
+<span class="nc" id="L669">            sb.append(&quot; ]&quot;);</span>
         }
-<span class="fc" id="L671">        sb.append(&quot;]&quot;);</span>
-<span class="fc" id="L672">        return sb.toString();</span>
+<span class="nc" id="L671">        sb.append(&quot;]&quot;);</span>
+<span class="nc" id="L672">        return sb.toString();</span>
     }
 
     /**
      * {@inheritDoc}
      */
     @Override
-<span class="fc" id="L679">    public String getXMLTagName() { return getTagName(); }</span>
+<span class="nc" id="L679">    public String getXMLTagName() { return getTagName(); }</span>
 
     /**
      * Gets the XML tag name for this element.
@@ -684,7 +684,7 @@ public class Modifier extends Feature {
      * @return &quot;modifier&quot;.
      */
     public static String getTagName() {
-<span class="fc" id="L687">        return &quot;modifier&quot;;</span>
+<span class="nc" id="L687">        return &quot;modifier&quot;;</span>
     }
 }
-</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span>ModifierTest (May 13, 2016 7:43:28 PM)</div></body></html>
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span>AbstractGoodsTest (May 14, 2016 4:05:35 PM)</div></body></html>
