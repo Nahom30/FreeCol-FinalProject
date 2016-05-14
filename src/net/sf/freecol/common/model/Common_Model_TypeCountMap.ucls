@@ -1,0 +1,593 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.1.9" icons="true" automaticImage="PNG" always-add-relationships="true" generalizations="true" 
+  realizations="true" associations="true" dependencies="true" nesting-relationships="true" router="FAN">  
+  <class id="1" language="java" name="net.sf.freecol.common.model.TypeCountMap" project="FreeCol" 
+    file="/FreeCol/src/net/sf/freecol/common/model/TypeCountMap.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="317" y="172"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="2" language="java" name="net.sf.freecol.client.gui.panel.ReportTradePanel" project="FreeCol" 
+    file="/FreeCol/src/net/sf/freecol/client/gui/panel/ReportTradePanel.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="53" width="132" x="1080" y="420"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="net.sf.freecol.common.model.UnitType" project="FreeCol" 
+    file="/FreeCol/src/net/sf/freecol/common/model/UnitType.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="53" width="134" x="617" y="719"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="net.sf.freecol.client.gui.panel.ReportRequirementsPanel" project="FreeCol" 
+    file="/FreeCol/src/net/sf/freecol/client/gui/panel/ReportRequirementsPanel.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="53" width="174" x="698" y="420"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="5" language="java" name="net.sf.freecol.server.model.ServerColony" project="FreeCol" 
+    file="/FreeCol/src/net/sf/freecol/server/model/ServerColony.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="53" width="125" x="302" y="420"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="6" language="java" name="net.sf.freecol.server.ai.AIColony" project="FreeCol" 
+    file="/FreeCol/src/net/sf/freecol/server/ai/AIColony.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="53" width="107" x="530" y="420"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="7" language="java" name="net.sf.freecol.common.model.Unit" project="FreeCol" 
+    file="/FreeCol/src/net/sf/freecol/common/model/Unit.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="53" width="134" x="462" y="513"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="8" language="java" name="net.sf.freecol.client.gui.panel.ReportLabourPanel" project="FreeCol" 
+    file="/FreeCol/src/net/sf/freecol/client/gui/panel/ReportLabourPanel.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="53" width="134" x="371" y="327"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="9" language="java" name="net.sf.freecol.common.model.Player" project="FreeCol" 
+    file="/FreeCol/src/net/sf/freecol/common/model/Player.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="53" width="134" x="483" y="822"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="10" language="java" name="net.sf.freecol.client.gui.Canvas" project="FreeCol" 
+    file="/FreeCol/src/net/sf/freecol/client/gui/Canvas.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="53" width="107" x="1040" y="234"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="11" language="java" name="net.sf.freecol.client.gui.panel.ReportLabourDetailPanel" project="FreeCol" 
+    file="/FreeCol/src/net/sf/freecol/client/gui/panel/ReportLabourDetailPanel.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="53" width="166" x="1065" y="513"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="12" language="java" name="net.sf.freecol.common.model.Colony" project="FreeCol" 
+    file="/FreeCol/src/net/sf/freecol/common/model/Colony.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="53" width="134" x="782" y="626"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="13" language="java" name="net.sf.freecol.common.model.ProductionCache" project="FreeCol" 
+    file="/FreeCol/src/net/sf/freecol/common/model/ProductionCache.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="53" width="134" x="1273" y="420"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="14" language="java" name="net.sf.freecol.client.gui.SwingGUI" project="FreeCol" 
+    file="/FreeCol/src/net/sf/freecol/client/gui/SwingGUI.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="53" width="107" x="912" y="420"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="15" language="java" name="net.sf.freecol.client.gui.panel.ReportUnitPanel" project="FreeCol" 
+    file="/FreeCol/src/net/sf/freecol/client/gui/panel/ReportUnitPanel.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="53" width="132" x="199" y="327"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <association id="16">    
+    <bendpoint x="709" y="513"/>    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="17" name="colony"/>      
+      <multiplicity id="18" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="12" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="19">    
+    <end type="SOURCE" refId="7" navigable="false">      
+      <attribute id="20" name="student"/>      
+      <multiplicity id="21" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="7" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="22">    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="7"/>  
+  </dependency>  
+  <dependency id="23">    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="8"/>  
+  </dependency>  
+  <association id="24">    
+    <bendpoint x="1034" y="513"/>    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="25" name="colonies"/>      
+      <multiplicity id="26" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="12" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="27">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="7"/>  
+  </dependency>  
+  <dependency id="28">    
+    <bendpoint x="878" y="327"/>    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="4"/>  
+  </dependency>  
+  <association id="29">    
+    <end type="SOURCE" refId="3" navigable="false">      
+      <attribute id="30" name="skillTaught"/>      
+      <multiplicity id="31" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="3" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="32">    
+    <bendpoint x="334" y="513"/>    
+    <bendpoint x="313" y="626"/>    
+    <bendpoint x="313" y="719"/>    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="9"/>  
+  </dependency>  
+  <dependency id="33">    
+    <end type="SOURCE" refId="15"/>    
+    <end type="TARGET" refId="14"/>  
+  </dependency>  
+  <dependency id="34">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="1"/>  
+  </dependency>  
+  <association id="35">    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="36" name="unitCount"/>      
+      <multiplicity id="37" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="1" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="38">    
+    <end type="SOURCE" refId="13" navigable="false">      
+      <attribute id="39" name="netProduction"/>      
+      <multiplicity id="40" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="1" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="41">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="14"/>  
+  </dependency>  
+  <association id="42">    
+    <bendpoint x="667" y="420"/>    
+    <bendpoint x="667" y="513"/>    
+    <end type="SOURCE" refId="8" navigable="false">      
+      <attribute id="43" name="colonies"/>      
+      <multiplicity id="44" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="12" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="45">    
+    <bendpoint x="1070" y="327"/>    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="2"/>  
+  </dependency>  
+  <association id="46">    
+    <bendpoint x="492" y="719"/>    
+    <bendpoint x="492" y="626"/>    
+    <end type="SOURCE" refId="9" navigable="false">      
+      <attribute id="47" name="units"/>      
+      <multiplicity id="48" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="7" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="49">    
+    <bendpoint x="478" y="420"/>    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="7"/>  
+  </dependency>  
+  <dependency id="50">    
+    <bendpoint x="1458" y="327"/>    
+    <bendpoint x="1458" y="420"/>    
+    <bendpoint x="1458" y="513"/>    
+    <bendpoint x="1458" y="626"/>    
+    <bendpoint x="1458" y="719"/>    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="9"/>  
+  </dependency>  
+  <dependency id="51">    
+    <bendpoint x="313" y="513"/>    
+    <bendpoint x="355" y="626"/>    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="3"/>  
+  </dependency>  
+  <dependency id="52">    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="1"/>  
+  </dependency>  
+  <association id="53">    
+    <bendpoint x="730" y="513"/>    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="54" name="colonies"/>      
+      <multiplicity id="55" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="12" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="56">    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="57" name="colonies"/>      
+      <multiplicity id="58" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="12" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="59">    
+    <bendpoint x="549" y="626"/>    
+    <end type="SOURCE" refId="7" navigable="false">      
+      <attribute id="60" name="unitType"/>      
+      <multiplicity id="61" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="3" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="62">    
+    <end type="SOURCE" refId="13"/>    
+    <end type="TARGET" refId="7"/>  
+  </dependency>  
+  <dependency id="63">    
+    <bendpoint x="856" y="513"/>    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="12"/>  
+  </dependency>  
+  <dependency id="64">    
+    <bendpoint x="646" y="513"/>    
+    <bendpoint x="646" y="626"/>    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="3"/>  
+  </dependency>  
+  <association id="65">    
+    <bendpoint x="996" y="327"/>    
+    <end type="SOURCE" refId="14" navigable="false">      
+      <attribute id="66" name="canvas"/>      
+      <multiplicity id="67" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="10" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="68">    
+    <bendpoint x="208" y="420"/>    
+    <bendpoint x="250" y="513"/>    
+    <bendpoint x="292" y="626"/>    
+    <end type="SOURCE" refId="15"/>    
+    <end type="TARGET" refId="3"/>  
+  </dependency>  
+  <association id="69">    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="70" name="unitCount"/>      
+      <multiplicity id="71" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="1" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="72">    
+    <bendpoint x="975" y="327"/>    
+    <end type="SOURCE" refId="10" navigable="false">      
+      <attribute id="73" name="gui"/>      
+      <multiplicity id="74" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="14" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="75">    
+    <bendpoint x="1013" y="513"/>    
+    <bendpoint x="1013" y="626"/>    
+    <bendpoint x="1013" y="719"/>    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="9"/>  
+  </dependency>  
+  <dependency id="76">    
+    <bendpoint x="791" y="719"/>    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="12"/>  
+  </dependency>  
+  <dependency id="77">    
+    <bendpoint x="187" y="420"/>    
+    <bendpoint x="187" y="513"/>    
+    <bendpoint x="187" y="626"/>    
+    <bendpoint x="187" y="719"/>    
+    <end type="SOURCE" refId="15"/>    
+    <end type="TARGET" refId="9"/>  
+  </dependency>  
+  <dependency id="78">    
+    <bendpoint x="1437" y="327"/>    
+    <bendpoint x="1437" y="420"/>    
+    <bendpoint x="1437" y="513"/>    
+    <bendpoint x="1395" y="626"/>    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="3"/>  
+  </dependency>  
+  <dependency id="79">    
+    <bendpoint x="1242" y="327"/>    
+    <bendpoint x="1242" y="420"/>    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="11"/>  
+  </dependency>  
+  <association id="80">    
+    <bendpoint x="1282" y="513"/>    
+    <end type="SOURCE" refId="12" navigable="false">      
+      <attribute id="81" name="productionCache"/>      
+      <multiplicity id="82" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="13" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="83">    
+    <bendpoint x="471" y="626"/>    
+    <bendpoint x="471" y="719"/>    
+    <end type="SOURCE" refId="7" navigable="false">      
+      <attribute id="84" name="owner"/>      
+      <multiplicity id="85" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="86">    
+    <end type="SOURCE" refId="7" navigable="false">      
+      <attribute id="87" name="teacher"/>      
+      <multiplicity id="88" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="7" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="89">    
+    <bendpoint x="535" y="327"/>    
+    <bendpoint x="499" y="420"/>    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="7"/>  
+  </dependency>  
+  <dependency id="90">    
+    <bendpoint x="1049" y="327"/>    
+    <bendpoint x="1049" y="420"/>    
+    <bendpoint x="992" y="513"/>    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="12"/>  
+  </dependency>  
+  <dependency id="91">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="1"/>  
+  </dependency>  
+  <dependency id="92">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="7"/>  
+  </dependency>  
+  <dependency id="93">    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="1"/>  
+  </dependency>  
+  <dependency id="94">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="7"/>  
+  </dependency>  
+  <association id="95">    
+    <end type="SOURCE" refId="8" navigable="false">      
+      <attribute id="96" name="unitCount"/>      
+      <multiplicity id="97" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="1" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="98">    
+    <bendpoint x="751" y="513"/>    
+    <bendpoint x="751" y="626"/>    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="3"/>  
+  </dependency>  
+  <association id="99">    
+    <bendpoint x="457" y="420"/>    
+    <end type="SOURCE" refId="15" navigable="false">      
+      <attribute id="100" name="inEurope"/>      
+      <multiplicity id="101" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="7" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="102">    
+    <end type="SOURCE" refId="7" navigable="false">      
+      <attribute id="103" name="equipment"/>      
+      <multiplicity id="104" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="1" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="105">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="1"/>  
+  </dependency>  
+  <dependency id="106">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="12"/>  
+  </dependency>  
+  <association id="107">    
+    <end type="SOURCE" refId="9" navigable="false">      
+      <attribute id="108" name="bannedMissions"/>      
+      <multiplicity id="109" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="110">    
+    <bendpoint x="946" y="626"/>    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="111" name="unitType"/>      
+      <multiplicity id="112" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="3" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="113">    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="1"/>  
+  </dependency>  
+  <dependency id="114">    
+    <bendpoint x="271" y="513"/>    
+    <bendpoint x="271" y="626"/>    
+    <bendpoint x="271" y="719"/>    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="9"/>  
+  </dependency>  
+  <association id="115">    
+    <bendpoint x="1261" y="513"/>    
+    <end type="SOURCE" refId="13" navigable="false">      
+      <attribute id="116" name="colony"/>      
+      <multiplicity id="117" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="12" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="118">    
+    <bendpoint x="1416" y="513"/>    
+    <bendpoint x="1416" y="626"/>    
+    <bendpoint x="1416" y="719"/>    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="9"/>  
+  </dependency>  
+  <association id="119">    
+    <end type="SOURCE" refId="3" navigable="false">      
+      <attribute id="120" name="consumption"/>      
+      <multiplicity id="121" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="1" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="122">    
+    <bendpoint x="688" y="513"/>    
+    <bendpoint x="688" y="626"/>    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="3"/>  
+  </dependency>  
+  <dependency id="123">    
+    <bendpoint x="229" y="420"/>    
+    <bendpoint x="229" y="513"/>    
+    <bendpoint x="229" y="626"/>    
+    <bendpoint x="229" y="719"/>    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="9"/>  
+  </dependency>  
+  <dependency id="124">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="9"/>  
+  </dependency>  
+  <association id="125">    
+    <end type="SOURCE" refId="15" navigable="false">      
+      <attribute id="126" name="units"/>      
+      <multiplicity id="127" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="1" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="128">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="7"/>  
+  </dependency>  
+  <dependency id="129">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="1"/>  
+  </dependency>  
+  <dependency id="130">    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="3"/>  
+  </dependency>  
+  <dependency id="131">    
+    <bendpoint x="271" y="420"/>    
+    <bendpoint x="355" y="513"/>    
+    <end type="SOURCE" refId="15"/>    
+    <end type="TARGET" refId="12"/>  
+  </dependency>  
+  <generalization id="132">    
+    <bendpoint x="431" y="513"/>    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="12"/>  
+  </generalization>  
+  <dependency id="133">    
+    <bendpoint x="250" y="420"/>    
+    <bendpoint x="292" y="513"/>    
+    <bendpoint x="334" y="626"/>    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="3"/>  
+  </dependency>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="false" package="false" protected="false" private="false" static="false"/>    
+    <operations public="false" package="false" protected="false" private="false" static="false"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>
