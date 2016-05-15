@@ -26,4 +26,8 @@ class StubXMLReader extends FreeColXMLReader{
     	outputString += attributeName + '=' + String.valueOf(defaultValue) + ';';
     	return defaultValue;
     }
+    
+    public boolean shouldClearContainers() {
+    	return true;
+    }
 }
