@@ -1,0 +1,1005 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../.resources/report.gif" type="image/gif"/><title>TerrainGenerator.java</title><link rel="stylesheet" href="../../../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../.sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">TurnTest (1) (May 15, 2016 10:10:32 AM)</a> &gt; <a href="../../index.html" class="el_group">FreeCol</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">net.sf.freecol.server.generator</a> &gt; <span class="el_source">TerrainGenerator.java</span></div><h1>TerrainGenerator.java</h1><pre class="source lang-java linenums">/**
+ *  Copyright (C) 2002-2016   The FreeCol Team
+ *
+ *  This file is part of FreeCol.
+ *
+ *  FreeCol is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 2 of the License, or
+ *  (at your option) any later version.
+ *
+ *  FreeCol is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with FreeCol.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
+ */
+
+package net.sf.freecol.server.generator;
+
+import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.EnumMap;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Random;
+import java.util.logging.Logger;
+import java.util.stream.Collectors;
+
+import net.sf.freecol.common.model.Game;
+import net.sf.freecol.common.model.LandMap;
+import net.sf.freecol.common.model.Map;
+import net.sf.freecol.common.model.Direction;
+import net.sf.freecol.common.model.Region;
+import net.sf.freecol.common.model.Region.RegionType;
+import net.sf.freecol.common.model.Resource;
+import net.sf.freecol.common.model.ResourceType;
+import net.sf.freecol.common.model.Specification;
+import net.sf.freecol.common.model.Tile;
+import net.sf.freecol.common.model.TileImprovement;
+import net.sf.freecol.common.model.TileImprovementType;
+import net.sf.freecol.common.model.TileItemContainer;
+import net.sf.freecol.common.model.TileType;
+import net.sf.freecol.common.option.MapGeneratorOptions;
+import net.sf.freecol.common.option.OptionGroup;
+import net.sf.freecol.common.util.LogBuilder;
+import static net.sf.freecol.common.util.CollectionUtils.*;
+import net.sf.freecol.common.util.RandomChoice;
+import static net.sf.freecol.common.util.RandomUtils.*;
+import net.sf.freecol.server.model.ServerRegion;
+
+
+/**
+ * Class for making a &lt;code&gt;Map&lt;/code&gt; based upon a land map.
+ *
+ * FIXME: dynamic lakes, mountains and hills
+ */
+public class TerrainGenerator {
+
+<span class="nc" id="L61">    private static final Logger logger = Logger.getLogger(TerrainGenerator.class.getName());</span>
+
+    public static final int LAND_REGIONS_SCORE_VALUE = 1000;
+    public static final int LAND_REGION_MIN_SCORE = 5;
+<span class="nc" id="L65">    public static final int LAND_REGION_MAX_SIZE = 75;</span>
+
+    /** The Game to generate for. */
+    private final Game game;
+
+    /** The game to selectively import from. */
+    private final Game importGame;
+
+    /**
+     * The pseudo-random number source to use.
+     *
+     * Uses of the PRNG are usually logged in FreeCol, but the use is
+     * so intense here and this code is called pre-game, so we
+     * intentionally skip the logging here.
+     */
+    private final Random random;
+
+    /** The cached map generator options. */
+    private final OptionGroup mapOptions;
+
+    /** The cache of the Specification. */
+    private final Specification spec;
+
+    /** The cached land and ocean tile types. */
+<span class="nc" id="L89">    private List&lt;TileType&gt; landTileTypes = null;</span>
+<span class="nc" id="L90">    private List&lt;TileType&gt; oceanTileTypes = null;</span>
+
+
+    /**
+     * Creates a new &lt;code&gt;TerrainGenerator&lt;/code&gt;.
+     *
+     * @param game The &lt;code&gt;Game&lt;/code&gt; to generate for.
+     * @param importGame A &lt;code&gt;Game&lt;/code&gt; to selectively import from.
+     * @param random A &lt;code&gt;Random&lt;/code&gt; number source.
+     * @see #createMap
+     */
+<span class="nc" id="L101">    public TerrainGenerator(Game game, Game importGame, Random random) {</span>
+<span class="nc" id="L102">        this.game = game;</span>
+<span class="nc" id="L103">        this.importGame = importGame;</span>
+<span class="nc" id="L104">        this.random = random;</span>
+<span class="nc" id="L105">        this.mapOptions = game.getMapGeneratorOptions();</span>
+<span class="nc" id="L106">        this.spec = game.getSpecification();</span>
+<span class="nc" id="L107">    }</span>
+
+
+    // Utilities
+
+    // FIXME: this might be useful elsewhere, too
+    private int limitToRange(int value, int lower, int upper) {
+<span class="nc" id="L114">        return Math.max(lower, Math.min(value, upper));</span>
+    }
+
+    /**
+     * Gets the approximate number of land tiles.
+     *
+     * @return The approximate number of land tiles
+     */
+    private int getApproximateLandCount() {
+<span class="nc" id="L123">        return mapOptions.getInteger(MapGeneratorOptions.MAP_WIDTH)</span>
+<span class="nc" id="L124">            * mapOptions.getInteger(MapGeneratorOptions.MAP_HEIGHT)</span>
+<span class="nc" id="L125">            * mapOptions.getInteger(MapGeneratorOptions.LAND_MASS)</span>
+<span class="nc" id="L126">            / 100;</span>
+    }
+
+    /**
+     * Creates a random tile for the specified position.
+     *
+     * @param x The tile x coordinate.
+     * @param y The tile y coordinate.
+     * @param landMap A boolean array defining where the land is.
+     * @param latitude The tile latitude.
+     * @return The created tile.
+     */
+    private Tile createTile(int x, int y, LandMap landMap, int latitude) {
+<span class="nc bnc" id="L139" title="All 2 branches missed.">        return (landMap.isLand(x, y))</span>
+<span class="nc" id="L140">            ? new Tile(game, getRandomLandTileType(latitude), x, y)</span>
+<span class="nc" id="L141">            : new Tile(game, getRandomOceanTileType(latitude), x, y);</span>
+    }
+
+    /**
+     * Gets a random land tile type based on the latitude.
+     *
+     * @param latitude The location of the tile relative to the north/south
+     *     poles and equator:
+     *     0 is the mid-section of the map (equator)
+     *     +/-90 is on the bottom/top of the map (poles).
+     * @return A suitable random land tile type.
+     */
+    private TileType getRandomLandTileType(int latitude) {
+<span class="nc bnc" id="L154" title="All 2 branches missed.">        if (landTileTypes == null) {</span>
+            // Do not generate elevated and water tiles at this time
+            // they are created elsewhere.
+<span class="nc" id="L157">            landTileTypes = transform(spec.getTileTypeList(),</span>
+<span class="nc bnc" id="L158" title="All 4 branches missed.">                t -&gt; !t.isElevation() &amp;&amp; !t.isWater(), Collectors.toList());</span>
+        }
+<span class="nc" id="L160">        return getRandomTileType(landTileTypes, latitude);</span>
+    }
+
+    /**
+     * Gets a random ocean tile type.
+     *
+     * @param latitude The latitude of the proposed tile.
+     * @return A suitable random ocean tile type.
+     */
+    private TileType getRandomOceanTileType(int latitude) {
+<span class="nc bnc" id="L170" title="All 2 branches missed.">        if (oceanTileTypes == null) {</span>
+<span class="nc" id="L171">            oceanTileTypes = transform(spec.getTileTypeList(),</span>
+<span class="nc bnc" id="L172" title="All 4 branches missed.">                t -&gt; t.isWater() &amp;&amp; t.isHighSeasConnected()</span>
+<span class="nc bnc" id="L173" title="All 2 branches missed.">                    &amp;&amp; !t.isDirectlyHighSeasConnected(),</span>
+<span class="nc" id="L174">                Collectors.toList());</span>
+        }
+<span class="nc" id="L176">        return getRandomTileType(oceanTileTypes, latitude);</span>
+    }
+
+    /**
+     * Gets a tile type fitted to the regional requirements.
+     *
+     * FIXME: Can be used for mountains and rivers too.
+     *
+     * @param candidates A list of &lt;code&gt;TileType&lt;/code&gt;s to use for
+     *     calculations.
+     * @param latitude The tile latitude.
+     * @return A suitable &lt;code&gt;TileType&lt;/code&gt;.
+     */
+    private TileType getRandomTileType(List&lt;TileType&gt; candidates,
+                                       int latitude) {
+        // decode options
+<span class="nc" id="L192">        final int forestChance</span>
+<span class="nc" id="L193">            = mapOptions.getInteger(MapGeneratorOptions.FOREST_NUMBER);</span>
+<span class="nc" id="L194">        final int temperaturePreference</span>
+<span class="nc" id="L195">            = mapOptions.getInteger(MapGeneratorOptions.TEMPERATURE);</span>
+
+        // temperature calculation
+<span class="nc" id="L198">        int poleTemperature = -20;</span>
+<span class="nc" id="L199">        int equatorTemperature= 40;</span>
+<span class="nc bnc" id="L200" title="All 6 branches missed.">        switch (temperaturePreference) {</span>
+        case MapGeneratorOptions.TEMPERATURE_COLD:
+<span class="nc" id="L202">            poleTemperature = -20;</span>
+<span class="nc" id="L203">            equatorTemperature = 25;</span>
+<span class="nc" id="L204">            break;</span>
+        case MapGeneratorOptions.TEMPERATURE_CHILLY:
+<span class="nc" id="L206">            poleTemperature = -20;</span>
+<span class="nc" id="L207">            equatorTemperature = 30;</span>
+<span class="nc" id="L208">            break;</span>
+        case MapGeneratorOptions.TEMPERATURE_TEMPERATE:
+<span class="nc" id="L210">            poleTemperature = -10;</span>
+<span class="nc" id="L211">            equatorTemperature = 35;</span>
+<span class="nc" id="L212">            break;</span>
+        case MapGeneratorOptions.TEMPERATURE_WARM:
+<span class="nc" id="L214">            poleTemperature = -5;</span>
+<span class="nc" id="L215">            equatorTemperature = 40;</span>
+<span class="nc" id="L216">            break;</span>
+        case MapGeneratorOptions.TEMPERATURE_HOT:
+<span class="nc" id="L218">            poleTemperature = 0;</span>
+<span class="nc" id="L219">            equatorTemperature = 40;</span>
+<span class="nc" id="L220">            break;</span>
+        default:
+            break;
+        }
+
+<span class="nc" id="L225">        final Specification spec = game.getSpecification();</span>
+<span class="nc" id="L226">        int temperatureRange = equatorTemperature-poleTemperature;</span>
+<span class="nc" id="L227">        int localeTemperature = poleTemperature + (90 - Math.abs(latitude))</span>
+<span class="nc" id="L228">            * temperatureRange/90;</span>
+<span class="nc" id="L229">        int temperatureDeviation = 7; // +/- 7 degrees randomization</span>
+<span class="nc" id="L230">        localeTemperature += randomInt(logger, &quot;Temperature&quot;, random,</span>
+<span class="nc" id="L231">                                       temperatureDeviation * 2)</span>
+<span class="nc" id="L232">            - temperatureDeviation;</span>
+<span class="nc" id="L233">        localeTemperature = limitToRange(localeTemperature, -20, 40);</span>
+
+        // humidity calculation
+<span class="nc" id="L236">        int localeHumidity = spec.getRangeOption(MapGeneratorOptions.HUMIDITY)</span>
+<span class="nc" id="L237">            .getValue();</span>
+<span class="nc" id="L238">        int humidityDeviation = 20; // +/- 20% randomization</span>
+<span class="nc" id="L239">        localeHumidity += randomInt(logger, &quot;Humidity&quot;, random,</span>
+<span class="nc" id="L240">                                    humidityDeviation * 2)</span>
+<span class="nc" id="L241">            - humidityDeviation;</span>
+<span class="nc" id="L242">        localeHumidity = limitToRange(localeHumidity, 0, 100);</span>
+
+<span class="nc" id="L244">        List&lt;TileType&gt; candidateTileTypes = new ArrayList&lt;&gt;(candidates);</span>
+
+        // Filter the candidates by temperature.
+<span class="nc" id="L247">        int i = 0;</span>
+<span class="nc bnc" id="L248" title="All 2 branches missed.">        while (i &lt; candidateTileTypes.size()) {</span>
+<span class="nc" id="L249">            TileType type = candidateTileTypes.get(i);</span>
+<span class="nc" id="L250">            if (!type.withinRange(TileType.RangeType.TEMPERATURE,</span>
+<span class="nc bnc" id="L251" title="All 2 branches missed.">                                  localeTemperature)) {</span>
+<span class="nc" id="L252">                candidateTileTypes.remove(i);</span>
+<span class="nc" id="L253">                continue;</span>
+            }
+<span class="nc" id="L255">            i++;</span>
+        }
+
+        // Need to continue?
+<span class="nc bnc" id="L259" title="All 3 branches missed.">        switch (candidateTileTypes.size()) {</span>
+        case 0:
+<span class="nc" id="L261">            throw new RuntimeException(&quot;No TileType for&quot;</span>
+<span class="nc" id="L262">                + &quot; temperature==&quot; + localeTemperature);</span>
+        case 1:
+<span class="nc" id="L264">            return candidateTileTypes.get(0);</span>
+        default:
+            break;
+        }
+
+        // Filter the candidates by humidity.
+<span class="nc" id="L270">        i = 0;</span>
+<span class="nc bnc" id="L271" title="All 2 branches missed.">        while (i &lt; candidateTileTypes.size()) {</span>
+<span class="nc" id="L272">            TileType type = candidateTileTypes.get(i);</span>
+<span class="nc" id="L273">            if (!type.withinRange(TileType.RangeType.HUMIDITY,</span>
+<span class="nc bnc" id="L274" title="All 2 branches missed.">                                  localeHumidity)) {</span>
+<span class="nc" id="L275">                candidateTileTypes.remove(i);</span>
+<span class="nc" id="L276">                continue;</span>
+            }
+<span class="nc" id="L278">            i++;</span>
+        }
+
+        // Need to continue?
+<span class="nc bnc" id="L282" title="All 3 branches missed.">        switch (candidateTileTypes.size()) {</span>
+        case 0:
+<span class="nc" id="L284">            throw new RuntimeException(&quot;No TileType for&quot;</span>
+<span class="nc" id="L285">                + &quot; humidity==&quot; + localeHumidity);</span>
+        case 1:
+<span class="nc" id="L287">            return candidateTileTypes.get(0);</span>
+        default:
+            break;
+        }
+
+        // Filter the candidates by forest presence.
+<span class="nc bnc" id="L293" title="All 2 branches missed.">        boolean forested = randomInt(logger, &quot;Forest&quot;, random, 100) &lt; forestChance;</span>
+<span class="nc" id="L294">        i = 0;</span>
+<span class="nc bnc" id="L295" title="All 2 branches missed.">        while (i &lt; candidateTileTypes.size()) {</span>
+<span class="nc" id="L296">            TileType type = candidateTileTypes.get(i);</span>
+<span class="nc bnc" id="L297" title="All 2 branches missed.">            if (type.isForested() != forested) {</span>
+<span class="nc" id="L298">                candidateTileTypes.remove(i);</span>
+<span class="nc" id="L299">                continue;</span>
+            }
+<span class="nc" id="L301">            i++;</span>
+        }
+
+        // Done
+<span class="nc bnc" id="L305" title="All 3 branches missed.">        switch (i = candidateTileTypes.size()) {</span>
+        case 0:
+<span class="nc" id="L307">            throw new RuntimeException(&quot;No TileType for&quot;</span>
+<span class="nc" id="L308">                + &quot; forested==&quot; + forested);</span>
+        case 1:
+<span class="nc" id="L310">            return candidateTileTypes.get(0);</span>
+        default:
+<span class="nc" id="L312">            return candidateTileTypes.get(randomInt(logger, &quot;Forest tile&quot;,</span>
+<span class="nc" id="L313">                                                    random, i));</span>
+        }
+    }
+
+
+    // Create map entities
+
+    /**
+     * Creates land map regions in the given Map.
+     *
+     * First, the arctic/antarctic regions are defined, based on
+     * &lt;code&gt;Map.POLAR_HEIGHT&lt;/code&gt;.
+     *
+     * For the remaining land tiles, one region per contiguous
+     * landmass is created.
+     *
+     * @param map The &lt;code&gt;Map&lt;/code&gt; to work on.
+     * @param lb A &lt;code&gt;LogBuilder&lt;/code&gt; to log to.
+     * @return A list of created &lt;code&gt;ServerRegion&lt;/code&gt;s.
+     */
+    private List&lt;ServerRegion&gt; createLandRegions(Map map, LogBuilder lb) {
+        // Create &quot;explorable&quot; land regions
+<span class="nc" id="L335">        int continents = 0;</span>
+<span class="nc" id="L336">        boolean[][] landmap = new boolean[map.getWidth()][map.getHeight()];</span>
+<span class="nc" id="L337">        int[][] continentmap = new int[map.getWidth()][map.getHeight()];</span>
+<span class="nc" id="L338">        int landsize = 0;</span>
+
+        // Initialize both maps
+<span class="nc bnc" id="L341" title="All 2 branches missed.">        for (int x = 0; x &lt; map.getWidth(); x++) {</span>
+<span class="nc bnc" id="L342" title="All 2 branches missed.">            for (int y = 0; y &lt; map.getHeight(); y++) {</span>
+<span class="nc" id="L343">                continentmap[x][y] = 0;</span>
+<span class="nc" id="L344">                landmap[x][y] = false;</span>
+<span class="nc bnc" id="L345" title="All 2 branches missed.">                if (map.isValid(x, y)) {</span>
+<span class="nc" id="L346">                    Tile tile = map.getTile(x, y);</span>
+                    // Exclude existing regions (arctic/antarctic, mountains,
+                    // rivers).
+<span class="nc bnc" id="L349" title="All 2 branches missed.">                    landmap[x][y] = tile.isLand()</span>
+<span class="nc bnc" id="L350" title="All 2 branches missed.">                        &amp;&amp; tile.getRegion() == null;</span>
+<span class="nc bnc" id="L351" title="All 2 branches missed.">                    if (tile.isLand()) landsize++;</span>
+                }
+            }
+        }
+
+        // Flood fill, so that we end up with individual landmasses
+        // numbered in continentmap[][]
+<span class="nc bnc" id="L358" title="All 2 branches missed.">        for (int y = 0; y &lt; map.getHeight(); y++) {</span>
+<span class="nc bnc" id="L359" title="All 2 branches missed.">            for (int x = 0; x &lt; map.getWidth(); x++) {</span>
+<span class="nc bnc" id="L360" title="All 2 branches missed.">                if (landmap[x][y]) { // Found a new region.</span>
+<span class="nc" id="L361">                    continents++;</span>
+<span class="nc" id="L362">                    boolean[][] continent = Map.floodFill(landmap, x, y);</span>
+
+<span class="nc bnc" id="L364" title="All 2 branches missed.">                    for (int yy = 0; yy &lt; map.getHeight(); yy++) {</span>
+<span class="nc bnc" id="L365" title="All 2 branches missed.">                        for (int xx = 0; xx &lt; map.getWidth(); xx++) {</span>
+<span class="nc bnc" id="L366" title="All 2 branches missed.">                            if (continent[xx][yy]) {</span>
+<span class="nc" id="L367">                                continentmap[xx][yy] = continents;</span>
+<span class="nc" id="L368">                                landmap[xx][yy] = false;</span>
+                            }
+                        }
+                    }
+                }
+            }
+        }
+<span class="nc" id="L375">        lb.add(&quot;Number of individual landmasses is &quot;, continents, &quot;\n&quot;);</span>
+
+        // Get landmass sizes
+<span class="nc" id="L378">        int[] continentsize = new int[continents+1];</span>
+<span class="nc bnc" id="L379" title="All 2 branches missed.">        for (int y = 0; y &lt; map.getHeight(); y++) {</span>
+<span class="nc bnc" id="L380" title="All 2 branches missed.">            for (int x = 0; x &lt; map.getWidth(); x++) {</span>
+<span class="nc" id="L381">                continentsize[continentmap[x][y]]++;</span>
+            }
+        }
+
+        // Go through landmasses, split up those too big
+<span class="nc" id="L386">        int oldcontinents = continents;</span>
+<span class="nc bnc" id="L387" title="All 2 branches missed.">        for (int c = 1; c &lt;= oldcontinents; c++) {</span>
+            // c starting at 1, c=0 is all excluded tiles
+<span class="nc bnc" id="L389" title="All 2 branches missed.">            if (continentsize[c] &gt; LAND_REGION_MAX_SIZE) {</span>
+<span class="nc" id="L390">                boolean[][] splitcontinent</span>
+<span class="nc" id="L391">                    = new boolean[map.getWidth()][map.getHeight()];</span>
+<span class="nc" id="L392">                int splitX = 0, splitY = 0;</span>
+
+<span class="nc bnc" id="L394" title="All 2 branches missed.">                for (int x = 0; x &lt; map.getWidth(); x++) {</span>
+<span class="nc bnc" id="L395" title="All 2 branches missed.">                    for (int y = 0; y &lt; map.getHeight(); y++) {</span>
+<span class="nc bnc" id="L396" title="All 2 branches missed.">                        if (continentmap[x][y] == c) {</span>
+<span class="nc" id="L397">                            splitcontinent[x][y] = true;</span>
+<span class="nc" id="L398">                            splitX = x; splitY = y;</span>
+<span class="nc" id="L399">                        } else {</span>
+<span class="nc" id="L400">                            splitcontinent[x][y] = false;</span>
+                        }
+                    }
+                }
+
+<span class="nc bnc" id="L405" title="All 2 branches missed.">                while (continentsize[c] &gt; LAND_REGION_MAX_SIZE) {</span>
+<span class="nc" id="L406">                    int targetsize = LAND_REGION_MAX_SIZE;</span>
+<span class="nc bnc" id="L407" title="All 2 branches missed.">                    if (continentsize[c] &lt; 2*LAND_REGION_MAX_SIZE) {</span>
+<span class="nc" id="L408">                        targetsize = continentsize[c]/2;</span>
+                    }
+<span class="nc" id="L410">                    continents++; //index of the new region in continentmap[][]</span>
+<span class="nc" id="L411">                    boolean[][] newregion = Map.floodFill(splitcontinent,</span>
+<span class="nc" id="L412">                        splitX, splitY, targetsize);</span>
+<span class="nc bnc" id="L413" title="All 2 branches missed.">                    for (int x = 0; x &lt; map.getWidth(); x++) {</span>
+<span class="nc bnc" id="L414" title="All 2 branches missed.">                        for (int y = 0; y &lt; map.getHeight(); y++) {</span>
+<span class="nc bnc" id="L415" title="All 2 branches missed.">                            if (newregion[x][y]) {</span>
+<span class="nc" id="L416">                                continentmap[x][y] = continents;</span>
+<span class="nc" id="L417">                                splitcontinent[x][y] = false;</span>
+<span class="nc" id="L418">                                continentsize[c]--;</span>
+                            }
+<span class="nc bnc" id="L420" title="All 2 branches missed.">                            if (splitcontinent[x][y]) {</span>
+<span class="nc" id="L421">                                splitX = x; splitY = y;</span>
+                            }
+                        }
+                    }
+                }
+            }
+        }
+<span class="nc" id="L428">        lb.add(&quot;Number of land regions being created: &quot;, continents, &quot;\n&quot;);</span>
+
+        // Create ServerRegions for all land regions
+<span class="nc" id="L431">        ServerRegion[] landregions = new ServerRegion[continents+1];</span>
+<span class="nc" id="L432">        int landIndex = 1;</span>
+<span class="nc bnc" id="L433" title="All 2 branches missed.">        for (int c = 1; c &lt;= continents; c++) {</span>
+            // c starting at 1, c=0 is all water tiles
+<span class="nc" id="L435">            landregions[c] = new ServerRegion(game, RegionType.LAND);</span>
+        }
+
+        // Add tiles to ServerRegions
+<span class="nc bnc" id="L439" title="All 2 branches missed.">        for (int y = 0; y &lt; map.getHeight(); y++) {</span>
+<span class="nc bnc" id="L440" title="All 2 branches missed.">            for (int x = 0; x &lt; map.getWidth(); x++) {</span>
+<span class="nc bnc" id="L441" title="All 2 branches missed.">                if (continentmap[x][y] &gt; 0) {</span>
+<span class="nc" id="L442">                    Tile tile = map.getTile(x, y);</span>
+<span class="nc" id="L443">                    landregions[continentmap[x][y]].addTile(tile);</span>
+                }
+            }
+        }
+
+<span class="nc bnc" id="L448" title="All 2 branches missed.">        for (int c = 1; c &lt;= continents; c++) {</span>
+<span class="nc" id="L449">            ServerRegion sr = landregions[c];</span>
+
+            // Set exploration points for land regions based on size
+<span class="nc" id="L452">            int score = Math.max((int)(((float)sr.getSize() / landsize)</span>
+<span class="nc" id="L453">                                       * LAND_REGIONS_SCORE_VALUE),</span>
+<span class="nc" id="L454">                                 LAND_REGION_MIN_SCORE);</span>
+<span class="nc" id="L455">            sr.setScoreValue(score);</span>
+<span class="nc" id="L456">            lb.add(&quot;Created land region &quot;, sr.toString(),</span>
+<span class="nc" id="L457">                &quot; (size &quot;, sr.getSize(),</span>
+<span class="nc" id="L458">                &quot;, score &quot;, sr.getScoreValue(),</span>
+<span class="nc bnc" id="L459" title="All 2 branches missed.">                &quot;, parent &quot;, ((sr.getParent() == null) ? &quot;(null)&quot;</span>
+<span class="nc" id="L460">                    : sr.getParent().toString()), &quot;)\n&quot;);</span>
+        }
+<span class="nc" id="L462">        return Arrays.asList(Arrays.copyOfRange(landregions, 1, continents+1));</span>
+    }
+
+    /**
+     * Pick a good tile to put elevated terrain on.
+     *
+     * @param map A &lt;code&gt;Map&lt;/code&gt; to choose from.
+     * @return A suitable &lt;code&gt;Tile&lt;/code&gt;, or null if none found.
+     */
+    private Tile getGoodMountainTile(Map map) {
+<span class="nc" id="L472">        final TileType hills = spec.getTileType(&quot;model.tile.hills&quot;);</span>
+<span class="nc" id="L473">        final TileType mountains = spec.getTileType(&quot;model.tile.mountains&quot;);</span>
+<span class="nc" id="L474">        Tile tile = null;</span>
+<span class="nc bnc" id="L475" title="All 2 branches missed.">        while ((tile = map.getRandomLandTile(random)) != null) {</span>
+            // Can not be high ground already
+<span class="nc bnc" id="L477" title="All 4 branches missed.">            if (tile.getType() != hills &amp;&amp; tile.getType() != mountains</span>
+                
+                // Not too close to a mountain range as this would
+                // defeat the purpose of adding random hills
+<span class="nc bnc" id="L481" title="All 4 branches missed.">                &amp;&amp; none(tile.getSurroundingTiles(1, 3), t -&gt; t.getType() == mountains)</span>
+
+                // Do not add hills too close to the ocean/lake, as
+                // this helps with good locations for building
+                // colonies on shore.
+<span class="nc bnc" id="L486" title="All 4 branches missed.">                &amp;&amp; none(tile.getSurroundingTiles(1, 1), t -&gt; !t.isLand())) {</span>
+<span class="nc" id="L487">                return tile;</span>
+            }
+        }
+<span class="nc" id="L490">        return null;</span>
+    }
+
+    /**
+     * Creates mountain ranges on the given map.  The number and size
+     * of mountain ranges depends on the map size.
+     *
+     * @param map The map to use.
+     * @param lb A &lt;code&gt;LogBuilder&lt;/code&gt; to log to.
+     * @return A list of created &lt;code&gt;ServerRegion&lt;/code&gt;s.
+     */
+    private List&lt;ServerRegion&gt; createMountains(Map map, LogBuilder lb) {
+<span class="nc" id="L502">        List&lt;ServerRegion&gt; result = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L503">        float randomHillsRatio = 0.5f;</span>
+        // 50% of user settings will be allocated for random hills
+        // here and there the rest will be allocated for large
+        // mountain ranges
+<span class="nc" id="L507">        int maximumLength</span>
+<span class="nc" id="L508">            = Math.max(mapOptions.getInteger(MapGeneratorOptions.MAP_WIDTH),</span>
+<span class="nc" id="L509">                mapOptions.getInteger(MapGeneratorOptions.MAP_HEIGHT)) / 10;</span>
+<span class="nc" id="L510">        int number = (int)((1.0f - randomHillsRatio)</span>
+<span class="nc" id="L511">            * (getApproximateLandCount()</span>
+<span class="nc" id="L512">                / mapOptions.getInteger(MapGeneratorOptions.MOUNTAIN_NUMBER)));</span>
+<span class="nc" id="L513">        lb.add(&quot;Number of mountain tiles is &quot;, number, &quot;\n&quot;,</span>
+<span class="nc" id="L514">            &quot;Maximum length of mountain ranges is &quot;, maximumLength, &quot;\n&quot;);</span>
+
+        // lookup the resources from specification
+<span class="nc" id="L517">        final TileType hills = spec.getTileType(&quot;model.tile.hills&quot;);</span>
+<span class="nc" id="L518">        final TileType mountains = spec.getTileType(&quot;model.tile.mountains&quot;);</span>
+<span class="nc bnc" id="L519" title="All 4 branches missed.">        if (hills == null || mountains == null) {</span>
+<span class="nc" id="L520">            throw new RuntimeException(&quot;Both Hills and Mountains TileTypes must be defined&quot;);</span>
+        }
+
+        // Generate the mountain ranges
+<span class="nc" id="L524">        int counter = 0;</span>
+<span class="nc bnc" id="L525" title="All 2 branches missed.">        for (int tries = 0; tries &lt; 100; tries++) {</span>
+<span class="nc" id="L526">            Tile startTile = getGoodMountainTile(map);</span>
+<span class="nc bnc" id="L527" title="All 2 branches missed.">            if (startTile == null) break;</span>
+
+<span class="nc" id="L529">            ServerRegion mountainRegion</span>
+<span class="nc" id="L530">                = new ServerRegion(game, RegionType.MOUNTAIN);</span>
+<span class="nc" id="L531">            startTile.setType(mountains);</span>
+<span class="nc" id="L532">            mountainRegion.addTile(startTile);</span>
+<span class="nc" id="L533">            Direction direction = Direction.getRandomDirection(&quot;getLand&quot;,</span>
+<span class="nc" id="L534">                logger, random);</span>
+<span class="nc" id="L535">            int length = maximumLength</span>
+<span class="nc" id="L536">                - randomInt(logger, &quot;MLen&quot;, random, maximumLength/2);</span>
+<span class="nc bnc" id="L537" title="All 2 branches missed.">            for (int index = 0; index &lt; length; index++) {</span>
+<span class="nc" id="L538">                Tile nextTile = startTile.getNeighbourOrNull(direction);</span>
+<span class="nc bnc" id="L539" title="All 4 branches missed.">                if (nextTile == null || !nextTile.isLand()) continue;</span>
+<span class="nc" id="L540">                nextTile.setType(mountains);</span>
+<span class="nc" id="L541">                mountainRegion.addTile(nextTile);</span>
+<span class="nc" id="L542">                counter++;</span>
+<span class="nc bnc" id="L543" title="All 2 branches missed.">                for (Tile neighbour : nextTile.getSurroundingTiles(1)) {</span>
+<span class="nc bnc" id="L544" title="All 2 branches missed.">                    if (!neighbour.isLand()</span>
+<span class="nc bnc" id="L545" title="All 2 branches missed.">                        || neighbour.getType() == mountains) continue;</span>
+<span class="nc" id="L546">                    int r = randomInt(logger, &quot;MSiz&quot;, random, 8);</span>
+<span class="nc bnc" id="L547" title="All 2 branches missed.">                    if (r == 0) {</span>
+<span class="nc" id="L548">                        neighbour.setType(mountains);</span>
+<span class="nc" id="L549">                        mountainRegion.addTile(neighbour);</span>
+<span class="nc" id="L550">                        counter++;</span>
+<span class="nc bnc" id="L551" title="All 2 branches missed.">                    } else if (r &gt; 2) {</span>
+<span class="nc" id="L552">                        neighbour.setType(hills);</span>
+<span class="nc" id="L553">                        mountainRegion.addTile(neighbour);</span>
+                    }
+                }
+            }
+<span class="nc" id="L557">            int scoreValue = 2 * mountainRegion.getSize();</span>
+<span class="nc" id="L558">            mountainRegion.setScoreValue(scoreValue);</span>
+<span class="nc" id="L559">            result.add(mountainRegion);</span>
+<span class="nc" id="L560">            lb.add(&quot;Created mountain region (direction &quot;, direction,</span>
+<span class="nc" id="L561">                &quot;, length &quot;, length,</span>
+<span class="nc" id="L562">                &quot;, size &quot;, mountainRegion.getSize(),</span>
+<span class="nc" id="L563">                &quot;, score value &quot;, scoreValue, &quot;).\n&quot;);</span>
+<span class="nc bnc" id="L564" title="All 2 branches missed.">            if (counter &gt;= number) break;</span>
+        }
+<span class="nc" id="L566">        lb.add(&quot;Added &quot;, counter, &quot; mountain range tiles.\n&quot;);</span>
+
+        // and sprinkle a few random hills/mountains here and there
+<span class="nc" id="L569">        number = (int) (getApproximateLandCount() * randomHillsRatio)</span>
+<span class="nc" id="L570">            / mapOptions.getInteger(MapGeneratorOptions.MOUNTAIN_NUMBER);</span>
+<span class="nc" id="L571">        counter = 0;</span>
+<span class="nc bnc" id="L572" title="All 2 branches missed.">        for (int tries = 0; tries &lt; 1000; tries++) {</span>
+<span class="nc" id="L573">            Tile t = getGoodMountainTile(map);</span>
+<span class="nc bnc" id="L574" title="All 2 branches missed.">            if (t == null) break;</span>
+
+            // 25% mountains, 75% hills
+<span class="nc bnc" id="L577" title="All 2 branches missed.">            boolean m = randomInt(logger, &quot;MorH&quot;, random, 4) == 0;</span>
+<span class="nc bnc" id="L578" title="All 2 branches missed.">            t.setType((m) ? mountains : hills);</span>
+<span class="nc bnc" id="L579" title="All 2 branches missed.">            if (++counter &gt;= number) break;</span>
+        }
+<span class="nc" id="L581">        lb.add(&quot;Added &quot;, counter, &quot; random hilly tiles.\n&quot;);</span>
+<span class="nc" id="L582">        return result;</span>
+    }
+
+    /**
+     * Creates rivers on the given map. The number of rivers depends
+     * on the map size.
+     *
+     * @param map The &lt;code&gt;Map&lt;/code&gt; to create rivers on.
+     * @param lb A &lt;code&gt;LogBuilder&lt;/code&gt; to log to.
+     * @return A list of created &lt;code&gt;ServerRegion&lt;/code&gt;s.
+     */
+    private List&lt;ServerRegion&gt; createRivers(Map map, LogBuilder lb) {
+<span class="nc" id="L594">        List&lt;ServerRegion&gt; result = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L595">        final TileImprovementType riverType</span>
+<span class="nc" id="L596">            = spec.getTileImprovementType(&quot;model.improvement.river&quot;);</span>
+<span class="nc" id="L597">        final int number = getApproximateLandCount()</span>
+<span class="nc" id="L598">            / mapOptions.getInteger(MapGeneratorOptions.RIVER_NUMBER);</span>
+<span class="nc" id="L599">        int counter = 0;</span>
+<span class="nc" id="L600">        HashMap&lt;Tile, River&gt; riverMap = new HashMap&lt;&gt;();</span>
+<span class="nc" id="L601">        List&lt;River&gt; rivers = new ArrayList&lt;&gt;();</span>
+
+<span class="nc bnc" id="L603" title="All 2 branches missed.">        outer: for (int i = 0; i &lt; number; i++) {</span>
+<span class="nc bnc" id="L604" title="All 2 branches missed.">            for (int tries = 0; tries &lt; 100; tries++) {</span>
+<span class="nc" id="L605">                Tile tile = map.getRandomLandTile(random);</span>
+<span class="nc bnc" id="L606" title="All 2 branches missed.">                if (tile == null) break outer;</span>
+
+<span class="nc bnc" id="L608" title="All 2 branches missed.">                if (!riverType.isTileTypeAllowed(tile.getType())) continue;</span>
+
+                // check the river source/spring is not too close to the ocean
+<span class="nc" id="L611">                if (!all(tile.getSurroundingTiles(1, 2),</span>
+<span class="nc bnc" id="L612" title="All 2 branches missed.">                        Tile::isLand)) continue;</span>
+
+<span class="nc bnc" id="L614" title="All 2 branches missed.">                if (riverMap.get(tile) == null) {</span>
+                    // no river here yet
+<span class="nc" id="L616">                    ServerRegion riverRegion = new ServerRegion(game, RegionType.RIVER);</span>
+<span class="nc" id="L617">                    River river = new River(map, riverMap, riverRegion, random);</span>
+<span class="nc bnc" id="L618" title="All 2 branches missed.">                    if (river.flowFromSource(tile)) {</span>
+<span class="nc" id="L619">                        lb.add(&quot;Created new river with length &quot;,</span>
+<span class="nc" id="L620">                            river.getLength(), &quot;\n&quot;);</span>
+<span class="nc" id="L621">                        result.add(riverRegion);</span>
+<span class="nc" id="L622">                        rivers.add(river);</span>
+<span class="nc bnc" id="L623" title="All 2 branches missed.">                        if (++counter &gt;= number) break;</span>
+                    } else {
+<span class="nc" id="L625">                        lb.add(&quot;Failed to generate river.\n&quot;);</span>
+                    }
+<span class="nc" id="L627">                    break;</span>
+                }
+            }
+        }
+<span class="nc" id="L631">        lb.add(&quot;Created &quot;, counter, &quot; rivers of maximum &quot;, number, &quot;\n&quot;);</span>
+
+<span class="nc bnc" id="L633" title="All 2 branches missed.">        for (River river : rivers) {</span>
+<span class="nc" id="L634">            ServerRegion region = river.getRegion();</span>
+<span class="nc" id="L635">            int score = 2 * sum(river.getSections(), RiverSection::getSize);</span>
+<span class="nc" id="L636">            region.setScoreValue(score);</span>
+<span class="nc" id="L637">            lb.add(&quot;Created river region (length &quot;, river.getLength(),</span>
+<span class="nc" id="L638">                &quot;, score value &quot;, score, &quot;).\n&quot;);</span>
+        }
+<span class="nc" id="L640">        return result;</span>
+    }
+
+    /**
+     * Finds all the lake regions.
+     *
+     * @param map The &lt;code&gt;Map&lt;/code&gt; to work on.
+     * @param lb A &lt;code&gt;LogBuilder&lt;/code&gt; to log to.
+     * @return A list of created &lt;code&gt;ServerRegion&lt;/code&gt;s.
+     */
+    private List&lt;ServerRegion&gt; createLakeRegions(Map map, LogBuilder lb) {
+<span class="nc" id="L651">        final TileType lakeType = spec.getTileType(&quot;model.tile.lake&quot;);</span>
+
+        // Create the water map, and find any tiles that are water but
+        // not part of any region (such as the oceans).  These are
+        // lake tiles.
+<span class="nc" id="L656">        List&lt;Tile&gt; lakes = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L657">        lb.add(&quot;Lakes at:&quot;);</span>
+<span class="nc bnc" id="L658" title="All 2 branches missed.">        for (int y = 0; y &lt; map.getHeight(); y++) {</span>
+<span class="nc bnc" id="L659" title="All 2 branches missed.">            for (int x = 0; x &lt; map.getWidth(); x++) {</span>
+                Tile tile;
+<span class="nc bnc" id="L661" title="All 2 branches missed.">                if (map.isValid(x, y)</span>
+<span class="nc bnc" id="L662" title="All 2 branches missed.">                    &amp;&amp; !(tile = map.getTile(x, y)).isLand()</span>
+<span class="nc bnc" id="L663" title="All 2 branches missed.">                    &amp;&amp; map.getTile(x, y).getRegion() == null) {</span>
+<span class="nc" id="L664">                    lakes.add(tile);</span>
+<span class="nc" id="L665">                    lb.add(&quot; &quot;, x, &quot;,&quot;, y);</span>
+                }
+            }
+        }
+<span class="nc" id="L669">        lb.add(&quot;\n&quot;);</span>
+        
+<span class="nc" id="L671">        return makeLakes(map, lakes);</span>
+    }
+
+    /**
+     * Make lake regions from unassigned lake tiles.
+     *
+     * // @compat 0.10.x
+     * // Public/static to allow Map to remediate missing lake regions
+     * // end @compat 0.10.x
+     *
+     * @param map The &lt;code&gt;Map&lt;/code&gt; to add to.
+     * @param lakes A list of lake &lt;code&gt;Tile&lt;/code&gt;s.
+     * @return A list of new &lt;code&gt;ServerRegion&lt;/code&gt;s.
+     */
+    public static List&lt;ServerRegion&gt; makeLakes(Map map, List&lt;Tile&gt; lakes) {
+<span class="nc" id="L686">        Game game = map.getGame();</span>
+<span class="nc" id="L687">        final TileType lakeType = map.getSpecification()</span>
+<span class="nc" id="L688">            .getTileType(&quot;model.tile.lake&quot;);</span>
+<span class="nc" id="L689">        List&lt;Tile&gt; todo = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L690">        List&lt;ServerRegion&gt; result = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L691">        int lakeCount = 0;</span>
+<span class="nc bnc" id="L692" title="All 2 branches missed.">        while (!lakes.isEmpty()) {</span>
+<span class="nc" id="L693">            Tile tile = lakes.get(0);</span>
+<span class="nc bnc" id="L694" title="All 2 branches missed.">            if (tile.getRegion() != null) continue;</span>
+
+<span class="nc" id="L696">            ServerRegion lakeRegion = new ServerRegion(game, RegionType.LAKE);</span>
+            // Pretend lakes are discovered with the surrounding terrain?
+<span class="nc" id="L698">            todo.clear();</span>
+<span class="nc" id="L699">            todo.add(tile);</span>
+<span class="nc bnc" id="L700" title="All 2 branches missed.">            while (!todo.isEmpty()) {</span>
+<span class="nc" id="L701">                Tile t = todo.remove(0);</span>
+<span class="nc bnc" id="L702" title="All 2 branches missed.">                if (lakes.contains(t)) {</span>
+<span class="nc" id="L703">                    t.setRegion(lakeRegion);</span>
+<span class="nc" id="L704">                    t.setType(lakeType);</span>
+<span class="nc" id="L705">                    lakes.remove(t);</span>
+                    // It would be better to do:
+                    //   todo.addAll(t.getSurroundingTiles(1, 1));
+                    // but this routine can be called from Map.readChildren
+                    // before game.getMap() works.  When that use goes away,
+                    // use the above code.
+<span class="nc bnc" id="L711" title="All 2 branches missed.">                    for (Direction d : Direction.allDirections) {</span>
+<span class="nc" id="L712">                        Tile t0 = map.getAdjacentTile(t, d);</span>
+<span class="nc bnc" id="L713" title="All 2 branches missed.">                        if (t0 != null) todo.add(t0);</span>
+                    }
+                }
+            }
+<span class="nc" id="L717">            result.add(lakeRegion);</span>
+        }
+<span class="nc" id="L719">        return result;</span>
+    }
+
+    /**
+     * Adds a terrain bonus with a probability determined by the
+     * &lt;code&gt;MapGeneratorOptions&lt;/code&gt;.
+     *
+     * @param t The &lt;code&gt;Tile&lt;/code&gt; to add bonuses to.
+     * @param generateBonus Generate the bonus or not.
+     */
+    private void perhapsAddBonus(Tile t, boolean generateBonus) {
+<span class="nc" id="L730">        final Specification spec = t.getSpecification();</span>
+<span class="nc" id="L731">        TileImprovementType fishBonusLandType</span>
+<span class="nc" id="L732">            = spec.getTileImprovementType(&quot;model.improvement.fishBonusLand&quot;);</span>
+<span class="nc" id="L733">        TileImprovementType fishBonusRiverType</span>
+<span class="nc" id="L734">            = spec.getTileImprovementType(&quot;model.improvement.fishBonusRiver&quot;);</span>
+<span class="nc" id="L735">        final int bonusNumber</span>
+<span class="nc" id="L736">            = mapOptions.getInteger(MapGeneratorOptions.BONUS_NUMBER);</span>
+<span class="nc bnc" id="L737" title="All 2 branches missed.">        if (t.isLand()) {</span>
+<span class="nc bnc" id="L738" title="All 2 branches missed.">            if (generateBonus</span>
+<span class="nc bnc" id="L739" title="All 2 branches missed.">                &amp;&amp; randomInt(logger, &quot;Land Resource&quot;, random, 100) &lt; bonusNumber) {</span>
+                // Create random Bonus Resource
+<span class="nc" id="L741">                t.addResource(createResource(t));</span>
+            }
+<span class="nc" id="L743">        } else {</span>
+<span class="nc" id="L744">            int adjacentLand = 0;</span>
+<span class="nc" id="L745">            boolean adjacentRiver = false;</span>
+<span class="nc bnc" id="L746" title="All 2 branches missed.">            for (Direction direction : Direction.values()) {</span>
+<span class="nc" id="L747">                Tile otherTile = t.getNeighbourOrNull(direction);</span>
+<span class="nc bnc" id="L748" title="All 4 branches missed.">                if (otherTile != null &amp;&amp; otherTile.isLand()) {</span>
+<span class="nc" id="L749">                    adjacentLand++;</span>
+<span class="nc bnc" id="L750" title="All 2 branches missed.">                    if (otherTile.hasRiver()) {</span>
+<span class="nc" id="L751">                        adjacentRiver = true;</span>
+                    }
+                }
+            }
+
+            // In Col1, ocean tiles with less than 3 land neighbours
+            // produce 2 fish, all others produce 4 fish
+<span class="nc bnc" id="L758" title="All 2 branches missed.">            if (adjacentLand &gt; 2) {</span>
+<span class="nc" id="L759">                t.add(new TileImprovement(game, t, fishBonusLandType));</span>
+            }
+
+            // In Col1, the ocean tile in front of a river mouth would
+            // get an additional +1 bonus
+            // FIXME: This probably has some false positives, means
+            // river tiles that are NOT a river mouth next to this tile!
+<span class="nc bnc" id="L766" title="All 4 branches missed.">            if (!t.hasRiver() &amp;&amp; adjacentRiver) {</span>
+<span class="nc" id="L767">                t.add(new TileImprovement(game, t, fishBonusRiverType));</span>
+            }
+
+<span class="nc bnc" id="L770" title="All 2 branches missed.">            if (t.getType().isHighSeasConnected()) {</span>
+<span class="nc bnc" id="L771" title="All 4 branches missed.">                if (generateBonus &amp;&amp; adjacentLand &gt; 1</span>
+<span class="nc bnc" id="L772" title="All 2 branches missed.">                    &amp;&amp; randomInt(logger, &quot;Sea resource&quot;, random,</span>
+<span class="nc" id="L773">                                 10 - adjacentLand) == 0) {</span>
+<span class="nc" id="L774">                    t.addResource(createResource(t));</span>
+                }
+<span class="nc" id="L776">            } else {</span>
+<span class="nc bnc" id="L777" title="All 2 branches missed.">                if (randomInt(logger, &quot;Water resource&quot;, random, 100) &lt; bonusNumber) {</span>
+                    // Create random Bonus Resource
+<span class="nc" id="L779">                    t.addResource(createResource(t));</span>
+                }
+            }
+        }
+<span class="nc" id="L783">    }</span>
+
+    /**
+     * Create a random resource on a tile.
+     *
+     * @param tile The &lt;code&gt;Tile&lt;/code&gt; to create the resource on.
+     * @return The created resource, or null if it is not possible.
+     */
+    private Resource createResource(Tile tile) {
+<span class="nc bnc" id="L792" title="All 2 branches missed.">        if (tile == null) return null;</span>
+<span class="nc" id="L793">        ResourceType resourceType = RandomChoice.getWeightedRandom(null, null,</span>
+<span class="nc" id="L794">            tile.getType().getWeightedResources(), random);</span>
+<span class="nc bnc" id="L795" title="All 2 branches missed.">        if (resourceType == null) return null;</span>
+<span class="nc" id="L796">        int minValue = resourceType.getMinValue();</span>
+<span class="nc" id="L797">        int maxValue = resourceType.getMaxValue();</span>
+<span class="nc bnc" id="L798" title="All 2 branches missed.">        int quantity = (minValue == maxValue) ? maxValue</span>
+<span class="nc" id="L799">            : (minValue + randomInt(logger, &quot;Rsiz&quot;, random, </span>
+<span class="nc" id="L800">                                    maxValue - minValue + 1));</span>
+<span class="nc" id="L801">        return new Resource(game, tile, resourceType, quantity);</span>
+    }
+
+    // @compat 0.10.x
+    // Only still public to allow reencoding tile styles when loading
+    // pre-save-v-12 savegames.
+    // end @compat 0.10.x
+    /**
+     * Sets the style of the tiles.
+     * Only relevant to water tiles for now.
+     * Public because it is used in the river generator.
+     *
+     * @param tile The &lt;code&gt;Tile&lt;/code&gt; to set the style of.
+     */
+    public static void encodeStyle(Tile tile) {
+<span class="nc" id="L816">        EnumMap&lt;Direction, Boolean&gt; connections</span>
+<span class="nc" id="L817">            = new EnumMap&lt;&gt;(Direction.class);</span>
+
+        // corners
+<span class="nc bnc" id="L820" title="All 2 branches missed.">        for (Direction d : Direction.corners) {</span>
+<span class="nc" id="L821">            Tile t = tile.getNeighbourOrNull(d);</span>
+<span class="nc bnc" id="L822" title="All 4 branches missed.">            connections.put(d, t != null &amp;&amp; t.isLand());</span>
+        }
+        // edges
+<span class="nc bnc" id="L825" title="All 2 branches missed.">        for (Direction d : Direction.longSides) {</span>
+<span class="nc" id="L826">            Tile t = tile.getNeighbourOrNull(d);</span>
+<span class="nc bnc" id="L827" title="All 4 branches missed.">            if (t != null &amp;&amp; t.isLand()) {</span>
+<span class="nc" id="L828">                connections.put(d, Boolean.TRUE);</span>
+                // ignore adjacent corners
+<span class="nc" id="L830">                connections.put(d.getNextDirection(), Boolean.FALSE);</span>
+<span class="nc" id="L831">                connections.put(d.getPreviousDirection(), Boolean.FALSE);</span>
+<span class="nc" id="L832">            } else {</span>
+<span class="nc" id="L833">                connections.put(d, Boolean.FALSE);</span>
+            }
+        }
+<span class="nc" id="L836">        int result = 0;</span>
+<span class="nc" id="L837">        int index = 0;</span>
+<span class="nc bnc" id="L838" title="All 2 branches missed.">        for (Direction d : Direction.corners) {</span>
+<span class="nc bnc" id="L839" title="All 2 branches missed.">            if (connections.get(d)) result += (int)Math.pow(2, index);</span>
+<span class="nc" id="L840">            index++;</span>
+        }
+<span class="nc bnc" id="L842" title="All 2 branches missed.">        for (Direction d : Direction.longSides) {</span>
+<span class="nc bnc" id="L843" title="All 2 branches missed.">            if (connections.get(d)) result += (int)Math.pow(2, index);</span>
+<span class="nc" id="L844">            index++;</span>
+        }
+<span class="nc" id="L846">        tile.setStyle(result);</span>
+<span class="nc" id="L847">    }</span>
+
+    // Main functionality, create the map.
+
+    /**
+     * Creates a &lt;code&gt;Map&lt;/code&gt;.
+     *
+     * @param landMap The &lt;code&gt;LandMap&lt;/code&gt; to use as a template.
+     * @param lb A &lt;code&gt;LogBuilder&lt;/code&gt; to log to.
+     * @return The new &lt;code&gt;Map&lt;/code&gt;.
+     */
+    public Map createMap(LandMap landMap, LogBuilder lb) {
+<span class="nc" id="L859">        final int width = landMap.getWidth();</span>
+<span class="nc" id="L860">        final int height = landMap.getHeight();</span>
+<span class="nc bnc" id="L861" title="All 2 branches missed.">        final boolean importTerrain = (importGame != null)</span>
+<span class="nc bnc" id="L862" title="All 2 branches missed.">            &amp;&amp; mapOptions.getBoolean(MapGeneratorOptions.IMPORT_TERRAIN);</span>
+<span class="nc bnc" id="L863" title="All 2 branches missed.">        final boolean importBonuses = (importGame != null)</span>
+<span class="nc bnc" id="L864" title="All 2 branches missed.">            &amp;&amp; mapOptions.getBoolean(MapGeneratorOptions.IMPORT_BONUSES);</span>
+
+<span class="nc" id="L866">        boolean mapHasLand = false;</span>
+<span class="nc" id="L867">        Map map = new Map(game, width, height);</span>
+<span class="nc" id="L868">        int minimumLatitude = mapOptions</span>
+<span class="nc" id="L869">            .getInteger(MapGeneratorOptions.MINIMUM_LATITUDE);</span>
+<span class="nc" id="L870">        int maximumLatitude = mapOptions</span>
+<span class="nc" id="L871">            .getInteger(MapGeneratorOptions.MAXIMUM_LATITUDE);</span>
+        // make sure the values are in range
+<span class="nc" id="L873">        minimumLatitude = limitToRange(minimumLatitude, -90, 90);</span>
+<span class="nc" id="L874">        maximumLatitude = limitToRange(maximumLatitude, -90, 90);</span>
+<span class="nc" id="L875">        map.setMinimumLatitude(Math.min(minimumLatitude, maximumLatitude));</span>
+<span class="nc" id="L876">        map.setMaximumLatitude(Math.max(minimumLatitude, maximumLatitude));</span>
+
+<span class="nc" id="L878">        java.util.Map&lt;String, ServerRegion&gt; regionMap = new HashMap&lt;&gt;();</span>
+<span class="nc bnc" id="L879" title="All 2 branches missed.">        if (importTerrain) { // Import the regions</span>
+<span class="nc" id="L880">            lb.add(&quot;Imported regions: &quot;);</span>
+<span class="nc bnc" id="L881" title="All 2 branches missed.">            for (Region r : importGame.getMap().getRegions()) {</span>
+<span class="nc" id="L882">                ServerRegion region = new ServerRegion(game, r);</span>
+<span class="nc" id="L883">                map.addRegion(region);</span>
+<span class="nc" id="L884">                regionMap.put(r.getId(), region);</span>
+<span class="nc" id="L885">                lb.add(&quot; &quot;, region.toString());</span>
+            }
+<span class="nc bnc" id="L887" title="All 2 branches missed.">            for (Region r : importGame.getMap().getRegions()) {</span>
+<span class="nc" id="L888">                ServerRegion region = regionMap.get(r.getId());</span>
+<span class="nc" id="L889">                Region x = r.getParent();</span>
+<span class="nc bnc" id="L890" title="All 2 branches missed.">                if (x != null) x = regionMap.get(x.getId());</span>
+<span class="nc" id="L891">                region.setParent(x);</span>
+<span class="nc bnc" id="L892" title="All 2 branches missed.">                for (Region c : r.getChildren()) {</span>
+<span class="nc" id="L893">                    x = regionMap.get(c.getId());</span>
+<span class="nc bnc" id="L894" title="All 2 branches missed.">                    if (x != null) region.addChild(x);</span>
+                }
+            }
+<span class="nc" id="L897">            lb.add(&quot;\n&quot;);</span>
+        }
+
+<span class="nc" id="L900">        List&lt;Tile&gt; fixRegions = new ArrayList&lt;&gt;();</span>
+<span class="nc bnc" id="L901" title="All 2 branches missed.">        for (int y = 0; y &lt; height; y++) {</span>
+<span class="nc" id="L902">            int latitude = map.getLatitude(y);</span>
+<span class="nc bnc" id="L903" title="All 2 branches missed.">            for (int x = 0; x &lt; width; x++) {</span>
+<span class="nc bnc" id="L904" title="All 2 branches missed.">                if (landMap.isLand(x, y)) mapHasLand = true;</span>
+<span class="nc" id="L905">                Tile t, importTile = null;</span>
+<span class="nc bnc" id="L906" title="All 2 branches missed.">                if (importTerrain</span>
+<span class="nc bnc" id="L907" title="All 2 branches missed.">                    &amp;&amp; importGame.getMap().isValid(x, y)</span>
+<span class="nc bnc" id="L908" title="All 2 branches missed.">                    &amp;&amp; (importTile = importGame.getMap().getTile(x, y)) != null</span>
+<span class="nc bnc" id="L909" title="All 2 branches missed.">                    &amp;&amp; importTile.isLand() == landMap.isLand(x, y)) {</span>
+<span class="nc" id="L910">                    String id = importTile.getType().getId();</span>
+<span class="nc" id="L911">                    t = new Tile(game, spec.getTileType(id), x, y);</span>
+<span class="nc bnc" id="L912" title="All 2 branches missed.">                    if (importTile.getMoveToEurope() != null) {</span>
+<span class="nc" id="L913">                        t.setMoveToEurope(importTile.getMoveToEurope());</span>
+                    }
+<span class="nc bnc" id="L915" title="All 2 branches missed.">                    if (importTile.getTileItemContainer() != null) {</span>
+<span class="nc" id="L916">                        TileItemContainer container</span>
+<span class="nc" id="L917">                            = new TileItemContainer(game, t);</span>
+                        // TileItemContainer copies every natural item
+                        // including Resource if importBonuses is true.
+                        // Rumors and roads are not copied.
+<span class="nc" id="L921">                        container.copyFrom(importTile.getTileItemContainer(),</span>
+<span class="nc bnc" id="L922" title="All 2 branches missed.">                            (importBonuses) ? Map.Layer.RESOURCES</span>
+<span class="nc" id="L923">                            : Map.Layer.RIVERS);</span>
+<span class="nc" id="L924">                        t.setTileItemContainer(container);</span>
+                    }
+<span class="nc" id="L926">                    Region r = importTile.getRegion();</span>
+<span class="nc bnc" id="L927" title="All 2 branches missed.">                    if (r == null) {</span>
+<span class="nc" id="L928">                        fixRegions.add(t);</span>
+<span class="nc" id="L929">                    } else {</span>
+<span class="nc" id="L930">                        ServerRegion ours = regionMap.get(r.getId());</span>
+<span class="nc bnc" id="L931" title="All 2 branches missed.">                        if (ours == null) {</span>
+<span class="nc" id="L932">                            lb.add(&quot;Could not set tile region &quot;, r.getId(),</span>
+<span class="nc" id="L933">                                &quot; for tile: &quot;, t, &quot;\n&quot;);</span>
+<span class="nc" id="L934">                            fixRegions.add(t);</span>
+<span class="nc" id="L935">                        } else {</span>
+<span class="nc" id="L936">                            ours.addTile(t);</span>
+                        }
+                    }
+<span class="nc" id="L939">                } else {</span>
+<span class="nc" id="L940">                    t = createTile(x, y, landMap, latitude);</span>
+                }
+<span class="nc" id="L942">                map.setTile(t, x, y);</span>
+            }
+        }
+<span class="nc" id="L945">        game.setMap(map);</span>
+
+        // Build the regions.
+<span class="nc" id="L948">        List&lt;ServerRegion&gt; fixed = ServerRegion.requireFixedRegions(map, lb);</span>
+<span class="nc" id="L949">        List&lt;ServerRegion&gt; newRegions = new ArrayList&lt;&gt;();</span>
+<span class="nc bnc" id="L950" title="All 2 branches missed.">        if (importTerrain) {</span>
+<span class="nc bnc" id="L951" title="All 2 branches missed.">            if (!fixRegions.isEmpty()) { // Fix the tiles missing regions.</span>
+<span class="nc" id="L952">                newRegions.addAll(createLakeRegions(map, lb));</span>
+<span class="nc" id="L953">                newRegions.addAll(createLandRegions(map, lb));</span>
+            }
+<span class="nc" id="L955">        } else {</span>
+<span class="nc" id="L956">            map.resetHighSeas(</span>
+<span class="nc" id="L957">                mapOptions.getInteger(MapGeneratorOptions.DISTANCE_TO_HIGH_SEA),</span>
+<span class="nc" id="L958">                mapOptions.getInteger(MapGeneratorOptions.MAXIMUM_DISTANCE_TO_EDGE));</span>
+<span class="nc bnc" id="L959" title="All 2 branches missed.">            if (mapHasLand) {</span>
+<span class="nc" id="L960">                newRegions.addAll(createMountains(map, lb));</span>
+<span class="nc" id="L961">                newRegions.addAll(createRivers(map, lb));</span>
+<span class="nc" id="L962">                newRegions.addAll(createLakeRegions(map, lb));</span>
+<span class="nc" id="L963">                newRegions.addAll(createLandRegions(map, lb));</span>
+            }
+        }
+<span class="nc" id="L966">        lb.shrink(&quot;\n&quot;);</span>
+
+        // Connect all new regions to their geographic parent and add to
+        // the map.
+<span class="nc" id="L970">        List&lt;ServerRegion&gt; geographic = new ArrayList&lt;&gt;();</span>
+<span class="nc bnc" id="L971" title="All 2 branches missed.">        for (ServerRegion sr : fixed) {</span>
+<span class="nc bnc" id="L972" title="All 2 branches missed.">            if (sr.isGeographic()) geographic.add(sr);</span>
+        }
+<span class="nc bnc" id="L974" title="All 2 branches missed.">        for (ServerRegion sr : newRegions) {</span>
+<span class="nc bnc" id="L975" title="All 2 branches missed.">            for (ServerRegion gr : geographic) {</span>
+<span class="nc bnc" id="L976" title="All 2 branches missed.">                if (gr.containsCenter(sr)) {</span>
+<span class="nc" id="L977">                    sr.setParent(gr);</span>
+<span class="nc" id="L978">                    gr.addChild(sr);</span>
+<span class="nc" id="L979">                    gr.setSize(gr.getSize() + sr.getSize());</span>
+<span class="nc" id="L980">                    break;</span>
+                }
+            }
+<span class="nc" id="L983">            map.addRegion(sr);</span>
+        }
+
+        // Probably only needed on import of old maps.
+<span class="nc" id="L987">        map.fixupRegions();</span>
+
+        // Add the bonuses only after the map is completed.
+        // Otherwise we risk creating resources on fields where they
+        // do not belong (like sugar in large rivers or tobacco on hills).
+<span class="nc bnc" id="L992" title="All 2 branches missed.">        for (Tile tile : map.getAllTiles()) {</span>
+<span class="nc bnc" id="L993" title="All 2 branches missed.">            perhapsAddBonus(tile, !importBonuses);</span>
+<span class="nc bnc" id="L994" title="All 2 branches missed.">            if (!tile.isLand()) {</span>
+<span class="nc" id="L995">                encodeStyle(tile);</span>
+            }
+        }
+
+        // Final cleanups
+<span class="nc" id="L1000">        map.resetContiguity();</span>
+<span class="nc" id="L1001">        map.resetHighSeasCount();</span>
+<span class="nc" id="L1002">        return map;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span>TurnTest (1) (May 15, 2016 10:10:32 AM)</div></body></html>

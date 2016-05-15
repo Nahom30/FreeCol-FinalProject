@@ -1,0 +1,788 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../.resources/report.gif" type="image/gif"/><title>AbstractGoodsTest.java</title><link rel="stylesheet" href="../../../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../.sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">TurnTest (1) (May 15, 2016 10:10:32 AM)</a> &gt; <a href="../../index.html" class="el_group">FreeCol</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">net.sf.freecol.common.model</a> &gt; <span class="el_source">AbstractGoodsTest.java</span></div><h1>AbstractGoodsTest.java</h1><pre class="source lang-java linenums">package net.sf.freecol.common.model;
+
+import java.util.Collection;
+import java.util.LinkedList;
+import javax.imageio.metadata.IIOMetadataNode;
+import org.junit.*;
+import static org.junit.Assert.*;
+import org.w3c.dom.Element;
+
+/**
+ * The class &lt;code&gt;AbstractGoodsTest&lt;/code&gt; contains tests for the class &lt;code&gt;{@link AbstractGoods}&lt;/code&gt;.
+ *
+ * @generatedBy CodePro at 5/14/16 4:04 PM
+ * @author nahomnegash
+ * @version $Revision: 1.0 $
+ */
+<span class="nc" id="L17">public class AbstractGoodsTest {</span>
+	/**
+	 * Run the AbstractGoods() constructor test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/14/16 4:04 PM
+	 */
+	@Test
+	public void testAbstractGoods_1()
+		throws Exception {
+
+<span class="nc" id="L29">		AbstractGoods result = new AbstractGoods();</span>
+
+		// add additional test code here
+<span class="nc" id="L32">		assertNotNull(result);</span>
+<span class="nc" id="L33">		assertEquals(&quot;0 (null)&quot;, result.toString());</span>
+<span class="nc" id="L34">		assertEquals(null, result.getType());</span>
+<span class="nc" id="L35">		assertEquals(0, result.getAmount());</span>
+<span class="nc" id="L36">		assertEquals(null, result.getXMLTagName());</span>
+<span class="nc" id="L37">		assertEquals(null, result.getSuffix());</span>
+<span class="nc" id="L38">		assertEquals(null, result.getId());</span>
+<span class="nc" id="L39">		assertEquals(null, result.getSpecification());</span>
+<span class="nc" id="L40">		assertEquals(-1, result.getIdNumber());</span>
+<span class="nc" id="L41">		assertEquals(null, result.getGame());</span>
+<span class="nc" id="L42">		assertEquals(null, result.getIdType());</span>
+<span class="nc" id="L43">		assertEquals(null, result.getFeatureContainer());</span>
+<span class="nc" id="L44">	}</span>
+
+	/**
+	 * Run the AbstractGoods(AbstractGoods) constructor test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/14/16 4:04 PM
+	 */
+	@Test
+	public void testAbstractGoods_2()
+		throws Exception {
+<span class="nc" id="L56">		AbstractGoods other = new AbstractGoods(new GoodsType(&quot;&quot;, new Specification()), 1);</span>
+
+<span class="nc" id="L58">		AbstractGoods result = new AbstractGoods(other);</span>
+
+		// add additional test code here
+<span class="nc" id="L61">		assertNotNull(result);</span>
+<span class="nc" id="L62">		assertEquals(&quot;1 &quot;, result.toString());</span>
+<span class="nc" id="L63">		assertEquals(1, result.getAmount());</span>
+<span class="nc" id="L64">		assertEquals(null, result.getXMLTagName());</span>
+<span class="nc" id="L65">		assertEquals(&quot;.name&quot;, result.getNameKey());</span>
+<span class="nc" id="L66">		assertEquals(&quot;&quot;, result.getSuffix());</span>
+<span class="nc" id="L67">		assertEquals(&quot;&quot;, result.getId());</span>
+<span class="nc" id="L68">		assertEquals(null, result.getSpecification());</span>
+<span class="nc" id="L69">		assertEquals(-1, result.getIdNumber());</span>
+<span class="nc" id="L70">		assertEquals(null, result.getGame());</span>
+<span class="nc" id="L71">		assertEquals(&quot;&quot;, result.getIdType());</span>
+<span class="nc" id="L72">		assertEquals(null, result.getFeatureContainer());</span>
+<span class="nc" id="L73">	}</span>
+
+	/**
+	 * Run the AbstractGoods(GoodsType,int) constructor test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/14/16 4:04 PM
+	 */
+	@Test
+	public void testAbstractGoods_3()
+		throws Exception {
+<span class="nc" id="L85">		GoodsType type = new GoodsType(&quot;&quot;, new Specification());</span>
+<span class="nc" id="L86">		int amount = 1;</span>
+
+<span class="nc" id="L88">		AbstractGoods result = new AbstractGoods(type, amount);</span>
+
+		// add additional test code here
+<span class="nc" id="L91">		assertNotNull(result);</span>
+<span class="nc" id="L92">		assertEquals(&quot;1 &quot;, result.toString());</span>
+<span class="nc" id="L93">		assertEquals(1, result.getAmount());</span>
+<span class="nc" id="L94">		assertEquals(null, result.getXMLTagName());</span>
+<span class="nc" id="L95">		assertEquals(&quot;.name&quot;, result.getNameKey());</span>
+<span class="nc" id="L96">		assertEquals(&quot;&quot;, result.getSuffix());</span>
+<span class="nc" id="L97">		assertEquals(&quot;&quot;, result.getId());</span>
+<span class="nc" id="L98">		assertEquals(null, result.getSpecification());</span>
+<span class="nc" id="L99">		assertEquals(-1, result.getIdNumber());</span>
+<span class="nc" id="L100">		assertEquals(null, result.getGame());</span>
+<span class="nc" id="L101">		assertEquals(&quot;&quot;, result.getIdType());</span>
+<span class="nc" id="L102">		assertEquals(null, result.getFeatureContainer());</span>
+<span class="nc" id="L103">	}</span>
+
+	/**
+	 * Run the boolean containsType(GoodsType,Collection&lt;? extends AbstractGoods&gt;) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/14/16 4:04 PM
+	 */
+	@Test
+	public void testContainsType_1()
+		throws Exception {
+<span class="nc" id="L115">		GoodsType type = new GoodsType(&quot;&quot;, new Specification());</span>
+<span class="nc" id="L116">		Collection&lt;? extends AbstractGoods&gt; goods = new LinkedList();</span>
+
+<span class="nc" id="L118">		boolean result = AbstractGoods.containsType(type, goods);</span>
+
+		// add additional test code here
+<span class="nc" id="L121">		assertEquals(false, result);</span>
+<span class="nc" id="L122">	}</span>
+
+	/**
+	 * Run the boolean containsType(GoodsType,Collection&lt;? extends AbstractGoods&gt;) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/14/16 4:04 PM
+	 */
+	@Test
+	public void testContainsType_2()
+		throws Exception {
+<span class="nc" id="L134">		GoodsType type = new GoodsType(&quot;&quot;, new Specification());</span>
+<span class="nc" id="L135">		Collection&lt;? extends AbstractGoods&gt; goods = new LinkedList();</span>
+
+<span class="nc" id="L137">		boolean result = AbstractGoods.containsType(type, goods);</span>
+
+		// add additional test code here
+<span class="nc" id="L140">		assertEquals(false, result);</span>
+<span class="nc" id="L141">	}</span>
+
+	/**
+	 * Run the boolean equals(Object) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/14/16 4:04 PM
+	 */
+	@Test
+	public void testEquals_1()
+		throws Exception {
+<span class="nc" id="L153">		AbstractGoods fixture = new AbstractGoods(new GoodsType(&quot;&quot;, new Specification()), 1);</span>
+<span class="nc" id="L154">		Object o = new AbstractGoods(new GoodsType(&quot;&quot;, new Specification()), 1);</span>
+
+<span class="nc" id="L156">		boolean result = fixture.equals(o);</span>
+
+		// add additional test code here
+<span class="nc" id="L159">		assertEquals(false, result);</span>
+<span class="nc" id="L160">	}</span>
+
+	/**
+	 * Run the boolean equals(Object) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/14/16 4:04 PM
+	 */
+	@Test
+	public void testEquals_2()
+		throws Exception {
+<span class="nc" id="L172">		AbstractGoods fixture = new AbstractGoods(new GoodsType(&quot;&quot;, new Specification()), 1);</span>
+<span class="nc" id="L173">		Object o = new AbstractGoods(new GoodsType(&quot;&quot;, new Specification()), 1);</span>
+
+<span class="nc" id="L175">		boolean result = fixture.equals(o);</span>
+
+		// add additional test code here
+<span class="nc" id="L178">		assertEquals(false, result);</span>
+<span class="nc" id="L179">	}</span>
+
+	/**
+	 * Run the boolean equals(Object) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/14/16 4:04 PM
+	 */
+	@Test
+	public void testEquals_3()
+		throws Exception {
+<span class="nc" id="L191">		AbstractGoods fixture = new AbstractGoods(new GoodsType(&quot;&quot;, new Specification()), 1);</span>
+<span class="nc" id="L192">		Object o = new AbstractGoods(new GoodsType(&quot;&quot;, new Specification()), 1);</span>
+
+<span class="nc" id="L194">		boolean result = fixture.equals(o);</span>
+
+		// add additional test code here
+<span class="nc" id="L197">		assertEquals(false, result);</span>
+<span class="nc" id="L198">	}</span>
+
+	/**
+	 * Run the boolean equals(Object) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/14/16 4:04 PM
+	 */
+	@Test
+	public void testEquals_4()
+		throws Exception {
+<span class="nc" id="L210">		AbstractGoods fixture = new AbstractGoods(new GoodsType(&quot;&quot;, new Specification()), 1);</span>
+<span class="nc" id="L211">		Object o = new AbstractGoods(new GoodsType(&quot;&quot;, new Specification()), 1);</span>
+
+<span class="nc" id="L213">		boolean result = fixture.equals(o);</span>
+
+		// add additional test code here
+<span class="nc" id="L216">		assertEquals(false, result);</span>
+<span class="nc" id="L217">	}</span>
+
+	/**
+	 * Run the boolean equals(Object) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/14/16 4:04 PM
+	 */
+	@Test
+	public void testEquals_5()
+		throws Exception {
+<span class="nc" id="L229">		AbstractGoods fixture = new AbstractGoods(new GoodsType(&quot;&quot;, new Specification()), 1);</span>
+<span class="nc" id="L230">		Object o = new Object();</span>
+
+<span class="nc" id="L232">		boolean result = fixture.equals(o);</span>
+
+		// add additional test code here
+<span class="nc" id="L235">		assertEquals(false, result);</span>
+<span class="nc" id="L236">	}</span>
+
+	/**
+	 * Run the int evaluateFor(Player) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/14/16 4:04 PM
+	 */
+	@Test
+	public void testEvaluateFor_1()
+		throws Exception {
+<span class="nc" id="L248">		AbstractGoods fixture = new AbstractGoods(new GoodsType(&quot;&quot;, new Specification()), 1);</span>
+<span class="nc" id="L249">		Player player = new Player(new Game(), new IIOMetadataNode());</span>
+<span class="nc" id="L250">		player.market = null;</span>
+
+<span class="nc" id="L252">		int result = fixture.evaluateFor(player);</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.lang.RuntimeException: Reader creation failure
+		//       at net.sf.freecol.common.networking.DOMMessage.makeElementReader(DOMMessage.java:802)
+		//       at net.sf.freecol.common.networking.DOMMessage.readFromXMLElement(DOMMessage.java:817)
+		//       at net.sf.freecol.common.networking.DOMMessage.readFromXMLElement(DOMMessage.java:778)
+		//       at net.sf.freecol.common.model.Player.&lt;init&gt;(Player.java:450)
+<span class="nc" id="L261">		assertEquals(0, result);</span>
+<span class="nc" id="L262">	}</span>
+
+	/**
+	 * Run the AbstractGoods findByType(GoodsType,Collection&lt;? extends AbstractGoods&gt;) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/14/16 4:04 PM
+	 */
+	@Test
+	public void testFindByType_1()
+		throws Exception {
+<span class="nc" id="L274">		GoodsType type = new GoodsType(&quot;&quot;, new Specification());</span>
+<span class="nc" id="L275">		Collection&lt;? extends AbstractGoods&gt; goods = new LinkedList();</span>
+
+<span class="nc" id="L277">		AbstractGoods result = AbstractGoods.findByType(type, goods);</span>
+
+		// add additional test code here
+<span class="nc" id="L280">		assertEquals(null, result);</span>
+<span class="nc" id="L281">	}</span>
+
+	/**
+	 * Run the AbstractGoods findByType(GoodsType,Collection&lt;? extends AbstractGoods&gt;) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/14/16 4:04 PM
+	 */
+	@Test
+	public void testFindByType_2()
+		throws Exception {
+<span class="nc" id="L293">		GoodsType type = new GoodsType(&quot;&quot;, new Specification());</span>
+<span class="nc" id="L294">		Collection&lt;? extends AbstractGoods&gt; goods = new LinkedList();</span>
+
+<span class="nc" id="L296">		AbstractGoods result = AbstractGoods.findByType(type, goods);</span>
+
+		// add additional test code here
+<span class="nc" id="L299">		assertEquals(null, result);</span>
+<span class="nc" id="L300">	}</span>
+
+	/**
+	 * Run the AbstractGoods findByType(GoodsType,Collection&lt;? extends AbstractGoods&gt;) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/14/16 4:04 PM
+	 */
+	@Test
+	public void testFindByType_3()
+		throws Exception {
+<span class="nc" id="L312">		GoodsType type = new GoodsType(&quot;&quot;, new Specification());</span>
+<span class="nc" id="L313">		Collection&lt;? extends AbstractGoods&gt; goods = new LinkedList();</span>
+
+<span class="nc" id="L315">		AbstractGoods result = AbstractGoods.findByType(type, goods);</span>
+
+		// add additional test code here
+<span class="nc" id="L318">		assertEquals(null, result);</span>
+<span class="nc" id="L319">	}</span>
+
+	/**
+	 * Run the int getAmount() method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/14/16 4:04 PM
+	 */
+	@Test
+	public void testGetAmount_1()
+		throws Exception {
+<span class="nc" id="L331">		AbstractGoods fixture = new AbstractGoods(new GoodsType(&quot;&quot;, new Specification()), 1);</span>
+
+<span class="nc" id="L333">		int result = fixture.getAmount();</span>
+
+		// add additional test code here
+<span class="nc" id="L336">		assertEquals(1, result);</span>
+<span class="nc" id="L337">	}</span>
+
+	/**
+	 * Run the int getCount(GoodsType,Collection&lt;? extends AbstractGoods&gt;) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/14/16 4:04 PM
+	 */
+	@Test
+	public void testGetCount_1()
+		throws Exception {
+<span class="nc" id="L349">		GoodsType type = new GoodsType(&quot;&quot;, new Specification());</span>
+<span class="nc" id="L350">		Collection&lt;? extends AbstractGoods&gt; goods = new LinkedList();</span>
+
+<span class="nc" id="L352">		int result = AbstractGoods.getCount(type, goods);</span>
+
+		// add additional test code here
+<span class="nc" id="L355">		assertEquals(0, result);</span>
+<span class="nc" id="L356">	}</span>
+
+	/**
+	 * Run the int getCount(GoodsType,Collection&lt;? extends AbstractGoods&gt;) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/14/16 4:04 PM
+	 */
+	@Test
+	public void testGetCount_2()
+		throws Exception {
+<span class="nc" id="L368">		GoodsType type = new GoodsType(&quot;&quot;, new Specification());</span>
+<span class="nc" id="L369">		Collection&lt;? extends AbstractGoods&gt; goods = new LinkedList();</span>
+
+<span class="nc" id="L371">		int result = AbstractGoods.getCount(type, goods);</span>
+
+		// add additional test code here
+<span class="nc" id="L374">		assertEquals(0, result);</span>
+<span class="nc" id="L375">	}</span>
+
+	/**
+	 * Run the StringTemplate getLabel() method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/14/16 4:04 PM
+	 */
+	@Test
+	public void testGetLabel_1()
+		throws Exception {
+<span class="nc" id="L387">		AbstractGoods fixture = new AbstractGoods(new GoodsType(&quot;&quot;, new Specification()), 1);</span>
+
+<span class="nc" id="L389">		StringTemplate result = fixture.getLabel();</span>
+
+		// add additional test code here
+<span class="nc" id="L392">		assertNotNull(result);</span>
+<span class="nc" id="L393">		assertEquals(&quot;TEMPLATE: model.abstractGoods.label [[%goods%: KEY: .name][%amount%: NAME: 1]]&quot;, result.toString());</span>
+<span class="nc" id="L394">		assertEquals(false, result.isEmpty());</span>
+<span class="nc" id="L395">		assertEquals(null, result.getDefaultId());</span>
+<span class="nc" id="L396">		assertEquals(&quot;stringTemplate&quot;, result.getXMLTagName());</span>
+<span class="nc" id="L397">		assertEquals(&quot;label&quot;, result.getSuffix());</span>
+<span class="nc" id="L398">		assertEquals(&quot;model.abstractGoods.label&quot;, result.getId());</span>
+<span class="nc" id="L399">		assertEquals(&quot;&lt;stringTemplate id=\&quot;model.abstractGoods.label\&quot; templateType=\&quot;template\&quot;&gt;&lt;key value=\&quot;%goods%\&quot;&gt;&lt;/key&gt;&lt;key value=\&quot;%amount%\&quot;&gt;&lt;/key&gt;&lt;stringTemplate id=\&quot;.name\&quot; templateType=\&quot;key\&quot;&gt;&lt;/stringTemplate&gt;&lt;stringTemplate id=\&quot;1\&quot; templateType=\&quot;name\&quot;&gt;&lt;/stringTemplate&gt;&lt;/stringTemplate&gt;&quot;, result.serialize());</span>
+<span class="nc" id="L400">		assertEquals(null, result.getSpecification());</span>
+<span class="nc" id="L401">		assertEquals(-1, result.getIdNumber());</span>
+<span class="nc" id="L402">		assertEquals(null, result.getGame());</span>
+<span class="nc" id="L403">		assertEquals(&quot;model.abstractGoods.label&quot;, result.getIdType());</span>
+<span class="nc" id="L404">		assertEquals(null, result.getFeatureContainer());</span>
+<span class="nc" id="L405">	}</span>
+
+	/**
+	 * Run the StringTemplate getLabel(boolean) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/14/16 4:04 PM
+	 */
+	@Test
+	public void testGetLabel_2()
+		throws Exception {
+<span class="nc" id="L417">		AbstractGoods fixture = new AbstractGoods(new GoodsType(&quot;&quot;, new Specification()), 1);</span>
+<span class="nc" id="L418">		boolean sellable = false;</span>
+
+<span class="nc" id="L420">		StringTemplate result = fixture.getLabel(sellable);</span>
+
+		// add additional test code here
+<span class="nc" id="L423">		assertNotNull(result);</span>
+<span class="nc" id="L424">		assertEquals(&quot;TEMPLATE: model.abstractGoods.boycotted [[%goods%: KEY: .name][%amount%: NAME: 1]]&quot;, result.toString());</span>
+<span class="nc" id="L425">		assertEquals(false, result.isEmpty());</span>
+<span class="nc" id="L426">		assertEquals(null, result.getDefaultId());</span>
+<span class="nc" id="L427">		assertEquals(&quot;stringTemplate&quot;, result.getXMLTagName());</span>
+<span class="nc" id="L428">		assertEquals(&quot;boycotted&quot;, result.getSuffix());</span>
+<span class="nc" id="L429">		assertEquals(&quot;model.abstractGoods.boycotted&quot;, result.getId());</span>
+<span class="nc" id="L430">		assertEquals(&quot;&lt;stringTemplate id=\&quot;model.abstractGoods.boycotted\&quot; templateType=\&quot;template\&quot;&gt;&lt;key value=\&quot;%goods%\&quot;&gt;&lt;/key&gt;&lt;key value=\&quot;%amount%\&quot;&gt;&lt;/key&gt;&lt;stringTemplate id=\&quot;.name\&quot; templateType=\&quot;key\&quot;&gt;&lt;/stringTemplate&gt;&lt;stringTemplate id=\&quot;1\&quot; templateType=\&quot;name\&quot;&gt;&lt;/stringTemplate&gt;&lt;/stringTemplate&gt;&quot;, result.serialize());</span>
+<span class="nc" id="L431">		assertEquals(null, result.getSpecification());</span>
+<span class="nc" id="L432">		assertEquals(-1, result.getIdNumber());</span>
+<span class="nc" id="L433">		assertEquals(null, result.getGame());</span>
+<span class="nc" id="L434">		assertEquals(&quot;model.abstractGoods.boycotted&quot;, result.getIdType());</span>
+<span class="nc" id="L435">		assertEquals(null, result.getFeatureContainer());</span>
+<span class="nc" id="L436">	}</span>
+
+	/**
+	 * Run the StringTemplate getLabel(boolean) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/14/16 4:04 PM
+	 */
+	@Test
+	public void testGetLabel_3()
+		throws Exception {
+<span class="nc" id="L448">		AbstractGoods fixture = new AbstractGoods(new GoodsType(&quot;&quot;, new Specification()), 1);</span>
+<span class="nc" id="L449">		boolean sellable = true;</span>
+
+<span class="nc" id="L451">		StringTemplate result = fixture.getLabel(sellable);</span>
+
+		// add additional test code here
+<span class="nc" id="L454">		assertNotNull(result);</span>
+<span class="nc" id="L455">		assertEquals(&quot;TEMPLATE: model.abstractGoods.label [[%goods%: KEY: .name][%amount%: NAME: 1]]&quot;, result.toString());</span>
+<span class="nc" id="L456">		assertEquals(false, result.isEmpty());</span>
+<span class="nc" id="L457">		assertEquals(null, result.getDefaultId());</span>
+<span class="nc" id="L458">		assertEquals(&quot;stringTemplate&quot;, result.getXMLTagName());</span>
+<span class="nc" id="L459">		assertEquals(&quot;label&quot;, result.getSuffix());</span>
+<span class="nc" id="L460">		assertEquals(&quot;model.abstractGoods.label&quot;, result.getId());</span>
+<span class="nc" id="L461">		assertEquals(&quot;&lt;stringTemplate id=\&quot;model.abstractGoods.label\&quot; templateType=\&quot;template\&quot;&gt;&lt;key value=\&quot;%goods%\&quot;&gt;&lt;/key&gt;&lt;key value=\&quot;%amount%\&quot;&gt;&lt;/key&gt;&lt;stringTemplate id=\&quot;.name\&quot; templateType=\&quot;key\&quot;&gt;&lt;/stringTemplate&gt;&lt;stringTemplate id=\&quot;1\&quot; templateType=\&quot;name\&quot;&gt;&lt;/stringTemplate&gt;&lt;/stringTemplate&gt;&quot;, result.serialize());</span>
+<span class="nc" id="L462">		assertEquals(null, result.getSpecification());</span>
+<span class="nc" id="L463">		assertEquals(-1, result.getIdNumber());</span>
+<span class="nc" id="L464">		assertEquals(null, result.getGame());</span>
+<span class="nc" id="L465">		assertEquals(&quot;model.abstractGoods.label&quot;, result.getIdType());</span>
+<span class="nc" id="L466">		assertEquals(null, result.getFeatureContainer());</span>
+<span class="nc" id="L467">	}</span>
+
+	/**
+	 * Run the StringTemplate getLabel(String,int) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/14/16 4:04 PM
+	 */
+	@Test
+	public void testGetLabel_4()
+		throws Exception {
+<span class="nc" id="L479">		String key = &quot;&quot;;</span>
+<span class="nc" id="L480">		int amount = 1;</span>
+
+<span class="nc" id="L482">		StringTemplate result = AbstractGoods.getLabel(key, amount);</span>
+
+		// add additional test code here
+<span class="nc" id="L485">		assertNotNull(result);</span>
+<span class="nc" id="L486">		assertEquals(&quot;TEMPLATE: model.abstractGoods.label [[%goods%: KEY: ][%amount%: NAME: 1]]&quot;, result.toString());</span>
+<span class="nc" id="L487">		assertEquals(false, result.isEmpty());</span>
+<span class="nc" id="L488">		assertEquals(null, result.getDefaultId());</span>
+<span class="nc" id="L489">		assertEquals(&quot;stringTemplate&quot;, result.getXMLTagName());</span>
+<span class="nc" id="L490">		assertEquals(&quot;label&quot;, result.getSuffix());</span>
+<span class="nc" id="L491">		assertEquals(&quot;model.abstractGoods.label&quot;, result.getId());</span>
+<span class="nc" id="L492">		assertEquals(&quot;&lt;stringTemplate id=\&quot;model.abstractGoods.label\&quot; templateType=\&quot;template\&quot;&gt;&lt;key value=\&quot;%goods%\&quot;&gt;&lt;/key&gt;&lt;key value=\&quot;%amount%\&quot;&gt;&lt;/key&gt;&lt;stringTemplate id=\&quot;\&quot; templateType=\&quot;key\&quot;&gt;&lt;/stringTemplate&gt;&lt;stringTemplate id=\&quot;1\&quot; templateType=\&quot;name\&quot;&gt;&lt;/stringTemplate&gt;&lt;/stringTemplate&gt;&quot;, result.serialize());</span>
+<span class="nc" id="L493">		assertEquals(null, result.getSpecification());</span>
+<span class="nc" id="L494">		assertEquals(-1, result.getIdNumber());</span>
+<span class="nc" id="L495">		assertEquals(null, result.getGame());</span>
+<span class="nc" id="L496">		assertEquals(&quot;model.abstractGoods.label&quot;, result.getIdType());</span>
+<span class="nc" id="L497">		assertEquals(null, result.getFeatureContainer());</span>
+<span class="nc" id="L498">	}</span>
+
+	/**
+	 * Run the StringTemplate getLabel(GoodsType,int) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/14/16 4:04 PM
+	 */
+	@Test
+	public void testGetLabel_5()
+		throws Exception {
+<span class="nc" id="L510">		GoodsType type = new GoodsType(&quot;&quot;, new Specification());</span>
+<span class="nc" id="L511">		int amount = 1;</span>
+
+<span class="nc" id="L513">		StringTemplate result = AbstractGoods.getLabel(type, amount);</span>
+
+		// add additional test code here
+<span class="nc" id="L516">		assertNotNull(result);</span>
+<span class="nc" id="L517">		assertEquals(&quot;TEMPLATE: model.abstractGoods.label [[%goods%: KEY: .name][%amount%: NAME: 1]]&quot;, result.toString());</span>
+<span class="nc" id="L518">		assertEquals(false, result.isEmpty());</span>
+<span class="nc" id="L519">		assertEquals(null, result.getDefaultId());</span>
+<span class="nc" id="L520">		assertEquals(&quot;stringTemplate&quot;, result.getXMLTagName());</span>
+<span class="nc" id="L521">		assertEquals(&quot;label&quot;, result.getSuffix());</span>
+<span class="nc" id="L522">		assertEquals(&quot;model.abstractGoods.label&quot;, result.getId());</span>
+<span class="nc" id="L523">		assertEquals(&quot;&lt;stringTemplate id=\&quot;model.abstractGoods.label\&quot; templateType=\&quot;template\&quot;&gt;&lt;key value=\&quot;%goods%\&quot;&gt;&lt;/key&gt;&lt;key value=\&quot;%amount%\&quot;&gt;&lt;/key&gt;&lt;stringTemplate id=\&quot;.name\&quot; templateType=\&quot;key\&quot;&gt;&lt;/stringTemplate&gt;&lt;stringTemplate id=\&quot;1\&quot; templateType=\&quot;name\&quot;&gt;&lt;/stringTemplate&gt;&lt;/stringTemplate&gt;&quot;, result.serialize());</span>
+<span class="nc" id="L524">		assertEquals(null, result.getSpecification());</span>
+<span class="nc" id="L525">		assertEquals(-1, result.getIdNumber());</span>
+<span class="nc" id="L526">		assertEquals(null, result.getGame());</span>
+<span class="nc" id="L527">		assertEquals(&quot;model.abstractGoods.label&quot;, result.getIdType());</span>
+<span class="nc" id="L528">		assertEquals(null, result.getFeatureContainer());</span>
+<span class="nc" id="L529">	}</span>
+
+	/**
+	 * Run the String getNameKey() method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/14/16 4:04 PM
+	 */
+	@Test
+	public void testGetNameKey_1()
+		throws Exception {
+<span class="nc" id="L541">		AbstractGoods fixture = new AbstractGoods(new GoodsType(&quot;&quot;, new Specification()), 1);</span>
+
+<span class="nc" id="L543">		String result = fixture.getNameKey();</span>
+
+		// add additional test code here
+<span class="nc" id="L546">		assertEquals(&quot;.name&quot;, result);</span>
+<span class="nc" id="L547">	}</span>
+
+	/**
+	 * Run the GoodsType getType() method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/14/16 4:04 PM
+	 */
+	@Test
+	public void testGetType_1()
+		throws Exception {
+<span class="nc" id="L559">		AbstractGoods fixture = new AbstractGoods(new GoodsType(&quot;&quot;, new Specification()), 1);</span>
+
+<span class="nc" id="L561">		GoodsType result = fixture.getType();</span>
+
+		// add additional test code here
+<span class="nc" id="L564">		assertNotNull(result);</span>
+<span class="nc" id="L565">		assertEquals(false, result.isNewWorldGoodsType());</span>
+<span class="nc" id="L566">		assertEquals(false, result.isNewWorldLuxuryType());</span>
+<span class="nc" id="L567">		assertEquals(Integer.MAX_VALUE, result.getPrice());</span>
+<span class="nc" id="L568">		assertEquals(false, result.limitIgnored());</span>
+<span class="nc" id="L569">		assertEquals(null, result.getInputType());</span>
+<span class="nc" id="L570">		assertEquals(false, result.isFarmed());</span>
+<span class="nc" id="L571">		assertEquals(false, result.isLibertyType());</span>
+<span class="nc" id="L572">		assertEquals(&quot;goods-type&quot;, result.getXMLTagName());</span>
+<span class="nc" id="L573">		assertEquals(false, result.isFoodType());</span>
+<span class="nc" id="L574">		assertEquals(Integer.MAX_VALUE, result.getBreedingNumber());</span>
+<span class="nc" id="L575">		assertEquals(false, result.isBreedable());</span>
+<span class="nc" id="L576">		assertEquals(1.0f, result.getProductionWeight(), 1.0f);</span>
+<span class="nc" id="L577">		assertEquals(0.0f, result.getLowProductionThreshold(), 1.0f);</span>
+<span class="nc" id="L578">		assertEquals(false, result.isStoredAs());</span>
+<span class="nc" id="L579">		assertEquals(false, result.isBuildingMaterial());</span>
+<span class="nc" id="L580">		assertEquals(false, result.isTradeGoods());</span>
+<span class="nc" id="L581">		assertEquals(1.0f, result.getZeroProductionFactor(), 1.0f);</span>
+<span class="nc" id="L582">		assertEquals(&quot;.workingAs&quot;, result.getWorkingAsKey());</span>
+<span class="nc" id="L583">		assertEquals(false, result.isMilitaryGoods());</span>
+<span class="nc" id="L584">		assertEquals(false, result.isRawBuildingMaterial());</span>
+<span class="nc" id="L585">		assertEquals(false, result.isImmigrationType());</span>
+<span class="nc" id="L586">		assertEquals(false, result.isStorable());</span>
+<span class="nc" id="L587">		assertEquals(false, result.isRawMaterial());</span>
+<span class="nc" id="L588">		assertEquals(false, result.isRefined());</span>
+<span class="nc" id="L589">		assertEquals(null, result.getOutputType());</span>
+<span class="nc" id="L590">		assertEquals(0, result.getInitialAmount());</span>
+<span class="nc" id="L591">		assertEquals(&quot;&quot;, result.toString());</span>
+<span class="nc" id="L592">		assertEquals(&quot;.description&quot;, result.getDescriptionKey());</span>
+<span class="nc" id="L593">		assertEquals(false, result.isAbstractType());</span>
+<span class="nc" id="L594">		assertEquals(&quot;.name&quot;, result.getNameKey());</span>
+<span class="nc" id="L595">		assertEquals(&quot;&quot;, result.getSuffix());</span>
+<span class="nc" id="L596">		assertEquals(&quot;&quot;, result.getId());</span>
+<span class="nc" id="L597">		assertEquals(&quot;&lt;goods-type id=\&quot;\&quot; is-farmed=\&quot;false\&quot; is-food=\&quot;false\&quot; is-military=\&quot;false\&quot; ignore-limit=\&quot;false\&quot; new-world-goods=\&quot;false\&quot; trade-goods=\&quot;false\&quot; storable=\&quot;false\&quot; production-weight=\&quot;1.0\&quot;&gt;&lt;/goods-type&gt;&quot;, result.serialize());</span>
+<span class="nc" id="L598">		assertEquals(-1, result.getIdNumber());</span>
+<span class="nc" id="L599">		assertEquals(null, result.getGame());</span>
+<span class="nc" id="L600">		assertEquals(&quot;&quot;, result.getIdType());</span>
+<span class="nc" id="L601">	}</span>
+
+	/**
+	 * Run the String getXMLTagName() method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/14/16 4:04 PM
+	 */
+	@Test
+	public void testGetXMLTagName_1()
+		throws Exception {
+<span class="nc" id="L613">		AbstractGoods fixture = new AbstractGoods(new GoodsType(&quot;&quot;, new Specification()), 1);</span>
+
+<span class="nc" id="L615">		String result = fixture.getXMLTagName();</span>
+
+		// add additional test code here
+<span class="nc" id="L618">		assertEquals(null, result);</span>
+<span class="nc" id="L619">	}</span>
+
+	/**
+	 * Run the int hashCode() method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/14/16 4:04 PM
+	 */
+	@Test
+	public void testHashCode_1()
+		throws Exception {
+<span class="nc" id="L631">		AbstractGoods fixture = new AbstractGoods(new GoodsType(&quot;&quot;, new Specification()), 1);</span>
+
+<span class="nc" id="L633">		int result = fixture.hashCode();</span>
+
+		// add additional test code here
+<span class="nc" id="L636">		assertEquals(1, result);</span>
+<span class="nc" id="L637">	}</span>
+
+	/**
+	 * Run the void setAmount(int) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/14/16 4:04 PM
+	 */
+	@Test
+	public void testSetAmount_1()
+		throws Exception {
+<span class="nc" id="L649">		AbstractGoods fixture = new AbstractGoods(new GoodsType(&quot;&quot;, new Specification()), 1);</span>
+<span class="nc" id="L650">		int newAmount = 1;</span>
+
+<span class="nc" id="L652">		fixture.setAmount(newAmount);</span>
+
+		// add additional test code here
+<span class="nc" id="L655">	}</span>
+
+	/**
+	 * Run the void setType(GoodsType) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/14/16 4:04 PM
+	 */
+	@Test
+	public void testSetType_1()
+		throws Exception {
+<span class="nc" id="L667">		AbstractGoods fixture = new AbstractGoods(new GoodsType(&quot;&quot;, new Specification()), 1);</span>
+<span class="nc" id="L668">		GoodsType newType = new GoodsType(&quot;&quot;, new Specification());</span>
+
+<span class="nc" id="L670">		fixture.setType(newType);</span>
+
+		// add additional test code here
+<span class="nc" id="L673">	}</span>
+
+	/**
+	 * Run the String toString() method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/14/16 4:04 PM
+	 */
+	@Test
+	public void testToString_1()
+		throws Exception {
+<span class="nc" id="L685">		AbstractGoods fixture = new AbstractGoods(new GoodsType(&quot;&quot;, new Specification()), 1);</span>
+
+<span class="nc" id="L687">		String result = fixture.toString();</span>
+
+		// add additional test code here
+<span class="nc" id="L690">		assertEquals(&quot;1 &quot;, result);</span>
+<span class="nc" id="L691">	}</span>
+
+	/**
+	 * Run the String toString(AbstractGoods) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/14/16 4:04 PM
+	 */
+	@Test
+	public void testToString_2()
+		throws Exception {
+<span class="nc" id="L703">		AbstractGoods ag = new AbstractGoods(new GoodsType(&quot;&quot;, new Specification()), 1);</span>
+
+<span class="nc" id="L705">		String result = AbstractGoods.toString(ag);</span>
+
+		// add additional test code here
+<span class="nc" id="L708">		assertEquals(&quot;1 &quot;, result);</span>
+<span class="nc" id="L709">	}</span>
+
+	/**
+	 * Run the String toString(GoodsType,int) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/14/16 4:04 PM
+	 */
+	@Test
+	public void testToString_3()
+		throws Exception {
+<span class="nc" id="L721">		GoodsType goodsType = new GoodsType(&quot;&quot;, new Specification());</span>
+<span class="nc" id="L722">		int amount = 1;</span>
+
+<span class="nc" id="L724">		String result = AbstractGoods.toString(goodsType, amount);</span>
+
+		// add additional test code here
+<span class="nc" id="L727">		assertEquals(&quot;1 &quot;, result);</span>
+<span class="nc" id="L728">	}</span>
+
+	/**
+	 * Run the String toString(GoodsType,int) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/14/16 4:04 PM
+	 */
+	@Test
+	public void testToString_4()
+		throws Exception {
+<span class="nc" id="L740">		GoodsType goodsType = null;</span>
+<span class="nc" id="L741">		int amount = 1;</span>
+
+<span class="nc" id="L743">		String result = AbstractGoods.toString(goodsType, amount);</span>
+
+		// add additional test code here
+<span class="nc" id="L746">		assertEquals(&quot;1 (null)&quot;, result);</span>
+<span class="nc" id="L747">	}</span>
+
+	/**
+	 * Perform pre-test initialization.
+	 *
+	 * @throws Exception
+	 *         if the initialization fails for some reason
+	 *
+	 * @generatedBy CodePro at 5/14/16 4:04 PM
+	 */
+	@Before
+	public void setUp()
+		throws Exception {
+		// add additional set up code here
+<span class="nc" id="L761">	}</span>
+
+	/**
+	 * Perform post-test clean-up.
+	 *
+	 * @throws Exception
+	 *         if the clean-up fails for some reason
+	 *
+	 * @generatedBy CodePro at 5/14/16 4:04 PM
+	 */
+	@After
+	public void tearDown()
+		throws Exception {
+		// Add additional tear down code here
+<span class="nc" id="L775">	}</span>
+
+	/**
+	 * Launch the test.
+	 *
+	 * @param args the command line arguments
+	 *
+	 * @generatedBy CodePro at 5/14/16 4:04 PM
+	 */
+	public static void main(String[] args) {
+<span class="nc" id="L785">		new org.junit.runner.JUnitCore().run(AbstractGoodsTest.class);</span>
+<span class="nc" id="L786">	}</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span>TurnTest (1) (May 15, 2016 10:10:32 AM)</div></body></html>
