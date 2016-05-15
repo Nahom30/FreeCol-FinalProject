@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../.resources/report.gif" type="image/gif"/><title>StringTemplate.java</title><link rel="stylesheet" href="../../../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../.sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">AbstractGoodsTest (May 14, 2016 4:05:35 PM)</a> &gt; <a href="../../index.html" class="el_group">FreeCol</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">net.sf.freecol.common.model</a> &gt; <span class="el_source">StringTemplate.java</span></div><h1>StringTemplate.java</h1><pre class="source lang-java linenums"><span class="pc" id="L1">/**</span>
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../.resources/report.gif" type="image/gif"/><title>StringTemplate.java</title><link rel="stylesheet" href="../../../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../.sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">TextOptionTest (May 15, 2016 12:07:29 AM)</a> &gt; <a href="../../index.html" class="el_group">FreeCol</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">net.sf.freecol.common.model</a> &gt; <span class="el_source">StringTemplate.java</span></div><h1>StringTemplate.java</h1><pre class="source lang-java linenums"><span class="nc" id="L1">/**</span>
  *  Copyright (C) 2002-2016   The FreeCol Team
  *
  *  This file is part of FreeCol.
@@ -54,22 +54,22 @@ public class StringTemplate extends FreeColObject {
      * value of the key, or LABEL, a separator string that will be
      * used to join the replacement values.
      */
-<span class="fc" id="L57">    public static enum TemplateType { NAME, KEY, TEMPLATE, LABEL }</span>
+<span class="nc" id="L57">    public static enum TemplateType { NAME, KEY, TEMPLATE, LABEL }</span>
 
     /** The TemplateType of this StringTemplate. Defaults to KEY. */
-<span class="pc" id="L60">    private TemplateType templateType = TemplateType.KEY;</span>
+<span class="nc" id="L60">    private TemplateType templateType = TemplateType.KEY;</span>
 
     /**
      * An alternative key to use if the identifier is not contained in
      * the message bundle.
      */
-<span class="pc" id="L66">    private String defaultId = null;</span>
+<span class="nc" id="L66">    private String defaultId = null;</span>
 
     /** The keys to replace within the string template. */
-<span class="pc" id="L69">    private List&lt;String&gt; keys = null;</span>
+<span class="nc" id="L69">    private List&lt;String&gt; keys = null;</span>
 
     /** The values with which to replace the keys in the string template. */
-<span class="pc" id="L72">    private List&lt;StringTemplate&gt; replacements = null;</span>
+<span class="nc" id="L72">    private List&lt;StringTemplate&gt; replacements = null;</span>
 
 
     /**
@@ -98,14 +98,14 @@ public class StringTemplate extends FreeColObject {
      * @param defaultId The default identifier.
      * @param templateType The &lt;code&gt;TemplateType&lt;/code&gt; for this template.
      */
-<span class="fc" id="L101">    protected StringTemplate(String id, String defaultId,</span>
+<span class="nc" id="L101">    protected StringTemplate(String id, String defaultId,</span>
                              TemplateType templateType) {
-<span class="fc" id="L103">        setId(id);</span>
-<span class="fc" id="L104">        this.defaultId = defaultId;</span>
-<span class="fc" id="L105">        this.templateType = templateType;</span>
-<span class="fc" id="L106">        this.keys = null;</span>
-<span class="fc" id="L107">        this.replacements = null;</span>
-<span class="fc" id="L108">    }</span>
+<span class="nc" id="L103">        setId(id);</span>
+<span class="nc" id="L104">        this.defaultId = defaultId;</span>
+<span class="nc" id="L105">        this.templateType = templateType;</span>
+<span class="nc" id="L106">        this.keys = null;</span>
+<span class="nc" id="L107">        this.replacements = null;</span>
+<span class="nc" id="L108">    }</span>
 
     /**
      * Create a new &lt;code&gt;StringTemplate&lt;/code&gt; by reading a stream.
@@ -125,10 +125,10 @@ public class StringTemplate extends FreeColObject {
     }
 
     public static StringTemplate name(String value) {
-<span class="pc bpc" id="L128" title="1 of 2 branches missed.">        if (value == null) {</span>
+<span class="nc bnc" id="L128" title="All 2 branches missed.">        if (value == null) {</span>
 <span class="nc" id="L129">            logger.warning(&quot;NULL NAME TEMPLATE\n&quot; + net.sf.freecol.common.debug.FreeColDebugger.stackTraceToString());</span>
         }
-<span class="fc" id="L131">        return new StringTemplate(value, null, TemplateType.NAME);</span>
+<span class="nc" id="L131">        return new StringTemplate(value, null, TemplateType.NAME);</span>
     }
 
     public static StringTemplate key(Named named) {
@@ -136,7 +136,7 @@ public class StringTemplate extends FreeColObject {
     }
 
     public static StringTemplate key(String value) {
-<span class="fc" id="L139">        return new StringTemplate(value, null, TemplateType.KEY);</span>
+<span class="nc" id="L139">        return new StringTemplate(value, null, TemplateType.KEY);</span>
     }
 
     public static StringTemplate template(Named named) {
@@ -144,7 +144,7 @@ public class StringTemplate extends FreeColObject {
     }
 
     public static StringTemplate template(String value) {
-<span class="fc" id="L147">        return new StringTemplate(value, null, TemplateType.TEMPLATE);</span>
+<span class="nc" id="L147">        return new StringTemplate(value, null, TemplateType.TEMPLATE);</span>
     }
 
     public static StringTemplate label(String value) {
@@ -167,7 +167,7 @@ public class StringTemplate extends FreeColObject {
      * @return The default identifier.
      */
     public final String getDefaultId() {
-<span class="fc" id="L170">        return this.defaultId;</span>
+<span class="nc" id="L170">        return this.defaultId;</span>
     }
 
     /**
@@ -214,9 +214,9 @@ public class StringTemplate extends FreeColObject {
      * @param key The key to add.
      */
     private void addKey(String key) {
-<span class="fc bfc" id="L217" title="All 2 branches covered.">        if (this.keys == null) this.keys = new ArrayList&lt;&gt;();</span>
-<span class="fc" id="L218">        this.keys.add(key);</span>
-<span class="fc" id="L219">    }</span>
+<span class="nc bnc" id="L217" title="All 2 branches missed.">        if (this.keys == null) this.keys = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L218">        this.keys.add(key);</span>
+<span class="nc" id="L219">    }</span>
 
     /**
      * Get the replacements.
@@ -235,7 +235,7 @@ public class StringTemplate extends FreeColObject {
      * @return True if the template is empty.
      */
     public boolean isEmpty() {
-<span class="pc bpc" id="L238" title="2 of 4 branches missed.">        return this.replacements == null || this.replacements.isEmpty();</span>
+<span class="nc bnc" id="L238" title="All 4 branches missed.">        return this.replacements == null || this.replacements.isEmpty();</span>
     }
     
     /**
@@ -244,9 +244,9 @@ public class StringTemplate extends FreeColObject {
      * @param replacement The &lt;code&gt;StringTemplate&lt;/code&gt; replacement to add.
      */
     private void addReplacement(StringTemplate replacement) {
-<span class="fc bfc" id="L247" title="All 2 branches covered.">        if (this.replacements == null) this.replacements = new ArrayList&lt;&gt;();</span>
-<span class="fc" id="L248">        this.replacements.add(replacement);</span>
-<span class="fc" id="L249">    }</span>
+<span class="nc bnc" id="L247" title="All 2 branches missed.">        if (this.replacements == null) this.replacements = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L248">        this.replacements.add(replacement);</span>
+<span class="nc" id="L249">    }</span>
 
     /**
      * Get the replacement value for a given key.
@@ -278,9 +278,9 @@ public class StringTemplate extends FreeColObject {
     @SuppressWarnings(&quot;unchecked&quot;)
     private final &lt;T extends StringTemplate&gt; T complete(String key,
                                                         StringTemplate value) {
-<span class="pc bpc" id="L281" title="1 of 2 branches missed.">        if (key != null) addKey(key);</span>
-<span class="fc" id="L282">        addReplacement(value);</span>
-<span class="fc" id="L283">        return (T)this;</span>
+<span class="nc bnc" id="L281" title="All 2 branches missed.">        if (key != null) addKey(key);</span>
+<span class="nc" id="L282">        addReplacement(value);</span>
+<span class="nc" id="L283">        return (T)this;</span>
     }
 
     /**
@@ -294,11 +294,11 @@ public class StringTemplate extends FreeColObject {
      * @return This.
      */
     public &lt;T extends StringTemplate&gt; T add(String key, String value) {
-<span class="pc bpc" id="L297" title="1 of 2 branches missed.">        if (this.templateType != TemplateType.TEMPLATE) {</span>
+<span class="nc bnc" id="L297" title="All 2 branches missed.">        if (this.templateType != TemplateType.TEMPLATE) {</span>
 <span class="nc" id="L298">            throw new IllegalArgumentException(&quot;Cannot add key-value pair&quot;</span>
 <span class="nc" id="L299">                + &quot; to StringTemplate.&quot; + this.templateType);</span>
         }
-<span class="fc" id="L301">        return complete(key, this.key(value));</span>
+<span class="nc" id="L301">        return complete(key, this.key(value));</span>
     }
 
     /**
@@ -329,11 +329,11 @@ public class StringTemplate extends FreeColObject {
      * @return This.
      */
     public &lt;T extends StringTemplate&gt; T addName(String key, String value) {
-<span class="pc bpc" id="L332" title="1 of 2 branches missed.">        if (this.templateType != TemplateType.TEMPLATE) {</span>
+<span class="nc bnc" id="L332" title="All 2 branches missed.">        if (this.templateType != TemplateType.TEMPLATE) {</span>
 <span class="nc" id="L333">            throw new IllegalArgumentException(&quot;Cannot add key-name pair&quot;</span>
 <span class="nc" id="L334">                + &quot; to StringTemplate.&quot; + this.templateType);</span>
         }
-<span class="fc" id="L336">        return complete(key, this.name(value));</span>
+<span class="nc" id="L336">        return complete(key, this.name(value));</span>
     }
 
     /**
@@ -380,7 +380,7 @@ public class StringTemplate extends FreeColObject {
      * @return This.
      */
     public &lt;T extends StringTemplate&gt; T addNamed(String key, Named named) {
-<span class="fc" id="L383">        return add(key, named.getNameKey());</span>
+<span class="nc" id="L383">        return add(key, named.getNameKey());</span>
     }
 
     /**
@@ -403,7 +403,7 @@ public class StringTemplate extends FreeColObject {
      * @return This.
      */
     public &lt;T extends StringTemplate&gt; T addAmount(String key, Number amount) {
-<span class="fc" id="L406">        return addName(key, amount.toString());</span>
+<span class="nc" id="L406">        return addName(key, amount.toString());</span>
     }
 
     /**
@@ -543,38 +543,38 @@ public class StringTemplate extends FreeColObject {
      */
     @Override
     protected void writeAttributes(FreeColXMLWriter xw) throws XMLStreamException {
-<span class="fc" id="L546">        super.writeAttributes(xw);</span>
+<span class="nc" id="L546">        super.writeAttributes(xw);</span>
 
-<span class="fc" id="L548">        xw.writeAttribute(TEMPLATE_TYPE_TAG, templateType);</span>
+<span class="nc" id="L548">        xw.writeAttribute(TEMPLATE_TYPE_TAG, templateType);</span>
 
-<span class="pc bpc" id="L550" title="1 of 2 branches missed.">        if (defaultId != null) {</span>
+<span class="nc bnc" id="L550" title="All 2 branches missed.">        if (defaultId != null) {</span>
 <span class="nc" id="L551">            xw.writeAttribute(DEFAULT_ID_TAG, defaultId);</span>
         }
-<span class="fc" id="L553">    }</span>
+<span class="nc" id="L553">    }</span>
 
     /**
      * {@inheritDoc}
      */
     @Override
     protected void writeChildren(FreeColXMLWriter xw) throws XMLStreamException {
-<span class="fc" id="L560">        super.writeChildren(xw);</span>
+<span class="nc" id="L560">        super.writeChildren(xw);</span>
 
-<span class="fc bfc" id="L562" title="All 2 branches covered.">        if (keys != null) {</span>
-<span class="fc bfc" id="L563" title="All 2 branches covered.">            for (String key : keys) {</span>
-<span class="fc" id="L564">                xw.writeStartElement(KEY_TAG);</span>
+<span class="nc bnc" id="L562" title="All 2 branches missed.">        if (keys != null) {</span>
+<span class="nc bnc" id="L563" title="All 2 branches missed.">            for (String key : keys) {</span>
+<span class="nc" id="L564">                xw.writeStartElement(KEY_TAG);</span>
 
-<span class="fc" id="L566">                xw.writeAttribute(VALUE_TAG, key);</span>
+<span class="nc" id="L566">                xw.writeAttribute(VALUE_TAG, key);</span>
 
-<span class="fc" id="L568">                xw.writeEndElement();</span>
+<span class="nc" id="L568">                xw.writeEndElement();</span>
             }
         }
 
-<span class="fc bfc" id="L572" title="All 2 branches covered.">        if (replacements != null) {</span>
-<span class="fc bfc" id="L573" title="All 2 branches covered.">            for (StringTemplate replacement : replacements) {</span>
-<span class="fc" id="L574">                replacement.toXML(xw);</span>
+<span class="nc bnc" id="L572" title="All 2 branches missed.">        if (replacements != null) {</span>
+<span class="nc bnc" id="L573" title="All 2 branches missed.">            for (StringTemplate replacement : replacements) {</span>
+<span class="nc" id="L574">                replacement.toXML(xw);</span>
             }
         }
-<span class="fc" id="L577">    }</span>
+<span class="nc" id="L577">    }</span>
 
     /**
      * {@inheritDoc}
@@ -625,9 +625,9 @@ public class StringTemplate extends FreeColObject {
      */
     @Override
     public String toString() {
-<span class="fc" id="L628">        StringBuilder sb = new StringBuilder(64);</span>
-<span class="fc" id="L629">        sb.append(templateType).append(&quot;: &quot;);</span>
-<span class="pc bpc" id="L630" title="1 of 4 branches missed.">        switch (templateType) {</span>
+<span class="nc" id="L628">        StringBuilder sb = new StringBuilder(64);</span>
+<span class="nc" id="L629">        sb.append(templateType).append(&quot;: &quot;);</span>
+<span class="nc bnc" id="L630" title="All 4 branches missed.">        switch (templateType) {</span>
         case LABEL:
 <span class="nc bnc" id="L632" title="All 2 branches missed.">            if (this.replacements == null) {</span>
 <span class="nc" id="L633">                sb.append(getId());</span>
@@ -638,38 +638,38 @@ public class StringTemplate extends FreeColObject {
             }
 <span class="nc" id="L639">            break;</span>
         case TEMPLATE:
-<span class="fc" id="L641">            sb.append(getId());</span>
-<span class="pc bpc" id="L642" title="1 of 2 branches missed.">            if (this.defaultId != null) {</span>
+<span class="nc" id="L641">            sb.append(getId());</span>
+<span class="nc bnc" id="L642" title="All 2 branches missed.">            if (this.defaultId != null) {</span>
 <span class="nc" id="L643">                sb.append(&quot; (&quot;).append(this.defaultId).append(&quot;)&quot;);</span>
             }
-<span class="fc" id="L645">            sb.append(&quot; [&quot;);</span>
-<span class="pc bpc" id="L646" title="1 of 2 branches missed.">            if (this.keys != null) {</span>
-<span class="fc bfc" id="L647" title="All 2 branches covered.">                for (int index = 0; index &lt; this.keys.size(); index++) {</span>
-<span class="fc" id="L648">                    sb.append(&quot;[&quot;).append(this.keys.get(index)).append(&quot;: &quot;)</span>
-<span class="fc" id="L649">                        .append(this.replacements.get(index)).append(&quot;]&quot;);</span>
+<span class="nc" id="L645">            sb.append(&quot; [&quot;);</span>
+<span class="nc bnc" id="L646" title="All 2 branches missed.">            if (this.keys != null) {</span>
+<span class="nc bnc" id="L647" title="All 2 branches missed.">                for (int index = 0; index &lt; this.keys.size(); index++) {</span>
+<span class="nc" id="L648">                    sb.append(&quot;[&quot;).append(this.keys.get(index)).append(&quot;: &quot;)</span>
+<span class="nc" id="L649">                        .append(this.replacements.get(index)).append(&quot;]&quot;);</span>
                 }
             }
-<span class="fc" id="L652">            sb.append(&quot;]&quot;);</span>
-<span class="fc" id="L653">            break;</span>
+<span class="nc" id="L652">            sb.append(&quot;]&quot;);</span>
+<span class="nc" id="L653">            break;</span>
         case KEY:
-<span class="fc" id="L655">            sb.append(getId());</span>
-<span class="pc bpc" id="L656" title="1 of 2 branches missed.">            if (this.defaultId != null) {</span>
+<span class="nc" id="L655">            sb.append(getId());</span>
+<span class="nc bnc" id="L656" title="All 2 branches missed.">            if (this.defaultId != null) {</span>
 <span class="nc" id="L657">                sb.append(&quot; (&quot;).append(this.defaultId).append(&quot;)&quot;);</span>
             }
 <span class="nc" id="L659">            break;</span>
         case NAME:
         default:
-<span class="fc" id="L662">            sb.append(getId());</span>
+<span class="nc" id="L662">            sb.append(getId());</span>
             break;
         }
-<span class="fc" id="L665">        return sb.toString();</span>
+<span class="nc" id="L665">        return sb.toString();</span>
     }
 
     /**
      * {@inheritDoc}
      */
     @Override
-<span class="fc" id="L672">    public String getXMLTagName() { return getTagName(); }</span>
+<span class="nc" id="L672">    public String getXMLTagName() { return getTagName(); }</span>
 
     /**
      * Gets the tag name of the root element representing this object.
@@ -677,7 +677,7 @@ public class StringTemplate extends FreeColObject {
      * @return &quot;stringTemplate&quot;.
      */
     public static String getTagName() {
-<span class="fc" id="L680">        return &quot;stringTemplate&quot;;</span>
+<span class="nc" id="L680">        return &quot;stringTemplate&quot;;</span>
     }
 }
-</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span>AbstractGoodsTest (May 14, 2016 4:05:35 PM)</div></body></html>
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span>TextOptionTest (May 15, 2016 12:07:29 AM)</div></body></html>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../.resources/report.gif" type="image/gif"/><title>FreeColObject.java</title><link rel="stylesheet" href="../../../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../.sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">AbstractGoodsTest (May 14, 2016 4:05:35 PM)</a> &gt; <a href="../../index.html" class="el_group">FreeCol</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">net.sf.freecol.common.model</a> &gt; <span class="el_source">FreeColObject.java</span></div><h1>FreeColObject.java</h1><pre class="source lang-java linenums">/**
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../.resources/report.gif" type="image/gif"/><title>FreeColObject.java</title><link rel="stylesheet" href="../../../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../.sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">TextOptionTest (May 15, 2016 12:07:29 AM)</a> &gt; <a href="../../index.html" class="el_group">FreeCol</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">net.sf.freecol.common.model</a> &gt; <span class="el_source">FreeColObject.java</span></div><h1>FreeColObject.java</h1><pre class="source lang-java linenums">/**
  *  Copyright (C) 2002-2016   The FreeCol Team
  *
  *  This file is part of FreeCol.
@@ -228,7 +228,7 @@ import net.sf.freecol.common.util.Utils;
      * @return The &lt;code&gt;Specification&lt;/code&gt; used by this object.
      */
     public Specification getSpecification() {
-<span class="fc" id="L231">        return null;</span>
+<span class="nc" id="L231">        return null;</span>
     }
 
     /**
@@ -420,7 +420,7 @@ import net.sf.freecol.common.util.Utils;
      * @return A set of abilities.
      */
     public final Set&lt;Ability&gt; getAbilities() {
-<span class="fc" id="L423">        return getAbilities(null);</span>
+<span class="nc" id="L423">        return getAbilities(null);</span>
     }
 
     /**
@@ -430,7 +430,7 @@ import net.sf.freecol.common.util.Utils;
      * @return A set of abilities.
      */
     public final Set&lt;Ability&gt; getAbilities(String id) {
-<span class="fc" id="L433">        return getAbilities(id, null);</span>
+<span class="nc" id="L433">        return getAbilities(id, null);</span>
     }
 
     /**
@@ -443,7 +443,7 @@ import net.sf.freecol.common.util.Utils;
      */
     public final Set&lt;Ability&gt; getAbilities(String id,
                                            FreeColSpecObjectType fcgot) {
-<span class="fc" id="L446">        return getAbilities(id, fcgot, null);</span>
+<span class="nc" id="L446">        return getAbilities(id, fcgot, null);</span>
     }
 
     /**
@@ -460,9 +460,9 @@ import net.sf.freecol.common.util.Utils;
     public Set&lt;Ability&gt; getAbilities(String id,
                                      FreeColSpecObjectType fcgot,
                                      Turn turn) {
-<span class="fc" id="L463">        FeatureContainer fc = getFeatureContainer();</span>
-<span class="pc bpc" id="L464" title="1 of 2 branches missed.">        return (fc == null) ? Collections.&lt;Ability&gt;emptySet()</span>
-<span class="fc" id="L465">            : fc.getAbilities(id, fcgot, turn);</span>
+<span class="nc" id="L463">        FeatureContainer fc = getFeatureContainer();</span>
+<span class="nc bnc" id="L464" title="All 2 branches missed.">        return (fc == null) ? Collections.&lt;Ability&gt;emptySet()</span>
+<span class="nc" id="L465">            : fc.getAbilities(id, fcgot, turn);</span>
     }
 
     /**
@@ -541,8 +541,8 @@ import net.sf.freecol.common.util.Utils;
      * @return True if the key is present.
      */
     public final boolean containsModifierKey(String key) {
-<span class="fc" id="L544">        Set&lt;Modifier&gt; set = getModifiers(key);</span>
-<span class="pc bpc" id="L545" title="2 of 4 branches missed.">        return (set == null) ? false : !set.isEmpty();</span>
+<span class="nc" id="L544">        Set&lt;Modifier&gt; set = getModifiers(key);</span>
+<span class="nc bnc" id="L545" title="All 4 branches missed.">        return (set == null) ? false : !set.isEmpty();</span>
     }
 
     /**
@@ -551,10 +551,10 @@ import net.sf.freecol.common.util.Utils;
      * @return A list of modifiers.
      */
     public final List&lt;Modifier&gt; getSortedModifiers() {
-<span class="fc" id="L554">        List&lt;Modifier&gt; modifiers = new ArrayList&lt;&gt;();</span>
-<span class="fc" id="L555">        modifiers.addAll(getModifiers());</span>
-<span class="fc" id="L556">        Collections.sort(modifiers);</span>
-<span class="fc" id="L557">        return modifiers;</span>
+<span class="nc" id="L554">        List&lt;Modifier&gt; modifiers = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L555">        modifiers.addAll(getModifiers());</span>
+<span class="nc" id="L556">        Collections.sort(modifiers);</span>
+<span class="nc" id="L557">        return modifiers;</span>
     }
 
     /**
@@ -563,7 +563,7 @@ import net.sf.freecol.common.util.Utils;
      * @return A set of modifiers.
      */
     public final Set&lt;Modifier&gt; getModifiers() {
-<span class="fc" id="L566">        return getModifiers(null);</span>
+<span class="nc" id="L566">        return getModifiers(null);</span>
     }
 
     /**
@@ -573,7 +573,7 @@ import net.sf.freecol.common.util.Utils;
      * @return A set of modifiers.
      */
     public final Set&lt;Modifier&gt; getModifiers(String id) {
-<span class="fc" id="L576">        return getModifiers(id, null);</span>
+<span class="nc" id="L576">        return getModifiers(id, null);</span>
     }
 
     /**
@@ -586,7 +586,7 @@ import net.sf.freecol.common.util.Utils;
      */
     public final Set&lt;Modifier&gt; getModifiers(String id,
                                             FreeColSpecObjectType fcgot) {
-<span class="fc" id="L589">        return getModifiers(id, fcgot, null);</span>
+<span class="nc" id="L589">        return getModifiers(id, fcgot, null);</span>
     }
 
     /**
@@ -604,9 +604,9 @@ import net.sf.freecol.common.util.Utils;
     public Set&lt;Modifier&gt; getModifiers(String id,
                                       FreeColSpecObjectType fcgot,
                                       Turn turn) {
-<span class="fc" id="L607">        FeatureContainer fc = getFeatureContainer();</span>
-<span class="pc bpc" id="L608" title="1 of 2 branches missed.">        return (fc == null) ? Collections.&lt;Modifier&gt;emptySet()</span>
-<span class="fc" id="L609">            : fc.getModifiers(id, fcgot, turn);</span>
+<span class="nc" id="L607">        FeatureContainer fc = getFeatureContainer();</span>
+<span class="nc bnc" id="L608" title="All 2 branches missed.">        return (fc == null) ? Collections.&lt;Modifier&gt;emptySet()</span>
+<span class="nc" id="L609">            : fc.getModifiers(id, fcgot, turn);</span>
     }
 
     /**
@@ -789,7 +789,7 @@ import net.sf.freecol.common.util.Utils;
      */
     @Override
     public int hashCode() {
-<span class="fc" id="L792">        return Utils.hashCode(this.id);</span>
+<span class="nc" id="L792">        return Utils.hashCode(this.id);</span>
     }
 
 
@@ -1027,9 +1027,9 @@ import net.sf.freecol.common.util.Utils;
      */
     protected void writeAttributes(FreeColXMLWriter xw) throws XMLStreamException {
 <span class="pc bpc" id="L1029" title="1 of 2 branches missed.">        if (getId() == null) {</span>
-<span class="nc" id="L1030">            logger.warning(&quot;FreeColObject with null identifier: &quot; + this);</span>
-<span class="nc" id="L1031">        } else {</span>
-<span class="fc" id="L1032">            xw.writeAttribute(ID_ATTRIBUTE_TAG, getId());</span>
+<span class="fc" id="L1030">            logger.warning(&quot;FreeColObject with null identifier: &quot; + this);</span>
+<span class="fc" id="L1031">        } else {</span>
+<span class="nc" id="L1032">            xw.writeAttribute(ID_ATTRIBUTE_TAG, getId());</span>
         }
 <span class="fc" id="L1034">    }</span>
 
@@ -1232,4 +1232,4 @@ import net.sf.freecol.common.util.Utils;
 <span class="nc" id="L1232">        return null;</span>
     }
 }
-</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span>AbstractGoodsTest (May 14, 2016 4:05:35 PM)</div></body></html>
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span>TextOptionTest (May 15, 2016 12:07:29 AM)</div></body></html>

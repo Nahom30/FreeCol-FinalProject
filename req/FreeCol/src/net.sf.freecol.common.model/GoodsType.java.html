@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../.resources/report.gif" type="image/gif"/><title>GoodsType.java</title><link rel="stylesheet" href="../../../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../.sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">AbstractGoodsTest (May 14, 2016 4:05:35 PM)</a> &gt; <a href="../../index.html" class="el_group">FreeCol</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">net.sf.freecol.common.model</a> &gt; <span class="el_source">GoodsType.java</span></div><h1>GoodsType.java</h1><pre class="source lang-java linenums">/**
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../.resources/report.gif" type="image/gif"/><title>GoodsType.java</title><link rel="stylesheet" href="../../../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../.sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">TextOptionTest (May 15, 2016 12:07:29 AM)</a> &gt; <a href="../../index.html" class="el_group">FreeCol</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">net.sf.freecol.common.model</a> &gt; <span class="el_source">GoodsType.java</span></div><h1>GoodsType.java</h1><pre class="source lang-java linenums">/**
  *  Copyright (C) 2002-2016   The FreeCol Team
  *
  *  This file is part of FreeCol.
@@ -43,9 +43,9 @@ public final class GoodsType extends FreeColSpecObjectType {
     private static final float DEFAULT_ZERO_PRODUCTION_FACTOR = 1.0f;
 
     /** A comparator to impose a useful order on goods types. */
-<span class="fc" id="L46">    public static final Comparator&lt;GoodsType&gt; goodsTypeComparator</span>
-<span class="fc" id="L47">        = Comparator.comparingInt(GoodsType::getRank)</span>
-<span class="pc" id="L48">            .thenComparing(gt -&gt; (FreeColObject)gt);</span>
+<span class="nc" id="L46">    public static final Comparator&lt;GoodsType&gt; goodsTypeComparator</span>
+<span class="nc" id="L47">        = Comparator.comparingInt(GoodsType::getRank)</span>
+<span class="nc" id="L48">            .thenComparing(gt -&gt; (FreeColObject)gt);</span>
 
     /** Is this a farmed goods type. */
     private boolean isFarmed;
@@ -63,13 +63,13 @@ public final class GoodsType extends FreeColSpecObjectType {
      * Whether this type of goods is required for building equipment
      * that grants an offence bonus or defence bonus.
      */
-<span class="fc" id="L66">    private boolean isMilitary = false;</span>
+<span class="nc" id="L66">    private boolean isMilitary = false;</span>
 
     /**
      * Whether this type of goods is required for building. (Derived
      * attribute)
      */
-<span class="fc" id="L72">    private boolean buildingMaterial = false;</span>
+<span class="nc" id="L72">    private boolean buildingMaterial = false;</span>
 
     /** Whether these are trade goods that can only be obtained in Europe. */
     private boolean tradeGoods;
@@ -84,7 +84,7 @@ public final class GoodsType extends FreeColSpecObjectType {
     private GoodsType madeFrom;
 
     /** What this goods type can make.  (Derived attribute) */
-<span class="fc" id="L87">    private GoodsType makes = null;</span>
+<span class="nc" id="L87">    private GoodsType makes = null;</span>
 
     /** The initial amount of this goods type in a market. */
     private int initialAmount;
@@ -99,32 +99,32 @@ public final class GoodsType extends FreeColSpecObjectType {
      * The number of units required to breed this type of goods. This
      * obviously only applies to animals.
      */
-<span class="fc" id="L102">    private int breedingNumber = INFINITY;</span>
+<span class="nc" id="L102">    private int breedingNumber = INFINITY;</span>
 
     /**
      * The price of this type of goods.  This is only used for goods
      * that can not be traded in the market, such as hammers.
      */
-<span class="fc" id="L108">    private int price = INFINITY;</span>
+<span class="nc" id="L108">    private int price = INFINITY;</span>
 
     /**
      * A weight for the potential production of this goods type at a
      * colony site.
      */
-<span class="fc" id="L114">    private float productionWeight = DEFAULT_PRODUCTION_WEIGHT;</span>
+<span class="nc" id="L114">    private float productionWeight = DEFAULT_PRODUCTION_WEIGHT;</span>
 
     /**
      * A threshold amount of potential production of this goods type
      * at a colony site, below which the score for the site is reduced.
      */
-<span class="fc" id="L120">    private float lowProductionThreshold = DEFAULT_LOW_PRODUCTION_THRESHOLD;</span>
+<span class="nc" id="L120">    private float lowProductionThreshold = DEFAULT_LOW_PRODUCTION_THRESHOLD;</span>
 
     /**
      * The multiplicative factor with which to penalize a colony site
      * with zero production of this goods type, scaling linearly to
      * unity when the amount reaches lowResourceThreshold.
      */
-<span class="fc" id="L127">    private float zeroProductionFactor = DEFAULT_ZERO_PRODUCTION_FACTOR;</span>
+<span class="nc" id="L127">    private float zeroProductionFactor = DEFAULT_ZERO_PRODUCTION_FACTOR;</span>
 
 
     /**
@@ -134,8 +134,8 @@ public final class GoodsType extends FreeColSpecObjectType {
      * @param specification The &lt;code&gt;Specification&lt;/code&gt; to refer to.
      */
     public GoodsType(String id, Specification specification) {
-<span class="fc" id="L137">        super(id, specification);</span>
-<span class="fc" id="L138">    }</span>
+<span class="nc" id="L137">        super(id, specification);</span>
+<span class="nc" id="L138">    }</span>
 
 
     /**
@@ -144,7 +144,7 @@ public final class GoodsType extends FreeColSpecObjectType {
      * @return True if this is a farmed goods type.
      */
     public boolean isFarmed() {
-<span class="fc" id="L147">        return isFarmed;</span>
+<span class="nc" id="L147">        return isFarmed;</span>
     }
 
     /**
@@ -153,7 +153,7 @@ public final class GoodsType extends FreeColSpecObjectType {
      * @return True if this is a food type.
      */
     public boolean isFoodType() {
-<span class="fc" id="L156">        return isFood;</span>
+<span class="nc" id="L156">        return isFood;</span>
     }
 
     /**
@@ -162,7 +162,7 @@ public final class GoodsType extends FreeColSpecObjectType {
      * @return True if this is a military goods type.
      */
     public boolean isMilitaryGoods() {
-<span class="fc" id="L165">        return isMilitary;</span>
+<span class="nc" id="L165">        return isMilitary;</span>
     }
 
     // @compat 0.10.x
@@ -178,7 +178,7 @@ public final class GoodsType extends FreeColSpecObjectType {
      * @return True if unlimited amounts of this goods type can be stored.
      */
     public boolean limitIgnored() {
-<span class="fc" id="L181">        return ignoreLimit;</span>
+<span class="nc" id="L181">        return ignoreLimit;</span>
     }
 
     /**
@@ -187,7 +187,7 @@ public final class GoodsType extends FreeColSpecObjectType {
      * @return True if this goods type is native to the New World.
      */
     public boolean isNewWorldGoodsType() {
-<span class="fc" id="L190">        return newWorldGoods;</span>
+<span class="nc" id="L190">        return newWorldGoods;</span>
     }
 
     /**
@@ -196,7 +196,7 @@ public final class GoodsType extends FreeColSpecObjectType {
      * @return True if this goods type is made from New World goods.
      */
     public boolean isNewWorldLuxuryType() {
-<span class="pc bpc" id="L199" title="3 of 4 branches missed.">        return madeFrom != null &amp;&amp; madeFrom.isNewWorldGoodsType();</span>
+<span class="nc bnc" id="L199" title="All 4 branches missed.">        return madeFrom != null &amp;&amp; madeFrom.isNewWorldGoodsType();</span>
     }
 
     /**
@@ -206,7 +206,7 @@ public final class GoodsType extends FreeColSpecObjectType {
      * @see BuildableType
      */
     public boolean isBuildingMaterial() {
-<span class="fc" id="L209">        return buildingMaterial;</span>
+<span class="nc" id="L209">        return buildingMaterial;</span>
     }
 
     /**
@@ -215,7 +215,7 @@ public final class GoodsType extends FreeColSpecObjectType {
      * @return True if this goods type is trade goods.
      */
     public boolean isTradeGoods() {
-<span class="fc" id="L218">        return tradeGoods;</span>
+<span class="nc" id="L218">        return tradeGoods;</span>
     }
 
     /**
@@ -224,7 +224,7 @@ public final class GoodsType extends FreeColSpecObjectType {
      * @return True if this goods type produces liberty.
      */
     public boolean isLibertyType() {
-<span class="fc" id="L227">        return containsModifierKey(Modifier.LIBERTY);</span>
+<span class="nc" id="L227">        return containsModifierKey(Modifier.LIBERTY);</span>
     }
 
     /**
@@ -233,7 +233,7 @@ public final class GoodsType extends FreeColSpecObjectType {
      * @return True if this goods type produces immigration.
      */
     public boolean isImmigrationType() {
-<span class="fc" id="L236">        return containsModifierKey(Modifier.IMMIGRATION);</span>
+<span class="nc" id="L236">        return containsModifierKey(Modifier.IMMIGRATION);</span>
     }
 
     /**
@@ -242,7 +242,7 @@ public final class GoodsType extends FreeColSpecObjectType {
      * @return True if this goods type is storable.
      */
     public boolean isStorable() {
-<span class="fc" id="L245">        return storable;</span>
+<span class="nc" id="L245">        return storable;</span>
     }
 
     /**
@@ -251,7 +251,7 @@ public final class GoodsType extends FreeColSpecObjectType {
      * @return True if this type of goods is stored as another type.
      */
     public boolean isStoredAs() {
-<span class="pc bpc" id="L254" title="1 of 2 branches missed.">        return storedAs != null;</span>
+<span class="nc bnc" id="L254" title="All 2 branches missed.">        return storedAs != null;</span>
     }
 
     /**
@@ -269,7 +269,7 @@ public final class GoodsType extends FreeColSpecObjectType {
      * @return True if this &lt;code&gt;GoodsType&lt;/code&gt; can be made into something.
      */
     public boolean isRawMaterial() {
-<span class="pc bpc" id="L272" title="1 of 2 branches missed.">        return makes != null;</span>
+<span class="nc bnc" id="L272" title="All 2 branches missed.">        return makes != null;</span>
     }
 
     /**
@@ -278,7 +278,7 @@ public final class GoodsType extends FreeColSpecObjectType {
      * @return True if this &lt;code&gt;GoodsType&lt;/code&gt; is made from something.
      */
     public boolean isRefined() {
-<span class="pc bpc" id="L281" title="1 of 2 branches missed.">        return madeFrom != null;</span>
+<span class="nc bnc" id="L281" title="All 2 branches missed.">        return madeFrom != null;</span>
     }
 
     /**
@@ -287,7 +287,7 @@ public final class GoodsType extends FreeColSpecObjectType {
      * @return The &lt;code&gt;GoodsType&lt;/code&gt; this is made into, if anything.
      */
     public GoodsType getOutputType() {
-<span class="fc" id="L290">        return makes;</span>
+<span class="nc" id="L290">        return makes;</span>
     }
 
     /**
@@ -296,7 +296,7 @@ public final class GoodsType extends FreeColSpecObjectType {
      * @return The &lt;code&gt;GoodsType&lt;/code&gt; this is made from, if anything.
      */
     public GoodsType getInputType() {
-<span class="fc" id="L299">        return madeFrom;</span>
+<span class="nc" id="L299">        return madeFrom;</span>
     }
 
     /**
@@ -305,7 +305,7 @@ public final class GoodsType extends FreeColSpecObjectType {
      * @return The default initial amount.
      */
     public int getInitialAmount() {
-<span class="fc" id="L308">        return initialAmount;</span>
+<span class="nc" id="L308">        return initialAmount;</span>
     }
 
     /**
@@ -346,7 +346,7 @@ public final class GoodsType extends FreeColSpecObjectType {
      * @return The breeding number.
      */
     public int getBreedingNumber() {
-<span class="fc" id="L349">        return breedingNumber;</span>
+<span class="nc" id="L349">        return breedingNumber;</span>
     }
 
     /**
@@ -355,7 +355,7 @@ public final class GoodsType extends FreeColSpecObjectType {
      * @return True if this &lt;code&gt;GoodsType&lt;/code&gt; is breedable.
      */
     public boolean isBreedable() {
-<span class="pc bpc" id="L358" title="1 of 2 branches missed.">        return breedingNumber != INFINITY;</span>
+<span class="nc bnc" id="L358" title="All 2 branches missed.">        return breedingNumber != INFINITY;</span>
     }
 
     /**
@@ -364,7 +364,7 @@ public final class GoodsType extends FreeColSpecObjectType {
      * @return The price.
      */
     public int getPrice() {
-<span class="fc" id="L367">        return price;</span>
+<span class="nc" id="L367">        return price;</span>
     }
 
     public void setPrice(final int newPrice) {
@@ -377,7 +377,7 @@ public final class GoodsType extends FreeColSpecObjectType {
      * @return The production weight.
      */
     public float getProductionWeight() {
-<span class="fc" id="L380">        return productionWeight;</span>
+<span class="nc" id="L380">        return productionWeight;</span>
     }
 
     /**
@@ -386,7 +386,7 @@ public final class GoodsType extends FreeColSpecObjectType {
      * @return The low production threshold.
      */
     public float getLowProductionThreshold() {
-<span class="fc" id="L389">        return lowProductionThreshold;</span>
+<span class="nc" id="L389">        return lowProductionThreshold;</span>
     }
 
     /**
@@ -395,7 +395,7 @@ public final class GoodsType extends FreeColSpecObjectType {
      * @return The zero production factor.
      */
     public float getZeroProductionFactor() {
-<span class="fc" id="L398">        return zeroProductionFactor;</span>
+<span class="nc" id="L398">        return zeroProductionFactor;</span>
     }
 
 
@@ -414,7 +414,7 @@ public final class GoodsType extends FreeColSpecObjectType {
      * @return The &quot;workingAs&quot; message key.
      */
     public final String getWorkingAsKey() {
-<span class="fc" id="L417">        return getId() + &quot;.workingAs&quot;;</span>
+<span class="nc" id="L417">        return getId() + &quot;.workingAs&quot;;</span>
     }
 
     /**
@@ -447,14 +447,14 @@ public final class GoodsType extends FreeColSpecObjectType {
      * @see BuildableType
      */
     public boolean isRawBuildingMaterial() {
-<span class="pc bpc" id="L450" title="1 of 2 branches missed.">        if (this.madeFrom != null) return false;</span>
+<span class="nc bnc" id="L450" title="All 2 branches missed.">        if (this.madeFrom != null) return false;</span>
 
-<span class="fc" id="L452">        GoodsType refinedType = makes;</span>
-<span class="pc bpc" id="L453" title="1 of 2 branches missed.">        while (refinedType != null) {</span>
+<span class="nc" id="L452">        GoodsType refinedType = makes;</span>
+<span class="nc bnc" id="L453" title="All 2 branches missed.">        while (refinedType != null) {</span>
 <span class="nc bnc" id="L454" title="All 2 branches missed.">            if (refinedType.isBuildingMaterial()) return true;</span>
 <span class="nc" id="L455">            refinedType = refinedType.makes;</span>
         }
-<span class="fc" id="L457">        return false;</span>
+<span class="nc" id="L457">        return false;</span>
     }
 
     /**
@@ -548,7 +548,7 @@ public final class GoodsType extends FreeColSpecObjectType {
     private static final String STORABLE_TAG = &quot;storable&quot;;
     private static final String STORED_AS_TAG = &quot;stored-as&quot;;
     private static final String TRADE_GOODS_TAG = &quot;trade-goods&quot;;
-<span class="fc" id="L551">    private static final String ZERO_PRODUCTION_FACTOR_TAG = &quot;zero-production-factor&quot;;</span>
+<span class="nc" id="L551">    private static final String ZERO_PRODUCTION_FACTOR_TAG = &quot;zero-production-factor&quot;;</span>
 
 
     /**
@@ -556,59 +556,59 @@ public final class GoodsType extends FreeColSpecObjectType {
      */
     @Override
     protected void writeAttributes(FreeColXMLWriter xw) throws XMLStreamException {
-<span class="fc" id="L559">        super.writeAttributes(xw);</span>
+<span class="nc" id="L559">        super.writeAttributes(xw);</span>
 
-<span class="fc" id="L561">        xw.writeAttribute(IS_FARMED_TAG, isFarmed);</span>
+<span class="nc" id="L561">        xw.writeAttribute(IS_FARMED_TAG, isFarmed);</span>
 
-<span class="fc" id="L563">        xw.writeAttribute(IS_FOOD_TAG, isFood);</span>
+<span class="nc" id="L563">        xw.writeAttribute(IS_FOOD_TAG, isFood);</span>
 
-<span class="fc" id="L565">        xw.writeAttribute(IS_MILITARY_TAG, isMilitary);</span>
+<span class="nc" id="L565">        xw.writeAttribute(IS_MILITARY_TAG, isMilitary);</span>
 
-<span class="fc" id="L567">        xw.writeAttribute(IGNORE_LIMIT_TAG, ignoreLimit);</span>
+<span class="nc" id="L567">        xw.writeAttribute(IGNORE_LIMIT_TAG, ignoreLimit);</span>
 
-<span class="fc" id="L569">        xw.writeAttribute(NEW_WORLD_GOODS_TAG, newWorldGoods);</span>
+<span class="nc" id="L569">        xw.writeAttribute(NEW_WORLD_GOODS_TAG, newWorldGoods);</span>
 
-<span class="fc" id="L571">        xw.writeAttribute(TRADE_GOODS_TAG, tradeGoods);</span>
+<span class="nc" id="L571">        xw.writeAttribute(TRADE_GOODS_TAG, tradeGoods);</span>
 
-<span class="fc" id="L573">        xw.writeAttribute(STORABLE_TAG, storable);</span>
+<span class="nc" id="L573">        xw.writeAttribute(STORABLE_TAG, storable);</span>
 
-<span class="pc bpc" id="L575" title="1 of 2 branches missed.">        if (breedingNumber != INFINITY) {</span>
+<span class="nc bnc" id="L575" title="All 2 branches missed.">        if (breedingNumber != INFINITY) {</span>
 <span class="nc" id="L576">            xw.writeAttribute(BREEDING_NUMBER_TAG, breedingNumber);</span>
         }
 
-<span class="pc bpc" id="L579" title="1 of 2 branches missed.">        if (price != INFINITY) {</span>
+<span class="nc bnc" id="L579" title="All 2 branches missed.">        if (price != INFINITY) {</span>
 <span class="nc" id="L580">            xw.writeAttribute(PRICE_TAG, price);</span>
         }
 
-<span class="pc bpc" id="L583" title="1 of 2 branches missed.">        if (madeFrom != null) {</span>
+<span class="nc bnc" id="L583" title="All 2 branches missed.">        if (madeFrom != null) {</span>
 <span class="nc" id="L584">            xw.writeAttribute(MADE_FROM_TAG, madeFrom);</span>
         }
 
-<span class="pc bpc" id="L587" title="1 of 2 branches missed.">        if (storedAs != null) {</span>
+<span class="nc bnc" id="L587" title="All 2 branches missed.">        if (storedAs != null) {</span>
 <span class="nc" id="L588">            xw.writeAttribute(STORED_AS_TAG, storedAs);</span>
         }
 
-<span class="fc" id="L591">        xw.writeAttribute(PRODUCTION_WEIGHT_TAG, productionWeight);</span>
+<span class="nc" id="L591">        xw.writeAttribute(PRODUCTION_WEIGHT_TAG, productionWeight);</span>
 
-<span class="pc bpc" id="L593" title="1 of 2 branches missed.">        if (lowProductionThreshold &gt; DEFAULT_LOW_PRODUCTION_THRESHOLD) {</span>
+<span class="nc bnc" id="L593" title="All 2 branches missed.">        if (lowProductionThreshold &gt; DEFAULT_LOW_PRODUCTION_THRESHOLD) {</span>
 <span class="nc" id="L594">            xw.writeAttribute(LOW_PRODUCTION_THRESHOLD_TAG,</span>
 <span class="nc" id="L595">                              lowProductionThreshold);</span>
         }
 
-<span class="pc bpc" id="L598" title="1 of 2 branches missed.">        if (0.0 &lt;= zeroProductionFactor</span>
-<span class="pc bpc" id="L599" title="1 of 2 branches missed.">            &amp;&amp; zeroProductionFactor &lt; DEFAULT_ZERO_PRODUCTION_FACTOR) {</span>
+<span class="nc bnc" id="L598" title="All 2 branches missed.">        if (0.0 &lt;= zeroProductionFactor</span>
+<span class="nc bnc" id="L599" title="All 2 branches missed.">            &amp;&amp; zeroProductionFactor &lt; DEFAULT_ZERO_PRODUCTION_FACTOR) {</span>
 <span class="nc" id="L600">            xw.writeAttribute(ZERO_PRODUCTION_FACTOR_TAG, zeroProductionFactor);</span>
         }
-<span class="fc" id="L602">    }</span>
+<span class="nc" id="L602">    }</span>
 
     /**
      * {@inheritDoc}
      */
     @Override
     protected void writeChildren(FreeColXMLWriter xw) throws XMLStreamException {
-<span class="fc" id="L609">        super.writeChildren(xw);</span>
+<span class="nc" id="L609">        super.writeChildren(xw);</span>
 
-<span class="pc bpc" id="L611" title="1 of 2 branches missed.">        if (initialAmount &gt; 0) {</span>
+<span class="nc bnc" id="L611" title="All 2 branches missed.">        if (initialAmount &gt; 0) {</span>
 <span class="nc" id="L612">            xw.writeStartElement(MARKET_TAG);</span>
 
 <span class="nc" id="L614">            xw.writeAttribute(INITIAL_AMOUNT_TAG, initialAmount);</span>
@@ -619,7 +619,7 @@ public final class GoodsType extends FreeColSpecObjectType {
 
 <span class="nc" id="L620">            xw.writeEndElement();</span>
         }
-<span class="fc" id="L622">    }</span>
+<span class="nc" id="L622">    }</span>
 
     /**
      * {@inheritDoc}
@@ -695,7 +695,7 @@ public final class GoodsType extends FreeColSpecObjectType {
      * {@inheritDoc}
      */
     @Override
-<span class="fc" id="L698">    public String getXMLTagName() { return getTagName(); }</span>
+<span class="nc" id="L698">    public String getXMLTagName() { return getTagName(); }</span>
 
     /**
      * Gets the tag name of the root element representing this object.
@@ -703,7 +703,7 @@ public final class GoodsType extends FreeColSpecObjectType {
      * @return &quot;goods-type&quot;.
      */
     public static String getTagName() {
-<span class="fc" id="L706">        return &quot;goods-type&quot;;</span>
+<span class="nc" id="L706">        return &quot;goods-type&quot;;</span>
     }
 }
-</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span>AbstractGoodsTest (May 14, 2016 4:05:35 PM)</div></body></html>
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span>TextOptionTest (May 15, 2016 12:07:29 AM)</div></body></html>

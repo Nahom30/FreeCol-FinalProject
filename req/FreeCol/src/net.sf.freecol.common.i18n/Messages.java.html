@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../.resources/report.gif" type="image/gif"/><title>Messages.java</title><link rel="stylesheet" href="../../../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../.sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">AbstractGoodsTest (May 14, 2016 4:05:35 PM)</a> &gt; <a href="../../index.html" class="el_group">FreeCol</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">net.sf.freecol.common.i18n</a> &gt; <span class="el_source">Messages.java</span></div><h1>Messages.java</h1><pre class="source lang-java linenums">/**
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../.resources/report.gif" type="image/gif"/><title>Messages.java</title><link rel="stylesheet" href="../../../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../.sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">TextOptionTest (May 15, 2016 12:07:29 AM)</a> &gt; <a href="../../index.html" class="el_group">FreeCol</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">net.sf.freecol.common.i18n</a> &gt; <span class="el_source">Messages.java</span></div><h1>Messages.java</h1><pre class="source lang-java linenums">/**
  *  Copyright (C) 2002-2016   The FreeCol Team
  *
  *  This file is part of FreeCol.
@@ -87,7 +87,7 @@ import static net.sf.freecol.common.util.CollectionUtils.*;
  */
 <span class="nc" id="L88">public class Messages {</span>
 
-<span class="fc" id="L90">    private static final Logger logger = Logger.getLogger(Messages.class.getName());</span>
+<span class="nc" id="L90">    private static final Logger logger = Logger.getLogger(Messages.class.getName());</span>
 
     public static final String MESSAGE_FILE_PREFIX = &quot;FreeColMessages&quot;;
     public static final String MOD_MESSAGE_FILE_PREFIX = &quot;ModMessages&quot;;
@@ -98,8 +98,8 @@ import static net.sf.freecol.common.util.CollectionUtils.*;
     public static final String NAME_SUFFIX = &quot;.name&quot;;
     public static final String RULER_SUFFIX = &quot;.ruler&quot;;
 
-<span class="fc" id="L101">    private static final String[] DESCRIPTION_KEYS = {</span>
-<span class="fc" id="L102">        DESCRIPTION_SUFFIX, SHORT_DESCRIPTION_SUFFIX, NAME_SUFFIX</span>
+<span class="nc" id="L101">    private static final String[] DESCRIPTION_KEYS = {</span>
+<span class="nc" id="L102">        DESCRIPTION_SUFFIX, SHORT_DESCRIPTION_SUFFIX, NAME_SUFFIX</span>
     };
 
     /** Automatic language choice from default locale. */
@@ -109,13 +109,13 @@ import static net.sf.freecol.common.util.CollectionUtils.*;
      * The mapping from language-independent key to localized message
      * for the established locale.
      */
-<span class="fc" id="L112">    private static final Map&lt;String, String&gt; messageBundle = new HashMap&lt;&gt;();</span>
+<span class="nc" id="L112">    private static final Map&lt;String, String&gt; messageBundle = new HashMap&lt;&gt;();</span>
 
     /**
      * A map with Selector values and the tag keys used in choice
      * formats.
      */
-<span class="fc" id="L118">    private static final Map&lt;String, Selector&gt; tagMap = new HashMap&lt;&gt;();</span>
+<span class="nc" id="L118">    private static final Map&lt;String, Selector&gt; tagMap = new HashMap&lt;&gt;();</span>
 
 
     // Message bundle initialization
@@ -331,7 +331,7 @@ import static net.sf.freecol.common.util.CollectionUtils.*;
     // Shortcut message accessors
 
     public static String nameKey(String id) {
-<span class="fc" id="L334">        return id + NAME_SUFFIX;</span>
+<span class="nc" id="L334">        return id + NAME_SUFFIX;</span>
     }
 
     public static String nameKey(ObjectWithId object) {
@@ -347,7 +347,7 @@ import static net.sf.freecol.common.util.CollectionUtils.*;
     }
 
     public static String descriptionKey(String id) {
-<span class="fc" id="L350">        return id + DESCRIPTION_SUFFIX;</span>
+<span class="nc" id="L350">        return id + DESCRIPTION_SUFFIX;</span>
     }
 
     public static String descriptionKey(ObjectWithId object) {
@@ -956,4 +956,4 @@ import static net.sf.freecol.common.util.CollectionUtils.*;
 <span class="nc" id="L956">        return -1;</span>
     }
 }
-</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span>AbstractGoodsTest (May 14, 2016 4:05:35 PM)</div></body></html>
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span>TextOptionTest (May 15, 2016 12:07:29 AM)</div></body></html>
