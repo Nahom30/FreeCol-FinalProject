@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../.resources/report.gif" type="image/gif"/><title>FreeColDirectories.java</title><link rel="stylesheet" href="../../../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../.sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">LanguageOptionTest (May 14, 2016 10:46:33 PM)</a> &gt; <a href="../../index.html" class="el_group">FreeCol</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">net.sf.freecol.common.io</a> &gt; <span class="el_source">FreeColDirectories.java</span></div><h1>FreeColDirectories.java</h1><pre class="source lang-java linenums">/**
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../.resources/report.gif" type="image/gif"/><title>FreeColDirectories.java</title><link rel="stylesheet" href="../../../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../.sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">TextOptionTest (May 15, 2016 12:07:29 AM)</a> &gt; <a href="../../index.html" class="el_group">FreeCol</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">net.sf.freecol.common.io</a> &gt; <span class="el_source">FreeColDirectories.java</span></div><h1>FreeColDirectories.java</h1><pre class="source lang-java linenums">/**
  *  Copyright (C) 2002-2016   The FreeCol Team
  *
  *  This file is part of FreeCol.
@@ -44,8 +44,8 @@ import net.sf.freecol.FreeCol;
 
     private static final String CLASSIC_DIRECTORY = &quot;classic&quot;;
 
-<span class="fc" id="L47">    private static final String[] CONFIG_DIRS</span>
-<span class="fc" id="L48">        = { &quot;classic&quot;, &quot;freecol&quot; };</span>
+<span class="nc" id="L47">    private static final String[] CONFIG_DIRS</span>
+<span class="nc" id="L48">        = { &quot;classic&quot;, &quot;freecol&quot; };</span>
 
     private static final String DATA_DIRECTORY = &quot;data&quot;;
 
@@ -67,7 +67,7 @@ import net.sf.freecol.FreeCol;
 
     private static final String START_MAP_NAME = &quot;startMap.fsg&quot;;
 
-<span class="fc" id="L70">    private static final String SEPARATOR = System.getProperty(&quot;file.separator&quot;);</span>
+<span class="nc" id="L70">    private static final String SEPARATOR = System.getProperty(&quot;file.separator&quot;);</span>
 
     private static final String XDG_CONFIG_HOME_ENV = &quot;XDG_CONFIG_HOME&quot;;
     private static final String XDG_CONFIG_HOME_DEFAULT = &quot;.config&quot;;
@@ -99,14 +99,14 @@ import net.sf.freecol.FreeCol;
      * changed by the user during the game, then the value of
      * autosaveDirectory will not change.
      */
-<span class="fc" id="L102">    private static File autosaveDirectory = null;</span>
+<span class="nc" id="L102">    private static File autosaveDirectory = null;</span>
 
     /**
      * A file containing the client options.
      *
      * Can be overridden at the command line.
      */
-<span class="fc" id="L109">    private static File clientOptionsFile = null;</span>
+<span class="nc" id="L109">    private static File clientOptionsFile = null;</span>
 
     /**
      * The directory where the standard freecol data is installed.
@@ -116,14 +116,14 @@ import net.sf.freecol.FreeCol;
      * FIXME: defaults lamely to ./data.  Do something better in the
      * installer.
      */
-<span class="fc" id="L119">    private static File dataDirectory = new File(DATA_DIRECTORY);</span>
+<span class="nc" id="L119">    private static File dataDirectory = new File(DATA_DIRECTORY);</span>
 
     /**
      * The path to the log file.
      *
      * Can be overridden at the command line.
      */
-<span class="fc" id="L126">    private static String logFilePath = null;</span>
+<span class="nc" id="L126">    private static String logFilePath = null;</span>
 
     /**
      * Where games are saved.
@@ -131,19 +131,19 @@ import net.sf.freecol.FreeCol;
      * Can be overridden in game or from the command line by
      * specifying the save game file.
      */
-<span class="fc" id="L134">    private static File saveDirectory = null;</span>
+<span class="nc" id="L134">    private static File saveDirectory = null;</span>
 
     /**
      * The current save game file.
      *
      * Can be modified in game.
      */
-<span class="fc" id="L141">    private static File savegameFile = null;</span>
+<span class="nc" id="L141">    private static File savegameFile = null;</span>
 
     /**
      * The directory where freecol saves transient information.
      */
-<span class="fc" id="L146">    private static File userCacheDirectory = null;</span>
+<span class="nc" id="L146">    private static File userCacheDirectory = null;</span>
 
     /**
      * The directory where freecol saves user configuration.
@@ -151,7 +151,7 @@ import net.sf.freecol.FreeCol;
      * This will be set by default but can be overridden at the
      * command line.
      */
-<span class="fc" id="L154">    private static File userConfigDirectory = null;</span>
+<span class="nc" id="L154">    private static File userConfigDirectory = null;</span>
 
     /**
      * The directory where freecol saves user data.
@@ -159,12 +159,12 @@ import net.sf.freecol.FreeCol;
      * This will be set by default but can be overridden at the
      * command line.
      */
-<span class="fc" id="L162">    private static File userDataDirectory = null;</span>
+<span class="nc" id="L162">    private static File userDataDirectory = null;</span>
 
     /**
      * An optional directory containing user mods.
      */
-<span class="fc" id="L167">    private static File userModsDirectory = null;</span>
+<span class="nc" id="L167">    private static File userModsDirectory = null;</span>
 
 
     /**
@@ -679,7 +679,7 @@ import net.sf.freecol.FreeCol;
      * @return The directory where the data files are located.
      */
     public static File getDataDirectory() {
-<span class="fc" id="L682">        return dataDirectory;</span>
+<span class="nc" id="L682">        return dataDirectory;</span>
     }
 
     /**
@@ -697,7 +697,7 @@ import net.sf.freecol.FreeCol;
      * @return The FreeCol i18n directory.
      */
     public static File getI18nDirectory() {
-<span class="fc" id="L700">        return new File(getDataDirectory(), I18N_DIRECTORY);</span>
+<span class="nc" id="L700">        return new File(getDataDirectory(), I18N_DIRECTORY);</span>
     }
 
     /**
@@ -927,4 +927,4 @@ import net.sf.freecol.FreeCol;
 <span class="nc" id="L927">        return userModsDirectory;</span>
     }
 }
-</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span>LanguageOptionTest (May 14, 2016 10:46:33 PM)</div></body></html>
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span>TextOptionTest (May 15, 2016 12:07:29 AM)</div></body></html>

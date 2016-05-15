@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../.resources/report.gif" type="image/gif"/><title>LanguageOptionTest.java</title><link rel="stylesheet" href="../../../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../.sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">LanguageOptionTest (May 14, 2016 10:46:33 PM)</a> &gt; <a href="../../index.html" class="el_group">FreeCol</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">net.sf.freecol.common.option</a> &gt; <span class="el_source">LanguageOptionTest.java</span></div><h1>LanguageOptionTest.java</h1><pre class="source lang-java linenums">package net.sf.freecol.common.option;
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../.resources/report.gif" type="image/gif"/><title>LanguageOptionTest.java</title><link rel="stylesheet" href="../../../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../.sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">TextOptionTest (May 15, 2016 12:07:29 AM)</a> &gt; <a href="../../index.html" class="el_group">FreeCol</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">net.sf.freecol.common.option</a> &gt; <span class="el_source">LanguageOptionTest.java</span></div><h1>LanguageOptionTest.java</h1><pre class="source lang-java linenums">package net.sf.freecol.common.option;
 
 import java.io.CharArrayWriter;
 import net.sf.freecol.common.io.FreeColXMLWriter;
@@ -16,7 +16,7 @@ import static org.junit.Assert.*;
  * @author nahomnegash
  * @version $Revision: 1.0 $
  */
-<span class="fc" id="L19">public class LanguageOptionTest {</span>
+<span class="nc" id="L19">public class LanguageOptionTest {</span>
 	/**
 	 * Run the LanguageOption(Specification) constructor test.
 	 *
@@ -27,17 +27,17 @@ import static org.junit.Assert.*;
 	@Test
 	public void testLanguageOption_1()
 		throws Exception {
-<span class="fc" id="L30">		Specification specification = new Specification();</span>
+<span class="nc" id="L30">		Specification specification = new Specification();</span>
 
-<span class="fc" id="L32">		LanguageOption result = new LanguageOption(specification);</span>
+<span class="nc" id="L32">		LanguageOption result = new LanguageOption(specification);</span>
 
 		// add additional test code here
 		// An unexpected exception was thrown in user code while executing this test:
 		//    java.lang.RuntimeException: No language files could be found in the &lt;data/strings&gt; directory.
 		//       at net.sf.freecol.common.option.LanguageOption.initializeLanguages(LanguageOption.java:198)
 		//       at net.sf.freecol.common.option.LanguageOption.&lt;init&gt;(LanguageOption.java:186)
-<span class="fc" id="L39">		assertNotNull(result);</span>
-<span class="fc" id="L40">	}</span>
+<span class="nc" id="L39">		assertNotNull(result);</span>
+<span class="nc" id="L40">	}</span>
 
 	/**
 	 * Run the LanguageOption clone() method test.
@@ -49,19 +49,19 @@ import static org.junit.Assert.*;
 	@Test
 	public void testClone_1()
 		throws Exception {
-<span class="fc" id="L52">		LanguageOption fixture = new LanguageOption(new Specification());</span>
-<span class="fc" id="L53">		fixture.setValue(new LanguageOption.Language(&quot;&quot;, Locale.getDefault()));</span>
-<span class="fc" id="L54">		fixture.isDefined = true;</span>
+<span class="nc" id="L52">		LanguageOption fixture = new LanguageOption(new Specification());</span>
+<span class="nc" id="L53">		fixture.setValue(new LanguageOption.Language(&quot;&quot;, Locale.getDefault()));</span>
+<span class="nc" id="L54">		fixture.isDefined = true;</span>
 
-<span class="fc" id="L56">		LanguageOption result = fixture.clone();</span>
+<span class="nc" id="L56">		LanguageOption result = fixture.clone();</span>
 
 		// add additional test code here
 		// An unexpected exception was thrown in user code while executing this test:
 		//    java.lang.RuntimeException: No language files could be found in the &lt;data/strings&gt; directory.
 		//       at net.sf.freecol.common.option.LanguageOption.initializeLanguages(LanguageOption.java:198)
 		//       at net.sf.freecol.common.option.LanguageOption.&lt;init&gt;(LanguageOption.java:186)
-<span class="fc" id="L63">		assertNotNull(result);</span>
-<span class="fc" id="L64">	}</span>
+<span class="nc" id="L63">		assertNotNull(result);</span>
+<span class="nc" id="L64">	}</span>
 
 	/**
 	 * Run the List&lt;LanguageOption.Language&gt; getChoices() method test.
@@ -73,19 +73,19 @@ import static org.junit.Assert.*;
 	@Test
 	public void testGetChoices_1()
 		throws Exception {
-<span class="fc" id="L76">		LanguageOption fixture = new LanguageOption(new Specification());</span>
-<span class="fc" id="L77">		fixture.setValue(new LanguageOption.Language(&quot;&quot;, Locale.getDefault()));</span>
-<span class="fc" id="L78">		fixture.isDefined = true;</span>
+<span class="nc" id="L76">		LanguageOption fixture = new LanguageOption(new Specification());</span>
+<span class="nc" id="L77">		fixture.setValue(new LanguageOption.Language(&quot;&quot;, Locale.getDefault()));</span>
+<span class="nc" id="L78">		fixture.isDefined = true;</span>
 
-<span class="fc" id="L80">		List&lt;LanguageOption.Language&gt; result = fixture.getChoices();</span>
+<span class="nc" id="L80">		List&lt;LanguageOption.Language&gt; result = fixture.getChoices();</span>
 
 		// add additional test code here
 		// An unexpected exception was thrown in user code while executing this test:
 		//    java.lang.RuntimeException: No language files could be found in the &lt;data/strings&gt; directory.
 		//       at net.sf.freecol.common.option.LanguageOption.initializeLanguages(LanguageOption.java:198)
 		//       at net.sf.freecol.common.option.LanguageOption.&lt;init&gt;(LanguageOption.java:186)
-<span class="fc" id="L87">		assertNotNull(result);</span>
-<span class="fc" id="L88">	}</span>
+<span class="nc" id="L87">		assertNotNull(result);</span>
+<span class="nc" id="L88">	}</span>
 
 	/**
 	 * Run the String getTagName() method test.
@@ -98,11 +98,11 @@ import static org.junit.Assert.*;
 	public void testGetTagName_1()
 		throws Exception {
 
-<span class="fc" id="L101">		String result = LanguageOption.getTagName();</span>
+<span class="nc" id="L101">		String result = LanguageOption.getTagName();</span>
 
 		// add additional test code here
-<span class="fc" id="L104">		assertEquals(&quot;languageOption&quot;, result);</span>
-<span class="fc" id="L105">	}</span>
+<span class="nc" id="L104">		assertEquals(&quot;languageOption&quot;, result);</span>
+<span class="nc" id="L105">	}</span>
 
 	/**
 	 * Run the LanguageOption.Language getValue() method test.
@@ -114,19 +114,19 @@ import static org.junit.Assert.*;
 	@Test
 	public void testGetValue_1()
 		throws Exception {
-<span class="fc" id="L117">		LanguageOption fixture = new LanguageOption(new Specification());</span>
-<span class="fc" id="L118">		fixture.setValue(new LanguageOption.Language(&quot;&quot;, Locale.getDefault()));</span>
-<span class="fc" id="L119">		fixture.isDefined = true;</span>
+<span class="nc" id="L117">		LanguageOption fixture = new LanguageOption(new Specification());</span>
+<span class="nc" id="L118">		fixture.setValue(new LanguageOption.Language(&quot;&quot;, Locale.getDefault()));</span>
+<span class="nc" id="L119">		fixture.isDefined = true;</span>
 
-<span class="fc" id="L121">		LanguageOption.Language result = fixture.getValue();</span>
+<span class="nc" id="L121">		LanguageOption.Language result = fixture.getValue();</span>
 
 		// add additional test code here
 		// An unexpected exception was thrown in user code while executing this test:
 		//    java.lang.RuntimeException: No language files could be found in the &lt;data/strings&gt; directory.
 		//       at net.sf.freecol.common.option.LanguageOption.initializeLanguages(LanguageOption.java:198)
 		//       at net.sf.freecol.common.option.LanguageOption.&lt;init&gt;(LanguageOption.java:186)
-<span class="fc" id="L128">		assertNotNull(result);</span>
-<span class="fc" id="L129">	}</span>
+<span class="nc" id="L128">		assertNotNull(result);</span>
+<span class="nc" id="L129">	}</span>
 
 	/**
 	 * Run the String getXMLTagName() method test.
@@ -138,19 +138,19 @@ import static org.junit.Assert.*;
 	@Test
 	public void testGetXMLTagName_1()
 		throws Exception {
-<span class="fc" id="L141">		LanguageOption fixture = new LanguageOption(new Specification());</span>
-<span class="fc" id="L142">		fixture.setValue(new LanguageOption.Language(&quot;&quot;, Locale.getDefault()));</span>
-<span class="fc" id="L143">		fixture.isDefined = true;</span>
+<span class="nc" id="L141">		LanguageOption fixture = new LanguageOption(new Specification());</span>
+<span class="nc" id="L142">		fixture.setValue(new LanguageOption.Language(&quot;&quot;, Locale.getDefault()));</span>
+<span class="nc" id="L143">		fixture.isDefined = true;</span>
 
-<span class="fc" id="L145">		String result = fixture.getXMLTagName();</span>
+<span class="nc" id="L145">		String result = fixture.getXMLTagName();</span>
 
 		// add additional test code here
 		// An unexpected exception was thrown in user code while executing this test:
 		//    java.lang.RuntimeException: No language files could be found in the &lt;data/strings&gt; directory.
 		//       at net.sf.freecol.common.option.LanguageOption.initializeLanguages(LanguageOption.java:198)
 		//       at net.sf.freecol.common.option.LanguageOption.&lt;init&gt;(LanguageOption.java:186)
-<span class="fc" id="L152">		assertNotNull(result);</span>
-<span class="fc" id="L153">	}</span>
+<span class="nc" id="L152">		assertNotNull(result);</span>
+<span class="nc" id="L153">	}</span>
 
 	/**
 	 * Run the void setValue(Language) method test.
@@ -162,19 +162,19 @@ import static org.junit.Assert.*;
 	@Test
 	public void testSetValue_1()
 		throws Exception {
-<span class="fc" id="L165">		LanguageOption fixture = new LanguageOption(new Specification());</span>
-<span class="fc" id="L166">		fixture.setValue(new LanguageOption.Language(&quot;&quot;, Locale.getDefault()));</span>
-<span class="fc" id="L167">		fixture.isDefined = true;</span>
-<span class="fc" id="L168">		LanguageOption.Language newValue = new LanguageOption.Language(&quot;&quot;, Locale.getDefault());</span>
+<span class="nc" id="L165">		LanguageOption fixture = new LanguageOption(new Specification());</span>
+<span class="nc" id="L166">		fixture.setValue(new LanguageOption.Language(&quot;&quot;, Locale.getDefault()));</span>
+<span class="nc" id="L167">		fixture.isDefined = true;</span>
+<span class="nc" id="L168">		LanguageOption.Language newValue = new LanguageOption.Language(&quot;&quot;, Locale.getDefault());</span>
 
-<span class="fc" id="L170">		fixture.setValue(newValue);</span>
+<span class="nc" id="L170">		fixture.setValue(newValue);</span>
 
 		// add additional test code here
 		// An unexpected exception was thrown in user code while executing this test:
 		//    java.lang.RuntimeException: No language files could be found in the &lt;data/strings&gt; directory.
 		//       at net.sf.freecol.common.option.LanguageOption.initializeLanguages(LanguageOption.java:198)
 		//       at net.sf.freecol.common.option.LanguageOption.&lt;init&gt;(LanguageOption.java:186)
-<span class="fc" id="L177">	}</span>
+<span class="nc" id="L177">	}</span>
 
 	/**
 	 * Run the void setValue(Language) method test.
@@ -186,19 +186,19 @@ import static org.junit.Assert.*;
 	@Test
 	public void testSetValue_2()
 		throws Exception {
-<span class="fc" id="L189">		LanguageOption fixture = new LanguageOption(new Specification());</span>
-<span class="fc" id="L190">		fixture.setValue(new LanguageOption.Language(&quot;&quot;, Locale.getDefault()));</span>
-<span class="fc" id="L191">		fixture.isDefined = true;</span>
-<span class="fc" id="L192">		LanguageOption.Language newValue = new LanguageOption.Language(&quot;&quot;, Locale.getDefault());</span>
+<span class="nc" id="L189">		LanguageOption fixture = new LanguageOption(new Specification());</span>
+<span class="nc" id="L190">		fixture.setValue(new LanguageOption.Language(&quot;&quot;, Locale.getDefault()));</span>
+<span class="nc" id="L191">		fixture.isDefined = true;</span>
+<span class="nc" id="L192">		LanguageOption.Language newValue = new LanguageOption.Language(&quot;&quot;, Locale.getDefault());</span>
 
-<span class="fc" id="L194">		fixture.setValue(newValue);</span>
+<span class="nc" id="L194">		fixture.setValue(newValue);</span>
 
 		// add additional test code here
 		// An unexpected exception was thrown in user code while executing this test:
 		//    java.lang.RuntimeException: No language files could be found in the &lt;data/strings&gt; directory.
 		//       at net.sf.freecol.common.option.LanguageOption.initializeLanguages(LanguageOption.java:198)
 		//       at net.sf.freecol.common.option.LanguageOption.&lt;init&gt;(LanguageOption.java:186)
-<span class="fc" id="L201">	}</span>
+<span class="nc" id="L201">	}</span>
 
 	/**
 	 * Run the void setValue(String,String) method test.
@@ -210,20 +210,20 @@ import static org.junit.Assert.*;
 	@Test
 	public void testSetValue_3()
 		throws Exception {
-<span class="fc" id="L213">		LanguageOption fixture = new LanguageOption(new Specification());</span>
-<span class="fc" id="L214">		fixture.setValue(new LanguageOption.Language(&quot;&quot;, Locale.getDefault()));</span>
-<span class="fc" id="L215">		fixture.isDefined = true;</span>
-<span class="fc" id="L216">		String valueString = &quot;&quot;;</span>
-<span class="fc" id="L217">		String defaultValueString = &quot;&quot;;</span>
+<span class="nc" id="L213">		LanguageOption fixture = new LanguageOption(new Specification());</span>
+<span class="nc" id="L214">		fixture.setValue(new LanguageOption.Language(&quot;&quot;, Locale.getDefault()));</span>
+<span class="nc" id="L215">		fixture.isDefined = true;</span>
+<span class="nc" id="L216">		String valueString = &quot;&quot;;</span>
+<span class="nc" id="L217">		String defaultValueString = &quot;&quot;;</span>
 
-<span class="fc" id="L219">		fixture.setValue(valueString, defaultValueString);</span>
+<span class="nc" id="L219">		fixture.setValue(valueString, defaultValueString);</span>
 
 		// add additional test code here
 		// An unexpected exception was thrown in user code while executing this test:
 		//    java.lang.RuntimeException: No language files could be found in the &lt;data/strings&gt; directory.
 		//       at net.sf.freecol.common.option.LanguageOption.initializeLanguages(LanguageOption.java:198)
 		//       at net.sf.freecol.common.option.LanguageOption.&lt;init&gt;(LanguageOption.java:186)
-<span class="fc" id="L226">	}</span>
+<span class="nc" id="L226">	}</span>
 
 	/**
 	 * Run the void setValue(String,String) method test.
@@ -235,20 +235,20 @@ import static org.junit.Assert.*;
 	@Test
 	public void testSetValue_4()
 		throws Exception {
-<span class="fc" id="L238">		LanguageOption fixture = new LanguageOption(new Specification());</span>
-<span class="fc" id="L239">		fixture.setValue(new LanguageOption.Language(&quot;&quot;, Locale.getDefault()));</span>
-<span class="fc" id="L240">		fixture.isDefined = true;</span>
-<span class="fc" id="L241">		String valueString = &quot;&quot;;</span>
-<span class="fc" id="L242">		String defaultValueString = &quot;&quot;;</span>
+<span class="nc" id="L238">		LanguageOption fixture = new LanguageOption(new Specification());</span>
+<span class="nc" id="L239">		fixture.setValue(new LanguageOption.Language(&quot;&quot;, Locale.getDefault()));</span>
+<span class="nc" id="L240">		fixture.isDefined = true;</span>
+<span class="nc" id="L241">		String valueString = &quot;&quot;;</span>
+<span class="nc" id="L242">		String defaultValueString = &quot;&quot;;</span>
 
-<span class="fc" id="L244">		fixture.setValue(valueString, defaultValueString);</span>
+<span class="nc" id="L244">		fixture.setValue(valueString, defaultValueString);</span>
 
 		// add additional test code here
 		// An unexpected exception was thrown in user code while executing this test:
 		//    java.lang.RuntimeException: No language files could be found in the &lt;data/strings&gt; directory.
 		//       at net.sf.freecol.common.option.LanguageOption.initializeLanguages(LanguageOption.java:198)
 		//       at net.sf.freecol.common.option.LanguageOption.&lt;init&gt;(LanguageOption.java:186)
-<span class="fc" id="L251">	}</span>
+<span class="nc" id="L251">	}</span>
 
 	/**
 	 * Run the void setValue(String,String) method test.
@@ -260,20 +260,20 @@ import static org.junit.Assert.*;
 	@Test
 	public void testSetValue_5()
 		throws Exception {
-<span class="fc" id="L263">		LanguageOption fixture = new LanguageOption(new Specification());</span>
-<span class="fc" id="L264">		fixture.setValue(new LanguageOption.Language(&quot;&quot;, Locale.getDefault()));</span>
-<span class="fc" id="L265">		fixture.isDefined = true;</span>
-<span class="fc" id="L266">		String valueString = &quot;&quot;;</span>
-<span class="fc" id="L267">		String defaultValueString = &quot;&quot;;</span>
+<span class="nc" id="L263">		LanguageOption fixture = new LanguageOption(new Specification());</span>
+<span class="nc" id="L264">		fixture.setValue(new LanguageOption.Language(&quot;&quot;, Locale.getDefault()));</span>
+<span class="nc" id="L265">		fixture.isDefined = true;</span>
+<span class="nc" id="L266">		String valueString = &quot;&quot;;</span>
+<span class="nc" id="L267">		String defaultValueString = &quot;&quot;;</span>
 
-<span class="fc" id="L269">		fixture.setValue(valueString, defaultValueString);</span>
+<span class="nc" id="L269">		fixture.setValue(valueString, defaultValueString);</span>
 
 		// add additional test code here
 		// An unexpected exception was thrown in user code while executing this test:
 		//    java.lang.RuntimeException: No language files could be found in the &lt;data/strings&gt; directory.
 		//       at net.sf.freecol.common.option.LanguageOption.initializeLanguages(LanguageOption.java:198)
 		//       at net.sf.freecol.common.option.LanguageOption.&lt;init&gt;(LanguageOption.java:186)
-<span class="fc" id="L276">	}</span>
+<span class="nc" id="L276">	}</span>
 
 	/**
 	 * Run the void setValue(String,String) method test.
@@ -285,20 +285,20 @@ import static org.junit.Assert.*;
 	@Test
 	public void testSetValue_6()
 		throws Exception {
-<span class="fc" id="L288">		LanguageOption fixture = new LanguageOption(new Specification());</span>
-<span class="fc" id="L289">		fixture.setValue(new LanguageOption.Language(&quot;&quot;, Locale.getDefault()));</span>
-<span class="fc" id="L290">		fixture.isDefined = true;</span>
-<span class="fc" id="L291">		String valueString = null;</span>
-<span class="fc" id="L292">		String defaultValueString = &quot;&quot;;</span>
+<span class="nc" id="L288">		LanguageOption fixture = new LanguageOption(new Specification());</span>
+<span class="nc" id="L289">		fixture.setValue(new LanguageOption.Language(&quot;&quot;, Locale.getDefault()));</span>
+<span class="nc" id="L290">		fixture.isDefined = true;</span>
+<span class="nc" id="L291">		String valueString = null;</span>
+<span class="nc" id="L292">		String defaultValueString = &quot;&quot;;</span>
 
-<span class="fc" id="L294">		fixture.setValue(valueString, defaultValueString);</span>
+<span class="nc" id="L294">		fixture.setValue(valueString, defaultValueString);</span>
 
 		// add additional test code here
 		// An unexpected exception was thrown in user code while executing this test:
 		//    java.lang.RuntimeException: No language files could be found in the &lt;data/strings&gt; directory.
 		//       at net.sf.freecol.common.option.LanguageOption.initializeLanguages(LanguageOption.java:198)
 		//       at net.sf.freecol.common.option.LanguageOption.&lt;init&gt;(LanguageOption.java:186)
-<span class="fc" id="L301">	}</span>
+<span class="nc" id="L301">	}</span>
 
 	/**
 	 * Run the void setValue(String,String) method test.
@@ -310,20 +310,20 @@ import static org.junit.Assert.*;
 	@Test
 	public void testSetValue_7()
 		throws Exception {
-<span class="fc" id="L313">		LanguageOption fixture = new LanguageOption(new Specification());</span>
-<span class="fc" id="L314">		fixture.setValue(new LanguageOption.Language(&quot;&quot;, Locale.getDefault()));</span>
-<span class="fc" id="L315">		fixture.isDefined = true;</span>
-<span class="fc" id="L316">		String valueString = &quot;&quot;;</span>
-<span class="fc" id="L317">		String defaultValueString = null;</span>
+<span class="nc" id="L313">		LanguageOption fixture = new LanguageOption(new Specification());</span>
+<span class="nc" id="L314">		fixture.setValue(new LanguageOption.Language(&quot;&quot;, Locale.getDefault()));</span>
+<span class="nc" id="L315">		fixture.isDefined = true;</span>
+<span class="nc" id="L316">		String valueString = &quot;&quot;;</span>
+<span class="nc" id="L317">		String defaultValueString = null;</span>
 
-<span class="fc" id="L319">		fixture.setValue(valueString, defaultValueString);</span>
+<span class="nc" id="L319">		fixture.setValue(valueString, defaultValueString);</span>
 
 		// add additional test code here
 		// An unexpected exception was thrown in user code while executing this test:
 		//    java.lang.RuntimeException: No language files could be found in the &lt;data/strings&gt; directory.
 		//       at net.sf.freecol.common.option.LanguageOption.initializeLanguages(LanguageOption.java:198)
 		//       at net.sf.freecol.common.option.LanguageOption.&lt;init&gt;(LanguageOption.java:186)
-<span class="fc" id="L326">	}</span>
+<span class="nc" id="L326">	}</span>
 
 	/**
 	 * Run the void setValue(String,String) method test.
@@ -335,20 +335,20 @@ import static org.junit.Assert.*;
 	@Test
 	public void testSetValue_8()
 		throws Exception {
-<span class="fc" id="L338">		LanguageOption fixture = new LanguageOption(new Specification());</span>
-<span class="fc" id="L339">		fixture.setValue(new LanguageOption.Language(&quot;&quot;, Locale.getDefault()));</span>
-<span class="fc" id="L340">		fixture.isDefined = true;</span>
-<span class="fc" id="L341">		String valueString = &quot;&quot;;</span>
-<span class="fc" id="L342">		String defaultValueString = null;</span>
+<span class="nc" id="L338">		LanguageOption fixture = new LanguageOption(new Specification());</span>
+<span class="nc" id="L339">		fixture.setValue(new LanguageOption.Language(&quot;&quot;, Locale.getDefault()));</span>
+<span class="nc" id="L340">		fixture.isDefined = true;</span>
+<span class="nc" id="L341">		String valueString = &quot;&quot;;</span>
+<span class="nc" id="L342">		String defaultValueString = null;</span>
 
-<span class="fc" id="L344">		fixture.setValue(valueString, defaultValueString);</span>
+<span class="nc" id="L344">		fixture.setValue(valueString, defaultValueString);</span>
 
 		// add additional test code here
 		// An unexpected exception was thrown in user code while executing this test:
 		//    java.lang.RuntimeException: No language files could be found in the &lt;data/strings&gt; directory.
 		//       at net.sf.freecol.common.option.LanguageOption.initializeLanguages(LanguageOption.java:198)
 		//       at net.sf.freecol.common.option.LanguageOption.&lt;init&gt;(LanguageOption.java:186)
-<span class="fc" id="L351">	}</span>
+<span class="nc" id="L351">	}</span>
 
 	/**
 	 * Run the void setValue(String,String) method test.
@@ -360,20 +360,20 @@ import static org.junit.Assert.*;
 	@Test
 	public void testSetValue_9()
 		throws Exception {
-<span class="fc" id="L363">		LanguageOption fixture = new LanguageOption(new Specification());</span>
-<span class="fc" id="L364">		fixture.setValue(new LanguageOption.Language(&quot;&quot;, Locale.getDefault()));</span>
-<span class="fc" id="L365">		fixture.isDefined = true;</span>
-<span class="fc" id="L366">		String valueString = null;</span>
-<span class="fc" id="L367">		String defaultValueString = null;</span>
+<span class="nc" id="L363">		LanguageOption fixture = new LanguageOption(new Specification());</span>
+<span class="nc" id="L364">		fixture.setValue(new LanguageOption.Language(&quot;&quot;, Locale.getDefault()));</span>
+<span class="nc" id="L365">		fixture.isDefined = true;</span>
+<span class="nc" id="L366">		String valueString = null;</span>
+<span class="nc" id="L367">		String defaultValueString = null;</span>
 
-<span class="fc" id="L369">		fixture.setValue(valueString, defaultValueString);</span>
+<span class="nc" id="L369">		fixture.setValue(valueString, defaultValueString);</span>
 
 		// add additional test code here
 		// An unexpected exception was thrown in user code while executing this test:
 		//    java.lang.RuntimeException: No language files could be found in the &lt;data/strings&gt; directory.
 		//       at net.sf.freecol.common.option.LanguageOption.initializeLanguages(LanguageOption.java:198)
 		//       at net.sf.freecol.common.option.LanguageOption.&lt;init&gt;(LanguageOption.java:186)
-<span class="fc" id="L376">	}</span>
+<span class="nc" id="L376">	}</span>
 
 	/**
 	 * Run the void setValue(String,String) method test.
@@ -385,20 +385,20 @@ import static org.junit.Assert.*;
 	@Test
 	public void testSetValue_10()
 		throws Exception {
-<span class="fc" id="L388">		LanguageOption fixture = new LanguageOption(new Specification());</span>
-<span class="fc" id="L389">		fixture.setValue(new LanguageOption.Language(&quot;&quot;, Locale.getDefault()));</span>
-<span class="fc" id="L390">		fixture.isDefined = true;</span>
-<span class="fc" id="L391">		String valueString = &quot;&quot;;</span>
-<span class="fc" id="L392">		String defaultValueString = &quot;&quot;;</span>
+<span class="nc" id="L388">		LanguageOption fixture = new LanguageOption(new Specification());</span>
+<span class="nc" id="L389">		fixture.setValue(new LanguageOption.Language(&quot;&quot;, Locale.getDefault()));</span>
+<span class="nc" id="L390">		fixture.isDefined = true;</span>
+<span class="nc" id="L391">		String valueString = &quot;&quot;;</span>
+<span class="nc" id="L392">		String defaultValueString = &quot;&quot;;</span>
 
-<span class="fc" id="L394">		fixture.setValue(valueString, defaultValueString);</span>
+<span class="nc" id="L394">		fixture.setValue(valueString, defaultValueString);</span>
 
 		// add additional test code here
 		// An unexpected exception was thrown in user code while executing this test:
 		//    java.lang.RuntimeException: No language files could be found in the &lt;data/strings&gt; directory.
 		//       at net.sf.freecol.common.option.LanguageOption.initializeLanguages(LanguageOption.java:198)
 		//       at net.sf.freecol.common.option.LanguageOption.&lt;init&gt;(LanguageOption.java:186)
-<span class="fc" id="L401">	}</span>
+<span class="nc" id="L401">	}</span>
 
 	/**
 	 * Run the void setValue(String,String) method test.
@@ -410,20 +410,20 @@ import static org.junit.Assert.*;
 	@Test
 	public void testSetValue_11()
 		throws Exception {
-<span class="fc" id="L413">		LanguageOption fixture = new LanguageOption(new Specification());</span>
-<span class="fc" id="L414">		fixture.setValue(new LanguageOption.Language(&quot;&quot;, Locale.getDefault()));</span>
-<span class="fc" id="L415">		fixture.isDefined = true;</span>
-<span class="fc" id="L416">		String valueString = &quot;&quot;;</span>
-<span class="fc" id="L417">		String defaultValueString = &quot;&quot;;</span>
+<span class="nc" id="L413">		LanguageOption fixture = new LanguageOption(new Specification());</span>
+<span class="nc" id="L414">		fixture.setValue(new LanguageOption.Language(&quot;&quot;, Locale.getDefault()));</span>
+<span class="nc" id="L415">		fixture.isDefined = true;</span>
+<span class="nc" id="L416">		String valueString = &quot;&quot;;</span>
+<span class="nc" id="L417">		String defaultValueString = &quot;&quot;;</span>
 
-<span class="fc" id="L419">		fixture.setValue(valueString, defaultValueString);</span>
+<span class="nc" id="L419">		fixture.setValue(valueString, defaultValueString);</span>
 
 		// add additional test code here
 		// An unexpected exception was thrown in user code while executing this test:
 		//    java.lang.RuntimeException: No language files could be found in the &lt;data/strings&gt; directory.
 		//       at net.sf.freecol.common.option.LanguageOption.initializeLanguages(LanguageOption.java:198)
 		//       at net.sf.freecol.common.option.LanguageOption.&lt;init&gt;(LanguageOption.java:186)
-<span class="fc" id="L426">	}</span>
+<span class="nc" id="L426">	}</span>
 
 	/**
 	 * Run the void setValue(String,String) method test.
@@ -435,20 +435,20 @@ import static org.junit.Assert.*;
 	@Test
 	public void testSetValue_12()
 		throws Exception {
-<span class="fc" id="L438">		LanguageOption fixture = new LanguageOption(new Specification());</span>
-<span class="fc" id="L439">		fixture.setValue(new LanguageOption.Language(&quot;&quot;, Locale.getDefault()));</span>
-<span class="fc" id="L440">		fixture.isDefined = true;</span>
-<span class="fc" id="L441">		String valueString = null;</span>
-<span class="fc" id="L442">		String defaultValueString = &quot;&quot;;</span>
+<span class="nc" id="L438">		LanguageOption fixture = new LanguageOption(new Specification());</span>
+<span class="nc" id="L439">		fixture.setValue(new LanguageOption.Language(&quot;&quot;, Locale.getDefault()));</span>
+<span class="nc" id="L440">		fixture.isDefined = true;</span>
+<span class="nc" id="L441">		String valueString = null;</span>
+<span class="nc" id="L442">		String defaultValueString = &quot;&quot;;</span>
 
-<span class="fc" id="L444">		fixture.setValue(valueString, defaultValueString);</span>
+<span class="nc" id="L444">		fixture.setValue(valueString, defaultValueString);</span>
 
 		// add additional test code here
 		// An unexpected exception was thrown in user code while executing this test:
 		//    java.lang.RuntimeException: No language files could be found in the &lt;data/strings&gt; directory.
 		//       at net.sf.freecol.common.option.LanguageOption.initializeLanguages(LanguageOption.java:198)
 		//       at net.sf.freecol.common.option.LanguageOption.&lt;init&gt;(LanguageOption.java:186)
-<span class="fc" id="L451">	}</span>
+<span class="nc" id="L451">	}</span>
 
 	/**
 	 * Run the void setValue(String,String) method test.
@@ -460,20 +460,20 @@ import static org.junit.Assert.*;
 	@Test
 	public void testSetValue_13()
 		throws Exception {
-<span class="fc" id="L463">		LanguageOption fixture = new LanguageOption(new Specification());</span>
-<span class="fc" id="L464">		fixture.setValue(new LanguageOption.Language(&quot;&quot;, Locale.getDefault()));</span>
-<span class="fc" id="L465">		fixture.isDefined = true;</span>
-<span class="fc" id="L466">		String valueString = &quot;&quot;;</span>
-<span class="fc" id="L467">		String defaultValueString = &quot;&quot;;</span>
+<span class="nc" id="L463">		LanguageOption fixture = new LanguageOption(new Specification());</span>
+<span class="nc" id="L464">		fixture.setValue(new LanguageOption.Language(&quot;&quot;, Locale.getDefault()));</span>
+<span class="nc" id="L465">		fixture.isDefined = true;</span>
+<span class="nc" id="L466">		String valueString = &quot;&quot;;</span>
+<span class="nc" id="L467">		String defaultValueString = &quot;&quot;;</span>
 
-<span class="fc" id="L469">		fixture.setValue(valueString, defaultValueString);</span>
+<span class="nc" id="L469">		fixture.setValue(valueString, defaultValueString);</span>
 
 		// add additional test code here
 		// An unexpected exception was thrown in user code while executing this test:
 		//    java.lang.RuntimeException: No language files could be found in the &lt;data/strings&gt; directory.
 		//       at net.sf.freecol.common.option.LanguageOption.initializeLanguages(LanguageOption.java:198)
 		//       at net.sf.freecol.common.option.LanguageOption.&lt;init&gt;(LanguageOption.java:186)
-<span class="fc" id="L476">	}</span>
+<span class="nc" id="L476">	}</span>
 
 	/**
 	 * Run the void setValue(String,String) method test.
@@ -485,20 +485,20 @@ import static org.junit.Assert.*;
 	@Test
 	public void testSetValue_14()
 		throws Exception {
-<span class="fc" id="L488">		LanguageOption fixture = new LanguageOption(new Specification());</span>
-<span class="fc" id="L489">		fixture.setValue(new LanguageOption.Language(&quot;&quot;, Locale.getDefault()));</span>
-<span class="fc" id="L490">		fixture.isDefined = true;</span>
-<span class="fc" id="L491">		String valueString = &quot;&quot;;</span>
-<span class="fc" id="L492">		String defaultValueString = &quot;&quot;;</span>
+<span class="nc" id="L488">		LanguageOption fixture = new LanguageOption(new Specification());</span>
+<span class="nc" id="L489">		fixture.setValue(new LanguageOption.Language(&quot;&quot;, Locale.getDefault()));</span>
+<span class="nc" id="L490">		fixture.isDefined = true;</span>
+<span class="nc" id="L491">		String valueString = &quot;&quot;;</span>
+<span class="nc" id="L492">		String defaultValueString = &quot;&quot;;</span>
 
-<span class="fc" id="L494">		fixture.setValue(valueString, defaultValueString);</span>
+<span class="nc" id="L494">		fixture.setValue(valueString, defaultValueString);</span>
 
 		// add additional test code here
 		// An unexpected exception was thrown in user code while executing this test:
 		//    java.lang.RuntimeException: No language files could be found in the &lt;data/strings&gt; directory.
 		//       at net.sf.freecol.common.option.LanguageOption.initializeLanguages(LanguageOption.java:198)
 		//       at net.sf.freecol.common.option.LanguageOption.&lt;init&gt;(LanguageOption.java:186)
-<span class="fc" id="L501">	}</span>
+<span class="nc" id="L501">	}</span>
 
 	/**
 	 * Run the void setValue(String,String) method test.
@@ -510,20 +510,20 @@ import static org.junit.Assert.*;
 	@Test
 	public void testSetValue_15()
 		throws Exception {
-<span class="fc" id="L513">		LanguageOption fixture = new LanguageOption(new Specification());</span>
-<span class="fc" id="L514">		fixture.setValue(new LanguageOption.Language(&quot;&quot;, Locale.getDefault()));</span>
-<span class="fc" id="L515">		fixture.isDefined = true;</span>
-<span class="fc" id="L516">		String valueString = null;</span>
-<span class="fc" id="L517">		String defaultValueString = &quot;&quot;;</span>
+<span class="nc" id="L513">		LanguageOption fixture = new LanguageOption(new Specification());</span>
+<span class="nc" id="L514">		fixture.setValue(new LanguageOption.Language(&quot;&quot;, Locale.getDefault()));</span>
+<span class="nc" id="L515">		fixture.isDefined = true;</span>
+<span class="nc" id="L516">		String valueString = null;</span>
+<span class="nc" id="L517">		String defaultValueString = &quot;&quot;;</span>
 
-<span class="fc" id="L519">		fixture.setValue(valueString, defaultValueString);</span>
+<span class="nc" id="L519">		fixture.setValue(valueString, defaultValueString);</span>
 
 		// add additional test code here
 		// An unexpected exception was thrown in user code while executing this test:
 		//    java.lang.RuntimeException: No language files could be found in the &lt;data/strings&gt; directory.
 		//       at net.sf.freecol.common.option.LanguageOption.initializeLanguages(LanguageOption.java:198)
 		//       at net.sf.freecol.common.option.LanguageOption.&lt;init&gt;(LanguageOption.java:186)
-<span class="fc" id="L526">	}</span>
+<span class="nc" id="L526">	}</span>
 
 	/**
 	 * Run the void setValue(String,String) method test.
@@ -535,20 +535,20 @@ import static org.junit.Assert.*;
 	@Test
 	public void testSetValue_16()
 		throws Exception {
-<span class="fc" id="L538">		LanguageOption fixture = new LanguageOption(new Specification());</span>
-<span class="fc" id="L539">		fixture.setValue(new LanguageOption.Language(&quot;&quot;, Locale.getDefault()));</span>
-<span class="fc" id="L540">		fixture.isDefined = true;</span>
-<span class="fc" id="L541">		String valueString = &quot;&quot;;</span>
-<span class="fc" id="L542">		String defaultValueString = null;</span>
+<span class="nc" id="L538">		LanguageOption fixture = new LanguageOption(new Specification());</span>
+<span class="nc" id="L539">		fixture.setValue(new LanguageOption.Language(&quot;&quot;, Locale.getDefault()));</span>
+<span class="nc" id="L540">		fixture.isDefined = true;</span>
+<span class="nc" id="L541">		String valueString = &quot;&quot;;</span>
+<span class="nc" id="L542">		String defaultValueString = null;</span>
 
-<span class="fc" id="L544">		fixture.setValue(valueString, defaultValueString);</span>
+<span class="nc" id="L544">		fixture.setValue(valueString, defaultValueString);</span>
 
 		// add additional test code here
 		// An unexpected exception was thrown in user code while executing this test:
 		//    java.lang.RuntimeException: No language files could be found in the &lt;data/strings&gt; directory.
 		//       at net.sf.freecol.common.option.LanguageOption.initializeLanguages(LanguageOption.java:198)
 		//       at net.sf.freecol.common.option.LanguageOption.&lt;init&gt;(LanguageOption.java:186)
-<span class="fc" id="L551">	}</span>
+<span class="nc" id="L551">	}</span>
 
 	/**
 	 * Run the void setValue(String,String) method test.
@@ -560,20 +560,20 @@ import static org.junit.Assert.*;
 	@Test
 	public void testSetValue_17()
 		throws Exception {
-<span class="fc" id="L563">		LanguageOption fixture = new LanguageOption(new Specification());</span>
-<span class="fc" id="L564">		fixture.setValue(new LanguageOption.Language(&quot;&quot;, Locale.getDefault()));</span>
-<span class="fc" id="L565">		fixture.isDefined = true;</span>
-<span class="fc" id="L566">		String valueString = &quot;&quot;;</span>
-<span class="fc" id="L567">		String defaultValueString = null;</span>
+<span class="nc" id="L563">		LanguageOption fixture = new LanguageOption(new Specification());</span>
+<span class="nc" id="L564">		fixture.setValue(new LanguageOption.Language(&quot;&quot;, Locale.getDefault()));</span>
+<span class="nc" id="L565">		fixture.isDefined = true;</span>
+<span class="nc" id="L566">		String valueString = &quot;&quot;;</span>
+<span class="nc" id="L567">		String defaultValueString = null;</span>
 
-<span class="fc" id="L569">		fixture.setValue(valueString, defaultValueString);</span>
+<span class="nc" id="L569">		fixture.setValue(valueString, defaultValueString);</span>
 
 		// add additional test code here
 		// An unexpected exception was thrown in user code while executing this test:
 		//    java.lang.RuntimeException: No language files could be found in the &lt;data/strings&gt; directory.
 		//       at net.sf.freecol.common.option.LanguageOption.initializeLanguages(LanguageOption.java:198)
 		//       at net.sf.freecol.common.option.LanguageOption.&lt;init&gt;(LanguageOption.java:186)
-<span class="fc" id="L576">	}</span>
+<span class="nc" id="L576">	}</span>
 
 	/**
 	 * Run the void setValue(String,String) method test.
@@ -585,20 +585,20 @@ import static org.junit.Assert.*;
 	@Test
 	public void testSetValue_18()
 		throws Exception {
-<span class="fc" id="L588">		LanguageOption fixture = new LanguageOption(new Specification());</span>
-<span class="fc" id="L589">		fixture.setValue(new LanguageOption.Language(&quot;&quot;, Locale.getDefault()));</span>
-<span class="fc" id="L590">		fixture.isDefined = true;</span>
-<span class="fc" id="L591">		String valueString = null;</span>
-<span class="fc" id="L592">		String defaultValueString = null;</span>
+<span class="nc" id="L588">		LanguageOption fixture = new LanguageOption(new Specification());</span>
+<span class="nc" id="L589">		fixture.setValue(new LanguageOption.Language(&quot;&quot;, Locale.getDefault()));</span>
+<span class="nc" id="L590">		fixture.isDefined = true;</span>
+<span class="nc" id="L591">		String valueString = null;</span>
+<span class="nc" id="L592">		String defaultValueString = null;</span>
 
-<span class="fc" id="L594">		fixture.setValue(valueString, defaultValueString);</span>
+<span class="nc" id="L594">		fixture.setValue(valueString, defaultValueString);</span>
 
 		// add additional test code here
 		// An unexpected exception was thrown in user code while executing this test:
 		//    java.lang.RuntimeException: No language files could be found in the &lt;data/strings&gt; directory.
 		//       at net.sf.freecol.common.option.LanguageOption.initializeLanguages(LanguageOption.java:198)
 		//       at net.sf.freecol.common.option.LanguageOption.&lt;init&gt;(LanguageOption.java:186)
-<span class="fc" id="L601">	}</span>
+<span class="nc" id="L601">	}</span>
 
 	/**
 	 * Run the void writeAttributes(FreeColXMLWriter) method test.
@@ -610,10 +610,10 @@ import static org.junit.Assert.*;
 	@Test
 	public void testWriteAttributes_1()
 		throws Exception {
-<span class="fc" id="L613">		LanguageOption fixture = new LanguageOption(new Specification());</span>
-<span class="fc" id="L614">		fixture.setValue(new LanguageOption.Language(&quot;&quot;, Locale.getDefault()));</span>
-<span class="fc" id="L615">		fixture.isDefined = true;</span>
-<span class="fc" id="L616">		FreeColXMLWriter xw = new FreeColXMLWriter(new CharArrayWriter(), net.sf.freecol.common.io.FreeColXMLWriter.WriteScope.CLIENT);</span>
+<span class="nc" id="L613">		LanguageOption fixture = new LanguageOption(new Specification());</span>
+<span class="nc" id="L614">		fixture.setValue(new LanguageOption.Language(&quot;&quot;, Locale.getDefault()));</span>
+<span class="nc" id="L615">		fixture.isDefined = true;</span>
+<span class="nc" id="L616">		FreeColXMLWriter xw = new FreeColXMLWriter(new CharArrayWriter(), net.sf.freecol.common.io.FreeColXMLWriter.WriteScope.CLIENT);</span>
 
 <span class="nc" id="L618">		fixture.writeAttributes(xw);</span>
 
@@ -634,10 +634,10 @@ import static org.junit.Assert.*;
 	@Test
 	public void testWriteAttributes_2()
 		throws Exception {
-<span class="fc" id="L637">		LanguageOption fixture = new LanguageOption(new Specification());</span>
-<span class="fc" id="L638">		fixture.setValue(new LanguageOption.Language(&quot;&quot;, Locale.getDefault()));</span>
-<span class="fc" id="L639">		fixture.isDefined = true;</span>
-<span class="fc" id="L640">		FreeColXMLWriter xw = new FreeColXMLWriter(new CharArrayWriter(), net.sf.freecol.common.io.FreeColXMLWriter.WriteScope.CLIENT);</span>
+<span class="nc" id="L637">		LanguageOption fixture = new LanguageOption(new Specification());</span>
+<span class="nc" id="L638">		fixture.setValue(new LanguageOption.Language(&quot;&quot;, Locale.getDefault()));</span>
+<span class="nc" id="L639">		fixture.isDefined = true;</span>
+<span class="nc" id="L640">		FreeColXMLWriter xw = new FreeColXMLWriter(new CharArrayWriter(), net.sf.freecol.common.io.FreeColXMLWriter.WriteScope.CLIENT);</span>
 
 <span class="nc" id="L642">		fixture.writeAttributes(xw);</span>
 
@@ -658,10 +658,10 @@ import static org.junit.Assert.*;
 	@Test
 	public void testWriteAttributes_3()
 		throws Exception {
-<span class="fc" id="L661">		LanguageOption fixture = new LanguageOption(new Specification());</span>
-<span class="fc" id="L662">		fixture.setValue(new LanguageOption.Language(&quot;&quot;, Locale.getDefault()));</span>
-<span class="fc" id="L663">		fixture.isDefined = true;</span>
-<span class="fc" id="L664">		FreeColXMLWriter xw = new FreeColXMLWriter(new CharArrayWriter(), net.sf.freecol.common.io.FreeColXMLWriter.WriteScope.CLIENT);</span>
+<span class="nc" id="L661">		LanguageOption fixture = new LanguageOption(new Specification());</span>
+<span class="nc" id="L662">		fixture.setValue(new LanguageOption.Language(&quot;&quot;, Locale.getDefault()));</span>
+<span class="nc" id="L663">		fixture.isDefined = true;</span>
+<span class="nc" id="L664">		FreeColXMLWriter xw = new FreeColXMLWriter(new CharArrayWriter(), net.sf.freecol.common.io.FreeColXMLWriter.WriteScope.CLIENT);</span>
 
 <span class="nc" id="L666">		fixture.writeAttributes(xw);</span>
 
@@ -684,7 +684,7 @@ import static org.junit.Assert.*;
 	public void setUp()
 		throws Exception {
 		// add additional set up code here
-<span class="fc" id="L687">	}</span>
+<span class="nc" id="L687">	}</span>
 
 	/**
 	 * Perform post-test clean-up.
@@ -698,7 +698,7 @@ import static org.junit.Assert.*;
 	public void tearDown()
 		throws Exception {
 		// Add additional tear down code here
-<span class="fc" id="L701">	}</span>
+<span class="nc" id="L701">	}</span>
 
 	/**
 	 * Launch the test.
@@ -711,4 +711,4 @@ import static org.junit.Assert.*;
 <span class="nc" id="L711">		new org.junit.runner.JUnitCore().run(LanguageOptionTest.class);</span>
 <span class="nc" id="L712">	}</span>
 }
-</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span>LanguageOptionTest (May 14, 2016 10:46:33 PM)</div></body></html>
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span>TextOptionTest (May 15, 2016 12:07:29 AM)</div></body></html>

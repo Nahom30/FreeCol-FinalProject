@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../.resources/report.gif" type="image/gif"/><title>FreeColObject.java</title><link rel="stylesheet" href="../../../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../.sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">LanguageOptionTest (May 14, 2016 10:46:33 PM)</a> &gt; <a href="../../index.html" class="el_group">FreeCol</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">net.sf.freecol.common.model</a> &gt; <span class="el_source">FreeColObject.java</span></div><h1>FreeColObject.java</h1><pre class="source lang-java linenums">/**
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../.resources/report.gif" type="image/gif"/><title>FreeColObject.java</title><link rel="stylesheet" href="../../../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../.sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">TextOptionTest (May 15, 2016 12:07:29 AM)</a> &gt; <a href="../../index.html" class="el_group">FreeCol</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">net.sf.freecol.common.model</a> &gt; <span class="el_source">FreeColObject.java</span></div><h1>FreeColObject.java</h1><pre class="source lang-java linenums">/**
  *  Copyright (C) 2002-2016   The FreeCol Team
  *
  *  This file is part of FreeCol.
@@ -144,8 +144,8 @@ import net.sf.freecol.common.util.Utils;
      * @return The usual identifier suffix.
      */
     public final String getSuffix() {
-<span class="nc" id="L147">        String id = getId();</span>
-<span class="nc bnc" id="L148" title="All 2 branches missed.">        return (id == null) ? null : lastPart(id, &quot;.&quot;);</span>
+<span class="fc" id="L147">        String id = getId();</span>
+<span class="fc bfc" id="L148" title="All 2 branches covered.">        return (id == null) ? null : lastPart(id, &quot;.&quot;);</span>
     }
 
     /**
@@ -155,11 +155,11 @@ import net.sf.freecol.common.util.Utils;
      * @return The type part of the identifier, or null on error.
      */
     public static String getIdType(String id) {
-<span class="nc bnc" id="L158" title="All 2 branches missed.">        if (id != null) {</span>
-<span class="nc" id="L159">            int col = id.indexOf(':');</span>
-<span class="nc bnc" id="L160" title="All 2 branches missed.">            return (col &gt;= 0) ? id.substring(0, col) : id;</span>
+<span class="fc bfc" id="L158" title="All 2 branches covered.">        if (id != null) {</span>
+<span class="fc" id="L159">            int col = id.indexOf(':');</span>
+<span class="pc bpc" id="L160" title="1 of 2 branches missed.">            return (col &gt;= 0) ? id.substring(0, col) : id;</span>
         }
-<span class="nc" id="L162">        return null;</span>
+<span class="fc" id="L162">        return null;</span>
     }
 
     /**
@@ -168,7 +168,7 @@ import net.sf.freecol.common.util.Utils;
      * @return The type part of the identifier, or null on error.
      */
     public String getIdType() {
-<span class="nc" id="L171">        return getIdType(getId());</span>
+<span class="fc" id="L171">        return getIdType(getId());</span>
     }
 
     /**
@@ -177,15 +177,15 @@ import net.sf.freecol.common.util.Utils;
      * @return The numeric part of the identifier, or negative on error.
      */
     public int getIdNumber() {
-<span class="nc bnc" id="L180" title="All 2 branches missed.">        if (id != null) {</span>
-<span class="nc" id="L181">            int col = id.indexOf(':');</span>
-<span class="nc bnc" id="L182" title="All 2 branches missed.">            if (col &gt;= 0) {</span>
+<span class="fc bfc" id="L180" title="All 2 branches covered.">        if (id != null) {</span>
+<span class="fc" id="L181">            int col = id.indexOf(':');</span>
+<span class="pc bpc" id="L182" title="1 of 2 branches missed.">            if (col &gt;= 0) {</span>
                 try {
 <span class="nc" id="L184">                    return Integer.parseInt(id.substring(col + 1));</span>
 <span class="nc" id="L185">                } catch (NumberFormatException nfe) {}</span>
             }
         }
-<span class="nc" id="L188">        return -1;</span>
+<span class="fc" id="L188">        return -1;</span>
     }
 
     /**
@@ -249,7 +249,7 @@ import net.sf.freecol.common.util.Utils;
      * @return The &lt;code&gt;Game&lt;/code&gt; this object belongs to.
      */
     public Game getGame() {
-<span class="nc" id="L252">        return null;</span>
+<span class="fc" id="L252">        return null;</span>
     }
 
     /**
@@ -309,10 +309,10 @@ import net.sf.freecol.common.util.Utils;
 <span class="nc" id="L309">    }</span>
 
     public void firePropertyChange(String propertyName, Object oldValue, Object newValue) {
-<span class="pc bpc" id="L312" title="1 of 2 branches missed.">        if (pcs != null) {</span>
+<span class="nc bnc" id="L312" title="All 2 branches missed.">        if (pcs != null) {</span>
 <span class="nc" id="L313">            pcs.firePropertyChange(propertyName, oldValue, newValue);</span>
         }
-<span class="fc" id="L315">    }</span>
+<span class="nc" id="L315">    }</span>
 
     public PropertyChangeListener[] getPropertyChangeListeners() {
 <span class="nc bnc" id="L318" title="All 2 branches missed.">        return (pcs == null) ? new PropertyChangeListener[0]</span>
@@ -353,7 +353,7 @@ import net.sf.freecol.common.util.Utils;
      * @return The &lt;code&gt;FeatureContainer&lt;/code&gt; for this object.
      */
     public FeatureContainer getFeatureContainer() {
-<span class="nc" id="L356">        return null;</span>
+<span class="fc" id="L356">        return null;</span>
     }
 
     /**
@@ -921,17 +921,17 @@ import net.sf.freecol.common.util.Utils;
      *     to the stream.
      */
     public String serialize(WriteScope scope) throws XMLStreamException {
-<span class="nc" id="L924">        StringWriter sw = new StringWriter();</span>
-<span class="nc" id="L925">        try (</span>
-<span class="nc" id="L926">            FreeColXMLWriter xw = new FreeColXMLWriter(sw, scope);</span>
+<span class="fc" id="L924">        StringWriter sw = new StringWriter();</span>
+<span class="fc" id="L925">        try (</span>
+<span class="fc" id="L926">            FreeColXMLWriter xw = new FreeColXMLWriter(sw, scope);</span>
         ) {
-<span class="nc" id="L928">            this.toXML(xw);</span>
-<span class="nc bnc" id="L929" title="All 8 branches missed.">        } catch (IOException ioe) {</span>
+<span class="fc" id="L928">            this.toXML(xw);</span>
+<span class="pc bpc" id="L929" title="7 of 8 branches missed.">        } catch (IOException ioe) {</span>
 <span class="nc" id="L930">            logger.log(Level.WARNING, &quot;Error creating FreeColXMLWriter,&quot;, ioe);</span>
 <span class="nc" id="L931">            return null;</span>
         }
 
-<span class="nc" id="L934">        return sw.toString();</span>
+<span class="fc" id="L934">        return sw.toString();</span>
     }
 
     /**
@@ -943,7 +943,7 @@ import net.sf.freecol.common.util.Utils;
      *     to the stream.
      */
     public String serialize() throws XMLStreamException {
-<span class="nc" id="L946">        return serialize(WriteScope.toServer());</span>
+<span class="fc" id="L946">        return serialize(WriteScope.toServer());</span>
     }
 
     /**
@@ -986,8 +986,8 @@ import net.sf.freecol.common.util.Utils;
      * @see #toXML(FreeColXMLWriter)
      */
     public void toXML(FreeColXMLWriter xw) throws XMLStreamException {
-<span class="nc" id="L989">        toXML(xw, getXMLTagName());</span>
-<span class="nc" id="L990">    }</span>
+<span class="fc" id="L989">        toXML(xw, getXMLTagName());</span>
+<span class="fc" id="L990">    }</span>
 
     /**
      * This method writes an XML-representation of this object with
@@ -1006,14 +1006,14 @@ import net.sf.freecol.common.util.Utils;
      *     to the stream.
      */
     public void toXML(FreeColXMLWriter xw, String tag) throws XMLStreamException {
-<span class="nc" id="L1009">        xw.writeStartElement(tag);</span>
+<span class="fc" id="L1009">        xw.writeStartElement(tag);</span>
 
-<span class="nc" id="L1011">        writeAttributes(xw);</span>
+<span class="fc" id="L1011">        writeAttributes(xw);</span>
 
-<span class="nc" id="L1013">        writeChildren(xw);</span>
+<span class="fc" id="L1013">        writeChildren(xw);</span>
 
-<span class="nc" id="L1015">        xw.writeEndElement();</span>
-<span class="nc" id="L1016">    }</span>
+<span class="fc" id="L1015">        xw.writeEndElement();</span>
+<span class="fc" id="L1016">    }</span>
 
     /**
      * Write the attributes of this object to a stream.
@@ -1045,7 +1045,7 @@ import net.sf.freecol.common.util.Utils;
      */
     protected void writeChildren(FreeColXMLWriter xw) throws XMLStreamException {
         // do nothing
-<span class="nc" id="L1048">    }</span>
+<span class="fc" id="L1048">    }</span>
 
     /**
      * This method writes a partial XML-representation of this object to
@@ -1208,7 +1208,7 @@ import net.sf.freecol.common.util.Utils;
      */
     @Override
     public String toString() {
-<span class="fc" id="L1211">        return getClass().getName() + &quot;:&quot; + getId();</span>
+<span class="nc" id="L1211">        return getClass().getName() + &quot;:&quot; + getId();</span>
         //+ &quot; (super hashcode: &quot; + Integer.toHexString(super.hashCode()) + &quot;)&quot;
     }
 
@@ -1232,4 +1232,4 @@ import net.sf.freecol.common.util.Utils;
 <span class="nc" id="L1232">        return null;</span>
     }
 }
-</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span>LanguageOptionTest (May 14, 2016 10:46:33 PM)</div></body></html>
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span>TextOptionTest (May 15, 2016 12:07:29 AM)</div></body></html>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../.resources/report.gif" type="image/gif"/><title>CollectionUtils.java</title><link rel="stylesheet" href="../../../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../.sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">LanguageOptionTest (May 14, 2016 10:46:33 PM)</a> &gt; <a href="../../index.html" class="el_group">FreeCol</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">net.sf.freecol.common.util</a> &gt; <span class="el_source">CollectionUtils.java</span></div><h1>CollectionUtils.java</h1><pre class="source lang-java linenums"><span class="nc" id="L1">/**</span>
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../.resources/report.gif" type="image/gif"/><title>CollectionUtils.java</title><link rel="stylesheet" href="../../../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../.sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">TextOptionTest (May 15, 2016 12:07:29 AM)</a> &gt; <a href="../../index.html" class="el_group">FreeCol</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">net.sf.freecol.common.util</a> &gt; <span class="el_source">CollectionUtils.java</span></div><h1>CollectionUtils.java</h1><pre class="source lang-java linenums"><span class="nc" id="L1">/**</span>
  *  Copyright (C) 2002-2016   The FreeCol Team
  *
  *  This file is part of FreeCol.
@@ -48,26 +48,26 @@ import net.sf.freecol.common.util.CachingFunction;
 <span class="nc" id="L48">public class CollectionUtils {</span>
 
     /** Trivial integer accumulator. */
-<span class="fc" id="L51">    public static final BinaryOperator&lt;Integer&gt; integerAccumulator</span>
-<span class="pc" id="L52">        = (i1, i2) -&gt; i1 + i2;</span>
+<span class="nc" id="L51">    public static final BinaryOperator&lt;Integer&gt; integerAccumulator</span>
+<span class="nc" id="L52">        = (i1, i2) -&gt; i1 + i2;</span>
 
     /** Trivial double accumulator. */
-<span class="fc" id="L55">    public static final BinaryOperator&lt;Double&gt; doubleAccumulator</span>
-<span class="pc" id="L56">        = (d1, d2) -&gt; d1 + d2;</span>
+<span class="nc" id="L55">    public static final BinaryOperator&lt;Double&gt; doubleAccumulator</span>
+<span class="nc" id="L56">        = (d1, d2) -&gt; d1 + d2;</span>
 
     /** Useful comparators for mapEntriesBy* */
-<span class="fc" id="L59">    public static final Comparator&lt;Integer&gt; ascendingIntegerComparator</span>
-<span class="pc" id="L60">        = Comparator.comparingInt(i -&gt; i);</span>
-<span class="fc" id="L61">    public static final Comparator&lt;Integer&gt; descendingIntegerComparator</span>
-<span class="fc" id="L62">        = ascendingIntegerComparator.reversed();</span>
-<span class="fc" id="L63">    public static final Comparator&lt;Double&gt; ascendingDoubleComparator</span>
-<span class="pc" id="L64">        = Comparator.comparingDouble(d -&gt; d);</span>
-<span class="fc" id="L65">    public static final Comparator&lt;Double&gt; descendingDoubleComparator</span>
-<span class="fc" id="L66">        = ascendingDoubleComparator.reversed();</span>
-<span class="fc" id="L67">    public static final Comparator&lt;List&lt;?&gt;&gt; ascendingListLengthComparator</span>
-<span class="pc" id="L68">        = Comparator.comparingInt(l -&gt; l.size());</span>
-<span class="fc" id="L69">    public static final Comparator&lt;List&lt;?&gt;&gt; descendingListLengthComparator</span>
-<span class="fc" id="L70">        = ascendingListLengthComparator.reversed();</span>
+<span class="nc" id="L59">    public static final Comparator&lt;Integer&gt; ascendingIntegerComparator</span>
+<span class="nc" id="L60">        = Comparator.comparingInt(i -&gt; i);</span>
+<span class="nc" id="L61">    public static final Comparator&lt;Integer&gt; descendingIntegerComparator</span>
+<span class="nc" id="L62">        = ascendingIntegerComparator.reversed();</span>
+<span class="nc" id="L63">    public static final Comparator&lt;Double&gt; ascendingDoubleComparator</span>
+<span class="nc" id="L64">        = Comparator.comparingDouble(d -&gt; d);</span>
+<span class="nc" id="L65">    public static final Comparator&lt;Double&gt; descendingDoubleComparator</span>
+<span class="nc" id="L66">        = ascendingDoubleComparator.reversed();</span>
+<span class="nc" id="L67">    public static final Comparator&lt;List&lt;?&gt;&gt; ascendingListLengthComparator</span>
+<span class="nc" id="L68">        = Comparator.comparingInt(l -&gt; l.size());</span>
+<span class="nc" id="L69">    public static final Comparator&lt;List&lt;?&gt;&gt; descendingListLengthComparator</span>
+<span class="nc" id="L70">        = ascendingListLengthComparator.reversed();</span>
 
     
     /**
@@ -502,7 +502,7 @@ import net.sf.freecol.common.util.CachingFunction;
      * @return The item found, or fail if not found.
      */
     public static &lt;T&gt; T find(Collection&lt;T&gt; c, Predicate&lt;T&gt; predicate) {
-<span class="fc" id="L505">        return find(c, predicate, (T)null);</span>
+<span class="nc" id="L505">        return find(c, predicate, (T)null);</span>
     }
 
     /**
@@ -516,7 +516,7 @@ import net.sf.freecol.common.util.CachingFunction;
      */
     public static &lt;T&gt; T find(Collection&lt;T&gt; collection, Predicate&lt;T&gt; predicate,
                              T fail) {
-<span class="fc" id="L519">        return find(collection.stream(), predicate, fail);</span>
+<span class="nc" id="L519">        return find(collection.stream(), predicate, fail);</span>
     }
 
     /**
@@ -541,7 +541,7 @@ import net.sf.freecol.common.util.CachingFunction;
      * @return The item found, or fail if not found.
      */
     public static &lt;T&gt; T find(Stream&lt;T&gt; stream, Predicate&lt;T&gt; predicate, T fail) {
-<span class="fc" id="L544">        return stream.filter(predicate).findFirst().orElse(fail);</span>
+<span class="nc" id="L544">        return stream.filter(predicate).findFirst().orElse(fail);</span>
     }
 
     /**
@@ -1371,4 +1371,4 @@ import net.sf.freecol.common.util.CachingFunction;
         };
     }
 }
-</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span>LanguageOptionTest (May 14, 2016 10:46:33 PM)</div></body></html>
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span>TextOptionTest (May 15, 2016 12:07:29 AM)</div></body></html>
