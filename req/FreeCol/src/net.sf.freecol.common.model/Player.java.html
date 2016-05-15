@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../.resources/report.gif" type="image/gif"/><title>Player.java</title><link rel="stylesheet" href="../../../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../.sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">AbstractGoodsTest (May 14, 2016 4:05:35 PM)</a> &gt; <a href="../../index.html" class="el_group">FreeCol</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">net.sf.freecol.common.model</a> &gt; <span class="el_source">Player.java</span></div><h1>Player.java</h1><pre class="source lang-java linenums"><span class="nc" id="L1">/**</span>
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../.resources/report.gif" type="image/gif"/><title>Player.java</title><link rel="stylesheet" href="../../../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../.sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">LanguageOptionTest (May 14, 2016 10:46:33 PM)</a> &gt; <a href="../../index.html" class="el_group">FreeCol</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">net.sf.freecol.common.model</a> &gt; <span class="el_source">Player.java</span></div><h1>Player.java</h1><pre class="source lang-java linenums"><span class="nc" id="L1">/**</span>
  *  Copyright (C) 2002-2016   The FreeCol Team
  *
  *  This file is part of FreeCol.
@@ -64,7 +64,7 @@ import org.w3c.dom.Element;
  */
 public class Player extends FreeColGameObject implements Nameable {
 
-<span class="fc" id="L67">    private static final Logger logger = Logger.getLogger(Player.class.getName());</span>
+<span class="nc" id="L67">    private static final Logger logger = Logger.getLogger(Player.class.getName());</span>
     //
     // Types
     //
@@ -126,7 +126,7 @@ public class Player extends FreeColGameObject implements Nameable {
 
         private final Predicate&lt;Unit&gt; predicate;
 
-<span class="fc" id="L129">        private final List&lt;Unit&gt; units = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L129">        private final List&lt;Unit&gt; units = new ArrayList&lt;&gt;();</span>
 
 
         /**
@@ -138,11 +138,11 @@ public class Player extends FreeColGameObject implements Nameable {
          *     whether a &lt;code&gt;Unit&lt;/code&gt; should be included in the
          *     &lt;code&gt;Iterator&lt;/code&gt; or not.
          */
-<span class="fc" id="L141">        public UnitIterator(Player owner, Predicate&lt;Unit&gt; predicate) {</span>
-<span class="fc" id="L142">            this.owner = owner;</span>
-<span class="fc" id="L143">            this.predicate = predicate;</span>
-<span class="fc" id="L144">            update();</span>
-<span class="fc" id="L145">        }</span>
+<span class="nc" id="L141">        public UnitIterator(Player owner, Predicate&lt;Unit&gt; predicate) {</span>
+<span class="nc" id="L142">            this.owner = owner;</span>
+<span class="nc" id="L143">            this.predicate = predicate;</span>
+<span class="nc" id="L144">            update();</span>
+<span class="nc" id="L145">        }</span>
 
 
         /**
@@ -150,12 +150,12 @@ public class Player extends FreeColGameObject implements Nameable {
          * predicate.
          */
         private final void update() {
-<span class="fc" id="L153">            units.clear();</span>
-<span class="fc" id="L154">            units.addAll(transformAndSort(owner.getUnits(),</span>
-<span class="pc" id="L155">                                          u -&gt; predicate.test(u),</span>
-<span class="fc" id="L156">                                          Unit.locComparator,</span>
-<span class="fc" id="L157">                                          Collectors.toList()));</span>
-<span class="fc" id="L158">        }</span>
+<span class="nc" id="L153">            units.clear();</span>
+<span class="nc" id="L154">            units.addAll(transformAndSort(owner.getUnits(),</span>
+<span class="nc" id="L155">                                          u -&gt; predicate.test(u),</span>
+<span class="nc" id="L156">                                          Unit.locComparator,</span>
+<span class="nc" id="L157">                                          Collectors.toList()));</span>
+<span class="nc" id="L158">        }</span>
 
         /**
          * Set the next valid unit.
@@ -240,8 +240,8 @@ public class Player extends FreeColGameObject implements Nameable {
     //
 
     /** A comparator for ordering players. */
-<span class="fc" id="L243">    public static final Comparator&lt;Player&gt; playerComparator</span>
-<span class="fc" id="L244">        = Comparator.comparingInt(Player::getRank);</span>
+<span class="nc" id="L243">    public static final Comparator&lt;Player&gt; playerComparator</span>
+<span class="nc" id="L244">        = Comparator.comparingInt(Player::getRank);</span>
 
     /** A magic constant to denote that a players gold is not tracked. */
     public static final int GOLD_NOT_ACCOUNTED = Integer.MIN_VALUE;
@@ -277,7 +277,7 @@ public class Player extends FreeColGameObject implements Nameable {
     protected String nationId;
 
     /** The name this player uses for the New World. */
-<span class="pc" id="L280">    protected String newLandName = null;</span>
+<span class="nc" id="L280">    protected String newLandName = null;</span>
 
     /** Is this player an admin? */
     protected boolean admin;
@@ -289,10 +289,10 @@ public class Player extends FreeColGameObject implements Nameable {
     protected boolean ready;
 
     /** Is this player dead? */
-<span class="pc" id="L292">    protected boolean dead = false;</span>
+<span class="nc" id="L292">    protected boolean dead = false;</span>
 
     /** True if player has been attacked by privateers. */
-<span class="pc" id="L295">    protected boolean attackedByPrivateers = false;</span>
+<span class="nc" id="L295">    protected boolean attackedByPrivateers = false;</span>
 
     /**
      * Whether the player is bankrupt, i.e. unable to pay for the
@@ -327,13 +327,13 @@ public class Player extends FreeColGameObject implements Nameable {
     protected int liberty;
 
     /** SoL from last turn. */
-<span class="pc" id="L330">    protected int oldSoL = 0;</span>
+<span class="nc" id="L330">    protected int oldSoL = 0;</span>
 
     /** The number of liberty bells produced towards the intervention force. */
     protected int interventionBells;
 
     /** The current tax rate for this player. */
-<span class="pc" id="L336">    protected int tax = 0;</span>
+<span class="nc" id="L336">    protected int tax = 0;</span>
 
     /** The player starting location on the map. */
     protected Location entryLocation;
@@ -348,12 +348,12 @@ public class Player extends FreeColGameObject implements Nameable {
     protected Monarch monarch;
 
     /** The founding fathers in this Player's congress. */
-<span class="pc" id="L351">    protected final Set&lt;FoundingFather&gt; foundingFathers</span>
-<span class="pc" id="L352">        = new HashSet&lt;&gt;();</span>
+<span class="nc" id="L351">    protected final Set&lt;FoundingFather&gt; foundingFathers</span>
+<span class="nc" id="L352">        = new HashSet&lt;&gt;();</span>
     /** Current founding father being recruited. */
     protected FoundingFather currentFather;
     /** The offered founding fathers. */
-<span class="pc" id="L356">    protected final List&lt;FoundingFather&gt; offeredFathers = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L356">    protected final List&lt;FoundingFather&gt; offeredFathers = new ArrayList&lt;&gt;();</span>
 
     /**
      * The tension levels, 0-1000, with 1000 being maximum hostility.
@@ -361,67 +361,67 @@ public class Player extends FreeColGameObject implements Nameable {
      * Only used by AI, but resist the temptation to move it to AIPlayer, the
      * complexity is not worth it.
      */
-<span class="pc" id="L364">    protected final java.util.Map&lt;Player, Tension&gt; tension = new HashMap&lt;&gt;();</span>
+<span class="nc" id="L364">    protected final java.util.Map&lt;Player, Tension&gt; tension = new HashMap&lt;&gt;();</span>
 
     /** A list of players who can not establish missions to this player. */
-<span class="pc" id="L367">    protected Set&lt;Player&gt; bannedMissions = null;</span>
+<span class="nc" id="L367">    protected Set&lt;Player&gt; bannedMissions = null;</span>
 
     /**
      * Stores the stance towards the other players. One of: WAR, CEASE_FIRE,
      * PEACE and ALLIANCE.
      */
-<span class="pc" id="L373">    protected final java.util.Map&lt;String, Stance&gt; stance = new HashMap&lt;&gt;();</span>
+<span class="nc" id="L373">    protected final java.util.Map&lt;String, Stance&gt; stance = new HashMap&lt;&gt;();</span>
 
     /** The trade routes defined by this player. */
-<span class="pc" id="L376">    protected final List&lt;TradeRoute&gt; tradeRoutes = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L376">    protected final List&lt;TradeRoute&gt; tradeRoutes = new ArrayList&lt;&gt;();</span>
 
     /** The current model messages for this player. */
-<span class="pc" id="L379">    protected final List&lt;ModelMessage&gt; modelMessages = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L379">    protected final List&lt;ModelMessage&gt; modelMessages = new ArrayList&lt;&gt;();</span>
 
     /** The history events occuring with this player. */
-<span class="pc" id="L382">    protected final List&lt;HistoryEvent&gt; history = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L382">    protected final List&lt;HistoryEvent&gt; history = new ArrayList&lt;&gt;();</span>
 
     /** The last-sale data. */
-<span class="pc" id="L385">    protected HashMap&lt;String, LastSale&gt; lastSales = null;</span>
+<span class="nc" id="L385">    protected HashMap&lt;String, LastSale&gt; lastSales = null;</span>
 
     // Temporary/transient variables, do not serialize.
 
     /** The units this player owns. */
-<span class="pc" id="L390">    private final List&lt;Unit&gt; units = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L390">    private final List&lt;Unit&gt; units = new ArrayList&lt;&gt;();</span>
 
     /** The settlements this player owns. */
-<span class="pc" id="L393">    protected final List&lt;Settlement&gt; settlements = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L393">    protected final List&lt;Settlement&gt; settlements = new ArrayList&lt;&gt;();</span>
 
     /** The tiles the player can see. */
-<span class="pc" id="L396">    private boolean[][] canSeeTiles = null;</span>
+<span class="nc" id="L396">    private boolean[][] canSeeTiles = null;</span>
     /** Are the canSeeTiles valid or do they need to be recalculated? */
-<span class="pc" id="L398">    private boolean canSeeValid = false;</span>
+<span class="nc" id="L398">    private boolean canSeeValid = false;</span>
     /** Do not access canSeeTiles without taking canSeeLock. */
-<span class="pc" id="L400">    private final Object canSeeLock = new Object();</span>
+<span class="nc" id="L400">    private final Object canSeeLock = new Object();</span>
 
     /** A container for the abilities and modifiers of this type. */
-<span class="pc" id="L403">    protected final FeatureContainer featureContainer = new FeatureContainer();</span>
+<span class="nc" id="L403">    protected final FeatureContainer featureContainer = new FeatureContainer();</span>
 
     /** The maximum food consumption of unit types available to this player. */
-<span class="pc" id="L406">    private int maximumFoodConsumption = -1;</span>
+<span class="nc" id="L406">    private int maximumFoodConsumption = -1;</span>
 
     /** An iterator for the player units that are still active this turn. */
-<span class="pc" id="L409">    private final UnitIterator nextActiveUnitIterator</span>
-<span class="pc" id="L410">        = new UnitIterator(this, Unit::couldMove);</span>
+<span class="nc" id="L409">    private final UnitIterator nextActiveUnitIterator</span>
+<span class="nc" id="L410">        = new UnitIterator(this, Unit::couldMove);</span>
 
     /** An iterator for the player units that have a destination to go to. */
-<span class="pc" id="L413">    private final UnitIterator nextGoingToUnitIterator</span>
-<span class="pc" id="L414">        = new UnitIterator(this, Unit::goingToDestination);</span>
+<span class="nc" id="L413">    private final UnitIterator nextGoingToUnitIterator</span>
+<span class="nc" id="L414">        = new UnitIterator(this, Unit::goingToDestination);</span>
 
     /**
      * The HighSeas is a Location that enables Units to travel between
      * the New World and one or several European Ports.
      */
-<span class="pc" id="L420">    protected HighSeas highSeas = null;</span>
+<span class="nc" id="L420">    protected HighSeas highSeas = null;</span>
 
     /** A cached map of the current nation summary for all live nations. */
-<span class="pc" id="L423">    private final java.util.Map&lt;Player, NationSummary&gt; nationCache</span>
-<span class="pc" id="L424">        = new HashMap&lt;&gt;();</span>
+<span class="nc" id="L423">    private final java.util.Map&lt;Player, NationSummary&gt; nationCache</span>
+<span class="nc" id="L424">        = new HashMap&lt;&gt;();</span>
 
 
     //
@@ -445,7 +445,7 @@ public class Player extends FreeColGameObject implements Nameable {
      * @param e An XML-element that will be used to initialize this object.
      */
     public Player(Game game, Element e) {
-<span class="fc" id="L448">        super(game, null);</span>
+<span class="nc" id="L448">        super(game, null);</span>
 
 <span class="nc" id="L450">        DOMMessage.readFromXMLElement(this, e);</span>
 <span class="nc" id="L451">    }</span>
@@ -1972,8 +1972,8 @@ public class Player extends FreeColGameObject implements Nameable {
      * @return A list of the player &lt;code&gt;Unit&lt;/code&gt;s.
      */
     public List&lt;Unit&gt; getUnits() {
-<span class="pc" id="L1975">        synchronized (this.units) {</span>
-<span class="fc" id="L1976">            return new ArrayList&lt;&gt;(this.units);</span>
+<span class="nc" id="L1975">        synchronized (this.units) {</span>
+<span class="nc" id="L1976">            return new ArrayList&lt;&gt;(this.units);</span>
         }
     }
 
@@ -3896,7 +3896,7 @@ public class Player extends FreeColGameObject implements Nameable {
     private static final String TENSION_TAG = &quot;tension&quot;;
     private static final String USERNAME_TAG = &quot;username&quot;;
     // @compat 0.10.7
-<span class="fc" id="L3899">    private static final String OLD_NATION_ID_TAG = &quot;nationID&quot;;</span>
+<span class="nc" id="L3899">    private static final String OLD_NATION_ID_TAG = &quot;nationID&quot;;</span>
     // end @compat
 
 
@@ -4292,4 +4292,4 @@ public class Player extends FreeColGameObject implements Nameable {
 <span class="nc" id="L4292">        return &quot;player&quot;;</span>
     }
 }
-</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span>AbstractGoodsTest (May 14, 2016 4:05:35 PM)</div></body></html>
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span>LanguageOptionTest (May 14, 2016 10:46:33 PM)</div></body></html>

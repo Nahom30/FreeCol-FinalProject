@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../.resources/report.gif" type="image/gif"/><title>FreeColSpecObjectType.java</title><link rel="stylesheet" href="../../../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../.sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">AbstractGoodsTest (May 14, 2016 4:05:35 PM)</a> &gt; <a href="../../index.html" class="el_group">FreeCol</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">net.sf.freecol.common.model</a> &gt; <span class="el_source">FreeColSpecObjectType.java</span></div><h1>FreeColSpecObjectType.java</h1><pre class="source lang-java linenums">/**
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../.resources/report.gif" type="image/gif"/><title>FreeColSpecObjectType.java</title><link rel="stylesheet" href="../../../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../.sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">LanguageOptionTest (May 14, 2016 10:46:33 PM)</a> &gt; <a href="../../index.html" class="el_group">FreeCol</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">net.sf.freecol.common.model</a> &gt; <span class="el_source">FreeColSpecObjectType.java</span></div><h1>FreeColSpecObjectType.java</h1><pre class="source lang-java linenums">/**
  *  Copyright (C) 2002-2016   The FreeCol Team
  *
  *  This file is part of FreeCol.
@@ -138,7 +138,7 @@ public abstract class FreeColSpecObjectType extends FreeColSpecObject
      * @return A description key.
      */
     public final String getDescriptionKey() {
-<span class="fc" id="L141">        return Messages.descriptionKey(getId());</span>
+<span class="nc" id="L141">        return Messages.descriptionKey(getId());</span>
     }
 
     /**
@@ -147,7 +147,7 @@ public abstract class FreeColSpecObjectType extends FreeColSpecObject
      * @return True if this is an abstract game object type.
      */
     public final boolean isAbstractType() {
-<span class="fc" id="L150">        return this.abstractType;</span>
+<span class="nc" id="L150">        return this.abstractType;</span>
     }
 
 
@@ -158,7 +158,7 @@ public abstract class FreeColSpecObjectType extends FreeColSpecObject
      */
     @Override
     public final String getNameKey() {
-<span class="fc" id="L161">        return Messages.nameKey(getId());</span>
+<span class="nc" id="L161">        return Messages.nameKey(getId());</span>
     }
 
 
@@ -169,10 +169,10 @@ public abstract class FreeColSpecObjectType extends FreeColSpecObject
      */
     @Override
     public final FeatureContainer getFeatureContainer() {
-<span class="fc bfc" id="L172" title="All 2 branches covered.">        if (this.featureContainer == null) {</span>
-<span class="fc" id="L173">            this.featureContainer = new FeatureContainer();</span>
+<span class="nc bnc" id="L172" title="All 2 branches missed.">        if (this.featureContainer == null) {</span>
+<span class="nc" id="L173">            this.featureContainer = new FeatureContainer();</span>
         }
-<span class="fc" id="L175">        return this.featureContainer;</span>
+<span class="nc" id="L175">        return this.featureContainer;</span>
     }
 
 
@@ -195,16 +195,16 @@ public abstract class FreeColSpecObjectType extends FreeColSpecObject
      */
     @Override
     protected void writeChildren(FreeColXMLWriter xw) throws XMLStreamException {
-<span class="fc" id="L198">        super.writeChildren(xw);</span>
+<span class="nc" id="L198">        super.writeChildren(xw);</span>
 
-<span class="pc bpc" id="L200" title="1 of 2 branches missed.">        for (Ability ability : toSortedList(getAbilities())) {</span>
+<span class="nc bnc" id="L200" title="All 2 branches missed.">        for (Ability ability : toSortedList(getAbilities())) {</span>
 <span class="nc" id="L201">            ability.toXML(xw);</span>
         }
 
-<span class="pc bpc" id="L204" title="1 of 2 branches missed.">        for (Modifier modifier : getSortedModifiers()) {</span>
+<span class="nc bnc" id="L204" title="All 2 branches missed.">        for (Modifier modifier : getSortedModifiers()) {</span>
 <span class="nc" id="L205">            modifier.toXML(xw);</span>
         }
-<span class="fc" id="L207">    }</span>
+<span class="nc" id="L207">    }</span>
 
     /**
      * {@inheritDoc}
@@ -272,7 +272,7 @@ public abstract class FreeColSpecObjectType extends FreeColSpecObject
      */
     @Override
     public String toString() {
-<span class="fc" id="L275">        return getId();</span>
+<span class="nc" id="L275">        return getId();</span>
     }
 }
-</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span>AbstractGoodsTest (May 14, 2016 4:05:35 PM)</div></body></html>
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span>LanguageOptionTest (May 14, 2016 10:46:33 PM)</div></body></html>

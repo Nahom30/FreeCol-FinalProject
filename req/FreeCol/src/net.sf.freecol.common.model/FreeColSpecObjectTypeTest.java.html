@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../.resources/report.gif" type="image/gif"/><title>FreeColSpecObjectTypeTest.java</title><link rel="stylesheet" href="../../../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../.sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">LanguageOptionTest (May 14, 2016 10:46:33 PM)</a> &gt; <a href="../../index.html" class="el_group">FreeCol</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">net.sf.freecol.common.model</a> &gt; <span class="el_source">FreeColSpecObjectTypeTest.java</span></div><h1>FreeColSpecObjectTypeTest.java</h1><pre class="source lang-java linenums">package net.sf.freecol.common.model;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
+
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+
+import javax.xml.stream.XMLStreamException;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+import net.sf.freecol.common.io.FreeColXMLWriter.WriteScope;
+
+<span class="nc" id="L19">public class FreeColSpecObjectTypeTest {</span>
+	ResourceType rType1, rType2;
+	StubXMLWriter stubXW;
+	StubXMLReader stubXR;
+	
+	@Before
+	public void setUp() throws IOException {
+<span class="nc" id="L26">		stubXW = new StubXMLWriter(new ByteArrayOutputStream(), WriteScope.CLIENT, false);</span>
+<span class="nc" id="L27">		stubXR = new StubXMLReader(new ByteArrayInputStream(new byte[0]));</span>
+<span class="nc" id="L28">		rType1 = new ResourceType(&quot;Resource1&quot;,null);</span>
+<span class="nc" id="L29">		rType2 = new ResourceType(&quot;Resource1&quot;,null);</span>
+<span class="nc" id="L30">	}</span>
+
+	@Test
+	public void maxValueInvalidTest(){
+<span class="nc" id="L34">		assertEquals(0,rType1.getMaxValue());</span>
+<span class="nc" id="L35">	}</span>
+
+	@Test
+	public void minValueInvalidTest(){
+<span class="nc" id="L39">		assertEquals(0,rType1.getMinValue());</span>
+<span class="nc" id="L40">	}</span>
+	
+	@Test
+	public void goodsTypeInvalidTest() throws XMLStreamException{
+<span class="nc" id="L44">		assertNull(rType1.getBestGoodsType());</span>
+<span class="nc" id="L45">		rType1.writeAttributes(stubXW);</span>
+<span class="nc" id="L46">		assertEquals(&quot;id=Resource1;maximum-value=0;minimum-value=0;&quot;, stubXW.outputString);</span>
+<span class="nc" id="L47">		rType1.readAttributes(stubXR);</span>
+<span class="nc" id="L48">		assertEquals(&quot;id=null;ID=null;abstract=false;maximum-value=-1;minimum-value=-1;&quot;,stubXR.outputString);</span>
+<span class="nc" id="L49">	}</span>
+	
+	//The following tests are related to methods defined in the abstract class FreeColSpecObjectType
+	@Test
+	public void isAbstractTypeTest(){
+<span class="nc" id="L54">		assertFalse(rType1.isAbstractType());</span>
+<span class="nc" id="L55">	}</span>
+	
+	@Test
+	public void nameKeyTest(){
+<span class="nc" id="L59">		assertEquals(&quot;Resource1.name&quot;, rType1.getNameKey());</span>
+<span class="nc" id="L60">	}</span>
+
+	@Test
+	public void toStringTest(){
+<span class="nc" id="L64">		assertEquals(&quot;Resource1&quot;, rType1.toString());</span>
+<span class="nc" id="L65">	}</span>
+		
+	//The following tests are related to methods defined in the abstract class FreeColSpecObject
+	@Test
+	public void getIdTest(){
+<span class="nc" id="L70">		assertEquals(&quot;Resource1&quot;, rType1.getId());</span>
+<span class="nc" id="L71">	}</span>
+
+	@Test
+	public void specificationTest(){
+<span class="nc" id="L75">		Specification sp1 = new Specification();</span>
+<span class="nc" id="L76">		rType1.setSpecification(sp1);</span>
+<span class="nc" id="L77">		assertEquals(sp1, rType1.getSpecification());</span>
+<span class="nc" id="L78">	}</span>
+	
+	//The following tests are related to methods defined in the abstract class FreeColSpecObject
+	@After
+	public void tearDown() {
+<span class="nc" id="L83">		stubXW = null;</span>
+<span class="nc" id="L84">		rType1 = null;</span>
+<span class="nc" id="L85">		rType2 = null;</span>
+<span class="nc" id="L86">	}</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span>LanguageOptionTest (May 14, 2016 10:46:33 PM)</div></body></html>

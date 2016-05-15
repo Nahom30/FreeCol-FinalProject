@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../.resources/report.gif" type="image/gif"/><title>CollectionUtils.java</title><link rel="stylesheet" href="../../../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../.sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">AbstractGoodsTest (May 14, 2016 4:05:35 PM)</a> &gt; <a href="../../index.html" class="el_group">FreeCol</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">net.sf.freecol.common.util</a> &gt; <span class="el_source">CollectionUtils.java</span></div><h1>CollectionUtils.java</h1><pre class="source lang-java linenums"><span class="nc" id="L1">/**</span>
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../.resources/report.gif" type="image/gif"/><title>CollectionUtils.java</title><link rel="stylesheet" href="../../../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../.sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">LanguageOptionTest (May 14, 2016 10:46:33 PM)</a> &gt; <a href="../../index.html" class="el_group">FreeCol</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">net.sf.freecol.common.util</a> &gt; <span class="el_source">CollectionUtils.java</span></div><h1>CollectionUtils.java</h1><pre class="source lang-java linenums"><span class="nc" id="L1">/**</span>
  *  Copyright (C) 2002-2016   The FreeCol Team
  *
  *  This file is part of FreeCol.
@@ -441,7 +441,7 @@ import net.sf.freecol.common.util.CachingFunction;
      */
     public static &lt;T&gt; boolean contains(Collection&lt;T&gt; c,
                                        Predicate&lt;T&gt; predicate) {
-<span class="fc" id="L444">        return c.stream().filter(predicate).findFirst().isPresent();</span>
+<span class="nc" id="L444">        return c.stream().filter(predicate).findFirst().isPresent();</span>
     }
 
     /**
@@ -502,7 +502,7 @@ import net.sf.freecol.common.util.CachingFunction;
      * @return The item found, or fail if not found.
      */
     public static &lt;T&gt; T find(Collection&lt;T&gt; c, Predicate&lt;T&gt; predicate) {
-<span class="nc" id="L505">        return find(c, predicate, (T)null);</span>
+<span class="fc" id="L505">        return find(c, predicate, (T)null);</span>
     }
 
     /**
@@ -516,7 +516,7 @@ import net.sf.freecol.common.util.CachingFunction;
      */
     public static &lt;T&gt; T find(Collection&lt;T&gt; collection, Predicate&lt;T&gt; predicate,
                              T fail) {
-<span class="nc" id="L519">        return find(collection.stream(), predicate, fail);</span>
+<span class="fc" id="L519">        return find(collection.stream(), predicate, fail);</span>
     }
 
     /**
@@ -541,7 +541,7 @@ import net.sf.freecol.common.util.CachingFunction;
      * @return The item found, or fail if not found.
      */
     public static &lt;T&gt; T find(Stream&lt;T&gt; stream, Predicate&lt;T&gt; predicate, T fail) {
-<span class="nc" id="L544">        return stream.filter(predicate).findFirst().orElse(fail);</span>
+<span class="fc" id="L544">        return stream.filter(predicate).findFirst().orElse(fail);</span>
     }
 
     /**
@@ -971,7 +971,7 @@ import net.sf.freecol.common.util.CachingFunction;
      */
     public static &lt;T extends Comparable&lt;? super T&gt;&gt; List&lt;T&gt;
         toSortedList(Collection&lt;T&gt; collection) {
-<span class="fc" id="L974">        return toSortedList(collection.stream());</span>
+<span class="nc" id="L974">        return toSortedList(collection.stream());</span>
     }
 
     /**
@@ -983,8 +983,8 @@ import net.sf.freecol.common.util.CachingFunction;
      */
     public static &lt;T extends Comparable&lt;? super T&gt;&gt; List&lt;T&gt;
         toSortedList(Stream&lt;T&gt; stream) {
-<span class="fc" id="L986">        final Comparator&lt;T&gt; comparator = Comparator.naturalOrder();</span>
-<span class="fc" id="L987">        return toSortedList(stream, comparator);</span>
+<span class="nc" id="L986">        final Comparator&lt;T&gt; comparator = Comparator.naturalOrder();</span>
+<span class="nc" id="L987">        return toSortedList(stream, comparator);</span>
     }
 
     /**
@@ -1023,7 +1023,7 @@ import net.sf.freecol.common.util.CachingFunction;
      */
     public static &lt;T&gt; List&lt;T&gt; toSortedList(Stream&lt;T&gt; stream,
                                            Comparator&lt;T&gt; comparator) {
-<span class="fc" id="L1026">        return stream.sorted(comparator).collect(Collectors.toList());</span>
+<span class="nc" id="L1026">        return stream.sorted(comparator).collect(Collectors.toList());</span>
     }
 
     /**
@@ -1270,8 +1270,8 @@ import net.sf.freecol.common.util.CachingFunction;
                          Predicate&lt;T&gt; predicate,
                          Comparator&lt;? super T&gt; comparator,
                          Collector&lt;T,?,C&gt; collector) {
-<span class="pc" id="L1273">        return fmcs(collection.stream(), predicate, i -&gt; i, comparator,</span>
-<span class="fc" id="L1274">                    collector);</span>
+<span class="nc" id="L1273">        return fmcs(collection.stream(), predicate, i -&gt; i, comparator,</span>
+<span class="nc" id="L1274">                    collector);</span>
     }
 
     /**
@@ -1313,8 +1313,8 @@ import net.sf.freecol.common.util.CachingFunction;
                                   Function&lt;? super T, ? extends R&gt; mapper,
                                   Comparator&lt;? super R&gt; comparator,
                                   Collector&lt;R,?,C&gt; collector) {
-<span class="fc" id="L1316">        return stream.filter(predicate).map(mapper).sorted(comparator)</span>
-<span class="fc" id="L1317">            .collect(collector);</span>
+<span class="nc" id="L1316">        return stream.filter(predicate).map(mapper).sorted(comparator)</span>
+<span class="nc" id="L1317">            .collect(collector);</span>
     }
     
     /**
@@ -1371,4 +1371,4 @@ import net.sf.freecol.common.util.CachingFunction;
         };
     }
 }
-</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span>AbstractGoodsTest (May 14, 2016 4:05:35 PM)</div></body></html>
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span>LanguageOptionTest (May 14, 2016 10:46:33 PM)</div></body></html>
