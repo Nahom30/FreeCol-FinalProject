@@ -149,63 +149,7 @@ public class NationTest {
 		assertEquals(null, result);
 	}
 
-	/**
-	 * Run the String getRandomNonPlayerNationNameKey(Game,Random) method test.
-	 *
-	 * @throws Exception
-	 *
-	 * @generatedBy CodePro at 5/13/16 6:51 PM
-	 */
-	@Test
-	public void testGetRandomNonPlayerNationNameKey_1()
-		throws Exception {
-		Game game = new Game();
-		Random random = new Random();
-
-		String result = Nation.getRandomNonPlayerNationNameKey(game, random);
-
-		// add additional test code here
-		assertEquals("model.nation.prussian.name", result);
-	}
-
-	/**
-	 * Run the String getRandomNonPlayerNationNameKey(Game,Random) method test.
-	 *
-	 * @throws Exception
-	 *
-	 * @generatedBy CodePro at 5/13/16 6:51 PM
-	 */
-	@Test
-	public void testGetRandomNonPlayerNationNameKey_2()
-		throws Exception {
-		Game game = new Game();
-		Random random = new Random();
-
-		String result = Nation.getRandomNonPlayerNationNameKey(game, random);
-
-		// add additional test code here
-		assertEquals("model.nation.spanish.name", result);
-	}
-
-	/**
-	 * Run the String getRandomNonPlayerNationNameKey(Game,Random) method test.
-	 *
-	 * @throws Exception
-	 *
-	 * @generatedBy CodePro at 5/13/16 6:51 PM
-	 */
-	@Test
-	public void testGetRandomNonPlayerNationNameKey_3()
-		throws Exception {
-		Game game = new Game();
-		Random random = new Random();
-
-		String result = Nation.getRandomNonPlayerNationNameKey(game, random);
-
-		// add additional test code here
-		assertEquals("model.nation.dutch.name", result);
-	}
-
+	
 	/**
 	 * Run the Nation getRebelNation() method test.
 	 *
@@ -265,6 +209,63 @@ public class NationTest {
 		// add additional test code here
 		assertEquals(".ruler", result);
 	}
+	/**
+	 * Run the String getRandomNonPlayerNationNameKey(Game,Random) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/13/16 6:51 PM
+	 */
+	@Test
+	public void testGetRandomNonPlayerNationNameKey_1()
+		throws Exception {
+		Game game = new Game();
+		Random random = new Random();
+
+		String result = Nation.getRandomNonPlayerNationNameKey(game, random);
+
+		// add additional test code here
+		assertEquals("model.nation.prussian.name", result);
+	}
+
+	/**
+	 * Run the String getRandomNonPlayerNationNameKey(Game,Random) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/13/16 6:51 PM
+	 */
+	@Test
+	public void testGetRandomNonPlayerNationNameKey_2()
+		throws Exception {
+		Game game = new Game();
+		Random random = new Random();
+
+		String result = Nation.getRandomNonPlayerNationNameKey(game, random);
+
+		// add additional test code here
+		assertEquals("model.nation.spanish.name", result);
+	}
+
+	/**
+	 * Run the String getRandomNonPlayerNationNameKey(Game,Random) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/13/16 6:51 PM
+	 */
+	@Test
+	public void testGetRandomNonPlayerNationNameKey_3()
+		throws Exception {
+		Game game = new Game();
+		Random random = new Random();
+
+		String result = Nation.getRandomNonPlayerNationNameKey(game, random);
+
+		// add additional test code here
+		assertEquals("model.nation.dutch.name", result);
+	}
+
 
 	/**
 	 * Run the String getTagName() method test.
@@ -418,212 +419,7 @@ public class NationTest {
 		assertEquals(false, result);
 	}
 
-	/**
-	 * Run the void readAttributes(FreeColXMLReader) method test.
-	 *
-	 * @throws Exception
-	 *
-	 * @generatedBy CodePro at 5/13/16 6:51 PM
-	 */
-	@Test
-	public void testReadAttributes_1()
-		throws Exception {
-		Nation fixture = new Nation("", new Specification());
-		fixture.setType(new EuropeanNationType("", new Specification()));
-		fixture.setColor(new Color(1));
-		FreeColXMLReader xr = new FreeColXMLReader(new BufferedInputStream(new PipedInputStream()));
-
-		fixture.readAttributes(xr);
-
-		// add additional test code here
-		// An unexpected exception was thrown in user code while executing this test:
-		//    java.io.IOException: javax.xml.stream.XMLStreamException: java.io.IOException: Pipe not connected
-		//       at net.sf.freecol.common.io.FreeColXMLReader.<init>(FreeColXMLReader.java:98)
-	}
-
-	/**
-	 * Run the void readAttributes(FreeColXMLReader) method test.
-	 *
-	 * @throws Exception
-	 *
-	 * @generatedBy CodePro at 5/13/16 6:51 PM
-	 */
-	@Test
-	public void testReadAttributes_2()
-		throws Exception {
-		Nation fixture = new Nation("", new Specification());
-		fixture.setType(new EuropeanNationType("", new Specification()));
-		fixture.setColor(new Color(1));
-		FreeColXMLReader xr = new FreeColXMLReader(new BufferedInputStream(new PipedInputStream()));
-
-		fixture.readAttributes(xr);
-
-		// add additional test code here
-		// An unexpected exception was thrown in user code while executing this test:
-		//    java.io.IOException: javax.xml.stream.XMLStreamException: java.io.IOException: Pipe not connected
-		//       at net.sf.freecol.common.io.FreeColXMLReader.<init>(FreeColXMLReader.java:98)
-	}
-
-	/**
-	 * Run the void readAttributes(FreeColXMLReader) method test.
-	 *
-	 * @throws Exception
-	 *
-	 * @generatedBy CodePro at 5/13/16 6:51 PM
-	 */
-	@Test
-	public void testReadAttributes_3()
-		throws Exception {
-		Nation fixture = new Nation("", new Specification());
-		fixture.setType(new EuropeanNationType("", new Specification()));
-		fixture.setColor(new Color(1));
-		FreeColXMLReader xr = new FreeColXMLReader(new BufferedInputStream(new PipedInputStream()));
-
-		fixture.readAttributes(xr);
-
-		// add additional test code here
-		// An unexpected exception was thrown in user code while executing this test:
-		//    java.io.IOException: javax.xml.stream.XMLStreamException: java.io.IOException: Pipe not connected
-		//       at net.sf.freecol.common.io.FreeColXMLReader.<init>(FreeColXMLReader.java:98)
-	}
-
-	/**
-	 * Run the void readAttributes(FreeColXMLReader) method test.
-	 *
-	 * @throws Exception
-	 *
-	 * @generatedBy CodePro at 5/13/16 6:51 PM
-	 */
-	@Test
-	public void testReadAttributes_4()
-		throws Exception {
-		Nation fixture = new Nation("", new Specification());
-		fixture.setType(new EuropeanNationType("", new Specification()));
-		fixture.setColor(new Color(1));
-		FreeColXMLReader xr = new FreeColXMLReader(new BufferedInputStream(new PipedInputStream()));
-
-		fixture.readAttributes(xr);
-
-		// add additional test code here
-		// An unexpected exception was thrown in user code while executing this test:
-		//    java.io.IOException: javax.xml.stream.XMLStreamException: java.io.IOException: Pipe not connected
-		//       at net.sf.freecol.common.io.FreeColXMLReader.<init>(FreeColXMLReader.java:98)
-	}
-
-	/**
-	 * Run the void readAttributes(FreeColXMLReader) method test.
-	 *
-	 * @throws Exception
-	 *
-	 * @generatedBy CodePro at 5/13/16 6:51 PM
-	 */
-	@Test
-	public void testReadAttributes_5()
-		throws Exception {
-		Nation fixture = new Nation("", new Specification());
-		fixture.setType(new EuropeanNationType("", new Specification()));
-		fixture.setColor(new Color(1));
-		FreeColXMLReader xr = new FreeColXMLReader(new BufferedInputStream(new PipedInputStream()));
-
-		fixture.readAttributes(xr);
-
-		// add additional test code here
-		// An unexpected exception was thrown in user code while executing this test:
-		//    java.io.IOException: javax.xml.stream.XMLStreamException: java.io.IOException: Pipe not connected
-		//       at net.sf.freecol.common.io.FreeColXMLReader.<init>(FreeColXMLReader.java:98)
-	}
-
-	/**
-	 * Run the void readAttributes(FreeColXMLReader) method test.
-	 *
-	 * @throws Exception
-	 *
-	 * @generatedBy CodePro at 5/13/16 6:51 PM
-	 */
-	@Test
-	public void testReadAttributes_6()
-		throws Exception {
-		Nation fixture = new Nation("", new Specification());
-		fixture.setType(new EuropeanNationType("", new Specification()));
-		fixture.setColor(new Color(1));
-		FreeColXMLReader xr = new FreeColXMLReader(new BufferedInputStream(new PipedInputStream()));
-
-		fixture.readAttributes(xr);
-
-		// add additional test code here
-		// An unexpected exception was thrown in user code while executing this test:
-		//    java.io.IOException: javax.xml.stream.XMLStreamException: java.io.IOException: Pipe not connected
-		//       at net.sf.freecol.common.io.FreeColXMLReader.<init>(FreeColXMLReader.java:98)
-	}
-
-	/**
-	 * Run the void readAttributes(FreeColXMLReader) method test.
-	 *
-	 * @throws Exception
-	 *
-	 * @generatedBy CodePro at 5/13/16 6:51 PM
-	 */
-	@Test
-	public void testReadAttributes_7()
-		throws Exception {
-		Nation fixture = new Nation("", new Specification());
-		fixture.setType(new EuropeanNationType("", new Specification()));
-		fixture.setColor(new Color(1));
-		FreeColXMLReader xr = new FreeColXMLReader(new BufferedInputStream(new PipedInputStream()));
-
-		fixture.readAttributes(xr);
-
-		// add additional test code here
-		// An unexpected exception was thrown in user code while executing this test:
-		//    java.io.IOException: javax.xml.stream.XMLStreamException: java.io.IOException: Pipe not connected
-		//       at net.sf.freecol.common.io.FreeColXMLReader.<init>(FreeColXMLReader.java:98)
-	}
-
-	/**
-	 * Run the void readAttributes(FreeColXMLReader) method test.
-	 *
-	 * @throws Exception
-	 *
-	 * @generatedBy CodePro at 5/13/16 6:51 PM
-	 */
-	@Test
-	public void testReadAttributes_8()
-		throws Exception {
-		Nation fixture = new Nation("", new Specification());
-		fixture.setType(new EuropeanNationType("", new Specification()));
-		fixture.setColor(new Color(1));
-		FreeColXMLReader xr = new FreeColXMLReader(new BufferedInputStream(new PipedInputStream()));
-
-		fixture.readAttributes(xr);
-
-		// add additional test code here
-		// An unexpected exception was thrown in user code while executing this test:
-		//    java.io.IOException: javax.xml.stream.XMLStreamException: java.io.IOException: Pipe not connected
-		//       at net.sf.freecol.common.io.FreeColXMLReader.<init>(FreeColXMLReader.java:98)
-	}
-
-	/**
-	 * Run the void readAttributes(FreeColXMLReader) method test.
-	 *
-	 * @throws Exception
-	 *
-	 * @generatedBy CodePro at 5/13/16 6:51 PM
-	 */
-	@Test
-	public void testReadAttributes_9()
-		throws Exception {
-		Nation fixture = new Nation("", new Specification());
-		fixture.setType(new EuropeanNationType("", new Specification()));
-		fixture.setColor(new Color(1));
-		FreeColXMLReader xr = new FreeColXMLReader(new BufferedInputStream(new PipedInputStream()));
-
-		fixture.readAttributes(xr);
-
-		// add additional test code here
-		// An unexpected exception was thrown in user code while executing this test:
-		//    java.io.IOException: javax.xml.stream.XMLStreamException: java.io.IOException: Pipe not connected
-		//       at net.sf.freecol.common.io.FreeColXMLReader.<init>(FreeColXMLReader.java:98)
-	}
+	
 
 	/**
 	 * Run the void setColor(Color) method test.

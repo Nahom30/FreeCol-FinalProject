@@ -600,77 +600,7 @@ public class LanguageOptionTest {
 		//       at net.sf.freecol.common.option.LanguageOption.<init>(LanguageOption.java:186)
 	}
 
-	/**
-	 * Run the void writeAttributes(FreeColXMLWriter) method test.
-	 *
-	 * @throws Exception
-	 *
-	 * @generatedBy CodePro at 5/14/16 10:44 PM
-	 */
-	@Test
-	public void testWriteAttributes_1()
-		throws Exception {
-		LanguageOption fixture = new LanguageOption(new Specification());
-		fixture.setValue(new LanguageOption.Language("", Locale.getDefault()));
-		fixture.isDefined = true;
-		FreeColXMLWriter xw = new FreeColXMLWriter(new CharArrayWriter(), net.sf.freecol.common.io.FreeColXMLWriter.WriteScope.CLIENT);
 
-		fixture.writeAttributes(xw);
-
-		// add additional test code here
-		// An unexpected exception was thrown in user code while executing this test:
-		//    java.lang.RuntimeException: No language files could be found in the <data/strings> directory.
-		//       at net.sf.freecol.common.option.LanguageOption.initializeLanguages(LanguageOption.java:198)
-		//       at net.sf.freecol.common.option.LanguageOption.<init>(LanguageOption.java:186)
-	}
-
-	/**
-	 * Run the void writeAttributes(FreeColXMLWriter) method test.
-	 *
-	 * @throws Exception
-	 *
-	 * @generatedBy CodePro at 5/14/16 10:44 PM
-	 */
-	@Test
-	public void testWriteAttributes_2()
-		throws Exception {
-		LanguageOption fixture = new LanguageOption(new Specification());
-		fixture.setValue(new LanguageOption.Language("", Locale.getDefault()));
-		fixture.isDefined = true;
-		FreeColXMLWriter xw = new FreeColXMLWriter(new CharArrayWriter(), net.sf.freecol.common.io.FreeColXMLWriter.WriteScope.CLIENT);
-
-		fixture.writeAttributes(xw);
-
-		// add additional test code here
-		// An unexpected exception was thrown in user code while executing this test:
-		//    java.lang.RuntimeException: No language files could be found in the <data/strings> directory.
-		//       at net.sf.freecol.common.option.LanguageOption.initializeLanguages(LanguageOption.java:198)
-		//       at net.sf.freecol.common.option.LanguageOption.<init>(LanguageOption.java:186)
-	}
-
-	/**
-	 * Run the void writeAttributes(FreeColXMLWriter) method test.
-	 *
-	 * @throws Exception
-	 *
-	 * @generatedBy CodePro at 5/14/16 10:44 PM
-	 */
-	@Test
-	public void testWriteAttributes_3()
-		throws Exception {
-		LanguageOption fixture = new LanguageOption(new Specification());
-		fixture.setValue(new LanguageOption.Language("", Locale.getDefault()));
-		fixture.isDefined = true;
-		FreeColXMLWriter xw = new FreeColXMLWriter(new CharArrayWriter(), net.sf.freecol.common.io.FreeColXMLWriter.WriteScope.CLIENT);
-
-		fixture.writeAttributes(xw);
-
-		// add additional test code here
-		// An unexpected exception was thrown in user code while executing this test:
-		//    java.lang.RuntimeException: No language files could be found in the <data/strings> directory.
-		//       at net.sf.freecol.common.option.LanguageOption.initializeLanguages(LanguageOption.java:198)
-		//       at net.sf.freecol.common.option.LanguageOption.<init>(LanguageOption.java:186)
-	}
 
 	/**
 	 * Perform pre-test initialization.

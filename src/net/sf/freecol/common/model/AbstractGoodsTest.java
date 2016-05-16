@@ -235,31 +235,7 @@ public class AbstractGoodsTest {
 		assertEquals(false, result);
 	}
 
-	/**
-	 * Run the int evaluateFor(Player) method test.
-	 *
-	 * @throws Exception
-	 *
-	 * @generatedBy CodePro at 5/14/16 4:04 PM
-	 */
-	@Test
-	public void testEvaluateFor_1()
-		throws Exception {
-		AbstractGoods fixture = new AbstractGoods(new GoodsType("", new Specification()), 1);
-		Player player = new Player(new Game(), new IIOMetadataNode());
-		player.market = null;
 
-		int result = fixture.evaluateFor(player);
-
-		// add additional test code here
-		// An unexpected exception was thrown in user code while executing this test:
-		//    java.lang.RuntimeException: Reader creation failure
-		//       at net.sf.freecol.common.networking.DOMMessage.makeElementReader(DOMMessage.java:802)
-		//       at net.sf.freecol.common.networking.DOMMessage.readFromXMLElement(DOMMessage.java:817)
-		//       at net.sf.freecol.common.networking.DOMMessage.readFromXMLElement(DOMMessage.java:778)
-		//       at net.sf.freecol.common.model.Player.<init>(Player.java:450)
-		assertEquals(0, result);
-	}
 
 	/**
 	 * Run the AbstractGoods findByType(GoodsType,Collection<? extends AbstractGoods>) method test.

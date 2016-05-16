@@ -149,74 +149,9 @@ public class ModifierTest {
 		assertEquals(null, result.getFeatureContainer());
 	}
 
-	/**
-	 * Run the Modifier(FreeColXMLReader,Specification) constructor test.
-	 *
-	 * @throws Exception
-	 *
-	 * @generatedBy CodePro at 5/13/16 7:40 PM
-	 */
-	@Test
-	public void testModifier_4()
-		throws Exception {
-		FreeColXMLReader xr = new FreeColXMLReader(new BufferedInputStream(new PipedInputStream()));
-		Specification specification = new Specification();
 
-		Modifier result = new Modifier(xr, specification);
 
-		// add additional test code here
-		// An unexpected exception was thrown in user code while executing this test:
-		//    java.io.IOException: javax.xml.stream.XMLStreamException: java.io.IOException: Pipe not connected
-		//       at net.sf.freecol.common.io.FreeColXMLReader.<init>(FreeColXMLReader.java:98)
-		assertNotNull(result);
-	}
 
-	/**
-	 * Run the Modifier(FreeColXMLReader,Specification) constructor test.
-	 *
-	 * @throws Exception
-	 *
-	 * @generatedBy CodePro at 5/13/16 7:40 PM
-	 */
-	@Test
-	public void testModifier_5()
-		throws Exception {
-		FreeColXMLReader xr = new FreeColXMLReader(new BufferedInputStream(new PipedInputStream()));
-		Specification specification = new Specification();
-
-		Modifier result = new Modifier(xr, specification);
-
-		// add additional test code here
-		// An unexpected exception was thrown in user code while executing this test:
-		//    java.io.IOException: javax.xml.stream.XMLStreamException: java.io.IOException: Pipe not connected
-		//       at net.sf.freecol.common.io.FreeColXMLReader.<init>(FreeColXMLReader.java:98)
-		assertNotNull(result);
-	}
-
-	/**
-	 * Run the Modifier(Element,Specification) constructor test.
-	 *
-	 * @throws Exception
-	 *
-	 * @generatedBy CodePro at 5/13/16 7:40 PM
-	 */
-	@Test
-	public void testModifier_6()
-		throws Exception {
-		Element e = new IIOMetadataNode();
-		Specification specification = new Specification();
-
-		Modifier result = new Modifier(e, specification);
-
-		// add additional test code here
-		// An unexpected exception was thrown in user code while executing this test:
-		//    java.lang.RuntimeException: Reader creation failure
-		//       at net.sf.freecol.common.networking.DOMMessage.makeElementReader(DOMMessage.java:802)
-		//       at net.sf.freecol.common.networking.DOMMessage.readFromXMLElement(DOMMessage.java:817)
-		//       at net.sf.freecol.common.networking.DOMMessage.readFromXMLElement(DOMMessage.java:778)
-		//       at net.sf.freecol.common.model.Modifier.<init>(Modifier.java:281)
-		assertNotNull(result);
-	}
 
 	/**
 	 * Run the Modifier(String,float,ModifierType) constructor test.
@@ -498,54 +433,7 @@ public class ModifierTest {
 		assertEquals(2.0f, result, 0.1f);
 	}
 
-	/**
-	 * Run the int compareTo(FreeColObject) method test.
-	 *
-	 * @throws Exception
-	 *
-	 * @generatedBy CodePro at 5/13/16 7:40 PM
-	 */
-	@Test
-	public void testCompareTo_1()
-		throws Exception {
-		Modifier fixture = new Modifier("", 1.0f, Modifier.ModifierType.ADDITIVE);
-		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));
-		fixture.setValue(1.0f);
-		fixture.setType(Modifier.ModifierType.ADDITIVE);
-		fixture.setModifierIndex(1);
-		Modifier other = new Modifier("", 1.0f, Modifier.ModifierType.ADDITIVE);
-		other.setModifierIndex(1);
 
-		int result = fixture.compareTo(other);
-
-		// add additional test code here
-		assertEquals(1767166750, result);
-	}
-
-	/**
-	 * Run the int compareTo(FreeColObject) method test.
-	 *
-	 * @throws Exception
-	 *
-	 * @generatedBy CodePro at 5/13/16 7:40 PM
-	 */
-	@Test
-	public void testCompareTo_2()
-		throws Exception {
-		Modifier fixture = new Modifier("", 1.0f, Modifier.ModifierType.ADDITIVE);
-		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));
-		fixture.setValue(1.0f);
-		fixture.setType(Modifier.ModifierType.ADDITIVE);
-		fixture.setModifierIndex(1);
-		Modifier other = new Modifier("", 1.0f, Modifier.ModifierType.ADDITIVE);
-		other.setType(Modifier.ModifierType.ADDITIVE);
-		other.setModifierIndex(1);
-
-		int result = fixture.compareTo(other);
-
-		// add additional test code here
-		assertEquals(1767166750, result);
-	}
 
 	/**
 	 * Run the int compareTo(FreeColObject) method test.
@@ -1184,105 +1072,6 @@ public class ModifierTest {
 		assertEquals(null, result.getFeatureContainer());
 	}
 
-	/**
-	 * Run the void readAttributes(FreeColXMLReader) method test.
-	 *
-	 * @throws Exception
-	 *
-	 * @generatedBy CodePro at 5/13/16 7:40 PM
-	 */
-	@Test
-	public void testReadAttributes_1()
-		throws Exception {
-		Modifier fixture = new Modifier("", 1.0f, Modifier.ModifierType.ADDITIVE);
-		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));
-		fixture.setValue(1.0f);
-		fixture.setType(Modifier.ModifierType.ADDITIVE);
-		fixture.setModifierIndex(1);
-		FreeColXMLReader xr = new FreeColXMLReader(new BufferedInputStream(new PipedInputStream()));
-
-		fixture.readAttributes(xr);
-
-		// add additional test code here
-		// An unexpected exception was thrown in user code while executing this test:
-		//    java.io.IOException: javax.xml.stream.XMLStreamException: java.io.IOException: Pipe not connected
-		//       at net.sf.freecol.common.io.FreeColXMLReader.<init>(FreeColXMLReader.java:98)
-	}
-
-	/**
-	 * Run the void readAttributes(FreeColXMLReader) method test.
-	 *
-	 * @throws Exception
-	 *
-	 * @generatedBy CodePro at 5/13/16 7:40 PM
-	 */
-	@Test
-	public void testReadAttributes_2()
-		throws Exception {
-		Modifier fixture = new Modifier("", 1.0f, Modifier.ModifierType.ADDITIVE);
-		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));
-		fixture.setValue(1.0f);
-		fixture.setType(Modifier.ModifierType.ADDITIVE);
-		fixture.setModifierIndex(1);
-		FreeColXMLReader xr = new FreeColXMLReader(new BufferedInputStream(new PipedInputStream()));
-
-		fixture.readAttributes(xr);
-
-		// add additional test code here
-		// An unexpected exception was thrown in user code while executing this test:
-		//    java.io.IOException: javax.xml.stream.XMLStreamException: java.io.IOException: Pipe not connected
-		//       at net.sf.freecol.common.io.FreeColXMLReader.<init>(FreeColXMLReader.java:98)
-	}
-
-	/**
-	 * Run the void readAttributes(FreeColXMLReader) method test.
-	 *
-	 * @throws Exception
-	 *
-	 * @generatedBy CodePro at 5/13/16 7:40 PM
-	 */
-	@Test
-	public void testReadAttributes_3()
-		throws Exception {
-		Modifier fixture = new Modifier("", 1.0f, Modifier.ModifierType.ADDITIVE);
-		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));
-		fixture.setValue(1.0f);
-		fixture.setType(Modifier.ModifierType.ADDITIVE);
-		fixture.setModifierIndex(1);
-		FreeColXMLReader xr = new FreeColXMLReader(new BufferedInputStream(new PipedInputStream()));
-
-		fixture.readAttributes(xr);
-
-		// add additional test code here
-		// An unexpected exception was thrown in user code while executing this test:
-		//    java.io.IOException: javax.xml.stream.XMLStreamException: java.io.IOException: Pipe not connected
-		//       at net.sf.freecol.common.io.FreeColXMLReader.<init>(FreeColXMLReader.java:98)
-	}
-
-	/**
-	 * Run the void readAttributes(FreeColXMLReader) method test.
-	 *
-	 * @throws Exception
-	 *
-	 * @generatedBy CodePro at 5/13/16 7:40 PM
-	 */
-	@Test
-	public void testReadAttributes_4()
-		throws Exception {
-		Modifier fixture = new Modifier("", 1.0f, Modifier.ModifierType.ADDITIVE);
-		fixture.setIncrement(Modifier.ModifierType.ADDITIVE, 1.0f, new Turn(1), new Turn(1));
-		fixture.setValue(1.0f);
-		fixture.setType(Modifier.ModifierType.ADDITIVE);
-		fixture.setModifierIndex(1);
-		FreeColXMLReader xr = new FreeColXMLReader(new BufferedInputStream(new PipedInputStream()));
-
-		fixture.readAttributes(xr);
-
-		// add additional test code here
-		// An unexpected exception was thrown in user code while executing this test:
-		//    java.io.IOException: javax.xml.stream.XMLStreamException: java.io.IOException: Pipe not connected
-		//       at net.sf.freecol.common.io.FreeColXMLReader.<init>(FreeColXMLReader.java:98)
-	}
 
 	/**
 	 * Run the boolean requireNegatedPersonScope() method test.
