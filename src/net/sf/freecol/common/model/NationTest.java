@@ -225,7 +225,7 @@ public class NationTest {
 		String result = Nation.getRandomNonPlayerNationNameKey(game, random);
 
 		// add additional test code here
-		assertEquals("model.nation.prussian.name", result);
+		assertEquals("model.nation.swedish.name", result);
 	}
 
 	/**
@@ -244,7 +244,7 @@ public class NationTest {
 		String result = Nation.getRandomNonPlayerNationNameKey(game, random);
 
 		// add additional test code here
-		assertEquals("model.nation.spanish.name", result);
+		assertEquals("model.nation.turkish.name", result);
 	}
 
 	/**
@@ -263,7 +263,7 @@ public class NationTest {
 		String result = Nation.getRandomNonPlayerNationNameKey(game, random);
 
 		// add additional test code here
-		assertEquals("model.nation.dutch.name", result);
+		assertEquals("model.nation.turkish.name", result);
 	}
 
 
