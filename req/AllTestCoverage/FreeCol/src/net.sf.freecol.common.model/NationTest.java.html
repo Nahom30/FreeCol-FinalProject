@@ -1,0 +1,967 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../.resources/report.gif" type="image/gif"/><title>NationTest.java</title><link rel="stylesheet" href="../../../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../.sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">AllTests (May 16, 2016 12:23:52 PM)</a> &gt; <a href="../../index.html" class="el_group">FreeCol</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">net.sf.freecol.common.model</a> &gt; <span class="el_source">NationTest.java</span></div><h1>NationTest.java</h1><pre class="source lang-java linenums">package net.sf.freecol.common.model;
+
+import java.awt.Color;
+import java.io.BufferedInputStream;
+import java.io.CharArrayWriter;
+import java.io.InputStream;
+import java.io.PipedInputStream;
+import java.io.Writer;
+import net.sf.freecol.common.io.FreeColXMLWriter;
+import net.sf.freecol.common.io.FreeColXMLReader;
+import java.util.Random;
+import javax.xml.stream.XMLStreamException;
+import org.junit.*;
+import static org.junit.Assert.*;
+
+/**
+ * The class &lt;code&gt;NationTest&lt;/code&gt; contains tests for the class &lt;code&gt;{@link Nation}&lt;/code&gt;.
+ *
+ * @generatedBy CodePro at 5/13/16 6:51 PM
+ * @author nahomnegash
+ * @version $Revision: 1.0 $
+ */
+<span class="fc" id="L23">public class NationTest {</span>
+	/**
+	 * Run the Nation(String,Specification) constructor test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/13/16 6:51 PM
+	 */
+	@Test
+	public void testNation_1()
+		throws Exception {
+<span class="fc" id="L34">		String id = &quot;&quot;;</span>
+<span class="fc" id="L35">		Specification specification = new Specification();</span>
+
+<span class="fc" id="L37">		Nation result = new Nation(id, specification);</span>
+
+		// add additional test code here
+<span class="fc" id="L40">		assertNotNull(result);</span>
+<span class="fc" id="L41">		assertEquals(null, result.getType());</span>
+<span class="fc" id="L42">		assertEquals(null, result.getColor());</span>
+<span class="fc" id="L43">		assertEquals(false, result.isSelectable());</span>
+<span class="fc" id="L44">		assertEquals(true, result.startsOnEastCoast());</span>
+<span class="fc" id="L45">		assertEquals(false, result.isUnknownEnemy());</span>
+<span class="fc" id="L46">		assertEquals(null, result.getREFNation());</span>
+<span class="fc" id="L47">		assertEquals(null, result.getRebelNation());</span>
+<span class="fc" id="L48">		assertEquals(0, result.getPreferredLatitude());</span>
+<span class="fc" id="L49">		assertEquals(&quot;.ruler&quot;, result.getRulerNameKey());</span>
+<span class="fc" id="L50">		assertEquals(&quot;.ruler&quot;, result.getRulerName());</span>
+<span class="fc" id="L51">		assertEquals(null, result.forceDefaultColor());</span>
+<span class="fc" id="L52">		assertEquals(&quot;nation&quot;, result.getXMLTagName());</span>
+<span class="fc" id="L53">		assertEquals(&quot;&quot;, result.toString());</span>
+<span class="fc" id="L54">		assertEquals(&quot;.description&quot;, result.getDescriptionKey());</span>
+<span class="fc" id="L55">		assertEquals(false, result.isAbstractType());</span>
+<span class="fc" id="L56">		assertEquals(&quot;.name&quot;, result.getNameKey());</span>
+<span class="fc" id="L57">		assertEquals(&quot;&quot;, result.getSuffix());</span>
+<span class="fc" id="L58">		assertEquals(&quot;&quot;, result.getId());</span>
+<span class="fc" id="L59">		assertEquals(&quot;&lt;nation id=\&quot;\&quot; selectable=\&quot;false\&quot; preferred-latitude=\&quot;0\&quot; starts-on-east-coast=\&quot;true\&quot;&gt;&lt;/nation&gt;&quot;, result.serialize());</span>
+<span class="fc" id="L60">		assertEquals(&quot;&quot;, result.getIdType());</span>
+<span class="fc" id="L61">		assertEquals(-1, result.getIdNumber());</span>
+<span class="fc" id="L62">		assertEquals(null, result.getGame());</span>
+<span class="fc" id="L63">	}</span>
+
+	/**
+	 * Run the Color forceDefaultColor() method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/13/16 6:51 PM
+	 */
+	@Test
+	public void testForceDefaultColor_1()
+		throws Exception {
+<span class="fc" id="L75">		Nation fixture = new Nation(&quot;&quot;, new Specification());</span>
+<span class="fc" id="L76">		fixture.setType(new EuropeanNationType(&quot;&quot;, new Specification()));</span>
+<span class="fc" id="L77">		fixture.setColor(new Color(1));</span>
+
+<span class="fc" id="L79">		Color result = fixture.forceDefaultColor();</span>
+
+		// add additional test code here
+<span class="fc" id="L82">		assertEquals(null, result);</span>
+<span class="fc" id="L83">	}</span>
+
+	/**
+	 * Run the Color getColor() method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/13/16 6:51 PM
+	 */
+	@Test
+	public void testGetColor_1()
+		throws Exception {
+<span class="fc" id="L95">		Nation fixture = new Nation(&quot;&quot;, new Specification());</span>
+<span class="fc" id="L96">		fixture.setType(new EuropeanNationType(&quot;&quot;, new Specification()));</span>
+<span class="fc" id="L97">		fixture.setColor(new Color(1));</span>
+
+<span class="fc" id="L99">		Color result = fixture.getColor();</span>
+
+		// add additional test code here
+<span class="fc" id="L102">		assertNotNull(result);</span>
+<span class="fc" id="L103">		assertEquals(255, result.getAlpha());</span>
+<span class="fc" id="L104">		assertEquals(&quot;java.awt.Color[r=0,g=0,b=1]&quot;, result.toString());</span>
+<span class="fc" id="L105">		assertEquals(1, result.getBlue());</span>
+<span class="fc" id="L106">		assertEquals(0, result.getGreen());</span>
+<span class="fc" id="L107">		assertEquals(0, result.getRed());</span>
+<span class="fc" id="L108">		assertEquals(-16777215, result.getRGB());</span>
+<span class="fc" id="L109">		assertEquals(1, result.getTransparency());</span>
+<span class="fc" id="L110">	}</span>
+
+	/**
+	 * Run the int getPreferredLatitude() method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/13/16 6:51 PM
+	 */
+	@Test
+	public void testGetPreferredLatitude_1()
+		throws Exception {
+<span class="fc" id="L122">		Nation fixture = new Nation(&quot;&quot;, new Specification());</span>
+<span class="fc" id="L123">		fixture.setType(new EuropeanNationType(&quot;&quot;, new Specification()));</span>
+<span class="fc" id="L124">		fixture.setColor(new Color(1));</span>
+
+<span class="fc" id="L126">		int result = fixture.getPreferredLatitude();</span>
+
+		// add additional test code here
+<span class="fc" id="L129">		assertEquals(0, result);</span>
+<span class="fc" id="L130">	}</span>
+
+	/**
+	 * Run the Nation getREFNation() method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/13/16 6:51 PM
+	 */
+	@Test
+	public void testGetREFNation_1()
+		throws Exception {
+<span class="fc" id="L142">		Nation fixture = new Nation(&quot;&quot;, new Specification());</span>
+<span class="fc" id="L143">		fixture.setType(new EuropeanNationType(&quot;&quot;, new Specification()));</span>
+<span class="fc" id="L144">		fixture.setColor(new Color(1));</span>
+
+<span class="fc" id="L146">		Nation result = fixture.getREFNation();</span>
+
+		// add additional test code here
+<span class="fc" id="L149">		assertEquals(null, result);</span>
+<span class="fc" id="L150">	}</span>
+
+	/**
+	 * Run the String getRandomNonPlayerNationNameKey(Game,Random) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/13/16 6:51 PM
+	 */
+	@Test
+	public void testGetRandomNonPlayerNationNameKey_1()
+		throws Exception {
+<span class="fc" id="L162">		Game game = new Game();</span>
+<span class="fc" id="L163">		Random random = new Random();</span>
+
+<span class="fc" id="L165">		String result = Nation.getRandomNonPlayerNationNameKey(game, random);</span>
+
+		// add additional test code here
+<span class="fc" id="L168">		assertEquals(&quot;model.nation.prussian.name&quot;, result);</span>
+<span class="fc" id="L169">	}</span>
+
+	/**
+	 * Run the String getRandomNonPlayerNationNameKey(Game,Random) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/13/16 6:51 PM
+	 */
+	@Test
+	public void testGetRandomNonPlayerNationNameKey_2()
+		throws Exception {
+<span class="fc" id="L181">		Game game = new Game();</span>
+<span class="fc" id="L182">		Random random = new Random();</span>
+
+<span class="fc" id="L184">		String result = Nation.getRandomNonPlayerNationNameKey(game, random);</span>
+
+		// add additional test code here
+<span class="nc" id="L187">		assertEquals(&quot;model.nation.spanish.name&quot;, result);</span>
+<span class="nc" id="L188">	}</span>
+
+	/**
+	 * Run the String getRandomNonPlayerNationNameKey(Game,Random) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/13/16 6:51 PM
+	 */
+	@Test
+	public void testGetRandomNonPlayerNationNameKey_3()
+		throws Exception {
+<span class="fc" id="L200">		Game game = new Game();</span>
+<span class="fc" id="L201">		Random random = new Random();</span>
+
+<span class="fc" id="L203">		String result = Nation.getRandomNonPlayerNationNameKey(game, random);</span>
+
+		// add additional test code here
+<span class="nc" id="L206">		assertEquals(&quot;model.nation.dutch.name&quot;, result);</span>
+<span class="nc" id="L207">	}</span>
+
+	/**
+	 * Run the Nation getRebelNation() method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/13/16 6:51 PM
+	 */
+	@Test
+	public void testGetRebelNation_1()
+		throws Exception {
+<span class="fc" id="L219">		Nation fixture = new Nation(&quot;&quot;, new Specification());</span>
+<span class="fc" id="L220">		fixture.setType(new EuropeanNationType(&quot;&quot;, new Specification()));</span>
+<span class="fc" id="L221">		fixture.setColor(new Color(1));</span>
+
+<span class="fc" id="L223">		Nation result = fixture.getRebelNation();</span>
+
+		// add additional test code here
+<span class="fc" id="L226">		assertEquals(null, result);</span>
+<span class="fc" id="L227">	}</span>
+
+	/**
+	 * Run the String getRulerName() method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/13/16 6:51 PM
+	 */
+	@Test
+	public void testGetRulerName_1()
+		throws Exception {
+<span class="fc" id="L239">		Nation fixture = new Nation(&quot;&quot;, new Specification());</span>
+<span class="fc" id="L240">		fixture.setType(new EuropeanNationType(&quot;&quot;, new Specification()));</span>
+<span class="fc" id="L241">		fixture.setColor(new Color(1));</span>
+
+<span class="fc" id="L243">		String result = fixture.getRulerName();</span>
+
+		// add additional test code here
+<span class="fc" id="L246">		assertEquals(&quot;.ruler&quot;, result);</span>
+<span class="fc" id="L247">	}</span>
+
+	/**
+	 * Run the String getRulerNameKey() method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/13/16 6:51 PM
+	 */
+	@Test
+	public void testGetRulerNameKey_1()
+		throws Exception {
+<span class="fc" id="L259">		Nation fixture = new Nation(&quot;&quot;, new Specification());</span>
+<span class="fc" id="L260">		fixture.setType(new EuropeanNationType(&quot;&quot;, new Specification()));</span>
+<span class="fc" id="L261">		fixture.setColor(new Color(1));</span>
+
+<span class="fc" id="L263">		String result = fixture.getRulerNameKey();</span>
+
+		// add additional test code here
+<span class="fc" id="L266">		assertEquals(&quot;.ruler&quot;, result);</span>
+<span class="fc" id="L267">	}</span>
+
+	/**
+	 * Run the String getTagName() method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/13/16 6:51 PM
+	 */
+	@Test
+	public void testGetTagName_1()
+		throws Exception {
+
+<span class="fc" id="L280">		String result = Nation.getTagName();</span>
+
+		// add additional test code here
+<span class="fc" id="L283">		assertEquals(&quot;nation&quot;, result);</span>
+<span class="fc" id="L284">	}</span>
+
+	/**
+	 * Run the NationType getType() method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/13/16 6:51 PM
+	 */
+	@Test
+	public void testGetType_1()
+		throws Exception {
+<span class="fc" id="L296">		Nation fixture = new Nation(&quot;&quot;, new Specification());</span>
+<span class="fc" id="L297">		fixture.setType(new EuropeanNationType(&quot;&quot;, new Specification()));</span>
+<span class="fc" id="L298">		fixture.setColor(new Color(1));</span>
+
+<span class="fc" id="L300">		NationType result = fixture.getType();</span>
+
+		// add additional test code here
+<span class="fc" id="L303">		assertNotNull(result);</span>
+<span class="fc" id="L304">		assertEquals(false, result.isREF());</span>
+<span class="fc" id="L305">		assertEquals(false, result.isIndian());</span>
+<span class="fc" id="L306">		assertEquals(true, result.isEuropean());</span>
+<span class="fc" id="L307">		assertEquals(null, result.getCapitalType());</span>
+<span class="fc" id="L308">		assertEquals(&quot;&quot;, result.toString());</span>
+<span class="fc" id="L309">		assertEquals(&quot;.description&quot;, result.getDescriptionKey());</span>
+<span class="fc" id="L310">		assertEquals(false, result.isAbstractType());</span>
+<span class="fc" id="L311">		assertEquals(&quot;.name&quot;, result.getNameKey());</span>
+<span class="fc" id="L312">		assertEquals(&quot;&quot;, result.getSuffix());</span>
+<span class="fc" id="L313">		assertEquals(&quot;&quot;, result.getId());</span>
+<span class="fc" id="L314">		assertEquals(&quot;&lt;european-nation-type id=\&quot;\&quot; number-of-settlements=\&quot;average\&quot; aggression=\&quot;average\&quot; ref=\&quot;false\&quot;&gt;&lt;/european-nation-type&gt;&quot;, result.serialize());</span>
+<span class="fc" id="L315">		assertEquals(&quot;european-nation-type&quot;, result.getXMLTagName());</span>
+<span class="fc" id="L316">		assertEquals(&quot;&quot;, result.getIdType());</span>
+<span class="fc" id="L317">		assertEquals(-1, result.getIdNumber());</span>
+<span class="fc" id="L318">		assertEquals(null, result.getGame());</span>
+<span class="fc" id="L319">	}</span>
+
+	/**
+	 * Run the String getXMLTagName() method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/13/16 6:51 PM
+	 */
+	@Test
+	public void testGetXMLTagName_1()
+		throws Exception {
+<span class="fc" id="L331">		Nation fixture = new Nation(&quot;&quot;, new Specification());</span>
+<span class="fc" id="L332">		fixture.setType(new EuropeanNationType(&quot;&quot;, new Specification()));</span>
+<span class="fc" id="L333">		fixture.setColor(new Color(1));</span>
+
+<span class="fc" id="L335">		String result = fixture.getXMLTagName();</span>
+
+		// add additional test code here
+<span class="fc" id="L338">		assertEquals(&quot;nation&quot;, result);</span>
+<span class="fc" id="L339">	}</span>
+
+	/**
+	 * Run the boolean isSelectable() method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/13/16 6:51 PM
+	 */
+	@Test
+	public void testIsSelectable_1()
+		throws Exception {
+<span class="fc" id="L351">		Nation fixture = new Nation(&quot;&quot;, new Specification());</span>
+<span class="fc" id="L352">		fixture.setType(new EuropeanNationType(&quot;&quot;, new Specification()));</span>
+<span class="fc" id="L353">		fixture.setColor(new Color(1));</span>
+
+<span class="fc" id="L355">		boolean result = fixture.isSelectable();</span>
+
+		// add additional test code here
+<span class="fc" id="L358">		assertEquals(false, result);</span>
+<span class="fc" id="L359">	}</span>
+
+	/**
+	 * Run the boolean isSelectable() method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/13/16 6:51 PM
+	 */
+	@Test
+	public void testIsSelectable_2()
+		throws Exception {
+<span class="fc" id="L371">		Nation fixture = new Nation(&quot;&quot;, new Specification());</span>
+<span class="fc" id="L372">		fixture.setType(new EuropeanNationType(&quot;&quot;, new Specification()));</span>
+<span class="fc" id="L373">		fixture.setColor(new Color(1));</span>
+
+<span class="fc" id="L375">		boolean result = fixture.isSelectable();</span>
+
+		// add additional test code here
+<span class="fc" id="L378">		assertEquals(false, result);</span>
+<span class="fc" id="L379">	}</span>
+
+	/**
+	 * Run the boolean isUnknownEnemy() method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/13/16 6:51 PM
+	 */
+	@Test
+	public void testIsUnknownEnemy_1()
+		throws Exception {
+<span class="fc" id="L391">		Nation fixture = new Nation(&quot;&quot;, new Specification());</span>
+<span class="fc" id="L392">		fixture.setType(new EuropeanNationType(&quot;&quot;, new Specification()));</span>
+<span class="fc" id="L393">		fixture.setColor(new Color(1));</span>
+
+<span class="fc" id="L395">		boolean result = fixture.isUnknownEnemy();</span>
+
+		// add additional test code here
+<span class="fc" id="L398">		assertEquals(false, result);</span>
+<span class="fc" id="L399">	}</span>
+
+	/**
+	 * Run the boolean isUnknownEnemy() method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/13/16 6:51 PM
+	 */
+	@Test
+	public void testIsUnknownEnemy_2()
+		throws Exception {
+<span class="fc" id="L411">		Nation fixture = new Nation(&quot;&quot;, new Specification());</span>
+<span class="fc" id="L412">		fixture.setType(new EuropeanNationType(&quot;&quot;, new Specification()));</span>
+<span class="fc" id="L413">		fixture.setColor(new Color(1));</span>
+
+<span class="fc" id="L415">		boolean result = fixture.isUnknownEnemy();</span>
+
+		// add additional test code here
+<span class="fc" id="L418">		assertEquals(false, result);</span>
+<span class="fc" id="L419">	}</span>
+
+	/**
+	 * Run the void readAttributes(FreeColXMLReader) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/13/16 6:51 PM
+	 */
+	@Test
+	public void testReadAttributes_1()
+		throws Exception {
+<span class="fc" id="L431">		Nation fixture = new Nation(&quot;&quot;, new Specification());</span>
+<span class="fc" id="L432">		fixture.setType(new EuropeanNationType(&quot;&quot;, new Specification()));</span>
+<span class="fc" id="L433">		fixture.setColor(new Color(1));</span>
+<span class="nc" id="L434">		FreeColXMLReader xr = new FreeColXMLReader(new BufferedInputStream(new PipedInputStream()));</span>
+
+<span class="nc" id="L436">		fixture.readAttributes(xr);</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.io.IOException: javax.xml.stream.XMLStreamException: java.io.IOException: Pipe not connected
+		//       at net.sf.freecol.common.io.FreeColXMLReader.&lt;init&gt;(FreeColXMLReader.java:98)
+<span class="nc" id="L442">	}</span>
+
+	/**
+	 * Run the void readAttributes(FreeColXMLReader) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/13/16 6:51 PM
+	 */
+	@Test
+	public void testReadAttributes_2()
+		throws Exception {
+<span class="fc" id="L454">		Nation fixture = new Nation(&quot;&quot;, new Specification());</span>
+<span class="fc" id="L455">		fixture.setType(new EuropeanNationType(&quot;&quot;, new Specification()));</span>
+<span class="fc" id="L456">		fixture.setColor(new Color(1));</span>
+<span class="nc" id="L457">		FreeColXMLReader xr = new FreeColXMLReader(new BufferedInputStream(new PipedInputStream()));</span>
+
+<span class="nc" id="L459">		fixture.readAttributes(xr);</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.io.IOException: javax.xml.stream.XMLStreamException: java.io.IOException: Pipe not connected
+		//       at net.sf.freecol.common.io.FreeColXMLReader.&lt;init&gt;(FreeColXMLReader.java:98)
+<span class="nc" id="L465">	}</span>
+
+	/**
+	 * Run the void readAttributes(FreeColXMLReader) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/13/16 6:51 PM
+	 */
+	@Test
+	public void testReadAttributes_3()
+		throws Exception {
+<span class="fc" id="L477">		Nation fixture = new Nation(&quot;&quot;, new Specification());</span>
+<span class="fc" id="L478">		fixture.setType(new EuropeanNationType(&quot;&quot;, new Specification()));</span>
+<span class="fc" id="L479">		fixture.setColor(new Color(1));</span>
+<span class="nc" id="L480">		FreeColXMLReader xr = new FreeColXMLReader(new BufferedInputStream(new PipedInputStream()));</span>
+
+<span class="nc" id="L482">		fixture.readAttributes(xr);</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.io.IOException: javax.xml.stream.XMLStreamException: java.io.IOException: Pipe not connected
+		//       at net.sf.freecol.common.io.FreeColXMLReader.&lt;init&gt;(FreeColXMLReader.java:98)
+<span class="nc" id="L488">	}</span>
+
+	/**
+	 * Run the void readAttributes(FreeColXMLReader) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/13/16 6:51 PM
+	 */
+	@Test
+	public void testReadAttributes_4()
+		throws Exception {
+<span class="fc" id="L500">		Nation fixture = new Nation(&quot;&quot;, new Specification());</span>
+<span class="fc" id="L501">		fixture.setType(new EuropeanNationType(&quot;&quot;, new Specification()));</span>
+<span class="fc" id="L502">		fixture.setColor(new Color(1));</span>
+<span class="nc" id="L503">		FreeColXMLReader xr = new FreeColXMLReader(new BufferedInputStream(new PipedInputStream()));</span>
+
+<span class="nc" id="L505">		fixture.readAttributes(xr);</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.io.IOException: javax.xml.stream.XMLStreamException: java.io.IOException: Pipe not connected
+		//       at net.sf.freecol.common.io.FreeColXMLReader.&lt;init&gt;(FreeColXMLReader.java:98)
+<span class="nc" id="L511">	}</span>
+
+	/**
+	 * Run the void readAttributes(FreeColXMLReader) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/13/16 6:51 PM
+	 */
+	@Test
+	public void testReadAttributes_5()
+		throws Exception {
+<span class="fc" id="L523">		Nation fixture = new Nation(&quot;&quot;, new Specification());</span>
+<span class="fc" id="L524">		fixture.setType(new EuropeanNationType(&quot;&quot;, new Specification()));</span>
+<span class="fc" id="L525">		fixture.setColor(new Color(1));</span>
+<span class="nc" id="L526">		FreeColXMLReader xr = new FreeColXMLReader(new BufferedInputStream(new PipedInputStream()));</span>
+
+<span class="nc" id="L528">		fixture.readAttributes(xr);</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.io.IOException: javax.xml.stream.XMLStreamException: java.io.IOException: Pipe not connected
+		//       at net.sf.freecol.common.io.FreeColXMLReader.&lt;init&gt;(FreeColXMLReader.java:98)
+<span class="nc" id="L534">	}</span>
+
+	/**
+	 * Run the void readAttributes(FreeColXMLReader) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/13/16 6:51 PM
+	 */
+	@Test
+	public void testReadAttributes_6()
+		throws Exception {
+<span class="fc" id="L546">		Nation fixture = new Nation(&quot;&quot;, new Specification());</span>
+<span class="fc" id="L547">		fixture.setType(new EuropeanNationType(&quot;&quot;, new Specification()));</span>
+<span class="fc" id="L548">		fixture.setColor(new Color(1));</span>
+<span class="nc" id="L549">		FreeColXMLReader xr = new FreeColXMLReader(new BufferedInputStream(new PipedInputStream()));</span>
+
+<span class="nc" id="L551">		fixture.readAttributes(xr);</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.io.IOException: javax.xml.stream.XMLStreamException: java.io.IOException: Pipe not connected
+		//       at net.sf.freecol.common.io.FreeColXMLReader.&lt;init&gt;(FreeColXMLReader.java:98)
+<span class="nc" id="L557">	}</span>
+
+	/**
+	 * Run the void readAttributes(FreeColXMLReader) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/13/16 6:51 PM
+	 */
+	@Test
+	public void testReadAttributes_7()
+		throws Exception {
+<span class="fc" id="L569">		Nation fixture = new Nation(&quot;&quot;, new Specification());</span>
+<span class="fc" id="L570">		fixture.setType(new EuropeanNationType(&quot;&quot;, new Specification()));</span>
+<span class="fc" id="L571">		fixture.setColor(new Color(1));</span>
+<span class="nc" id="L572">		FreeColXMLReader xr = new FreeColXMLReader(new BufferedInputStream(new PipedInputStream()));</span>
+
+<span class="nc" id="L574">		fixture.readAttributes(xr);</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.io.IOException: javax.xml.stream.XMLStreamException: java.io.IOException: Pipe not connected
+		//       at net.sf.freecol.common.io.FreeColXMLReader.&lt;init&gt;(FreeColXMLReader.java:98)
+<span class="nc" id="L580">	}</span>
+
+	/**
+	 * Run the void readAttributes(FreeColXMLReader) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/13/16 6:51 PM
+	 */
+	@Test
+	public void testReadAttributes_8()
+		throws Exception {
+<span class="fc" id="L592">		Nation fixture = new Nation(&quot;&quot;, new Specification());</span>
+<span class="fc" id="L593">		fixture.setType(new EuropeanNationType(&quot;&quot;, new Specification()));</span>
+<span class="fc" id="L594">		fixture.setColor(new Color(1));</span>
+<span class="nc" id="L595">		FreeColXMLReader xr = new FreeColXMLReader(new BufferedInputStream(new PipedInputStream()));</span>
+
+<span class="nc" id="L597">		fixture.readAttributes(xr);</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.io.IOException: javax.xml.stream.XMLStreamException: java.io.IOException: Pipe not connected
+		//       at net.sf.freecol.common.io.FreeColXMLReader.&lt;init&gt;(FreeColXMLReader.java:98)
+<span class="nc" id="L603">	}</span>
+
+	/**
+	 * Run the void readAttributes(FreeColXMLReader) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/13/16 6:51 PM
+	 */
+	@Test
+	public void testReadAttributes_9()
+		throws Exception {
+<span class="fc" id="L615">		Nation fixture = new Nation(&quot;&quot;, new Specification());</span>
+<span class="fc" id="L616">		fixture.setType(new EuropeanNationType(&quot;&quot;, new Specification()));</span>
+<span class="fc" id="L617">		fixture.setColor(new Color(1));</span>
+<span class="nc" id="L618">		FreeColXMLReader xr = new FreeColXMLReader(new BufferedInputStream(new PipedInputStream()));</span>
+
+<span class="nc" id="L620">		fixture.readAttributes(xr);</span>
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.io.IOException: javax.xml.stream.XMLStreamException: java.io.IOException: Pipe not connected
+		//       at net.sf.freecol.common.io.FreeColXMLReader.&lt;init&gt;(FreeColXMLReader.java:98)
+<span class="nc" id="L626">	}</span>
+
+	/**
+	 * Run the void setColor(Color) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/13/16 6:51 PM
+	 */
+	@Test
+	public void testSetColor_1()
+		throws Exception {
+<span class="fc" id="L638">		Nation fixture = new Nation(&quot;&quot;, new Specification());</span>
+<span class="fc" id="L639">		fixture.setType(new EuropeanNationType(&quot;&quot;, new Specification()));</span>
+<span class="fc" id="L640">		fixture.setColor(new Color(1));</span>
+<span class="fc" id="L641">		Color color = new Color(1);</span>
+
+<span class="fc" id="L643">		fixture.setColor(color);</span>
+
+		// add additional test code here
+<span class="fc" id="L646">	}</span>
+
+	/**
+	 * Run the void setType(NationType) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/13/16 6:51 PM
+	 */
+	@Test
+	public void testSetType_1()
+		throws Exception {
+<span class="fc" id="L658">		Nation fixture = new Nation(&quot;&quot;, new Specification());</span>
+<span class="fc" id="L659">		fixture.setType(new EuropeanNationType(&quot;&quot;, new Specification()));</span>
+<span class="fc" id="L660">		fixture.setColor(new Color(1));</span>
+<span class="fc" id="L661">		NationType type = new EuropeanNationType(&quot;&quot;, new Specification());</span>
+
+<span class="fc" id="L663">		fixture.setType(type);</span>
+
+		// add additional test code here
+<span class="fc" id="L666">	}</span>
+
+	/**
+	 * Run the boolean startsOnEastCoast() method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/13/16 6:51 PM
+	 */
+	@Test
+	public void testStartsOnEastCoast_1()
+		throws Exception {
+<span class="fc" id="L678">		Nation fixture = new Nation(&quot;&quot;, new Specification());</span>
+<span class="fc" id="L679">		fixture.setType(new EuropeanNationType(&quot;&quot;, new Specification()));</span>
+<span class="fc" id="L680">		fixture.setColor(new Color(1));</span>
+
+<span class="fc" id="L682">		boolean result = fixture.startsOnEastCoast();</span>
+
+		// add additional test code here
+<span class="fc" id="L685">		assertEquals(true, result);</span>
+<span class="fc" id="L686">	}</span>
+
+	/**
+	 * Run the boolean startsOnEastCoast() method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/13/16 6:51 PM
+	 */
+	@Test
+	public void testStartsOnEastCoast_2()
+		throws Exception {
+<span class="fc" id="L698">		Nation fixture = new Nation(&quot;&quot;, new Specification());</span>
+<span class="fc" id="L699">		fixture.setType(new EuropeanNationType(&quot;&quot;, new Specification()));</span>
+<span class="fc" id="L700">		fixture.setColor(new Color(1));</span>
+
+<span class="fc" id="L702">		boolean result = fixture.startsOnEastCoast();</span>
+
+		// add additional test code here
+<span class="fc" id="L705">		assertEquals(true, result);</span>
+<span class="fc" id="L706">	}</span>
+
+	/**
+	 * Run the void writeAttributes(FreeColXMLWriter) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/13/16 6:51 PM
+	 */
+	@Test(expected = javax.xml.stream.XMLStreamException.class)
+	public void testWriteAttributes_1()
+		throws Exception {
+<span class="fc" id="L718">		Nation fixture = new Nation(&quot;&quot;, new Specification());</span>
+<span class="fc" id="L719">		fixture.setType(new EuropeanNationType(&quot;&quot;, new Specification()));</span>
+<span class="fc" id="L720">		fixture.setColor(new Color(1));</span>
+<span class="fc" id="L721">		FreeColXMLWriter xw = new FreeColXMLWriter(new CharArrayWriter(), net.sf.freecol.common.io.FreeColXMLWriter.WriteScope.CLIENT);</span>
+
+<span class="nc" id="L723">		fixture.writeAttributes(xw);</span>
+
+		// add additional test code here
+<span class="nc" id="L726">	}</span>
+
+	/**
+	 * Run the void writeAttributes(FreeColXMLWriter) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/13/16 6:51 PM
+	 */
+	@Test(expected = javax.xml.stream.XMLStreamException.class)
+	public void testWriteAttributes_2()
+		throws Exception {
+<span class="fc" id="L738">		Nation fixture = new Nation(&quot;&quot;, new Specification());</span>
+<span class="fc" id="L739">		fixture.setType(new EuropeanNationType(&quot;&quot;, new Specification()));</span>
+<span class="fc" id="L740">		fixture.setColor(new Color(1));</span>
+<span class="fc" id="L741">		FreeColXMLWriter xw = new FreeColXMLWriter(new CharArrayWriter(), net.sf.freecol.common.io.FreeColXMLWriter.WriteScope.CLIENT);</span>
+
+<span class="nc" id="L743">		fixture.writeAttributes(xw);</span>
+
+		// add additional test code here
+<span class="nc" id="L746">	}</span>
+
+	/**
+	 * Run the void writeAttributes(FreeColXMLWriter) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/13/16 6:51 PM
+	 */
+	@Test(expected = javax.xml.stream.XMLStreamException.class)
+	public void testWriteAttributes_3()
+		throws Exception {
+<span class="fc" id="L758">		Nation fixture = new Nation(&quot;&quot;, new Specification());</span>
+<span class="fc" id="L759">		fixture.setType(new EuropeanNationType(&quot;&quot;, new Specification()));</span>
+<span class="fc" id="L760">		fixture.setColor(new Color(1));</span>
+<span class="fc" id="L761">		FreeColXMLWriter xw = new FreeColXMLWriter(new CharArrayWriter(), net.sf.freecol.common.io.FreeColXMLWriter.WriteScope.CLIENT);</span>
+
+<span class="nc" id="L763">		fixture.writeAttributes(xw);</span>
+
+		// add additional test code here
+<span class="nc" id="L766">	}</span>
+
+	/**
+	 * Run the void writeAttributes(FreeColXMLWriter) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/13/16 6:51 PM
+	 */
+	@Test(expected = javax.xml.stream.XMLStreamException.class)
+	public void testWriteAttributes_4()
+		throws Exception {
+<span class="fc" id="L778">		Nation fixture = new Nation(&quot;&quot;, new Specification());</span>
+<span class="fc" id="L779">		fixture.setType(new EuropeanNationType(&quot;&quot;, new Specification()));</span>
+<span class="fc" id="L780">		fixture.setColor(new Color(1));</span>
+<span class="fc" id="L781">		FreeColXMLWriter xw = new FreeColXMLWriter(new CharArrayWriter(), net.sf.freecol.common.io.FreeColXMLWriter.WriteScope.CLIENT);</span>
+
+<span class="nc" id="L783">		fixture.writeAttributes(xw);</span>
+
+		// add additional test code here
+<span class="nc" id="L786">	}</span>
+
+	/**
+	 * Run the void writeAttributes(FreeColXMLWriter) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/13/16 6:51 PM
+	 */
+	@Test(expected = javax.xml.stream.XMLStreamException.class)
+	public void testWriteAttributes_5()
+		throws Exception {
+<span class="fc" id="L798">		Nation fixture = new Nation(&quot;&quot;, new Specification());</span>
+<span class="fc" id="L799">		fixture.setType(new EuropeanNationType(&quot;&quot;, new Specification()));</span>
+<span class="fc" id="L800">		fixture.setColor(new Color(1));</span>
+<span class="fc" id="L801">		FreeColXMLWriter xw = new FreeColXMLWriter(new CharArrayWriter(), net.sf.freecol.common.io.FreeColXMLWriter.WriteScope.CLIENT);</span>
+
+<span class="nc" id="L803">		fixture.writeAttributes(xw);</span>
+
+		// add additional test code here
+<span class="nc" id="L806">	}</span>
+
+	/**
+	 * Run the void writeAttributes(FreeColXMLWriter) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/13/16 6:51 PM
+	 */
+	@Test(expected = javax.xml.stream.XMLStreamException.class)
+	public void testWriteAttributes_6()
+		throws Exception {
+<span class="fc" id="L818">		Nation fixture = new Nation(&quot;&quot;, new Specification());</span>
+<span class="fc" id="L819">		fixture.setType(new EuropeanNationType(&quot;&quot;, new Specification()));</span>
+<span class="fc" id="L820">		fixture.setColor(new Color(1));</span>
+<span class="fc" id="L821">		FreeColXMLWriter xw = new FreeColXMLWriter(new CharArrayWriter(), net.sf.freecol.common.io.FreeColXMLWriter.WriteScope.CLIENT);</span>
+
+<span class="nc" id="L823">		fixture.writeAttributes(xw);</span>
+
+		// add additional test code here
+<span class="nc" id="L826">	}</span>
+
+	/**
+	 * Run the void writeAttributes(FreeColXMLWriter) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/13/16 6:51 PM
+	 */
+	@Test(expected = javax.xml.stream.XMLStreamException.class)
+	public void testWriteAttributes_7()
+		throws Exception {
+<span class="fc" id="L838">		Nation fixture = new Nation(&quot;&quot;, new Specification());</span>
+<span class="fc" id="L839">		fixture.setType(new EuropeanNationType(&quot;&quot;, new Specification()));</span>
+<span class="fc" id="L840">		fixture.setColor(new Color(1));</span>
+<span class="fc" id="L841">		FreeColXMLWriter xw = new FreeColXMLWriter(new CharArrayWriter(), net.sf.freecol.common.io.FreeColXMLWriter.WriteScope.CLIENT);</span>
+
+<span class="nc" id="L843">		fixture.writeAttributes(xw);</span>
+
+		// add additional test code here
+<span class="nc" id="L846">	}</span>
+
+	/**
+	 * Run the void writeAttributes(FreeColXMLWriter) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/13/16 6:51 PM
+	 */
+	@Test(expected = javax.xml.stream.XMLStreamException.class)
+	public void testWriteAttributes_8()
+		throws Exception {
+<span class="fc" id="L858">		Nation fixture = new Nation(&quot;&quot;, new Specification());</span>
+<span class="fc" id="L859">		fixture.setType(new EuropeanNationType(&quot;&quot;, new Specification()));</span>
+<span class="fc" id="L860">		fixture.setColor(new Color(1));</span>
+<span class="fc" id="L861">		FreeColXMLWriter xw = new FreeColXMLWriter(new CharArrayWriter(), net.sf.freecol.common.io.FreeColXMLWriter.WriteScope.CLIENT);</span>
+
+<span class="nc" id="L863">		fixture.writeAttributes(xw);</span>
+
+		// add additional test code here
+<span class="nc" id="L866">	}</span>
+
+	/**
+	 * Run the void writeAttributes(FreeColXMLWriter) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/13/16 6:51 PM
+	 */
+	@Test(expected = javax.xml.stream.XMLStreamException.class)
+	public void testWriteAttributes_9()
+		throws Exception {
+<span class="fc" id="L878">		Nation fixture = new Nation(&quot;&quot;, new Specification());</span>
+<span class="fc" id="L879">		fixture.setType(new EuropeanNationType(&quot;&quot;, new Specification()));</span>
+<span class="fc" id="L880">		fixture.setColor(new Color(1));</span>
+<span class="fc" id="L881">		FreeColXMLWriter xw = new FreeColXMLWriter(new CharArrayWriter(), net.sf.freecol.common.io.FreeColXMLWriter.WriteScope.CLIENT);</span>
+
+<span class="nc" id="L883">		fixture.writeAttributes(xw);</span>
+
+		// add additional test code here
+<span class="nc" id="L886">	}</span>
+
+	/**
+	 * Run the void writeAttributes(FreeColXMLWriter) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/13/16 6:51 PM
+	 */
+	@Test(expected = javax.xml.stream.XMLStreamException.class)
+	public void testWriteAttributes_10()
+		throws Exception {
+<span class="fc" id="L898">		Nation fixture = new Nation(&quot;&quot;, new Specification());</span>
+<span class="fc" id="L899">		fixture.setType(new EuropeanNationType(&quot;&quot;, new Specification()));</span>
+<span class="fc" id="L900">		fixture.setColor((Color) null);</span>
+<span class="fc" id="L901">		FreeColXMLWriter xw = new FreeColXMLWriter(new CharArrayWriter(), net.sf.freecol.common.io.FreeColXMLWriter.WriteScope.CLIENT);</span>
+
+<span class="nc" id="L903">		fixture.writeAttributes(xw);</span>
+
+		// add additional test code here
+<span class="nc" id="L906">	}</span>
+
+	/**
+	 * Run the void writeAttributes(FreeColXMLWriter) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/13/16 6:51 PM
+	 */
+	@Test(expected = javax.xml.stream.XMLStreamException.class)
+	public void testWriteAttributes_11()
+		throws Exception {
+<span class="fc" id="L918">		Nation fixture = new Nation(&quot;&quot;, new Specification());</span>
+<span class="fc" id="L919">		fixture.setType(new EuropeanNationType(&quot;&quot;, new Specification()));</span>
+<span class="fc" id="L920">		fixture.setColor((Color) null);</span>
+<span class="fc" id="L921">		FreeColXMLWriter xw = new FreeColXMLWriter(new CharArrayWriter(), net.sf.freecol.common.io.FreeColXMLWriter.WriteScope.CLIENT);</span>
+
+<span class="nc" id="L923">		fixture.writeAttributes(xw);</span>
+
+		// add additional test code here
+<span class="nc" id="L926">	}</span>
+
+	/**
+	 * Perform pre-test initialization.
+	 *
+	 * @throws Exception
+	 *         if the initialization fails for some reason
+	 *
+	 * @generatedBy CodePro at 5/13/16 6:51 PM
+	 */
+	@Before
+	public void setUp()
+		throws Exception {
+		// add additional set up code here
+<span class="fc" id="L940">	}</span>
+
+	/**
+	 * Perform post-test clean-up.
+	 *
+	 * @throws Exception
+	 *         if the clean-up fails for some reason
+	 *
+	 * @generatedBy CodePro at 5/13/16 6:51 PM
+	 */
+	@After
+	public void tearDown()
+		throws Exception {
+		// Add additional tear down code here
+<span class="fc" id="L954">	}</span>
+
+	/**
+	 * Launch the test.
+	 *
+	 * @param args the command line arguments
+	 *
+	 * @generatedBy CodePro at 5/13/16 6:51 PM
+	 */
+	public static void main(String[] args) {
+<span class="nc" id="L964">		new org.junit.runner.JUnitCore().run(NationTest.class);</span>
+<span class="nc" id="L965">	}</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span>AllTests (May 16, 2016 12:23:52 PM)</div></body></html>
