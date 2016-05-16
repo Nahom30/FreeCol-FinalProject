@@ -163,7 +163,7 @@ public class ResourceTypeTests {
 	}
 	
 	/**
-	 * Perform port-test clean-up. 
+	 * Perform post-test clean-up. 
 	 * 
 	 * Tear down.
 	 */
