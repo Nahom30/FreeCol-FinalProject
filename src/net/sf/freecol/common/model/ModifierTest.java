@@ -984,7 +984,7 @@ public class ModifierTest {
 		int result = fixture.hashCode();
 
 		// add additional test code here
-		assertEquals(310833089, result);
+		assertEquals(-1978605631, result);
 	}
 
 	/**
