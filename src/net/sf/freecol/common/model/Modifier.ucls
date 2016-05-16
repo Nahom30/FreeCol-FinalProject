@@ -1,0 +1,1688 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.1.9" icons="true" automaticImage="PNG" always-add-relationships="false" generalizations="true" 
+  realizations="true" associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
+  <class id="1" language="java" name="net.sf.freecol.common.model.Modifier" project="FreeCol" 
+    file="/FreeCol/src/net/sf/freecol/common/model/Modifier.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1805" y="115"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="2" language="java" name="net.sf.freecol.server.ai.NativeAIPlayer" project="FreeCol" 
+    file="/FreeCol/src/net/sf/freecol/server/ai/NativeAIPlayer.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="68" y="263"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="net.sf.freecol.common.model.TileItemContainer" project="FreeCol" 
+    file="/FreeCol/src/net/sf/freecol/common/model/TileItemContainer.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="3358" y="704"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="net.sf.freecol.common.model.WorkLocation" project="FreeCol" 
+    file="/FreeCol/src/net/sf/freecol/common/model/WorkLocation.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1966" y="292"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="5" language="java" name="net.sf.freecol.common.model.ColonyTile" project="FreeCol" 
+    file="/FreeCol/src/net/sf/freecol/common/model/ColonyTile.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2916" y="478"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="6" language="java" name="net.sf.freecol.common.model.TileType" project="FreeCol" 
+    file="/FreeCol/src/net/sf/freecol/common/model/TileType.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1308" y="704"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="7" language="java" name="net.sf.freecol.server.model.ServerPlayer" project="FreeCol" 
+    file="/FreeCol/src/net/sf/freecol/server/model/ServerPlayer.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="3301" y="817"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="8" language="java" name="net.sf.freecol.common.model.Building" project="FreeCol" 
+    file="/FreeCol/src/net/sf/freecol/common/model/Building.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1546" y="478"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="9" language="java" name="net.sf.freecol.common.model.FeatureContainer" project="FreeCol" 
+    file="/FreeCol/src/net/sf/freecol/common/model/FeatureContainer.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="3132" y="817"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="10" language="java" name="net.sf.freecol.common.model.Colony" project="FreeCol" 
+    file="/FreeCol/src/net/sf/freecol/common/model/Colony.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1966" y="385"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="11" language="java" name="net.sf.freecol.common.model.SimpleCombatModel" project="FreeCol" 
+    file="/FreeCol/src/net/sf/freecol/common/model/SimpleCombatModel.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1767" y="385"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="12" language="java" name="net.sf.freecol.client.gui.panel.ResourcesDetailPanel" project="FreeCol" 
+    file="/FreeCol/src/net/sf/freecol/client/gui/panel/ResourcesDetailPanel.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="703" y="385"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="13" language="java" name="net.sf.freecol.common.model.LostCityRumour" project="FreeCol" 
+    file="/FreeCol/src/net/sf/freecol/common/model/LostCityRumour.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1783" y="591"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="14" language="java" name="net.sf.freecol.server.ai.EuropeanAIPlayer" project="FreeCol" 
+    file="/FreeCol/src/net/sf/freecol/server/ai/EuropeanAIPlayer.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="817" y="704"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="15" language="java" name="net.sf.freecol.client.control.InGameInputHandler" project="FreeCol" 
+    file="/FreeCol/src/net/sf/freecol/client/control/InGameInputHandler.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="90" y="190"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="16" language="java" name="net.sf.freecol.common.model.FreeColObject" project="FreeCol" 
+    file="/FreeCol/src/net/sf/freecol/common/model/FreeColObject.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="89" y="557"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="17" language="java" name="net.sf.freecol.common.model.ResourceType" project="FreeCol" 
+    file="/FreeCol/src/net/sf/freecol/common/model/ResourceType.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1783" y="704"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="18" language="java" name="net.sf.freecol.server.ai.ColonyPlan" project="FreeCol" 
+    file="/FreeCol/src/net/sf/freecol/server/ai/ColonyPlan.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2563" y="292"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="19" language="java" name="net.sf.freecol.common.model.ModifierTest" project="FreeCol" 
+    file="/FreeCol/src/net/sf/freecol/common/model/ModifierTest.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="83" y="488"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="20" language="java" name="net.sf.freecol.common.model.TileImprovementType" project="FreeCol" 
+    file="/FreeCol/src/net/sf/freecol/common/model/TileImprovementType.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1055" y="704"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="21" language="java" name="net.sf.freecol.common.model.TileImprovement" project="FreeCol" 
+    file="/FreeCol/src/net/sf/freecol/common/model/TileImprovement.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1957" y="591"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="22" language="java" name="net.sf.freecol.common.model.BuildingType" project="FreeCol" 
+    file="/FreeCol/src/net/sf/freecol/common/model/BuildingType.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1400" y="591"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="23" language="java" name="net.sf.freecol.client.gui.panel.GoodsDetailPanel" project="FreeCol" 
+    file="/FreeCol/src/net/sf/freecol/client/gui/panel/GoodsDetailPanel.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="884" y="385"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="24" language="java" name="net.sf.freecol.client.gui.panel.ColopediaGameObjectTypePanel" project="FreeCol" 
+    file="/FreeCol/src/net/sf/freecol/client/gui/panel/ColopediaGameObjectTypePanel.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1279" y="292"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="25" language="java" name="net.sf.freecol.common.model.CombatModel" project="FreeCol" 
+    file="/FreeCol/src/net/sf/freecol/common/model/CombatModel.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1764" y="292"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="26" language="java" name="net.sf.freecol.common.model.Specification" project="FreeCol" 
+    file="/FreeCol/src/net/sf/freecol/common/model/Specification.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1052" y="478"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <interface id="27" language="java" name="net.sf.freecol.common.model.Consumer" project="FreeCol" 
+    file="/FreeCol/src/net/sf/freecol/common/model/Consumer.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1617" y="1023"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </interface>  
+  <class id="28" language="java" name="net.sf.freecol.common.model.Tile" project="FreeCol" 
+    file="/FreeCol/src/net/sf/freecol/common/model/Tile.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="3390" y="591"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="29" language="java" name="net.sf.freecol.common.model.UnitType" project="FreeCol" 
+    file="/FreeCol/src/net/sf/freecol/common/model/UnitType.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="761" y="920"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="30" language="java" name="net.sf.freecol.client.gui.panel.BuildingDetailPanel" project="FreeCol" 
+    file="/FreeCol/src/net/sf/freecol/client/gui/panel/BuildingDetailPanel.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1056" y="385"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="31" language="java" name="net.sf.freecol.client.gui.panel.BuildingToolTip" project="FreeCol" 
+    file="/FreeCol/src/net/sf/freecol/client/gui/panel/BuildingToolTip.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="77" y="345"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="32" language="java" name="net.sf.freecol.server.control.ChangeSet" project="FreeCol" 
+    file="/FreeCol/src/net/sf/freecol/server/control/ChangeSet.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="82" y="417"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="33" language="java" name="net.sf.freecol.common.model.BuildQueue" project="FreeCol" 
+    file="/FreeCol/src/net/sf/freecol/common/model/BuildQueue.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1792" y="478"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="34" language="java" name="net.sf.freecol.common.model.Resource" project="FreeCol" 
+    file="/FreeCol/src/net/sf/freecol/common/model/Resource.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2131" y="591"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="35" language="java" name="net.sf.freecol.client.gui.panel.NationTypeDetailPanel" project="FreeCol" 
+    file="/FreeCol/src/net/sf/freecol/client/gui/panel/NationTypeDetailPanel.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1238" y="385"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="36" language="java" name="net.sf.freecol.client.gui.panel.WorkProductionPanel" project="FreeCol" 
+    file="/FreeCol/src/net/sf/freecol/client/gui/panel/WorkProductionPanel.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="95" y="624"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="37" language="java" name="net.sf.freecol.common.model.IndianSettlement" project="FreeCol" 
+    file="/FreeCol/src/net/sf/freecol/common/model/IndianSettlement.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2722" y="385"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="38" language="java" name="net.sf.freecol.client.gui.panel.TerrainDetailPanel" project="FreeCol" 
+    file="/FreeCol/src/net/sf/freecol/client/gui/panel/TerrainDetailPanel.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1419" y="385"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="39" language="java" name="net.sf.freecol.server.model.ServerUnit" project="FreeCol" 
+    file="/FreeCol/src/net/sf/freecol/server/model/ServerUnit.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2342" y="591"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="40" language="java" name="net.sf.freecol.server.model.ServerIndianSettlement" project="FreeCol" 
+    file="/FreeCol/src/net/sf/freecol/server/model/ServerIndianSettlement.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2173" y="478"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="41" language="java" name="net.sf.freecol.client.gui.panel.RebelToolTip" project="FreeCol" 
+    file="/FreeCol/src/net/sf/freecol/client/gui/panel/RebelToolTip.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="90" y="689"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="42" language="java" name="net.sf.freecol.common.model.FreeColSpecObjectTypeTest" project="FreeCol" 
+    file="/FreeCol/src/net/sf/freecol/common/model/FreeColSpecObjectTypeTest.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="496" y="385"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="43" language="java" name="net.sf.freecol.common.model.Unit" project="FreeCol" 
+    file="/FreeCol/src/net/sf/freecol/common/model/Unit.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2722" y="478"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="44" language="java" name="net.sf.freecol.common.model.Settlement" project="FreeCol" 
+    file="/FreeCol/src/net/sf/freecol/common/model/Settlement.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="3176" y="292"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="45" language="java" name="net.sf.freecol.client.gui.panel.PreCombatDialog" project="FreeCol" 
+    file="/FreeCol/src/net/sf/freecol/client/gui/panel/PreCombatDialog.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="90" y="761"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="46" language="java" name="net.sf.freecol.common.model.Europe" project="FreeCol" 
+    file="/FreeCol/src/net/sf/freecol/common/model/Europe.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="3216" y="591"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="47" language="java" name="net.sf.freecol.common.model.Player" project="FreeCol" 
+    file="/FreeCol/src/net/sf/freecol/common/model/Player.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="3153" y="704"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="48" language="java" name="net.sf.freecol.client.gui.panel.UnitDetailPanel" project="FreeCol" 
+    file="/FreeCol/src/net/sf/freecol/client/gui/panel/UnitDetailPanel.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1591" y="385"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="49" language="java" name="net.sf.freecol.client.gui.panel.ModifierFormat" project="FreeCol" 
+    file="/FreeCol/src/net/sf/freecol/client/gui/panel/ModifierFormat.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="91" y="827"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="50" language="java" name="net.sf.freecol.common.model.ProductionCache" project="FreeCol" 
+    file="/FreeCol/src/net/sf/freecol/common/model/ProductionCache.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1966" y="478"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="51" language="java" name="net.sf.freecol.common.model.FreeColSpecObjectType" project="FreeCol" 
+    file="/FreeCol/src/net/sf/freecol/common/model/FreeColSpecObjectType.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1148" y="591"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="52" language="java" name="net.sf.freecol.common.model.GoodsType" project="FreeCol" 
+    file="/FreeCol/src/net/sf/freecol/common/model/GoodsType.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2113" y="1156"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="53" language="java" name="net.sf.freecol.common.model.EquipmentType" project="FreeCol" 
+    file="/FreeCol/src/net/sf/freecol/common/model/EquipmentType.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="824" y="591"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="54" language="java" name="net.sf.freecol.common.model.Role" project="FreeCol" 
+    file="/FreeCol/src/net/sf/freecol/common/model/Role.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="989" y="817"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="55" language="java" name="net.sf.freecol.common.model.TileItem" project="FreeCol" 
+    file="/FreeCol/src/net/sf/freecol/common/model/TileItem.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2359" y="478"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <association id="56">    
+    <bendpoint x="4946" y="658"/>    
+    <bendpoint x="4395" y="771"/>    
+    <end type="SOURCE" refId="46" navigable="false">      
+      <attribute id="57" name="recruitables"/>      
+      <multiplicity id="58" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="29" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="59">    
+    <end type="SOURCE" refId="10" navigable="false">      
+      <attribute id="60" name="colonyTiles"/>      
+      <multiplicity id="61" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="5" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="62">    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="24"/>  
+  </generalization>  
+  <association id="63">    
+    <bendpoint x="2857" y="545"/>    
+    <bendpoint x="2857" y="658"/>    
+    <bendpoint x="2857" y="771"/>    
+    <end type="SOURCE" refId="26" navigable="false">      
+      <attribute id="64" name="unitTypesPurchasedInEurope"/>      
+      <multiplicity id="65" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="29" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="66">    
+    <end type="SOURCE" refId="28" navigable="false">      
+      <attribute id="67" name="cachedTiles"/>      
+      <multiplicity id="68" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="28" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="69">    
+    <bendpoint x="3232" y="545"/>    
+    <bendpoint x="3232" y="658"/>    
+    <end type="SOURCE" refId="26" navigable="false">      
+      <attribute id="70" name="militaryRoles"/>      
+      <multiplicity id="71" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="54" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="72">    
+    <end type="SOURCE" refId="40"/>    
+    <end type="TARGET" refId="37"/>  
+  </generalization>  
+  <association id="73">    
+    <end type="SOURCE" refId="55" navigable="false">      
+      <attribute id="74" name="tile"/>      
+      <multiplicity id="75" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="28" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="76">    
+    <bendpoint x="2941" y="545"/>    
+    <bendpoint x="2941" y="658"/>    
+    <bendpoint x="2941" y="771"/>    
+    <end type="SOURCE" refId="26" navigable="false">      
+      <attribute id="77" name="defaultUnitTypes"/>      
+      <multiplicity id="78" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="29" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="79">    
+    <bendpoint x="3004" y="545"/>    
+    <bendpoint x="3004" y="658"/>    
+    <bendpoint x="3004" y="771"/>    
+    <end type="SOURCE" refId="26" navigable="false">      
+      <attribute id="80" name="unitTypesTrainedInEurope"/>      
+      <multiplicity id="81" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="29" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="82">    
+    <bendpoint x="4904" y="545"/>    
+    <end type="SOURCE" refId="3" navigable="false">      
+      <attribute id="83" name="tileItems"/>      
+      <multiplicity id="84" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="55" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="85">    
+    <end type="SOURCE" refId="21" navigable="false">      
+      <attribute id="86" name="type"/>      
+      <multiplicity id="87" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="20" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="88">    
+    <end type="SOURCE" refId="37" navigable="false">      
+      <attribute id="89" name="ownedUnits"/>      
+      <multiplicity id="90" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="43" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="91">    
+    <end type="SOURCE" refId="52" navigable="false">      
+      <attribute id="92" name="makes"/>      
+      <multiplicity id="93" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="52" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="94">    
+    <bendpoint x="3944" y="545"/>    
+    <bendpoint x="3944" y="658"/>    
+    <bendpoint x="3902" y="771"/>    
+    <bendpoint x="3839" y="874"/>    
+    <end type="SOURCE" refId="33"/>    
+    <end type="TARGET" refId="27"/>  
+  </realization>  
+  <association id="95">    
+    <bendpoint x="3253" y="545"/>    
+    <end type="SOURCE" refId="26" navigable="false">      
+      <attribute id="96" name="tileImprovementTypeList"/>      
+      <multiplicity id="97" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="20" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="98">    
+    <bendpoint x="4925" y="545"/>    
+    <bendpoint x="4883" y="658"/>    
+    <bendpoint x="4820" y="771"/>    
+    <bendpoint x="4757" y="874"/>    
+    <end type="SOURCE" refId="43"/>    
+    <end type="TARGET" refId="27"/>  
+  </realization>  
+  <association id="99">    
+    <end type="SOURCE" refId="28" navigable="false">      
+      <attribute id="100" name="owner"/>      
+      <multiplicity id="101" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="47" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="102">    
+    <bendpoint x="4862" y="339"/>    
+    <bendpoint x="4862" y="432"/>    
+    <bendpoint x="4862" y="545"/>    
+    <bendpoint x="4862" y="658"/>    
+    <bendpoint x="4862" y="771"/>    
+    <bendpoint x="4862" y="874"/>    
+    <end type="SOURCE" refId="18" navigable="false">      
+      <attribute id="103" name="foodGoodsTypes"/>      
+      <multiplicity id="104" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="52" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="105">    
+    <bendpoint x="3190" y="658"/>    
+    <end type="SOURCE" refId="53" navigable="false">      
+      <attribute id="106" name="role"/>      
+      <multiplicity id="107" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="54" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="108">    
+    <end type="SOURCE" refId="52" navigable="false">      
+      <attribute id="109" name="storedAs"/>      
+      <multiplicity id="110" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="52" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="111">    
+    <bendpoint x="4799" y="339"/>    
+    <bendpoint x="4799" y="432"/>    
+    <bendpoint x="4799" y="545"/>    
+    <bendpoint x="4798" y="658"/>    
+    <bendpoint x="4798" y="771"/>    
+    <bendpoint x="4799" y="874"/>    
+    <end type="SOURCE" refId="18" navigable="false">      
+      <attribute id="112" name="buildingGoodsTypes"/>      
+      <multiplicity id="113" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="52" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="114">    
+    <bendpoint x="4820" y="545"/>    
+    <bendpoint x="4308" y="658"/>    
+    <bendpoint x="3797" y="771"/>    
+    <end type="SOURCE" refId="43" navigable="false">      
+      <attribute id="115" name="unitType"/>      
+      <multiplicity id="116" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="29" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="117">    
+    <end type="SOURCE" refId="43" navigable="false">      
+      <attribute id="118" name="teacher"/>      
+      <multiplicity id="119" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="43" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="120">    
+    <end type="SOURCE" refId="28" navigable="false">      
+      <attribute id="121" name="type"/>      
+      <multiplicity id="122" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="6" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="123">    
+    <bendpoint x="4757" y="339"/>    
+    <bendpoint x="4757" y="432"/>    
+    <bendpoint x="4757" y="545"/>    
+    <bendpoint x="4749" y="658"/>    
+    <bendpoint x="4742" y="771"/>    
+    <bendpoint x="4736" y="874"/>    
+    <end type="SOURCE" refId="18" navigable="false">      
+      <attribute id="124" name="rawLuxuryGoodsTypes"/>      
+      <multiplicity id="125" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="52" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="126">    
+    <end type="SOURCE" refId="7" navigable="false">      
+      <attribute id="127" name="stanceDirty"/>      
+      <multiplicity id="128" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="7" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="129">    
+    <end type="SOURCE" refId="54" navigable="false">      
+      <attribute id="130" name="downgrade"/>      
+      <multiplicity id="131" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="54" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="132">    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="133" name="LAND"/>      
+      <multiplicity id="134" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="6" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="135">    
+    <end type="SOURCE" refId="50" navigable="false">      
+      <attribute id="136" name="colony"/>      
+      <multiplicity id="137" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="10" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="138">    
+    <bendpoint x="5356" y="339"/>    
+    <bendpoint x="5356" y="432"/>    
+    <bendpoint x="5335" y="545"/>    
+    <bendpoint x="5335" y="658"/>    
+    <end type="SOURCE" refId="44" navigable="false">      
+      <attribute id="139" name="featureContainer"/>      
+      <multiplicity id="140" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="141">    
+    <end type="SOURCE" refId="20" navigable="false">      
+      <attribute id="142" name="requiredImprovementType"/>      
+      <multiplicity id="143" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="20" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="144">    
+    <end type="SOURCE" refId="37"/>    
+    <end type="TARGET" refId="44"/>  
+  </generalization>  
+  <association id="145">    
+    <bendpoint x="4988" y="545"/>    
+    <bendpoint x="4988" y="658"/>    
+    <bendpoint x="4988" y="771"/>    
+    <bendpoint x="4988" y="874"/>    
+    <end type="SOURCE" refId="43" navigable="false">      
+      <attribute id="146" name="workType"/>      
+      <multiplicity id="147" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="52" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="148">    
+    <end type="SOURCE" refId="47" navigable="false">      
+      <attribute id="149" name="europe"/>      
+      <multiplicity id="150" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="46" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="151">    
+    <bendpoint x="3923" y="432"/>    
+    <bendpoint x="3923" y="545"/>    
+    <end type="SOURCE" refId="42" navigable="false">      
+      <attribute id="152" name="rType1"/>      
+      <multiplicity id="153" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="17" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="154">    
+    <end type="SOURCE" refId="10" navigable="false">      
+      <attribute id="155" name="buildQueue"/>      
+      <multiplicity id="156" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="33" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="157">    
+    <bendpoint x="3211" y="545"/>    
+    <bendpoint x="3211" y="658"/>    
+    <end type="SOURCE" refId="26" navigable="false">      
+      <attribute id="158" name="roles"/>      
+      <multiplicity id="159" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="54" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="160">    
+    <bendpoint x="3540" y="545"/>    
+    <bendpoint x="3705" y="658"/>    
+    <bendpoint x="3705" y="771"/>    
+    <bendpoint x="3705" y="874"/>    
+    <end type="SOURCE" refId="26" navigable="false">      
+      <attribute id="161" name="goodsTypeList"/>      
+      <multiplicity id="162" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="52" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="163">    
+    <bendpoint x="5293" y="339"/>    
+    <bendpoint x="5293" y="432"/>    
+    <bendpoint x="5251" y="545"/>    
+    <bendpoint x="5251" y="658"/>    
+    <bendpoint x="5251" y="771"/>    
+    <bendpoint x="5251" y="874"/>    
+    <end type="SOURCE" refId="18" navigable="false">      
+      <attribute id="164" name="militaryGoodsTypes"/>      
+      <multiplicity id="165" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="52" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="166">    
+    <end type="SOURCE" refId="54" navigable="false">      
+      <attribute id="167" name="expertUnit"/>      
+      <multiplicity id="168" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="29" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="169">    
+    <bendpoint x="5272" y="545"/>    
+    <end type="SOURCE" refId="43" navigable="false">      
+      <attribute id="170" name="owner"/>      
+      <multiplicity id="171" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="47" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="172">    
+    <bendpoint x="3881" y="545"/>    
+    <bendpoint x="3923" y="658"/>    
+    <bendpoint x="3923" y="771"/>    
+    <bendpoint x="3923" y="874"/>    
+    <end type="SOURCE" refId="26" navigable="false">      
+      <attribute id="173" name="farmedGoodsTypeList"/>      
+      <multiplicity id="174" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="52" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="175">    
+    <bendpoint x="4148" y="339"/>    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="4"/>  
+  </generalization>  
+  <association id="176">    
+    <end type="SOURCE" refId="47" navigable="false">      
+      <attribute id="177" name="featureContainer"/>      
+      <multiplicity id="178" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="179">    
+    <end type="SOURCE" refId="23"/>    
+    <end type="TARGET" refId="24"/>  
+  </generalization>  
+  <association id="180">    
+    <end type="SOURCE" refId="52" navigable="false">      
+      <attribute id="181" name="madeFrom"/>      
+      <multiplicity id="182" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="52" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="183">    
+    <end type="SOURCE" refId="26" navigable="false">      
+      <attribute id="184" name="specialModifiers"/>      
+      <multiplicity id="185" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="1" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="186">    
+    <end type="SOURCE" refId="43" navigable="false">      
+      <attribute id="187" name="student"/>      
+      <multiplicity id="188" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="43" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="189">    
+    <bendpoint x="4967" y="545"/>    
+    <bendpoint x="4967" y="658"/>    
+    <bendpoint x="4967" y="771"/>    
+    <bendpoint x="4967" y="874"/>    
+    <end type="SOURCE" refId="43" navigable="false">      
+      <attribute id="190" name="experienceType"/>      
+      <multiplicity id="191" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="52" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="192">    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="25"/>  
+  </generalization>  
+  <association id="193">    
+    <bendpoint x="3965" y="545"/>    
+    <bendpoint x="4190" y="658"/>    
+    <bendpoint x="4416" y="771"/>    
+    <bendpoint x="4416" y="874"/>    
+    <end type="SOURCE" refId="50" navigable="false">      
+      <attribute id="194" name="goodsUsed"/>      
+      <multiplicity id="195" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="52" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="196">    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="197" name="UNKNOWN_DEFENCE_MODIFIER"/>      
+      <multiplicity id="198" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="1" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="199">    
+    <bendpoint x="3561" y="545"/>    
+    <bendpoint x="3747" y="658"/>    
+    <bendpoint x="3747" y="771"/>    
+    <bendpoint x="3747" y="874"/>    
+    <end type="SOURCE" refId="26" navigable="false">      
+      <attribute id="200" name="foodGoodsTypeList"/>      
+      <multiplicity id="201" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="52" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="202">    
+    <bendpoint x="4715" y="545"/>    
+    <bendpoint x="3860" y="658"/>    
+    <end type="SOURCE" refId="43" navigable="false">      
+      <attribute id="203" name="role"/>      
+      <multiplicity id="204" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="54" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="205">    
+    <bendpoint x="3316" y="545"/>    
+    <end type="SOURCE" refId="26" navigable="false">      
+      <attribute id="206" name="tileTypeList"/>      
+      <multiplicity id="207" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="6" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="208">    
+    <end type="SOURCE" refId="17"/>    
+    <end type="TARGET" refId="51"/>  
+  </generalization>  
+  <generalization id="209">    
+    <end type="SOURCE" refId="34"/>    
+    <end type="TARGET" refId="55"/>  
+  </generalization>  
+  <association id="210">    
+    <end type="SOURCE" refId="37" navigable="false">      
+      <attribute id="211" name="missionary"/>      
+      <multiplicity id="212" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="43" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="213">    
+    <bendpoint x="3860" y="545"/>    
+    <bendpoint x="3881" y="658"/>    
+    <bendpoint x="3881" y="771"/>    
+    <bendpoint x="3881" y="874"/>    
+    <end type="SOURCE" refId="26" navigable="false">      
+      <attribute id="214" name="newWorldLuxuryGoodsTypeList"/>      
+      <multiplicity id="215" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="52" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="216">    
+    <bendpoint x="5515" y="432"/>    
+    <bendpoint x="5515" y="339"/>    
+    <end type="SOURCE" refId="28" navigable="false">      
+      <attribute id="217" name="owningSettlement"/>      
+      <multiplicity id="218" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="44" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="219">    
+    <end type="SOURCE" refId="10" navigable="false">      
+      <attribute id="220" name="productionCache"/>      
+      <multiplicity id="221" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="50" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="222">    
+    <end type="SOURCE" refId="29"/>    
+    <end type="TARGET" refId="27"/>  
+  </realization>  
+  <association id="223">    
+    <bendpoint x="3427" y="771"/>    
+    <bendpoint x="3427" y="874"/>    
+    <end type="SOURCE" refId="20" navigable="false">      
+      <attribute id="224" name="deliverGoodsType"/>      
+      <multiplicity id="225" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="52" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="226">    
+    <bendpoint x="2920" y="545"/>    
+    <bendpoint x="2920" y="658"/>    
+    <bendpoint x="2920" y="771"/>    
+    <end type="SOURCE" refId="26" navigable="false">      
+      <attribute id="227" name="experts"/>      
+      <multiplicity id="228" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="29" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="229">    
+    <end type="SOURCE" refId="20" navigable="false">      
+      <attribute id="230" name="requiredRole"/>      
+      <multiplicity id="231" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="54" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="232">    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="233" name="WATER"/>      
+      <multiplicity id="234" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="6" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="235">    
+    <bendpoint x="3902" y="545"/>    
+    <end type="SOURCE" refId="26" navigable="false">      
+      <attribute id="236" name="resourceTypeList"/>      
+      <multiplicity id="237" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="17" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="238">    
+    <end type="SOURCE" refId="39"/>    
+    <end type="TARGET" refId="43"/>  
+  </generalization>  
+  <association id="239">    
+    <bendpoint x="5494" y="339"/>    
+    <bendpoint x="5494" y="432"/>    
+    <end type="SOURCE" refId="44" navigable="false">      
+      <attribute id="240" name="tile"/>      
+      <multiplicity id="241" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="28" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="242">    
+    <end type="SOURCE" refId="43" navigable="false">      
+      <attribute id="243" name="indianSettlement"/>      
+      <multiplicity id="244" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="37" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="245">    
+    <bendpoint x="4841" y="339"/>    
+    <bendpoint x="4841" y="432"/>    
+    <bendpoint x="4841" y="545"/>    
+    <bendpoint x="4841" y="658"/>    
+    <bendpoint x="4841" y="771"/>    
+    <bendpoint x="4841" y="874"/>    
+    <end type="SOURCE" refId="18" navigable="false">      
+      <attribute id="246" name="immigrationGoodsTypes"/>      
+      <multiplicity id="247" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="52" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="248">    
+    <bendpoint x="3965" y="658"/>    
+    <end type="SOURCE" refId="51" navigable="false">      
+      <attribute id="249" name="featureContainer"/>      
+      <multiplicity id="250" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="251">    
+    <end type="SOURCE" refId="53" navigable="false">      
+      <attribute id="252" name="NO_EQUIPMENT"/>      
+      <multiplicity id="253" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="53" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="254">    
+    <bendpoint x="3448" y="874"/>    
+    <bendpoint x="3448" y="771"/>    
+    <bendpoint x="3448" y="658"/>    
+    <end type="SOURCE" refId="52"/>    
+    <end type="TARGET" refId="51"/>  
+  </generalization>  
+  <association id="255">    
+    <bendpoint x="4778" y="339"/>    
+    <bendpoint x="4778" y="432"/>    
+    <bendpoint x="4778" y="545"/>    
+    <bendpoint x="4778" y="658"/>    
+    <bendpoint x="4778" y="771"/>    
+    <bendpoint x="4778" y="874"/>    
+    <end type="SOURCE" refId="18" navigable="false">      
+      <attribute id="256" name="luxuryGoodsTypes"/>      
+      <multiplicity id="257" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="52" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="258">    
+    <end type="SOURCE" refId="42" navigable="false">      
+      <attribute id="259" name="spec"/>      
+      <multiplicity id="260" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="26" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="261">    
+    <bendpoint x="5540" y="658"/>    
+    <end type="SOURCE" refId="46" navigable="false">      
+      <attribute id="262" name="featureContainer"/>      
+      <multiplicity id="263" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="264">    
+    <bendpoint x="2899" y="545"/>    
+    <bendpoint x="2899" y="658"/>    
+    <bendpoint x="2899" y="771"/>    
+    <end type="SOURCE" refId="26" navigable="false">      
+      <attribute id="265" name="fastestNavalUnitType"/>      
+      <multiplicity id="266" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="29" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="267">    
+    <end type="SOURCE" refId="26" navigable="false">      
+      <attribute id="268" name="allTypes"/>      
+      <multiplicity id="269" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="51" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="270">    
+    <end type="SOURCE" refId="22" navigable="false">      
+      <attribute id="271" name="upgradesFrom"/>      
+      <multiplicity id="272" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="22" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="273">    
+    <end type="SOURCE" refId="26" navigable="false">      
+      <attribute id="274" name="buildingTypeList"/>      
+      <multiplicity id="275" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="22" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="276">    
+    <bendpoint x="2983" y="545"/>    
+    <bendpoint x="2983" y="658"/>    
+    <bendpoint x="2983" y="771"/>    
+    <end type="SOURCE" refId="26" navigable="false">      
+      <attribute id="277" name="unitTypeList"/>      
+      <multiplicity id="278" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="29" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="279">    
+    <end type="SOURCE" refId="29" navigable="false">      
+      <attribute id="280" name="defaultRole"/>      
+      <multiplicity id="281" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="54" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="282">    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="283" name="colony"/>      
+      <multiplicity id="284" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="10" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="285">    
+    <end type="SOURCE" refId="22" navigable="false">      
+      <attribute id="286" name="upgradesTo"/>      
+      <multiplicity id="287" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="22" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="288">    
+    <end type="SOURCE" refId="43" navigable="false">      
+      <attribute id="289" name="workImprovement"/>      
+      <multiplicity id="290" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="21" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="291">    
+    <bendpoint x="3295" y="545"/>    
+    <bendpoint x="3490" y="658"/>    
+    <bendpoint x="3500" y="771"/>    
+    <bendpoint x="3511" y="874"/>    
+    <end type="SOURCE" refId="26" navigable="false">      
+      <attribute id="292" name="newWorldGoodsTypeList"/>      
+      <multiplicity id="293" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="52" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="294">    
+    <end type="SOURCE" refId="10" navigable="false">      
+      <attribute id="295" name="buildingMap"/>      
+      <multiplicity id="296" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="8" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="297">    
+    <bendpoint x="3797" y="545"/>    
+    <bendpoint x="3726" y="658"/>    
+    <bendpoint x="3597" y="771"/>    
+    <bendpoint x="3469" y="874"/>    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="27"/>  
+  </realization>  
+  <association id="298">    
+    <bendpoint x="4820" y="432"/>    
+    <bendpoint x="4508" y="545"/>    
+    <bendpoint x="3902" y="658"/>    
+    <bendpoint x="3726" y="771"/>    
+    <end type="SOURCE" refId="37" navigable="false">      
+      <attribute id="299" name="learnableSkill"/>      
+      <multiplicity id="300" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="29" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="301">    
+    <end type="SOURCE" refId="8" navigable="false">      
+      <attribute id="302" name="buildingType"/>      
+      <multiplicity id="303" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="22" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="304">    
+    <end type="SOURCE" refId="46" navigable="false">      
+      <attribute id="305" name="owner"/>      
+      <multiplicity id="306" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="47" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="307">    
+    <bendpoint x="3818" y="545"/>    
+    <bendpoint x="3818" y="658"/>    
+    <bendpoint x="3818" y="771"/>    
+    <bendpoint x="3818" y="874"/>    
+    <end type="SOURCE" refId="26" navigable="false">      
+      <attribute id="308" name="immigrationGoodsTypeList"/>      
+      <multiplicity id="309" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="52" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="310">    
+    <end type="SOURCE" refId="10" navigable="false">      
+      <attribute id="311" name="populationQueue"/>      
+      <multiplicity id="312" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="33" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="313">    
+    <bendpoint x="4883" y="339"/>    
+    <bendpoint x="4883" y="432"/>    
+    <bendpoint x="4883" y="545"/>    
+    <bendpoint x="4904" y="658"/>    
+    <bendpoint x="4904" y="771"/>    
+    <bendpoint x="4904" y="874"/>    
+    <end type="SOURCE" refId="18" navigable="false">      
+      <attribute id="314" name="produce"/>      
+      <multiplicity id="315" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="52" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="316">    
+    <bendpoint x="3274" y="545"/>    
+    <bendpoint x="3469" y="658"/>    
+    <bendpoint x="3479" y="771"/>    
+    <bendpoint x="3490" y="874"/>    
+    <end type="SOURCE" refId="26" navigable="false">      
+      <attribute id="317" name="storableGoodsTypeList"/>      
+      <multiplicity id="318" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="52" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="319">    
+    <bendpoint x="4736" y="339"/>    
+    <bendpoint x="4736" y="432"/>    
+    <bendpoint x="4736" y="545"/>    
+    <bendpoint x="4728" y="658"/>    
+    <bendpoint x="4721" y="771"/>    
+    <bendpoint x="4715" y="874"/>    
+    <end type="SOURCE" refId="18" navigable="false">      
+      <attribute id="320" name="rawBuildingGoodsTypes"/>      
+      <multiplicity id="321" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="52" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="322">    
+    <end type="SOURCE" refId="29" navigable="false">      
+      <attribute id="323" name="expertProduction"/>      
+      <multiplicity id="324" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="52" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="325">    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="44"/>  
+  </generalization>  
+  <association id="326">    
+    <bendpoint x="4904" y="339"/>    
+    <bendpoint x="4904" y="432"/>    
+    <bendpoint x="4946" y="545"/>    
+    <bendpoint x="4925" y="658"/>    
+    <bendpoint x="4925" y="771"/>    
+    <bendpoint x="4925" y="874"/>    
+    <end type="SOURCE" refId="18" navigable="false">      
+      <attribute id="327" name="otherRawGoodsTypes"/>      
+      <multiplicity id="328" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="52" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="329">    
+    <bendpoint x="5536" y="432"/>    
+    <bendpoint x="5536" y="339"/>    
+    <end type="SOURCE" refId="28" navigable="false">      
+      <attribute id="330" name="settlement"/>      
+      <multiplicity id="331" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="44" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="332">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="51"/>  
+  </generalization>  
+  <association id="333">    
+    <bendpoint x="5314" y="432"/>    
+    <bendpoint x="5314" y="545"/>    
+    <bendpoint x="5314" y="658"/>    
+    <bendpoint x="5314" y="771"/>    
+    <bendpoint x="5314" y="874"/>    
+    <end type="SOURCE" refId="37" navigable="false">      
+      <attribute id="334" name="wantedGoods"/>      
+      <multiplicity id="335" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="52" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="336">    
+    <bendpoint x="5099" y="339"/>    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="4"/>  
+  </generalization>  
+  <generalization id="337">    
+    <end type="SOURCE" refId="30"/>    
+    <end type="TARGET" refId="24"/>  
+  </generalization>  
+  <generalization id="338">    
+    <end type="SOURCE" refId="13"/>    
+    <end type="TARGET" refId="55"/>  
+  </generalization>  
+  <association id="339">    
+    <bendpoint x="3582" y="545"/>    
+    <bendpoint x="3645" y="658"/>    
+    <bendpoint x="3707" y="771"/>    
+    <bendpoint x="3768" y="874"/>    
+    <end type="SOURCE" refId="26" navigable="false">      
+      <attribute id="340" name="libertyGoodsTypeList"/>      
+      <multiplicity id="341" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="52" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="342">    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="343" name="workTile"/>      
+      <multiplicity id="344" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="28" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="345">    
+    <end type="SOURCE" refId="18" navigable="false">      
+      <attribute id="346" name="colony"/>      
+      <multiplicity id="347" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="10" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="348">    
+    <end type="SOURCE" refId="20"/>    
+    <end type="TARGET" refId="51"/>  
+  </generalization>  
+  <generalization id="349">    
+    <end type="SOURCE" refId="35"/>    
+    <end type="TARGET" refId="24"/>  
+  </generalization>  
+  <association id="350">    
+    <end type="SOURCE" refId="14" navigable="false">      
+      <attribute id="351" name="pioneerRole"/>      
+      <multiplicity id="352" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="54" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="353">    
+    <end type="SOURCE" refId="28" navigable="false">      
+      <attribute id="354" name="tileItemContainer"/>      
+      <multiplicity id="355" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="3" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="356">    
+    <end type="SOURCE" refId="3" navigable="false">      
+      <attribute id="357" name="tile"/>      
+      <multiplicity id="358" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="28" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="359">    
+    <bendpoint x="3839" y="545"/>    
+    <bendpoint x="3839" y="658"/>    
+    <bendpoint x="3849" y="771"/>    
+    <bendpoint x="3860" y="874"/>    
+    <end type="SOURCE" refId="26" navigable="false">      
+      <attribute id="360" name="rawBuildingGoodsTypeList"/>      
+      <multiplicity id="361" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="52" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="362">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="47"/>  
+  </generalization>  
+  <generalization id="363">    
+    <end type="SOURCE" refId="48"/>    
+    <end type="TARGET" refId="24"/>  
+  </generalization>  
+  <association id="364">    
+    <bendpoint x="5473" y="339"/>    
+    <bendpoint x="5473" y="432"/>    
+    <end type="SOURCE" refId="44" navigable="false">      
+      <attribute id="365" name="ownedTiles"/>      
+      <multiplicity id="366" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="28" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="367">    
+    <end type="SOURCE" refId="29" navigable="false">      
+      <attribute id="368" name="skillTaught"/>      
+      <multiplicity id="369" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="29" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="370">    
+    <bendpoint x="5293" y="545"/>    
+    <end type="SOURCE" refId="47" navigable="false">      
+      <attribute id="371" name="units"/>      
+      <multiplicity id="372" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="43" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="373">    
+    <bendpoint x="5398" y="545"/>    
+    <bendpoint x="5398" y="432"/>    
+    <bendpoint x="5398" y="339"/>    
+    <end type="SOURCE" refId="47" navigable="false">      
+      <attribute id="374" name="settlements"/>      
+      <multiplicity id="375" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="44" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="376">    
+    <end type="SOURCE" refId="38"/>    
+    <end type="TARGET" refId="24"/>  
+  </generalization>  
+  <generalization id="377">    
+    <end type="SOURCE" refId="21"/>    
+    <end type="TARGET" refId="55"/>  
+  </generalization>  
+  <association id="378">    
+    <bendpoint x="5377" y="339"/>    
+    <bendpoint x="5377" y="432"/>    
+    <bendpoint x="5377" y="545"/>    
+    <end type="SOURCE" refId="44" navigable="false">      
+      <attribute id="379" name="owner"/>      
+      <multiplicity id="380" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="47" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="381">    
+    <bendpoint x="2878" y="545"/>    
+    <bendpoint x="2878" y="658"/>    
+    <bendpoint x="2878" y="771"/>    
+    <end type="SOURCE" refId="26" navigable="false">      
+      <attribute id="382" name="fastestLandUnitType"/>      
+      <multiplicity id="383" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="29" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="384">    
+    <end type="SOURCE" refId="14" navigable="false">      
+      <attribute id="385" name="scoutRole"/>      
+      <multiplicity id="386" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="54" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="387">    
+    <end type="SOURCE" refId="34" navigable="false">      
+      <attribute id="388" name="type"/>      
+      <multiplicity id="389" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="17" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="390">    
+    <end type="SOURCE" refId="33" navigable="false">      
+      <attribute id="391" name="colony"/>      
+      <multiplicity id="392" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="10" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="393">    
+    <bendpoint x="4343" y="339"/>    
+    <bendpoint x="4343" y="432"/>    
+    <bendpoint x="4529" y="545"/>    
+    <bendpoint x="4529" y="658"/>    
+    <bendpoint x="4529" y="771"/>    
+    <bendpoint x="4529" y="874"/>    
+    <end type="SOURCE" refId="18" navigable="false">      
+      <attribute id="394" name="libertyGoodsTypes"/>      
+      <multiplicity id="395" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="52" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="396">    
+    <end type="SOURCE" refId="42" navigable="false">      
+      <attribute id="397" name="mod1"/>      
+      <multiplicity id="398" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="1" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="399">    
+    <end type="SOURCE" refId="26" navigable="false">      
+      <attribute id="400" name="equipmentTypes"/>      
+      <multiplicity id="401" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="53" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="402">    
+    <end type="SOURCE" refId="47" navigable="false">      
+      <attribute id="403" name="bannedMissions"/>      
+      <multiplicity id="404" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="47" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="405">    
+    <bendpoint x="5335" y="432"/>    
+    <bendpoint x="5356" y="545"/>    
+    <end type="SOURCE" refId="37" navigable="false">      
+      <attribute id="406" name="mostHated"/>      
+      <multiplicity id="407" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="47" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="408">    
+    <bendpoint x="2962" y="545"/>    
+    <bendpoint x="2962" y="658"/>    
+    <bendpoint x="2962" y="771"/>    
+    <end type="SOURCE" refId="26" navigable="false">      
+      <attribute id="409" name="buildableUnitTypes"/>      
+      <multiplicity id="410" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="29" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="false" package="false" protected="false" private="false" static="false"/>    
+    <operations public="false" package="false" protected="false" private="false" static="false"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>

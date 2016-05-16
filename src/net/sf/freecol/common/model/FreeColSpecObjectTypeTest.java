@@ -94,9 +94,7 @@ public class FreeColSpecObjectTypeTest {
 		cType1.addModifier(mod1);
 		//Set<Ability> test = cType1.getAbilities();
 		cType1.writeChildren(stubXW);
-		assertEquals("id=Ability1;id=Modifier1;index=0;", stubXW.outputString);
-		cType1.readChildren(stubXR);
-		String test;
+		assertEquals("id=Ability1;id=Modifier1;index=0;", stubXW.outputString);		
 	}
 	
 	@Test
