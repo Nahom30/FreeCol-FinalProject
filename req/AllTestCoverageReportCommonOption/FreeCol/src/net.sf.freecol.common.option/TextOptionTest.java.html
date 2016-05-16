@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../.resources/report.gif" type="image/gif"/><title>TextOptionTest.java</title><link rel="stylesheet" href="../../../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../.sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">AllTestsCommonOptionPackage (May 16, 2016 12:47:10 PM)</a> &gt; <a href="../../index.html" class="el_group">FreeCol</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">net.sf.freecol.common.option</a> &gt; <span class="el_source">TextOptionTest.java</span></div><h1>TextOptionTest.java</h1><pre class="source lang-java linenums">package net.sf.freecol.common.option;
+
+import java.io.CharArrayWriter;
+import net.sf.freecol.common.io.FreeColXMLWriter;
+import java.io.Writer;
+import javax.xml.stream.XMLStreamException;
+import org.junit.*;
+import net.sf.freecol.common.model.Specification;
+import static org.junit.Assert.*;
+
+/**
+ * The class &lt;code&gt;TextOptionTest&lt;/code&gt; contains tests for the class &lt;code&gt;{@link TextOption}&lt;/code&gt;.
+ *
+ * @generatedBy CodePro at 5/15/16 12:06 AM
+ * @author nahomnegash
+ * @version $Revision: 1.0 $
+ */
+<span class="fc" id="L18">public class TextOptionTest {</span>
+	/**
+	 * Run the TextOption(Specification) constructor test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/15/16 12:06 AM
+	 */
+	@Test
+	public void testTextOption_1()
+		throws Exception {
+<span class="fc" id="L29">		Specification specification = new Specification();</span>
+
+<span class="fc" id="L31">		TextOption result = new TextOption(specification);</span>
+
+		// add additional test code here
+<span class="fc" id="L34">		assertNotNull(result);</span>
+<span class="fc" id="L35">		assertEquals(&quot;[null value=null]&quot;, result.toString());</span>
+<span class="fc" id="L36">		assertEquals(null, result.getValue());</span>
+<span class="fc" id="L37">		assertEquals(&quot;textOption&quot;, result.getXMLTagName());</span>
+<span class="fc" id="L38">		assertEquals(&quot;&quot;, result.getGroup());</span>
+<span class="fc" id="L39">		assertEquals(false, result.isNullValueOK());</span>
+<span class="fc" id="L40">		assertEquals(null, result.getSuffix());</span>
+<span class="fc" id="L41">		assertEquals(null, result.getId());</span>
+<span class="fc" id="L42">		assertEquals(null, result.getFeatureContainer());</span>
+<span class="fc" id="L43">		assertEquals(-1, result.getIdNumber());</span>
+<span class="fc" id="L44">		assertEquals(null, result.getIdType());</span>
+<span class="fc" id="L45">		assertEquals(null, result.getGame());</span>
+<span class="fc" id="L46">	}</span>
+
+	/**
+	 * Run the TextOption(String,Specification) constructor test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/15/16 12:06 AM
+	 */
+	@Test
+	public void testTextOption_2()
+		throws Exception {
+<span class="fc" id="L58">		String id = &quot;&quot;;</span>
+<span class="fc" id="L59">		Specification specification = new Specification();</span>
+
+<span class="fc" id="L61">		TextOption result = new TextOption(id, specification);</span>
+
+		// add additional test code here
+<span class="fc" id="L64">		assertNotNull(result);</span>
+<span class="fc" id="L65">		assertEquals(&quot;[ value=null]&quot;, result.toString());</span>
+<span class="fc" id="L66">		assertEquals(null, result.getValue());</span>
+<span class="fc" id="L67">		assertEquals(&quot;textOption&quot;, result.getXMLTagName());</span>
+<span class="fc" id="L68">		assertEquals(&quot;&quot;, result.getGroup());</span>
+<span class="fc" id="L69">		assertEquals(false, result.isNullValueOK());</span>
+<span class="fc" id="L70">		assertEquals(&quot;&quot;, result.getSuffix());</span>
+<span class="fc" id="L71">		assertEquals(&quot;&quot;, result.getId());</span>
+<span class="fc" id="L72">		assertEquals(null, result.getFeatureContainer());</span>
+<span class="fc" id="L73">		assertEquals(-1, result.getIdNumber());</span>
+<span class="fc" id="L74">		assertEquals(&quot;&quot;, result.getIdType());</span>
+<span class="fc" id="L75">		assertEquals(null, result.getGame());</span>
+<span class="fc" id="L76">	}</span>
+
+	/**
+	 * Run the TextOption clone() method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/15/16 12:06 AM
+	 */
+	@Test
+	public void testClone_1()
+		throws Exception {
+<span class="fc" id="L88">		TextOption fixture = new TextOption(new Specification());</span>
+<span class="fc" id="L89">		fixture.setValue(&quot;&quot;);</span>
+<span class="fc" id="L90">		fixture.isDefined = true;</span>
+
+<span class="fc" id="L92">		TextOption result = fixture.clone();</span>
+
+		// add additional test code here
+<span class="fc" id="L95">		assertNotNull(result);</span>
+<span class="fc" id="L96">		assertEquals(&quot;[null value=]&quot;, result.toString());</span>
+<span class="fc" id="L97">		assertEquals(&quot;&quot;, result.getValue());</span>
+<span class="fc" id="L98">		assertEquals(&quot;textOption&quot;, result.getXMLTagName());</span>
+<span class="fc" id="L99">		assertEquals(&quot;&quot;, result.getGroup());</span>
+<span class="fc" id="L100">		assertEquals(false, result.isNullValueOK());</span>
+<span class="fc" id="L101">		assertEquals(null, result.getSuffix());</span>
+<span class="fc" id="L102">		assertEquals(null, result.getId());</span>
+<span class="fc" id="L103">		assertEquals(&quot;&lt;textOption value=\&quot;\&quot;&gt;&lt;/textOption&gt;&quot;, result.serialize());</span>
+<span class="fc" id="L104">		assertEquals(null, result.getFeatureContainer());</span>
+<span class="fc" id="L105">		assertEquals(-1, result.getIdNumber());</span>
+<span class="fc" id="L106">		assertEquals(null, result.getIdType());</span>
+<span class="fc" id="L107">		assertEquals(null, result.getGame());</span>
+<span class="fc" id="L108">	}</span>
+
+	/**
+	 * Run the String getTagName() method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/15/16 12:06 AM
+	 */
+	@Test
+	public void testGetTagName_1()
+		throws Exception {
+
+<span class="fc" id="L121">		String result = TextOption.getTagName();</span>
+
+		// add additional test code here
+<span class="fc" id="L124">		assertEquals(&quot;textOption&quot;, result);</span>
+<span class="fc" id="L125">	}</span>
+
+	/**
+	 * Run the String getValue() method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/15/16 12:06 AM
+	 */
+	@Test
+	public void testGetValue_1()
+		throws Exception {
+<span class="fc" id="L137">		TextOption fixture = new TextOption(new Specification());</span>
+<span class="fc" id="L138">		fixture.setValue(&quot;&quot;);</span>
+<span class="fc" id="L139">		fixture.isDefined = true;</span>
+
+<span class="fc" id="L141">		String result = fixture.getValue();</span>
+
+		// add additional test code here
+<span class="fc" id="L144">		assertEquals(&quot;&quot;, result);</span>
+<span class="fc" id="L145">	}</span>
+
+	/**
+	 * Run the String getXMLTagName() method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/15/16 12:06 AM
+	 */
+	@Test
+	public void testGetXMLTagName_1()
+		throws Exception {
+<span class="fc" id="L157">		TextOption fixture = new TextOption(new Specification());</span>
+<span class="fc" id="L158">		fixture.setValue(&quot;&quot;);</span>
+<span class="fc" id="L159">		fixture.isDefined = true;</span>
+
+<span class="fc" id="L161">		String result = fixture.getXMLTagName();</span>
+
+		// add additional test code here
+<span class="fc" id="L164">		assertEquals(&quot;textOption&quot;, result);</span>
+<span class="fc" id="L165">	}</span>
+
+	/**
+	 * Run the void setValue(String) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/15/16 12:06 AM
+	 */
+	@Test
+	public void testSetValue_1()
+		throws Exception {
+<span class="fc" id="L177">		TextOption fixture = new TextOption(new Specification());</span>
+<span class="fc" id="L178">		fixture.setValue(&quot;&quot;);</span>
+<span class="fc" id="L179">		fixture.isDefined = true;</span>
+<span class="fc" id="L180">		String value = &quot;&quot;;</span>
+
+<span class="fc" id="L182">		fixture.setValue(value);</span>
+
+		// add additional test code here
+<span class="fc" id="L185">	}</span>
+
+	/**
+	 * Run the void setValue(String) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/15/16 12:06 AM
+	 */
+	@Test
+	public void testSetValue_2()
+		throws Exception {
+<span class="fc" id="L197">		TextOption fixture = new TextOption(new Specification());</span>
+<span class="fc" id="L198">		fixture.setValue(&quot;&quot;);</span>
+<span class="fc" id="L199">		fixture.isDefined = false;</span>
+<span class="fc" id="L200">		String value = &quot;&quot;;</span>
+
+<span class="fc" id="L202">		fixture.setValue(value);</span>
+
+		// add additional test code here
+<span class="fc" id="L205">	}</span>
+
+	/**
+	 * Run the void setValue(String) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/15/16 12:06 AM
+	 */
+	@Test
+	public void testSetValue_3()
+		throws Exception {
+<span class="fc" id="L217">		TextOption fixture = new TextOption(new Specification());</span>
+<span class="fc" id="L218">		fixture.setValue(&quot;&quot;);</span>
+<span class="fc" id="L219">		fixture.isDefined = true;</span>
+<span class="fc" id="L220">		String value = &quot;&quot;;</span>
+
+<span class="fc" id="L222">		fixture.setValue(value);</span>
+
+		// add additional test code here
+<span class="fc" id="L225">	}</span>
+
+	/**
+	 * Run the void setValue(String,String) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/15/16 12:06 AM
+	 */
+	@Test
+	public void testSetValue_4()
+		throws Exception {
+<span class="fc" id="L237">		TextOption fixture = new TextOption(new Specification());</span>
+<span class="fc" id="L238">		fixture.setValue(&quot;&quot;);</span>
+<span class="fc" id="L239">		fixture.isDefined = true;</span>
+<span class="fc" id="L240">		String valueString = null;</span>
+<span class="fc" id="L241">		String defaultValueString = &quot;&quot;;</span>
+
+<span class="fc" id="L243">		fixture.setValue(valueString, defaultValueString);</span>
+
+		// add additional test code here
+<span class="fc" id="L246">	}</span>
+
+	/**
+	 * Run the void setValue(String,String) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/15/16 12:06 AM
+	 */
+	@Test
+	public void testSetValue_5()
+		throws Exception {
+<span class="fc" id="L258">		TextOption fixture = new TextOption(new Specification());</span>
+<span class="fc" id="L259">		fixture.setValue(&quot;&quot;);</span>
+<span class="fc" id="L260">		fixture.isDefined = true;</span>
+<span class="fc" id="L261">		String valueString = &quot;&quot;;</span>
+<span class="fc" id="L262">		String defaultValueString = &quot;&quot;;</span>
+
+<span class="fc" id="L264">		fixture.setValue(valueString, defaultValueString);</span>
+
+		// add additional test code here
+<span class="fc" id="L267">	}</span>
+
+	/**
+	 * Run the String toString() method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/15/16 12:06 AM
+	 */
+	@Test
+	public void testToString_1()
+		throws Exception {
+<span class="fc" id="L279">		TextOption fixture = new TextOption(new Specification());</span>
+<span class="fc" id="L280">		fixture.setValue(&quot;&quot;);</span>
+<span class="fc" id="L281">		fixture.isDefined = true;</span>
+
+<span class="fc" id="L283">		String result = fixture.toString();</span>
+
+		// add additional test code here
+<span class="fc" id="L286">		assertEquals(&quot;[null value=]&quot;, result);</span>
+<span class="fc" id="L287">	}</span>
+
+	/**
+	 * Run the void writeAttributes(FreeColXMLWriter) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/15/16 12:06 AM
+	 */
+	@Test(expected = javax.xml.stream.XMLStreamException.class)
+	public void testWriteAttributes_1()
+		throws Exception {
+<span class="fc" id="L299">		TextOption fixture = new TextOption(new Specification());</span>
+<span class="fc" id="L300">		fixture.setValue(&quot;&quot;);</span>
+<span class="fc" id="L301">		fixture.isDefined = true;</span>
+<span class="fc" id="L302">		FreeColXMLWriter xw = new FreeColXMLWriter(new CharArrayWriter(), net.sf.freecol.common.io.FreeColXMLWriter.WriteScope.CLIENT);</span>
+
+<span class="nc" id="L304">		fixture.writeAttributes(xw);</span>
+
+		// add additional test code here
+<span class="nc" id="L307">	}</span>
+
+	/**
+	 * Run the void writeAttributes(FreeColXMLWriter) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/15/16 12:06 AM
+	 */
+	@Test(expected = javax.xml.stream.XMLStreamException.class)
+	public void testWriteAttributes_2()
+		throws Exception {
+<span class="fc" id="L319">		TextOption fixture = new TextOption(new Specification());</span>
+<span class="fc" id="L320">		fixture.setValue(&quot;&quot;);</span>
+<span class="fc" id="L321">		fixture.isDefined = true;</span>
+<span class="fc" id="L322">		FreeColXMLWriter xw = new FreeColXMLWriter(new CharArrayWriter(), net.sf.freecol.common.io.FreeColXMLWriter.WriteScope.CLIENT);</span>
+
+<span class="nc" id="L324">		fixture.writeAttributes(xw);</span>
+
+		// add additional test code here
+<span class="nc" id="L327">	}</span>
+
+	/**
+	 * Run the void writeAttributes(FreeColXMLWriter) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/15/16 12:06 AM
+	 */
+	@Test(expected = javax.xml.stream.XMLStreamException.class)
+	public void testWriteAttributes_3()
+		throws Exception {
+<span class="fc" id="L339">		TextOption fixture = new TextOption(new Specification());</span>
+<span class="fc" id="L340">		fixture.setValue(&quot;&quot;);</span>
+<span class="fc" id="L341">		fixture.isDefined = true;</span>
+<span class="fc" id="L342">		FreeColXMLWriter xw = new FreeColXMLWriter(new CharArrayWriter(), net.sf.freecol.common.io.FreeColXMLWriter.WriteScope.CLIENT);</span>
+
+<span class="nc" id="L344">		fixture.writeAttributes(xw);</span>
+
+		// add additional test code here
+<span class="nc" id="L347">	}</span>
+
+	/**
+	 * Perform pre-test initialization.
+	 *
+	 * @throws Exception
+	 *         if the initialization fails for some reason
+	 *
+	 * @generatedBy CodePro at 5/15/16 12:06 AM
+	 */
+	@Before
+	public void setUp()
+		throws Exception {
+		// add additional set up code here
+<span class="fc" id="L361">	}</span>
+
+	/**
+	 * Perform post-test clean-up.
+	 *
+	 * @throws Exception
+	 *         if the clean-up fails for some reason
+	 *
+	 * @generatedBy CodePro at 5/15/16 12:06 AM
+	 */
+	@After
+	public void tearDown()
+		throws Exception {
+		// Add additional tear down code here
+<span class="fc" id="L375">	}</span>
+
+	/**
+	 * Launch the test.
+	 *
+	 * @param args the command line arguments
+	 *
+	 * @generatedBy CodePro at 5/15/16 12:06 AM
+	 */
+	public static void main(String[] args) {
+<span class="nc" id="L385">		new org.junit.runner.JUnitCore().run(TextOptionTest.class);</span>
+<span class="nc" id="L386">	}</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span>AllTestsCommonOptionPackage (May 16, 2016 12:47:10 PM)</div></body></html>

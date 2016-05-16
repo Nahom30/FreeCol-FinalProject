@@ -1,0 +1,719 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../.resources/report.gif" type="image/gif"/><title>TurnTest.java</title><link rel="stylesheet" href="../../../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../.sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">AllTestsCommonOptionPackage (May 16, 2016 12:47:10 PM)</a> &gt; <a href="../../index.html" class="el_group">FreeCol</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">net.sf.freecol.common.model</a> &gt; <span class="el_source">TurnTest.java</span></div><h1>TurnTest.java</h1><pre class="source lang-java linenums">package net.sf.freecol.common.model;
+
+import org.junit.*;
+import static org.junit.Assert.*;
+
+/**
+ * The class &lt;code&gt;TurnTest&lt;/code&gt; contains tests for the class &lt;code&gt;{@link Turn}&lt;/code&gt;.
+ *
+ * @generatedBy CodePro at 5/15/16 1:26 AM
+ * @author Obed Dominguez
+ * @version $Revision: 1.0 $
+ */
+<span class="nc" id="L13">public class TurnTest {</span>
+	/**
+	 * Run the Turn(int) constructor test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/15/16 1:26 AM
+	 */
+	@Test
+	public void testTurn_1()
+		throws Exception {
+<span class="nc" id="L24">		int turn = 1;</span>
+
+<span class="nc" id="L26">		Turn result = new Turn(turn);</span>
+
+		// add additional test code here
+<span class="nc" id="L29">		assertNotNull(result);</span>
+<span class="nc" id="L30">		assertEquals(&quot;1&quot;, result.toString());</span>
+<span class="nc" id="L31">		assertEquals(1, result.getNumber());</span>
+<span class="nc" id="L32">		assertNotEquals(1492, result.getYear());</span>
+<span class="nc" id="L33">		assertEquals(true, result.isFirstTurn());</span>
+<span class="nc" id="L34">		assertNotEquals(-1, result.getSeason());</span>
+<span class="nc" id="L35">		assertNotEquals(&quot;1492&quot;, result.getSaveGameSuffix());</span>
+<span class="nc" id="L36">		assertNotEquals(false, result.isFirstSeasonTurn());</span>
+<span class="nc" id="L37">	}</span>
+
+	/**
+	 * Run the boolean equals(Object) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/15/16 1:26 AM
+	 */
+	@Test
+	public void testEquals_1()
+		throws Exception {
+<span class="nc" id="L49">		Turn fixture = new Turn(1);</span>
+<span class="nc" id="L50">		Object o = new Turn(1);</span>
+
+<span class="nc" id="L52">		boolean result = fixture.equals(o);</span>
+
+		// add additional test code here
+<span class="nc" id="L55">		assertEquals(true, result);</span>
+<span class="nc" id="L56">	}</span>
+
+	/**
+	 * Run the boolean equals(Object) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/15/16 1:26 AM
+	 */
+	@Test
+	public void testEquals_2()
+		throws Exception {
+<span class="nc" id="L68">		Turn fixture = new Turn(1);</span>
+<span class="nc" id="L69">		Object o = new Turn(1);</span>
+
+<span class="nc" id="L71">		boolean result = fixture.equals(o);</span>
+
+		// add additional test code here
+<span class="nc" id="L74">		assertEquals(true, result);</span>
+<span class="nc" id="L75">	}</span>
+
+	/**
+	 * Run the boolean equals(Object) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/15/16 1:26 AM
+	 */
+	@Test
+	public void testEquals_3()
+		throws Exception {
+<span class="nc" id="L87">		Turn fixture = new Turn(1);</span>
+<span class="nc" id="L88">		Object o = new Object();</span>
+
+<span class="nc" id="L90">		boolean result = fixture.equals(o);</span>
+
+		// add additional test code here
+<span class="nc" id="L93">		assertEquals(false, result);</span>
+<span class="nc" id="L94">	}</span>
+
+	/**
+	 * Run the StringTemplate getLabel() method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/15/16 1:26 AM
+	 */
+	@Test
+	public void testGetLabel_1()
+		throws Exception {
+<span class="nc" id="L106">		Turn fixture = new Turn(1);</span>
+
+<span class="nc" id="L108">		StringTemplate result = fixture.getLabel();</span>
+
+		// add additional test code here
+<span class="nc" id="L111">		assertNotNull(result);</span>
+<span class="nc" id="L112">		assertNotEquals(&quot;LABEL: NAME: model.season.spring.nameNAME:  NAME: 1&quot;, result.toString());</span>
+<span class="nc" id="L113">		assertEquals(false, result.isEmpty());</span>
+<span class="nc" id="L114">		assertEquals(null, result.getDefaultId());</span>
+<span class="nc" id="L115">		assertEquals(&quot;stringTemplate&quot;, result.getXMLTagName());</span>
+<span class="nc" id="L116">		assertEquals(&quot;&quot;, result.getId());</span>
+<span class="nc" id="L117">		assertEquals(&quot;&quot;, result.getSuffix());</span>
+<span class="nc" id="L118">		assertEquals(null, result.getSpecification());</span>
+<span class="nc" id="L119">		assertNotEquals(&quot;&lt;stringTemplate id=\&quot;\&quot; templateType=\&quot;label\&quot;&gt;&lt;stringTemplate id=\&quot;model.season.spring.name\&quot; templateType=\&quot;name\&quot;&gt;&lt;/stringTemplate&gt;&lt;stringTemplate id=\&quot; \&quot; templateType=\&quot;name\&quot;&gt;&lt;/stringTemplate&gt;&lt;stringTemplate id=\&quot;1\&quot; templateType=\&quot;name\&quot;&gt;&lt;/stringTemplate&gt;&lt;/stringTemplate&gt;&quot;, result.serialize());</span>
+<span class="nc" id="L120">		assertEquals(&quot;&quot;, result.getIdType());</span>
+<span class="nc" id="L121">		assertEquals(null, result.getGame());</span>
+<span class="nc" id="L122">		assertEquals(-1, result.getIdNumber());</span>
+<span class="nc" id="L123">		assertEquals(null, result.getFeatureContainer());</span>
+<span class="nc" id="L124">	}</span>
+
+	/**
+	 * Run the StringTemplate getLabel(int) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/15/16 1:26 AM
+	 */
+	@Test
+	public void testGetLabel_2()
+		throws Exception {
+<span class="nc" id="L136">		int turn = 1;</span>
+
+<span class="nc" id="L138">		StringTemplate result = Turn.getLabel(turn);</span>
+
+		// add additional test code here
+<span class="nc" id="L141">		assertNotNull(result);</span>
+<span class="nc" id="L142">		assertNotEquals(&quot;LABEL: NAME: model.season.spring.nameNAME:  NAME: 1&quot;, result.toString());</span>
+<span class="nc" id="L143">		assertEquals(false, result.isEmpty());</span>
+<span class="nc" id="L144">		assertEquals(null, result.getDefaultId());</span>
+<span class="nc" id="L145">		assertEquals(&quot;stringTemplate&quot;, result.getXMLTagName());</span>
+<span class="nc" id="L146">		assertEquals(&quot;&quot;, result.getId());</span>
+<span class="nc" id="L147">		assertEquals(&quot;&quot;, result.getSuffix());</span>
+<span class="nc" id="L148">		assertEquals(null, result.getSpecification());</span>
+<span class="nc" id="L149">		assertNotEquals(&quot;&lt;stringTemplate id=\&quot;\&quot; templateType=\&quot;label\&quot;&gt;&lt;stringTemplate id=\&quot;model.season.spring.name\&quot; templateType=\&quot;name\&quot;&gt;&lt;/stringTemplate&gt;&lt;stringTemplate id=\&quot; \&quot; templateType=\&quot;name\&quot;&gt;&lt;/stringTemplate&gt;&lt;stringTemplate id=\&quot;1\&quot; templateType=\&quot;name\&quot;&gt;&lt;/stringTemplate&gt;&lt;/stringTemplate&gt;&quot;, result.serialize());</span>
+<span class="nc" id="L150">		assertEquals(&quot;&quot;, result.getIdType());</span>
+<span class="nc" id="L151">		assertEquals(null, result.getGame());</span>
+<span class="nc" id="L152">		assertEquals(-1, result.getIdNumber());</span>
+<span class="nc" id="L153">		assertEquals(null, result.getFeatureContainer());</span>
+<span class="nc" id="L154">	}</span>
+
+	/**
+	 * Run the StringTemplate getLabel(int) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/15/16 1:26 AM
+	 */
+	@Test
+	public void testGetLabel_3()
+		throws Exception {
+<span class="nc" id="L166">		int turn = 1;</span>
+
+<span class="nc" id="L168">		StringTemplate result = Turn.getLabel(turn);</span>
+
+		// add additional test code here
+<span class="nc" id="L171">		assertNotNull(result);</span>
+<span class="nc" id="L172">		assertNotEquals(&quot;LABEL: NAME: model.season.spring.nameNAME:  NAME: 1&quot;, result.toString());</span>
+<span class="nc" id="L173">		assertEquals(false, result.isEmpty());</span>
+<span class="nc" id="L174">		assertEquals(null, result.getDefaultId());</span>
+<span class="nc" id="L175">		assertEquals(&quot;stringTemplate&quot;, result.getXMLTagName());</span>
+<span class="nc" id="L176">		assertEquals(&quot;&quot;, result.getId());</span>
+<span class="nc" id="L177">		assertEquals(&quot;&quot;, result.getSuffix());</span>
+<span class="nc" id="L178">		assertEquals(null, result.getSpecification());</span>
+<span class="nc" id="L179">		assertNotEquals(&quot;&lt;stringTemplate id=\&quot;\&quot; templateType=\&quot;label\&quot;&gt;&lt;stringTemplate id=\&quot;model.season.spring.name\&quot; templateType=\&quot;name\&quot;&gt;&lt;/stringTemplate&gt;&lt;stringTemplate id=\&quot; \&quot; templateType=\&quot;name\&quot;&gt;&lt;/stringTemplate&gt;&lt;stringTemplate id=\&quot;1\&quot; templateType=\&quot;name\&quot;&gt;&lt;/stringTemplate&gt;&lt;/stringTemplate&gt;&quot;, result.serialize());</span>
+<span class="nc" id="L180">		assertEquals(&quot;&quot;, result.getIdType());</span>
+<span class="nc" id="L181">		assertEquals(null, result.getGame());</span>
+<span class="nc" id="L182">		assertEquals(-1, result.getIdNumber());</span>
+<span class="nc" id="L183">		assertEquals(null, result.getFeatureContainer());</span>
+<span class="nc" id="L184">	}</span>
+
+	/**
+	 * Run the int getNumber() method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/15/16 1:26 AM
+	 */
+	@Test
+	public void testGetNumber_1()
+		throws Exception {
+<span class="nc" id="L196">		Turn fixture = new Turn(1);</span>
+
+<span class="nc" id="L198">		int result = fixture.getNumber();</span>
+
+		// add additional test code here
+<span class="nc" id="L201">		assertEquals(1, result);</span>
+<span class="nc" id="L202">	}</span>
+
+	/**
+	 * Run the String getSaveGameSuffix() method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/15/16 1:26 AM
+	 */
+	@Test
+	public void testGetSaveGameSuffix_1()
+		throws Exception {
+<span class="nc" id="L214">		Turn fixture = new Turn(1);</span>
+
+<span class="nc" id="L216">		String result = fixture.getSaveGameSuffix();</span>
+
+		// add additional test code here
+<span class="nc" id="L219">		assertEquals(&quot;1_1_model.season.spring.name&quot;, result);</span>
+<span class="nc" id="L220">	}</span>
+
+	/**
+	 * Run the String getSaveGameSuffix() method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/15/16 1:26 AM
+	 */
+	@Test
+	public void testGetSaveGameSuffix_2()
+		throws Exception {
+<span class="nc" id="L232">		Turn fixture = new Turn(1);</span>
+
+<span class="nc" id="L234">		String result = fixture.getSaveGameSuffix();</span>
+
+		// add additional test code here
+<span class="nc" id="L237">		assertEquals(&quot;1_1_model.season.spring.name&quot;, result);</span>
+<span class="nc" id="L238">	}</span>
+
+	/**
+	 * Run the int getSeason() method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/15/16 1:26 AM
+	 */
+	@Test
+	public void testGetSeason_1()
+		throws Exception {
+<span class="nc" id="L250">		Turn fixture = new Turn(1);</span>
+
+<span class="nc" id="L252">		int result = fixture.getSeason();</span>
+
+		// add additional test code here
+<span class="nc" id="L255">		assertNotEquals(0, result);</span>
+<span class="nc" id="L256">	}</span>
+
+	/**
+	 * Run the int getSeason(int) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/15/16 1:26 AM
+	 */
+	@Test
+	public void testGetSeason_2()
+		throws Exception {
+<span class="nc" id="L268">		int turn = 1;</span>
+
+<span class="nc" id="L270">		int result = Turn.getSeason(turn);</span>
+
+		// add additional test code here
+<span class="nc" id="L273">		assertNotEquals(0, result);</span>
+<span class="nc" id="L274">	}</span>
+
+	/**
+	 * Run the int getSeason(int) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/15/16 1:26 AM
+	 */
+	@Test
+	public void testGetSeason_3()
+		throws Exception {
+<span class="nc" id="L286">		int turn = 1;</span>
+
+<span class="nc" id="L288">		int result = Turn.getSeason(turn);</span>
+
+		// add additional test code here
+<span class="nc" id="L291">		assertNotEquals(0, result);</span>
+<span class="nc" id="L292">	}</span>
+
+	/**
+	 * Run the int getSeasonNumber() method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/15/16 1:26 AM
+	 */
+	@Test
+	public void testGetSeasonNumber_1()
+		throws Exception {
+
+<span class="nc" id="L305">		int result = Turn.getSeasonNumber();</span>
+
+		// add additional test code here
+<span class="nc" id="L308">		assertNotEquals(1, result);</span>
+<span class="nc" id="L309">	}</span>
+
+	/**
+	 * Run the int getSeasonYear() method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/15/16 1:26 AM
+	 */
+	@Test
+	public void testGetSeasonYear_1()
+		throws Exception {
+
+<span class="nc" id="L322">		int result = Turn.getSeasonYear();</span>
+
+		// add additional test code here
+<span class="nc" id="L325">		assertNotEquals(1, result);</span>
+<span class="nc" id="L326">	}</span>
+
+	/**
+	 * Run the int getStartingYear() method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/15/16 1:26 AM
+	 */
+	@Test
+	public void testGetStartingYear_1()
+		throws Exception {
+
+<span class="nc" id="L339">		int result = Turn.getStartingYear();</span>
+
+		// add additional test code here
+<span class="nc" id="L342">		assertEquals(1, result);</span>
+<span class="nc" id="L343">	}</span>
+
+	/**
+	 * Run the String getTurnsText(int) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/15/16 1:26 AM
+	 */
+	@Test
+	public void testGetTurnsText_1()
+		throws Exception {
+<span class="nc" id="L355">		int turns = -1;</span>
+
+<span class="nc" id="L357">		String result = Turn.getTurnsText(turns);</span>
+
+		// add additional test code here
+<span class="nc" id="L360">		assertEquals(&quot;&gt;0&quot;, result);</span>
+<span class="nc" id="L361">	}</span>
+
+	/**
+	 * Run the String getTurnsText(int) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/15/16 1:26 AM
+	 */
+	@Test
+	public void testGetTurnsText_2()
+		throws Exception {
+<span class="nc" id="L373">		int turns = 1;</span>
+
+<span class="nc" id="L375">		String result = Turn.getTurnsText(turns);</span>
+
+		// add additional test code here
+<span class="nc" id="L378">		assertEquals(&quot;1&quot;, result);</span>
+<span class="nc" id="L379">	}</span>
+
+	/**
+	 * Run the String getTurnsText(int) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/15/16 1:26 AM
+	 */
+	@Test
+	public void testGetTurnsText_3()
+		throws Exception {
+<span class="nc" id="L391">		int turns = Integer.MIN_VALUE;</span>
+
+<span class="nc" id="L393">		String result = Turn.getTurnsText(turns);</span>
+
+		// add additional test code here
+<span class="nc" id="L396">		assertEquals(&quot;notApplicable&quot;, result);</span>
+<span class="nc" id="L397">	}</span>
+
+	/**
+	 * Run the int getYear() method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/15/16 1:26 AM
+	 */
+	@Test
+	public void testGetYear_1()
+		throws Exception {
+<span class="nc" id="L409">		Turn fixture = new Turn(1);</span>
+
+<span class="nc" id="L411">		int result = fixture.getYear();</span>
+
+		// add additional test code here
+<span class="nc" id="L414">		assertEquals(1, result);</span>
+<span class="nc" id="L415">	}</span>
+
+	/**
+	 * Run the int getYear(int) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/15/16 1:26 AM
+	 */
+	@Test
+	public void testGetYear_2()
+		throws Exception {
+<span class="nc" id="L427">		int turn = 1;</span>
+
+<span class="nc" id="L429">		int result = Turn.getYear(turn);</span>
+
+		// add additional test code here
+<span class="nc" id="L432">		assertEquals(1, result);</span>
+<span class="nc" id="L433">	}</span>
+
+	/**
+	 * Run the int getYear(int) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/15/16 1:26 AM
+	 */
+	@Test
+	public void testGetYear_3()
+		throws Exception {
+<span class="nc" id="L445">		int turn = 1;</span>
+
+<span class="nc" id="L447">		int result = Turn.getYear(turn);</span>
+
+		// add additional test code here
+<span class="nc" id="L450">		assertEquals(1, result);</span>
+<span class="nc" id="L451">	}</span>
+
+	/**
+	 * Run the int hashCode() method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/15/16 1:26 AM
+	 */
+	@Test
+	public void testHashCode_1()
+		throws Exception {
+<span class="nc" id="L463">		Turn fixture = new Turn(1);</span>
+
+<span class="nc" id="L465">		int result = fixture.hashCode();</span>
+
+		// add additional test code here
+<span class="nc" id="L468">		assertEquals(1, result);</span>
+<span class="nc" id="L469">	}</span>
+
+	/**
+	 * Run the void initialize(int,int,int) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/15/16 1:26 AM
+	 */
+	@Test
+	public void testInitialize_1()
+		throws Exception {
+<span class="nc" id="L481">		int newStartingYear = 1;</span>
+<span class="nc" id="L482">		int newSeasonYear = 1;</span>
+<span class="nc" id="L483">		int newSeasonNumber = 1;</span>
+
+<span class="nc" id="L485">		Turn.initialize(newStartingYear, newSeasonYear, newSeasonNumber);</span>
+
+		// add additional test code here
+<span class="nc" id="L488">	}</span>
+
+	/**
+	 * Run the boolean isFirstSeasonTurn() method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/15/16 1:26 AM
+	 */
+	@Test
+	public void testIsFirstSeasonTurn_1()
+		throws Exception {
+<span class="nc" id="L500">		Turn fixture = new Turn(1);</span>
+
+<span class="nc" id="L502">		boolean result = fixture.isFirstSeasonTurn();</span>
+
+		// add additional test code here
+<span class="nc" id="L505">		assertEquals(true, result);</span>
+<span class="nc" id="L506">	}</span>
+
+	/**
+	 * Run the boolean isFirstSeasonTurn() method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/15/16 1:26 AM
+	 */
+	@Test
+	public void testIsFirstSeasonTurn_2()
+		throws Exception {
+<span class="nc" id="L518">		Turn fixture = new Turn(1);</span>
+
+<span class="nc" id="L520">		boolean result = fixture.isFirstSeasonTurn();</span>
+
+		// add additional test code here
+<span class="nc" id="L523">		assertEquals(true, result);</span>
+<span class="nc" id="L524">	}</span>
+
+	/**
+	 * Run the boolean isFirstTurn() method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/15/16 1:26 AM
+	 */
+	@Test
+	public void testIsFirstTurn_1()
+		throws Exception {
+<span class="nc" id="L536">		Turn fixture = new Turn(1);</span>
+
+<span class="nc" id="L538">		boolean result = fixture.isFirstTurn();</span>
+
+		// add additional test code here
+<span class="nc" id="L541">		assertEquals(true, result);</span>
+<span class="nc" id="L542">	}</span>
+
+	/**
+	 * Run the boolean isFirstTurn() method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/15/16 1:26 AM
+	 */
+	@Test
+	public void testIsFirstTurn_2()
+		throws Exception {
+<span class="nc" id="L554">		Turn fixture = new Turn(2);</span>
+
+<span class="nc" id="L556">		boolean result = fixture.isFirstTurn();</span>
+
+		// add additional test code here
+<span class="nc" id="L559">		assertEquals(false, result);</span>
+<span class="nc" id="L560">	}</span>
+
+	/**
+	 * Run the Turn next() method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/15/16 1:26 AM
+	 */
+	@Test
+	public void testNext_1()
+		throws Exception {
+<span class="nc" id="L572">		Turn fixture = new Turn(1);</span>
+
+<span class="nc" id="L574">		Turn result = fixture.next();</span>
+
+		// add additional test code here
+<span class="nc" id="L577">		assertNotNull(result);</span>
+<span class="nc" id="L578">		assertEquals(&quot;2&quot;, result.toString());</span>
+<span class="nc" id="L579">		assertEquals(2, result.getNumber());</span>
+<span class="nc" id="L580">		assertEquals(2, result.getYear());</span>
+<span class="nc" id="L581">		assertEquals(false, result.isFirstTurn());</span>
+<span class="nc" id="L582">		assertEquals(0, result.getSeason());</span>
+<span class="nc" id="L583">		assertEquals(&quot;2_1_model.season.spring.name&quot;, result.getSaveGameSuffix());</span>
+<span class="nc" id="L584">		assertEquals(false, result.isFirstSeasonTurn());</span>
+<span class="nc" id="L585">	}</span>
+
+	/**
+	 * Run the String toString() method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/15/16 1:26 AM
+	 */
+	@Test
+	public void testToString_1()
+		throws Exception {
+<span class="nc" id="L597">		Turn fixture = new Turn(1);</span>
+
+<span class="nc" id="L599">		String result = fixture.toString();</span>
+
+		// add additional test code here
+<span class="nc" id="L602">		assertEquals(&quot;1&quot;, result);</span>
+<span class="nc" id="L603">	}</span>
+
+	/**
+	 * Run the int yearToTurn(int) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/15/16 1:26 AM
+	 */
+	@Test
+	public void testYearToTurn_1()
+		throws Exception {
+<span class="nc" id="L615">		int year = 1;</span>
+
+<span class="nc" id="L617">		int result = Turn.yearToTurn(year);</span>
+
+		// add additional test code here
+<span class="nc" id="L620">		assertEquals(1, result);</span>
+<span class="nc" id="L621">	}</span>
+
+	/**
+	 * Run the int yearToTurn(int,int) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/15/16 1:26 AM
+	 */
+	@Test
+	public void testYearToTurn_2()
+		throws Exception {
+<span class="nc" id="L633">		int year = 1600;</span>
+<span class="nc" id="L634">		int season = 1;</span>
+
+<span class="nc" id="L636">		int result = Turn.yearToTurn(year, season);</span>
+
+		// add additional test code here
+<span class="nc" id="L639">		assertNotEquals(1601, result);</span>
+<span class="nc" id="L640">	}</span>
+
+	/**
+	 * Run the int yearToTurn(int,int) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/15/16 1:26 AM
+	 */
+	@Test
+	public void testYearToTurn_3()
+		throws Exception {
+<span class="nc" id="L652">		int year = 1492;</span>
+<span class="nc" id="L653">		int season = 1;</span>
+
+<span class="nc" id="L655">		int result = Turn.yearToTurn(year, season);</span>
+
+		// add additional test code here
+<span class="nc" id="L658">		assertNotEquals(1493, result);</span>
+<span class="nc" id="L659">	}</span>
+
+	/**
+	 * Run the int yearToTurn(int,int) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 5/15/16 1:26 AM
+	 */
+	@Test
+	public void testYearToTurn_4()
+		throws Exception {
+<span class="nc" id="L671">		int year = 1;</span>
+<span class="nc" id="L672">		int season = 1;</span>
+
+<span class="nc" id="L674">		int result = Turn.yearToTurn(year, season);</span>
+
+		// add additional test code here
+<span class="nc" id="L677">		assertNotEquals(2, result);</span>
+<span class="nc" id="L678">	}</span>
+
+	/**
+	 * Perform pre-test initialization.
+	 *
+	 * @throws Exception
+	 *         if the initialization fails for some reason
+	 *
+	 * @generatedBy CodePro at 5/15/16 1:26 AM
+	 */
+	@Before
+	public void setUp()
+		throws Exception {
+		// add additional set up code here
+<span class="nc" id="L692">	}</span>
+
+	/**
+	 * Perform post-test clean-up.
+	 *
+	 * @throws Exception
+	 *         if the clean-up fails for some reason
+	 *
+	 * @generatedBy CodePro at 5/15/16 1:26 AM
+	 */
+	@After
+	public void tearDown()
+		throws Exception {
+		// Add additional tear down code here
+<span class="nc" id="L706">	}</span>
+
+	/**
+	 * Launch the test.
+	 *
+	 * @param args the command line arguments
+	 *
+	 * @generatedBy CodePro at 5/15/16 1:26 AM
+	 */
+	public static void main(String[] args) {
+<span class="nc" id="L716">		new org.junit.runner.JUnitCore().run(TurnTest.class);</span>
+<span class="nc" id="L717">	}</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span>AllTestsCommonOptionPackage (May 16, 2016 12:47:10 PM)</div></body></html>

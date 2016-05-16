@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../.resources/report.gif" type="image/gif"/><title>TypeCountMapTests.java</title><link rel="stylesheet" href="../../../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../.sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">AllTestsCommonOptionPackage (May 16, 2016 12:47:10 PM)</a> &gt; <a href="../../index.html" class="el_group">FreeCol</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">net.sf.freecol.common.model</a> &gt; <span class="el_source">TypeCountMapTests.java</span></div><h1>TypeCountMapTests.java</h1><pre class="source lang-java linenums">package net.sf.freecol.common.model;
+
+import junit.framework.TestCase;
+import static org.junit.Assert.*;
+import org.junit.*;
+
+<span class="nc" id="L7">public class TypeCountMapTests {</span>
+	TypeCountMap&lt;GoodsType&gt; map1;
+	TypeCountMap&lt;GoodsType&gt; map2;
+	GoodsType type1;
+	GoodsType type2;
+	GoodsType type3;
+	
+	@Before
+	public void setUp() {
+<span class="nc" id="L16">		map1 =  new TypeCountMap&lt;GoodsType&gt;();</span>
+<span class="nc" id="L17">		map2 =  new TypeCountMap&lt;GoodsType&gt;();</span>
+<span class="nc" id="L18">		type1 = new GoodsType(&quot;1&quot;, null);</span>
+<span class="nc" id="L19">		type2 = new GoodsType(&quot;2&quot;, null);</span>
+<span class="nc" id="L20">		type3 = new GoodsType(&quot;3&quot;, null);</span>
+<span class="nc" id="L21">	}</span>
+	
+	
+	@Test
+	public void addToMap() {
+		
+<span class="nc" id="L27">		map1.incrementCount(type1, 2);</span>
+<span class="nc" id="L28">		map1.incrementCount(type2, 5);</span>
+<span class="nc" id="L29">		map1.incrementCount(type2, 5);</span>
+<span class="nc" id="L30">		assertEquals(2, map1.getCount(type1));</span>
+<span class="nc" id="L31">		assertEquals(10, map1.getCount(type2));</span>
+<span class="nc" id="L32">		map1.incrementCount(type2, -3);</span>
+<span class="nc" id="L33">		assertEquals(7, map1.getCount(type2));</span>
+<span class="nc" id="L34">	}</span>
+	
+	@Test
+	public void removeFromMap() {
+<span class="nc" id="L38">		map1.incrementCount(type1, 2);</span>
+<span class="nc" id="L39">		assertEquals(2, map1.getCount(type1));</span>
+<span class="nc" id="L40">		map1.incrementCount(type1, -2);</span>
+<span class="nc" id="L41">		assertEquals(0, map1.getCount(type1));</span>
+<span class="nc" id="L42">	}</span>
+	
+	@Test
+	public void addAnotherMap() {
+<span class="nc" id="L46">		map1.incrementCount(type1, 1);</span>
+<span class="nc" id="L47">		map1.incrementCount(type2, 5);</span>
+<span class="nc" id="L48">		map2.incrementCount(type2, 5);</span>
+<span class="nc" id="L49">		map2.incrementCount(type3, 3);</span>
+		
+<span class="nc" id="L51">		assertEquals(1, map1.getCount(type1));</span>
+<span class="nc" id="L52">		assertEquals(5, map1.getCount(type2));</span>
+<span class="nc" id="L53">		assertEquals(0, map1.getCount(type3));</span>
+		
+<span class="nc" id="L55">		map1.add(map2);</span>
+
+<span class="nc" id="L57">		assertEquals(1, map1.getCount(type1));</span>
+<span class="nc" id="L58">		assertEquals(10, map1.getCount(type2));</span>
+<span class="nc" id="L59">		assertEquals(3, map1.getCount(type3));</span>
+<span class="nc" id="L60">	}</span>
+
+
+	@Test
+	public void clearMap() {
+<span class="nc" id="L65">		map1.incrementCount(type1, 1);</span>
+<span class="nc" id="L66">		map1.incrementCount(type2, 5);</span>
+
+<span class="nc" id="L68">		assertEquals(1, map1.getCount(type1));</span>
+<span class="nc" id="L69">		assertEquals(5, map1.getCount(type2));</span>
+		
+<span class="nc" id="L71">		map1.clear();</span>
+
+<span class="nc" id="L73">		assertEquals(0, map1.getCount(type1));</span>
+<span class="nc" id="L74">		assertEquals(0, map1.getCount(type2));		</span>
+<span class="nc" id="L75">	}</span>
+	
+	@Test
+	public void validateKeySet() {
+<span class="nc" id="L79">		map1.incrementCount(type1, 1);</span>
+<span class="nc" id="L80">		map1.incrementCount(type2, 5);</span>
+		
+<span class="nc" id="L82">		assertNotNull(map1.keySet());</span>
+<span class="nc" id="L83">	}</span>
+
+	@Test
+	public void validateValues() {
+<span class="nc" id="L87">		map1.incrementCount(type1, 1);</span>
+<span class="nc" id="L88">		map1.incrementCount(type2, 5);</span>
+		
+<span class="nc" id="L90">		assertNotNull(map1.values());</span>
+<span class="nc" id="L91">	}</span>
+	
+
+	@Test
+	public void validateContainsKey() {
+<span class="nc" id="L96">		map1.incrementCount(type1, 1);</span>
+<span class="nc" id="L97">		map1.incrementCount(type2, 5);</span>
+		
+<span class="nc" id="L99">		assertTrue(map1.containsKey(type1));</span>
+<span class="nc" id="L100">		assertTrue(map1.containsKey(type2));</span>
+<span class="nc" id="L101">		assertFalse(map1.containsKey(type3));</span>
+<span class="nc" id="L102">	}</span>
+	
+	@Test
+	public void validateIsEmpty() {
+<span class="nc" id="L106">		map1.incrementCount(type1, 1);</span>
+		
+<span class="nc" id="L108">		assertFalse(map1.isEmpty());</span>
+<span class="nc" id="L109">		assertTrue(map2.isEmpty());</span>
+<span class="nc" id="L110">	}</span>
+	
+	@Test
+	public void validateSize() {
+<span class="nc" id="L114">		map1.incrementCount(type1, 1);</span>
+<span class="nc" id="L115">		map1.incrementCount(type2, 5);</span>
+		
+<span class="nc" id="L117">		assertEquals(2, map1.size());</span>
+<span class="nc" id="L118">	}</span>
+	
+	@Test
+	public void validateToString() {
+<span class="nc" id="L122">		map1.incrementCount(type1, 1);</span>
+<span class="nc" id="L123">		map1.incrementCount(type2, 5);</span>
+		
+<span class="nc" id="L125">		assertEquals(&quot;[net.sf.freecol.common.model.TypeCountMap [-1,1] [-1,5]]&quot;, map1.toString());</span>
+<span class="nc" id="L126">	}</span>
+	
+	@After
+	public void tearDown() {
+<span class="nc" id="L130">	    map1 = null;</span>
+<span class="nc" id="L131">	    type1 = null;</span>
+<span class="nc" id="L132">	    type2 = null;</span>
+<span class="nc" id="L133">	}</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span>AllTestsCommonOptionPackage (May 16, 2016 12:47:10 PM)</div></body></html>

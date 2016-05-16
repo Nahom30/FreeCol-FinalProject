@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../.resources/report.gif" type="image/gif"/><title>StubXMLWriter.java</title><link rel="stylesheet" href="../../../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../.sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">AllTestsCommonOptionPackage (May 16, 2016 12:47:10 PM)</a> &gt; <a href="../../index.html" class="el_group">FreeCol</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">net.sf.freecol.common.model</a> &gt; <span class="el_source">StubXMLWriter.java</span></div><h1>StubXMLWriter.java</h1><pre class="source lang-java linenums">package net.sf.freecol.common.model;
+
+import java.io.IOException;
+import java.io.OutputStream;
+
+import javax.xml.stream.XMLStreamException;
+
+import net.sf.freecol.common.io.FreeColXMLWriter;
+import net.sf.freecol.common.io.FreeColXMLWriter.WriteScope;
+
+class StubXMLWriter extends FreeColXMLWriter
+{
+<span class="nc" id="L13">	public String outputString = &quot;&quot;;</span>
+	
+	public StubXMLWriter(OutputStream outputStream, WriteScope scope, boolean indent) throws IOException {
+<span class="nc" id="L16">		super(outputStream, scope, indent);</span>
+		// TODO Auto-generated constructor stub
+<span class="nc" id="L18">	}</span>
+	
+	@Override
+	public void writeAttribute(String attributeName, int value) throws XMLStreamException {
+<span class="nc" id="L22">        outputString += attributeName + '=' + String.valueOf(value) + ';';</span>
+<span class="nc" id="L23">    }</span>
+	
+	@Override
+	public void writeAttribute(String attributeName, String value) throws XMLStreamException {
+<span class="nc" id="L27">        outputString += attributeName + '=' + value + ';';</span>
+<span class="nc" id="L28">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span>AllTestsCommonOptionPackage (May 16, 2016 12:47:10 PM)</div></body></html>
